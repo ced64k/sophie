@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: Jeux
+  order: 4
+---
+<h1>Jeux</h1>
+
+{% set postslist = collections.jeux %}
+{% include "postslist.njk" %}
