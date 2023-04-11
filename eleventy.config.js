@@ -33,6 +33,15 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
 	// Filters
+
+	eleventyConfig.addFilter("permalink_year", dateObj => dateObj.getFullYear());
+	eleventyConfig.addFilter("permalink_month", dateObj =>
+	  String(dateObj.getMonth() + 1).padStart(2, "0")
+	);
+	eleventyConfig.addFilter("permalink_day", dateObj =>
+	  String(dateObj.getDate()).padStart(2, "0")
+	);
+
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");

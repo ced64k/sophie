@@ -7,7 +7,6 @@ tags:
   - "livres"
   - "materiel-pedagogique"
   - "telechargements-gratuits"
-  - "jeux"
 ---
 
 On a beau être joueuse, il y a des jeux qu'on apprend à apprécier sur le tard.
