@@ -103,6 +103,7 @@ module.exports = function(eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	eleventyConfig.addPassthroughCopy('./content/admin');
 
 	return {
 		// Control which files Eleventy will process

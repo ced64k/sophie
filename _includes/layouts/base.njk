@@ -9,6 +9,7 @@
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
 		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
@@ -63,5 +64,16 @@
 		<footer></footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+		<script>
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+				if (!user) {
+					window.netlifyIdentity.on("login", () => {
+						document.location.href = "/admin/";
+					});
+				}
+			});
+		}
+		</script>
 	</body>
 </html>
