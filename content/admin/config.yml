@@ -11,13 +11,13 @@ backend:
 # Uncomment below to enable a link to your published site in the header bar of Netlify CMS
 # site_url: https://eleventy-netlify-boilerplate.netlify.app/
 
-media_folder: "static/img" # Media files will be stored in the repo under images/uploads
+media_folder: "content/images" # Media files will be stored in the repo under images/uploads
 
 collections:
   # Our blog posts
-  - name: "content/blog" # Used in routes, e.g., /admin/collections/blog
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Post" # Used in the UI
-    folder: "" # The path to the folder where the documents are stored
+    folder: "content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
