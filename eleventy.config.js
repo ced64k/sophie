@@ -104,6 +104,8 @@ module.exports = function(eleventyConfig) {
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 	eleventyConfig.addPassthroughCopy("admin");
+	eleventyConfig.addPassthroughCopy("content/blog/**/**/**/*.jpg");
+
 
 	return {
 		// Control which files Eleventy will process
