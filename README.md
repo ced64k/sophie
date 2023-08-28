@@ -1,66 +1,96 @@
-# eleventy-base-blog v8
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bbf28a84-4bdb-407b-a2fa-32628d27fa3d/deploy-status)](https://app.netlify.com/sites/eleventy-netlify-boilerplate/deploys)
 
-A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 beta release](https://www.11ty.dev/blog/eleventy-v2-beta/)).
+# Eleventy Netlify Boilerplate
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/802669dd-d5f8-4d49-963d-6d57b257c2a2/deploy-status)](https://app.netlify.com/sites/eleventy-base-blog/deploys)
+### Click the button below to try it out!
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-netlify-boilerplate&stack=cms)
+
+## What is it?
+
+A simple template for building a fast, pre-generated HTML website using the [Eleventy](https://www.11ty.dev/) static site generator. With [Netlify CMS](https://www.netlifycms.org/) baked-in, ready to deploy to [Netlify](https://www.netlify.com) in a couple of clicks.
+
+Use it as a starter for your own JAMstack projects, or as an easy way to get started building websites with Eleventy.
+
+Based on the [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog) repo (see there for additional info on Eleventy usage).
+
+## [Demo Site](https://eleventy-netlify-boilerplate.netlify.app/)
 
 ## Features
 
-- Using [Eleventy v2.0](https://www.11ty.dev/blog/eleventy-v2-beta/) with zero-JavaScript output.
-	- Content is exclusively pre-rendered (this is a static site).
-	- Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
-	- All URLs are decoupled from the content’s location on the file system.
-	- Configure templates via the [Eleventy Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-- **Performance focused**: four-hundos Lighthouse score out of the box!
-	- [View the Lighthouse report for the latest build](https://eleventy-base-blog.netlify.app/reports/lighthouse/) courtesy of the [Netlify Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse).
-	- _0 Cumulative Layout Shift_
-	- _0ms Total Blocking Time_
-- Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
-- Content-driven [navigation menu](https://www.11ty.dev/docs/plugins/navigation/)
-- [Image optimization](https://www.11ty.dev/docs/plugins/image/) via the `{% image %}` shortcode.
-	- Zero-JavaScript output.
-	- Support for modern image formats automatically (e.g. AVIF and WebP)
-	- Prefers `<img>` markup if possible (single image format) but switches automatically to `<picture>` for multiple image formats.
-	- Automated `<picture>` syntax markup with `srcset` and optional `sizes`
-	- Includes `width`/`height` attributes to avoid [content layout shift](https://web.dev/cls/).
-	- Includes `loading="lazy"` for native lazy loading without JavaScript.
-	- Includes [`decoding="async"`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decoding)
-	- Images can be co-located with blog post files.
-	- View the [Image plugin source code](https://github.com/11ty/eleventy-base-blog/blob/main/eleventy.config.images.js)
-- Built-in [syntax highlighter](https://www.11ty.dev/docs/plugins/syntaxhighlight/) (zero-JavaScript output).
-- Blog Posts
-	- Draft posts: use `draft: true` to mark a blog post as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. View the [Drafts plugin source code](https://github.com/11ty/eleventy-base-blog/blob/main/eleventy.config.drafts.js).
-	- Automated next/previous links
-	- Accessible deep links to headings
-- Generated Pages
-	- Home, Archive, and About pages.
-	- [Feeds for Atom and JSON](https://www.11ty.dev/docs/plugins/rss/)
-	- `sitemap.xml`
-	- Zero-maintenance tag pages ([View on the Demo](https://eleventy-base-blog.netlify.app/tags/))
-	- Content not found (404) page
+* NEW: Now using Eleventy v2.0 (requires Node 14 or above!)
+* Sample pages and a blog with tag support
+* Netlify CMS with editor previews (thanks [@biilmann](https://github.com/biilmann)!)
+* Scores 100/100/100/100 in Lighthouse performance tests 🔥
+* Maintenance-free post author archives
+* Automatic navigation menus with [Eleventy Navigation](https://www.11ty.dev/docs/plugins/navigation/)
+* Includes a working contact form
+* CSS 2kb minified, inlined for fastest page render
+* Optional pipeline for minified inline JS
+* Pre-builds and minifies your HTML too
+* Uses Markdown files for content
+* Uses Nunjucks (or Liquid) templates for layout
+* 100% Javascript framework free
+* Continuous Deployment workflow via Netlify
 
-## Demos
+## Want to try it out now?
 
-- [Netlify](https://eleventy-base-blog.netlify.com/)
-- [GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
-- [Remix on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-netlify-boilerplate&stack=cms)
 
-## Deploy this to your own site
+Clicking the button above will deploy a copy of the demo website to your Netlify
+account (you can create an account during this process if you don't have one)
+and everything needed for running the CMS:
 
-Deploy this Eleventy site in just a few clicks on these services:
+* A new repository in your GitHub account with the code
+* Full Continuous Deployment to Netlify's global CDN network
+* Control users and access with Netlify Identity
+* Manage content with Netlify CMS
+* Process form data with Netlify Forms
 
-- [Get your own Eleventy web site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/11ty/eleventy-base-blog)
-- If you run Eleventy locally you can drag your `_site` folder to [`drop.netlify.com`](https://drop.netlify.com/) to upload it without using `git`.
-- [Get your own Eleventy web site on Vercel](https://vercel.com/import/project?template=11ty%2Feleventy-base-blog)
-- Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
+### Set Up Authentication
 
-## Getting Started
+After deploying this project, Netlify Identity will add you as a CMS user and
+will email you an invite. It is not necessary to accept this invite if you wish
+to use an
+[OAuth provider](https://www.netlify.com/docs/identity/#external-provider-login)
+(e.g. Github) to manage authentication for your CMS.
 
-### 1. Clone this Repository
+It is recommended to use this method of authentication as it removes the need
+for an email & password to log in to the CMS and is generally more secure. You
+will need to add an OAuth provider in your Netlify app settings under
+"Settings" > "Identity" > "External providers".
+
+Once you've added an OAuth provider, navigate to `/admin` on your site, select your provider from the
+list, and you should then be logged into your CMS. Cool huh?
+
+### Set Up Identity Email Templates
+
+In order for Netlify Identity service emails (Signup, Reset Password etc) to function correctly with Netlify CMS, you will need to tell Netlify where your email templates are located.
+
+Inside this repo under `/admin/email-templates/` are four Netlify Identity email templates. Inside your Netlify site settings, you will need to navigate to: "Site Settings > Identity" and look there for the four email template configuration boxes: Invitation template, Confirmation template, Recovery template, and Email change template. Inside each, edit the "Path to template" field to match the root-relative path to each template. For example:
+
+`/admin/email-templates/invitation.html`
+
+Now you're all set; you can invite new CMS users and begin editing content!
+
+## Gotchas
+
+If you change the repo that was created at deploy time from public to private, you'll need to regenerate your token,
+as the token generated using the deploy to Netlify button can only access public repositories. To
+regenerate your token, head to "Settings" in your Netlify site dashboard, go to the "Identity"
+section, then scroll to "Services" where you'll see an "Edit settings" button. Click that and you'll
+see a text link to "Generate access token in GitHub".
+
+If you need any help with setting up Netlify CMS, you can reach out to the Netlify team in the [Netlify CMS Gitter](https://gitter.im/netlify/netlifycms).
+
+## Local development
+
+### 1. Clone this repository:
 
 ```
-git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
+git clone https://github.com/danurbanowicz/eleventy-netlify-boilerplate.git my-blog-name
 ```
+
 
 ### 2. Navigate to the directory
 
@@ -68,56 +98,41 @@ git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
 cd my-blog-name
 ```
 
-Specifically have a look at `eleventy.config.js` to see if you want to configure any Eleventy options differently.
+Specifically have a look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
 
-### 3. Install dependencies
+### 3. Install dependencies locally
 
 ```
-npm install
+npm install @11ty/eleventy
 ```
 
-### 4. Edit `_data/metadata.json`
+### 4. Edit _data/metadata.json
 
-### 5. Run Eleventy
+This file contains your site title and author details, and can be used to store any other commonly used site data.
 
-Generate a production-ready build:
+### 5. Run Eleventy (builds the site)
 
 ```
 npx @11ty/eleventy
 ```
 
-Or build and host locally on a local development server:
+Or build automatically when a template changes:
+```
+npx @11ty/eleventy --watch
+```
 
+Or build and host locally for local development:
 ```
 npx @11ty/eleventy --serve
 ```
 
-Or in [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals:
-
+Or in debug mode:
 ```
-# Mac OS/Linux/etc
-DEBUG=Eleventy* npx @11ty/eleventy
-
-# Windows
-set DEBUG=Eleventy* & npx @11ty/eleventy
-
-# Windows (Powershell in VS Code)
-$env:DEBUG="Eleventy*"; npx @11ty/eleventy
+DEBUG=* npx @11ty/eleventy
 ```
 
-### Implementation Notes
+## Bug reports, feature requests, etc
 
-- `content/about/index.md` is an example of a content page.
-- `content/blog/` has the blog posts but really they can live in any directory. They need only the `post` tag to be included in the blog posts [collection](https://www.11ty.dev/docs/collections/).
-- Use the `eleventyNavigation` key (via the [Eleventy Navigation plugin](https://www.11ty.dev/docs/plugins/navigation/)) in your front matter to add a template to the top level site navigation. This is in use on `content/index.njk` and `content/about/index.md`.
-- Content can be in _any template format_ (blog posts needn’t exclusively be markdown, for example). Configure your project’s supported templates in `eleventy.config.js` -> `templateFormats`.
-- The `public` folder in your input directory will be copied to the output folder (via `addPassthroughCopy` in the `eleventy.config.js` file). This means `./public/css/*` will live at `./_site/css/*` after your build completes.
-- Provides two content feeds:
-	- `content/feed/feed.njk`
-	- `content/feed/json.njk`
-- This project uses three [Eleventy Layouts](https://www.11ty.dev/docs/layouts/):
-	- `_includes/layouts/base.njk`: the top level HTML structure
-	- `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-	- `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-- `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
+This is an ongoing project and I welcome contributions and suggestions! Feel free to submit a PR.
 
+If you need any help with setting up Netlify CMS, you can reach out to the Netlify team in the [Netlify CMS Gitter](https://gitter.im/netlify/netlifycms).

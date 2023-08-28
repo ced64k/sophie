@@ -1,0 +1,8 @@
+{
+  "layout": "layouts/jeu.njk",
+  "permalink": "/{{page.fileSlug}}/",
+  "author": "Anonymous",
+  "tags": [
+    "jeu"
+  ]
+}

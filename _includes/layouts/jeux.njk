@@ -1,21 +1,26 @@
 ---
 layout: layouts/base.njk
+section: jeux
+permalink: /jeux/index.html
 ---
 <h1>{{ title }}</h1>
 
-<ul class="post-metadata">
-	<li>Par {{ author }}</li>
-</ul>
+{{ layoutContent | safe }}
+{% set postslist = collections.jeu %}
+<section>
+	{% for post in postslist | reverse %}
+		<article{% if post.url == url %} data-current="current item"{% endif %}>
+			<h3>
+				<a href="{{ post.url | url }}">
+					{% if post.data.title %}
+						{{ post.data.title }}
+					{% else %}
+						Untitled
+					{% endif %}
+				</a>
+			</h3>
+		</article>
+	{% endfor %}
+</section>
 
-{{ content | safe }}
 
-{%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
-{%- if nextPost or previousPost %}
-<ul class="links-nextprev">
-	{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %}
-{%- endif %}

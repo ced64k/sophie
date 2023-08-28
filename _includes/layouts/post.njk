@@ -1,25 +1,31 @@
 ---
 layout: layouts/base.njk
+section: post
 ---
-<h1>{{ title }}</h1>
 
-<ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-	{%- for tag in tags | filterTagList %}
-	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-	{%- endfor %}
-</ul>
+<article>
+  <h1>{{ title }}</h1>
+  <p>
+    <small>
+      <time datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></a>
+    </small>
+  </p>
 
-{{ content | safe }}
+  {{ layoutContent | safe }}
 
-{%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
-{%- if nextPost or previousPost %}
-<ul class="links-nextprev">
-	{%- if previousPost %}<li>Précédent : <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li>Suivant : <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %}
-{%- endif %}
+  {% if tags %}
+    <p>
+    {% for tag in tags %}
+      {%- if tag != "post" -%}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+      {%- endif -%}
+    {% endfor %}
+    </p>
+  {% endif %}
+
+</article>
+
+<nav>
+  <a href="{{ '/blog/' | url }}">← Blog index</a>
+</nav>
