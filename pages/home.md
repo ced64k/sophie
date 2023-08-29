@@ -8,10 +8,6 @@ eleventyNavigation:
   order: 0
 ---
 
-![](/static/img/cropped-4860084382_c8a130d413_o-1.jpg)
-
-# Qui suis-je
-
 Sortie de l’Institut Libre Marie Haps de Bruxelles en 2001, j’ai d’abord pratiqué la logopédie dans un cabinet privé avant de m’orienter vers un domaine passionnant: la communication chez les patients atteints de troubles du spectre autistique.
 
 J’ai passé plusieurs années à travailler avec des adultes autistes et psychotiques au [CHAAP de Quevaucamps](http://www.chaap.be/fr/accueil). J’ai eu l’occasion de voir le langage s’enrichir et les frustrations diminuer grâce notamment à différentes méthodes comme la PECS (méthode de communication par échange d’images) et Sésame (méthode de communication gestuelle alternative)

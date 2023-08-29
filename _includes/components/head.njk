@@ -4,13 +4,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title or metadata.title }}</title>
   <meta name="description" content="{{ metaDescription or eleventyComputed.metaDescription or metadata.description }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/_includes/assets/css/style.css">
+  <script src="/_includes/assets/js/scripts.js"></script>
   {% set css %}
-    {% include "assets/css/inline.css" %}
+    {# {% include "assets/css/inline.css" %} #}
   {% endset %}
-  <style>{{ css | cssmin | safe }}</style>
-  {# Uncomment below if you want to include minified inline JavaScript #}
-  {# {% set js %}
-    {% include "assets/js/inline.js" %}
-  {% endset %}
-  <script>{{ js | jsmin | safe }}</script> #}
+  {# <style>{{ css | cssmin | safe }}</style> #}
+  <script>{{ js | jsmin | safe }}</script>
 </head>

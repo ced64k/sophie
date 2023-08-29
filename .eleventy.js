@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
+const eleventySass = require("eleventy-sass");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
@@ -117,6 +118,22 @@ module.exports = function(eleventyConfig) {
   let opts = {
     permalink: false
   };
+
+  eleventyConfig.setBrowserSyncConfig({
+      files: './_site/_includes/assets/css/**/*.css'
+    });
+
+  eleventyConfig.addPlugin(eleventySass, {
+      compileOptions: {
+        permalink: function(contents, inputPath) {
+          return (data) => data.page.filePathStem.replace(/^\/scss\//, "/css/") + ".css";
+        }
+      },
+      sass: {
+        style: "compressed",
+        sourceMap: false
+      }
+    });
 
   eleventyConfig.setLibrary("md", markdownIt(options)
     .use(markdownItAnchor, opts)

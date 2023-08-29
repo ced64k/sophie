@@ -4,14 +4,18 @@ section: post
 ---
 
 <article>
-  <h1>{{ title }}</h1>
-  <p>
-    <small>
-      <time datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></a>
-    </small>
-  </p>
-
-  {{ layoutContent | safe }}
+  <div class="intro">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="summary">
+    <div class="summary-date">
+    <time datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></a>
+    </div>
+  </div>
+  
+  <div class="content">
+    {{ layoutContent | safe }}
+  </div>
 
   {% if tags %}
     <p>

@@ -3,14 +3,19 @@ layout: layouts/base.njk
 section: jeux
 permalink: /jeux/index.html
 ---
-<h1>{{ title }}</h1>
 
-{{ layoutContent | safe }}
+<div class="intro">
+	<h1>{{ title }}<span class="dot">.</span></h1>
+</div>
+
+<div class="content">
+	{{ layoutContent | safe }}
+</div>
 {% set postslist = collections.jeu %}
 <section>
 	{% for post in postslist | reverse %}
-		<article{% if post.url == url %} data-current="current item"{% endif %}>
-			<h3>
+		<article{% if post.url == url %} data-current="current item"{% endif %} class="summary">
+			<h2 class="summary-title">
 				<a href="{{ post.url | url }}">
 					{% if post.data.title %}
 						{{ post.data.title }}
@@ -18,7 +23,7 @@ permalink: /jeux/index.html
 						Untitled
 					{% endif %}
 				</a>
-			</h3>
+			</h2>
 		</article>
 	{% endfor %}
 </section>
