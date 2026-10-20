@@ -127,7 +127,10 @@ h1, h2, h3 {
 }
 
 .coin-jeux {
-  --t: 76px;
+  --t: 80px;
+  --orange: #e4522a;
+  --orange-fonce: #b53c17;
+  --jaune: #f2d35b;
   position: absolute;
   top: 0;
   right: 0;
@@ -135,7 +138,7 @@ h1, h2, h3 {
   width: var(--t);
   height: var(--t);
   clip-path: polygon(0 0, 100% 0, 100% 100%);
-  background: linear-gradient(45deg, transparent 50%, #fff 50% 57%, var(--highlight-color) 57%);
+  background: linear-gradient(45deg, transparent 50%, var(--jaune) 50% 58%, var(--orange) 58%);
   color: #fff;
   font-family: var(--font-family-heading);
   font-weight: 700;
@@ -145,35 +148,43 @@ h1, h2, h3 {
 @media (min-width: 767px) {
   .coin-jeux {
     --t: 140px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 .coin-jeux:hover, .coin-jeux:focus-visible {
   outline: none;
-  background: linear-gradient(45deg, transparent 50%, var(--heading-color) 50% 57%, var(--heading-color) 57%);
+  background: linear-gradient(45deg, transparent 50%, var(--jaune) 50% 58%, var(--orange-fonce) 58%);
 }
 .coin-jeux .coin-jeux-texte {
   position: absolute;
-  left: 66%;
-  top: 34%;
+  left: 67%;
+  top: 33%;
   transform: translate(-50%, -50%) rotate(45deg);
   white-space: nowrap;
+  text-shadow: 0 1px 0 var(--orange-fonce);
 }
-.coin-jeux .coin-jeux-fleche {
+.coin-jeux .coin-jeux-emoji {
   display: inline-block;
-  animation: coin-jeux-appel 2.4s ease-in-out infinite;
+  transform-origin: 50% 100%;
+  animation: coin-jeux-emoji-anim 2.6s ease-in-out infinite;
 }
 
-@keyframes coin-jeux-appel {
-  0%, 60%, 100% {
-    transform: translate(0, 0);
+@keyframes coin-jeux-emoji-anim {
+  0%, 55%, 100% {
+    transform: rotate(0deg);
   }
-  75% {
-    transform: translate(3px, -3px);
+  67% {
+    transform: rotate(-14deg);
+  }
+  79% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(-5deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .coin-jeux .coin-jeux-fleche {
+  .coin-jeux .coin-jeux-emoji {
     animation: none;
   }
 }
