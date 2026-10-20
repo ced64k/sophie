@@ -1,6 +1,6 @@
 :root {
-  --font-family-heading: "Poppins", sans-serif;
-  --font-family-paragraph: "Helvetica", sans-serif;
+  --font-family-heading: 'Poppins', sans-serif;
+  --font-family-paragraph: 'Helvetica', sans-serif;
   --font-family-monospace: monospace ;
   --base-color: #ffffff;
   --base-offset-color: #eaeaea;
@@ -126,6 +126,57 @@ h1, h2, h3 {
   opacity: 0.7;
 }
 
+.coin-jeux {
+  --t: 76px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  width: var(--t);
+  height: var(--t);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  background: linear-gradient(45deg, transparent 50%, #fff 50% 57%, var(--highlight-color) 57%);
+  color: #fff;
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  font-size: 11px;
+  text-decoration: none;
+}
+@media (min-width: 767px) {
+  .coin-jeux {
+    --t: 140px;
+    font-size: 16px;
+  }
+}
+.coin-jeux:hover, .coin-jeux:focus-visible {
+  outline: none;
+  background: linear-gradient(45deg, transparent 50%, var(--heading-color) 50% 57%, var(--heading-color) 57%);
+}
+.coin-jeux .coin-jeux-texte {
+  position: absolute;
+  left: 66%;
+  top: 34%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  white-space: nowrap;
+}
+.coin-jeux .coin-jeux-fleche {
+  display: inline-block;
+  animation: coin-jeux-appel 2.4s ease-in-out infinite;
+}
+
+@keyframes coin-jeux-appel {
+  0%, 60%, 100% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(3px, -3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .coin-jeux .coin-jeux-fleche {
+    animation: none;
+  }
+}
 a {
   color: var(--highlight-color);
   text-decoration: none;
@@ -898,5 +949,3 @@ body.frame {
   max-width: 1000px;
   margin: 0 auto;
 }
-
-/*# sourceMappingURL=style.css.map */
