@@ -1,6 +1,7 @@
 name: Build et déploiement
 
-# Chaque push compile le site. Un push sur main publie sur https://sophielenaerts.be (VPS Infomaniak, dossier /var/www/sophie).
+# Chaque push compile le site. Un push sur main publie sur https://sophielenaerts.be (VPS Infomaniak, dossier /var/www/sophie),
+# un push sur dev publie sur https://dev.sophielenaerts.be (dossier /var/www/devsophie).
 on:
   push:
   pull_request:
@@ -20,14 +21,14 @@ jobs:
       - run: npx @11ty/eleventy
 
       - uses: actions/upload-artifact@v4
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name != 'pull_request'
         with:
           name: site
           path: _site
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     concurrency: deploy-vps
     steps:
@@ -45,4 +46,6 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy
-        run: rsync -rlptz --delete _site/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/sophie/
+        run: DEST=sophie
+          if [ "$GITHUB_REF" = "refs/heads/dev" ]; then DEST=devsophie; fi
+          rsync -rlptz --delete _site/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/$DEST/
