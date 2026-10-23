@@ -185,6 +185,12 @@ p { margin: 0; }
   padding: clamp(10px, 1.6vw, 22px) var(--bord);
 }
 
+/* Ordinateur : le logo et les liens du menu partagent la même ligne de base */
+@media (min-width: 961px) {
+  .bord { align-items: baseline; }
+  .nav { align-self: baseline; }
+}
+
 .logo {
   font-family: var(--titre);
   font-weight: 700;
@@ -373,7 +379,7 @@ p { margin: 0; }
   .nav-liens a[aria-current="page"]::after { left: 50%; right: auto; width: 100%; translate: -50% 0; bottom: .6em; }
   .nav-jeux { display: block; padding-top: 18px; }
   .nav-liens li.nav-jeux { border-top: 0; }
-  .nav-liens .jeton-jeux { display: inline-flex; padding: 12px 24px; color: var(--blanc); }
+  .nav-liens .jeton-jeux { display: inline-flex; padding: 12px 24px; font-size: 1.15rem; color: var(--blanc); }
   .nav-liens .jeton-jeux:hover { color: var(--blanc); }
 }
 
