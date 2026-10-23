@@ -832,6 +832,8 @@ p { margin: 0; }
   gap: 10px;
 }
 .filtres + .filtres { margin-bottom: clamp(24px, 3vw, 36px); }
+/* Le titre de page apporte déjà son espace du haut : même marge que les autres pages */
+.rayon { margin-top: 0; padding-top: 0; }
 .rayon > .filtres:last-of-type { margin-bottom: clamp(24px, 3vw, 36px); }
 
 .filtre {
