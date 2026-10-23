@@ -15,7 +15,7 @@
 						<span class="article-titre">{{ article.data.title }}</span>
 						<span class="article-extrait">{{ article.data.summary or (article.templateContent | excerpt(170)) }}</span>
 						{% if c.domaines.length %}
-							<span class="article-puces">{% for id in c.domaines %}{% set d = domaines | domaine(id) %}<span class="article-domaine" style="--puce: {{ d.couleur }}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</span>{% endfor %}</span>
+							<span class="article-puces">{% for id in c.domaines %}{% set d = domaines | domaine(id) %}<span class="article-domaine" style="--puce: {{ d.couleur }}"><span class="marque">{{ d.nom }}</span></span>{% endfor %}</span>
 						{% endif %}
 					</span>
 				</a>

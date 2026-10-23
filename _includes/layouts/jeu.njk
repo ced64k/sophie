@@ -15,7 +15,7 @@ section: jeu
 				<ul>
 					{% for s in sections %}
 						{% set d = domaines | domaine(s.domaine) if s.domaine %}
-						<li><a href="#{{ s.id }}"{% if d %} style="--puce: {{ d.couleur }}"{% endif %}>{% if d %}<svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{% endif %}{{ s.titre }}</a></li>
+						<li><a href="#{{ s.id }}"{% if d %} style="--puce: {{ d.couleur }}"{% endif %}>{% if d %}<span class="marque">{{ s.titre }}</span>{% else %}{{ s.titre }}{% endif %}</a></li>
 					{% endfor %}
 				</ul>
 			</nav>

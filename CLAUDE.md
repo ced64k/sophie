@@ -26,7 +26,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 - Alignements : en-tête, accueil, bandeau et pied de page s'alignent sur la colonne de 1180px des panneaux (variable `--bord`) ; sur l'accueil, tous les textes partagent le même bord intérieur.
 - Chiffres du texte courant en Fredoka (famille « Chiffres » limitée aux chiffres par `unicode-range`) et téléphones en `.tel` : le zéro barré d'Atkinson donnait un air de code.
 - Mise en avant au **marqueur jaune** (trait irrégulier, légèrement penché) : sous « joue », page active du menu, liens, filtres (blanc au repos, jaune actifs), étiquettes. Pas de pilules ni de soulignement classique pour ces éléments.
-- **Ni pions ni dés** : refusés par l'utilisateur. Les domaines sont repérés par une pastille ronde de couleur à côté de leur nom.
+- **Ni pions ni dés** : refusés par l'utilisateur. Les domaines sont repérés par leur nom surligné au marqueur dans leur couleur (classe `.marque`) ; sur les cartes de fiches, par une petite tache de couleur.
 - Polices hébergées dans `static/fonts/` : Fredoka (titres), Atkinson Hyperlegible (texte, choisie pour la lisibilité / dyslexie).
 - Tous les contenus existants sont conservés ; les URL des articles (`/AAAA/MM/JJ/slug/`) et des fiches (`/slug/`) ne changent pas.
 

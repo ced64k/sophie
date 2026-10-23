@@ -13,7 +13,7 @@ section: prises-en-charge
 		<dl class="domaines">
 			{% for d in domaines %}
 				<div class="domaine" id="{{ d.id }}" style="--puce: {{ d.couleur }}">
-					<dt><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</dt>
+					<dt><span class="marque">{{ d.nom }}</span></dt>
 					<dd>{{ d.texte }}</dd>
 				</div>
 			{% endfor %}

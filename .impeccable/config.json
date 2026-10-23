@@ -173,6 +173,15 @@
         ],
         "createdAt": "2026-10-23T11:40:36.693Z",
         "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "chiffres",
+        "files": [
+          "_includes/assets/css/site.css"
+        ],
+        "createdAt": "2026-10-23T12:00:35.349Z",
+        "reason": "Claude: 'Chiffres' is an alias of the documented Fredoka face limited to digits by unicode-range; recorded in DESIGN.md (règle du zéro rond)"
       }
     ]
   }

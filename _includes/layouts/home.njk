@@ -25,7 +25,7 @@ section: home
 		<nav class="legende" aria-label="Domaines pris en charge">
 			<ul>
 				{% for d in domaines %}
-					<li><a href="/prises-en-charge/#{{ d.id }}" style="--puce: {{ d.couleur }}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</a></li>
+					<li><a href="/prises-en-charge/#{{ d.id }}" style="--puce: {{ d.couleur }}"><span class="marque">{{ d.nom }}</span></a></li>
 				{% endfor %}
 			</ul>
 		</nav>

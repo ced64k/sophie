@@ -137,13 +137,25 @@ p { margin: 0; }
 }
 .evitement:focus { top: 16px; }
 
-/* ——— Pastille de domaine ——— */
+/* ——— Repères de domaine ——— */
 
+/* Tache de couleur (cartes de fiches, où le nom n'est pas écrit) ; chaque tache tourne un peu */
 .puce {
   width: .8em;
   height: .8em;
   flex: none;
   overflow: visible;
+}
+.fiche-puces .puce { width: 1em; height: 1em; }
+.fiche-puces .puce:nth-child(2n) { rotate: 70deg; }
+.fiche-puces .puce:nth-child(3n) { rotate: -40deg; }
+
+/* Nom du domaine surligné au marqueur dans sa couleur */
+.marque {
+  background: linear-gradient(color-mix(in srgb, var(--puce) 55%, white) 0 0) 0 90% / 100% .55em no-repeat;
+  padding-inline: .1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* ——— En-tête ——— */
@@ -674,6 +686,9 @@ p { margin: 0; }
 .filtre:nth-child(2n)::before { rotate: .8deg; border-radius: .45em .25em .5em .2em; }
 .filtre:hover::before { background: var(--blanc); }
 .filtre[aria-pressed="true"]::before { background: var(--surligne); }
+.filtre[style*="--puce"]::before { background: color-mix(in srgb, var(--puce) 38%, white); }
+.filtre[style*="--puce"]:hover::before { background: color-mix(in srgb, var(--puce) 58%, white); }
+.filtre[style*="--puce"][aria-pressed="true"]::before { background: color-mix(in srgb, var(--puce) 82%, white); }
 .filtre[aria-pressed="true"] .puce { transform: translateY(-2px); }
 .filtre .puce { transition: transform .25s var(--sortie); font-size: 1.15rem; }
 
@@ -827,7 +842,6 @@ p { margin: 0; }
   column-gap: 28px;
 }
 .sommaire li { break-inside: avoid; padding: 3px 0; }
-.sommaire a:not([style]) { padding-left: calc(1.1rem * .8 + 8px); }
 .sommaire a {
   display: inline-flex;
   align-items: center;

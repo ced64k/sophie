@@ -101,7 +101,7 @@ module.exports = function(eleventyConfig) {
       const domaine = domaineDuTitre(texteBrut(titre));
       if (!domaine) return m;
       const couleur = domaines.find(d => d.id === domaine).couleur;
-      return `<h2${attributs} class="variante" style="--puce: ${couleur}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>${titre}</h2>`;
+      return `<h2${attributs} class="variante" style="--puce: ${couleur}"><span class="marque">${titre}</span></h2>`;
     })
   );
 

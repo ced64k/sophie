@@ -135,7 +135,7 @@ components:
 
 **Creative North Star: "La frimousse"**
 
-Le site est doux, rond et curieux, comme l'identité d'une marque de livres jeunesse : une mascotte indigo aux oreilles noires dépasse du bas de l'accueil et du haut du pied de page, et regarde le visiteur. Tout est rond (pilules, panneaux très arrondis, pastilles, taches de fond), posé à plat sur un grand fond menthe, avec un texte noir franc, un accent indigo pour agir et quelques petites touches de jaune.
+Le site est doux, rond et curieux, comme l'identité d'une marque de livres jeunesse : une mascotte indigo aux oreilles noires dépasse du bas de l'accueil et du haut du pied de page, et regarde le visiteur. Tout est rond (pilules, panneaux très arrondis, taches de fond), posé à plat sur un grand fond menthe, avec un texte noir franc, un accent indigo pour agir et quelques petites touches de jaune.
 
 La densité reste basse : grands titres en Fredoka, lecture en Atkinson Hyperlegible dans des panneaux blancs sans contour, une colonne de 1180 px. Le mouvement est rare et doux : la frimousse monte une fois à l'arrivée, ses pupilles suivent le pointeur, les cartes se soulèvent en penchant à peine. Le site refuse le cabinet pastel « portrait + grille de services » et l'ancienne boîte de jeu verte.
 
@@ -146,7 +146,7 @@ Une seule palette, **menthe**, définie dans `:root`. Les noms de variables sont
 - Texte noir franc ; un accent indigo réservé aux actions et à la mascotte.
 - Petites touches de jaune (point du logo, trait sous « joue », bandeau, étiquettes, page active), jamais sur la mascotte ni les boutons.
 - Panneaux blancs très arrondis, sans contour, pour la lecture.
-- Domaines repérés par une pastille ronde de couleur cerclée de noir.
+- Domaines repérés par leur nom surligné au marqueur dans leur couleur ; sur les cartes de fiches, par une petite tache de couleur.
 - Boutons pilules posés sur un aplat plus foncé de 4 px qui s'écrase au clic.
 - Mascotte « frimousse » en SVG, dessin provisoire en attendant une vraie illustration.
 
@@ -165,7 +165,7 @@ Un fond frais et doux, de l'encre noire, un indigo qui fait agir et un jaune qui
 
 ### Tertiary
 - **Lavande** (peau-clair) et **Indigo moyen** (peau-milieu) : dégradé diagonal de la frimousse, de la lavande à l'indigo. Réservés à la mascotte.
-- **Couleurs des domaines** (domaine-precoce, domaine-oral, domaine-ecrit, domaine-math, domaine-methodo), définies dans `_data/domaines.json` et passées en `--puce` : elles n'apparaissent que dans les pastilles rondes, jamais en fond de surface ni en texte.
+- **Couleurs des domaines** (domaine-precoce, domaine-oral, domaine-ecrit, domaine-math, domaine-methodo), définies dans `_data/domaines.json` et passées en `--puce` : elles n'apparaissent que dans le marqueur sous le nom du domaine (mélangées à du blanc) et dans les taches des cartes de fiches, jamais en fond de surface ni en texte.
 
 ### Neutral
 - **Menthe** (menthe-fond, `--cyan`) : fond de toute la page et couleur de thème du navigateur.
@@ -232,7 +232,7 @@ Le monde est plat : profondeur par superposition (frimousse derrière les pannea
 
 ## Shapes
 
-Tout est rond. Trois rayons : 32 px pour les grands panneaux (livret, bandeau, pied, panneau mobile de l'accueil), 20 px pour tout ce qui vit à l'intérieur (cartes, images, champs, citations, sommaire), pilule 999 px pour tout ce qui se clique ou s'étiquette (boutons, filtres, étiquettes, lien « suite », menu, lien d'évitement). Les taches de fond sont des ovales (ratio 1.4), l'une légèrement irrégulière. Aucun contour : les séparations internes sont des filets givrés de 2 px. Les pastilles de domaine sont des cercles pleins cerclés de 2 px d'encre. Les flèches de lien sont des tracés SVG à bouts ronds.
+Tout est rond. Trois rayons : 32 px pour les grands panneaux (livret, bandeau, pied, panneau mobile de l'accueil), 20 px pour tout ce qui vit à l'intérieur (cartes, images, champs, citations, sommaire), pilule 999 px pour tout ce qui se clique ou s'étiquette (boutons, filtres, étiquettes, lien « suite », menu, lien d'évitement). Les taches de fond sont des ovales (ratio 1.4), l'une légèrement irrégulière. Aucun contour : les séparations internes sont des filets givrés de 2 px. Les taches de domaine des cartes sont des ovales pleins légèrement irréguliers, sans contour. Les flèches de lien sont des tracés SVG à bouts ronds.
 
 ## Components
 
@@ -245,12 +245,12 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 - **Pilule « Jeux en ligne » :** version compacte (10 × 20 px, Atkinson 700) dans la navigation, avec flèche sortante SVG.
 
 ### Chips
-- **Filtres de domaine :** libellé Atkinson 700 1rem surligné au marqueur blanc à 55 % (pseudo-élément incliné, rayons inégaux), pastille du domaine à gauche ; marqueur blanc plein au survol ; actif (`aria-pressed`) au marqueur `--surligne` (jaune), texte encre, la pastille monte de 2 px. Le filtre « Tous » n'a pas de pastille.
+- **Filtres de domaine :** libellé Atkinson 700 1rem surligné au marqueur (pseudo-élément incliné, rayons inégaux) dans la couleur du domaine mélangée à du blanc (38 %, 58 % au survol, 82 % actif). Les filtres sans domaine (« Tous », publics, « À télécharger ») ont un marqueur blanc à 55 %, blanc plein au survol, `--surligne` (jaune) actifs. Texte toujours encre.
 - **Étiquettes d'articles :** Atkinson 700 0.85rem surligné au marqueur `--etiquette` (jaune paille), incliné de −1.2° (la suivante de +0.9°).
 
 ### Cards / Containers
 - **Livret :** panneau blanc, rayon 32 px, sans ombre ni contour, padding fluide de 28 à 72 px.
-- **Carte de fiche jeu :** blanche, rayon 20 px, image 4:3 sans marge, nom en Fredoka 1.5rem, pastilles des domaines en bas. Sans image, aplat jaune (`--corail-vif`) ou menthe tache en alternance, avec le nom en grand. Survol : monte de 6 px en penchant de -1°, l'image grossit à 104 %.
+- **Carte de fiche jeu :** blanche, rayon 20 px, image 4:3 sans marge, nom en Fredoka 1.5rem, taches de couleur des domaines en bas (chacune tournée différemment). Sans image, aplat jaune (`--corail-vif`) ou menthe tache en alternance, avec le nom en grand. Survol : monte de 6 px en penchant de -1°, l'image grossit à 104 %.
 - **Article :** ligne vignette carrée arrondie 20 px + métadonnées, titre Fredoka, extrait en encre douce et domaines ; filet givré entre deux articles ; titre indigo nuit souligné 3 px au survol.
 - **Bandeau « Jeux en ligne » :** panneau `--jaune` rayon 32 px, texte `--bandeau-texte` (encre), bouton encre.
 
@@ -265,8 +265,8 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 - Sous 960 px : bouton pilule blanc « Menu » avec icône trois traits en CSS, liens en colonne.
 - **Focus partout :** anneau encre 3 px décalé de 3 px, rayon 6 px.
 
-### Pastille de domaine
-Le marqueur des domaines : un cercle SVG (symbole `#puce`) rempli par `--puce` et cerclé de 2 px d'encre, à 0.8em de la taille du texte voisin. Toujours à côté du nom du domaine (légende de l'accueil, filtres, sommaire, titres de variantes) ou, sur les cartes, avec le nom en `aria-label`.
+### Repère de domaine
+Partout où le nom du domaine est écrit (légende de l'accueil, domaines d'articles, page Prises en charge, sommaire et titres de variantes des fiches), il est surligné au marqueur dans sa couleur : classe `.marque`, dégradé de `--puce` à 55 % mélangé à du blanc, sur 0.55em au bas du texte. Sur les cartes de fiches, où le nom n'est pas écrit, une tache SVG (symbole `#puce`, ovale irrégulier sans contour) rempli par `--puce`, avec le nom en `aria-label`.
 
 ### Frimousse
 Mascotte SVG (600 × 400) : tête en dôme au dégradé `--peau-1` → `--peau-3` (lavande → indigo), oreilles `--oreille` (noires), yeux blancs, pupilles et bouche en encre. Elle dépasse du bas de l'accueil (centrée, passe derrière le panneau suivant, monte en 1.1 s une seule fois à l'arrivée) et du haut du pied de page (à droite). Sur l'accueil, ses pupilles suivent le pointeur (désactivé si mouvement réduit). **Dessin provisoire**, à remplacer par une vraie illustration si Sophie en commande une ; la remplaçante garde ce rôle et ces emplacements.
@@ -278,7 +278,7 @@ Grand panneau encre, rayon 32 px, texte blanc ; noms et villes en Fredoka 600 1.
 
 ### Do:
 - **Do** passer par les variables de palette (`--cyan`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`) plutôt que des valeurs en dur.
-- **Do** repérer un domaine par sa pastille ronde cerclée d'encre, à côté de son nom.
+- **Do** repérer un domaine en surlignant son nom au marqueur dans sa couleur (`.marque`) ; une tache de couleur seulement là où le nom n'est pas écrit.
 - **Do** donner aux boutons l'aplat vertical de 4 px de leur teinte foncée, qui s'écrase à l'appui.
 - **Do** composer les numéros de téléphone en Fredoka 600 (`.tel`).
 - **Do** garder trois rayons : 32 px pour les panneaux, 20 px pour l'intérieur, pilule pour ce qui se clique.
@@ -289,5 +289,5 @@ Grand panneau encre, rayon 32 px, texte blanc ; noms et villes en Fredoka 600 1.
 - **Don't** revenir à la boîte de jeu verte ni au cabinet pastel « portrait + grille de services ».
 - **Don't** mettre de contour ou d'ombre sur les panneaux de lecture.
 - **Don't** écrire le texte principal en gris : encre noire, encre douce seulement pour le secondaire.
-- **Don't** utiliser les couleurs des domaines ailleurs que dans les pastilles.
+- **Don't** utiliser les couleurs des domaines ailleurs que dans leur marqueur et leurs taches.
 - **Don't** mettre le jaune sur la frimousse ni sur les boutons.
