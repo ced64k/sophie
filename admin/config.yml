@@ -45,6 +45,7 @@ collections:
     extension: md
     filter: { field: layout, value: layouts/page.njk }
     fields:
+      - { label: Modèle de page, name: layout, widget: hidden }
       - { label: Titre, name: title, widget: string }
       - { label: Description (moteurs de recherche), name: metaDescription, widget: text, required: false }
       - { label: Texte, name: body, widget: markdown }
