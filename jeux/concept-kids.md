@@ -3,7 +3,7 @@ title: "Concept Kids"
 author: "Julie Braeye"
 ---
 
-![](/static/img/cropped-4176463964_be7d765ef9_o-1.jpg)
+![](/static/img/concept-kids.jpg)
 
 Coopération et réflexion sont les maîtres-mots du jeu Concept kids animaux. Ce jeu convient aux enfants à partir de 4 ans mais il existe également en version adulte.
 

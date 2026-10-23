@@ -3,7 +3,7 @@ title: "Cuisto Dingo"
 author: "Estelle Richard"
 ---
 
-![](/static/img/cropped-4176463964_be7d765ef9_o-1.jpg)
+![](/static/img/cuisto-dingo.jpg)
 
 Tout d’abord, qu’est ce que Cuisto Dingo ?
 
