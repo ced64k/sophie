@@ -20,6 +20,60 @@
         ],
         "createdAt": "2026-10-23T07:24:44.809Z",
         "reason": "Claude: L67 is a regex matching <img src> in a build filter, not markup"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/r3/plancton.html"
+        ],
+        "createdAt": "2026-10-23T10:48:18.216Z",
+        "reason": "Claude: decision-round sketch of the bioluminescent plankton world, where glow is the literal material; not shipped"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/r2/challenger-glazier.html"
+        ],
+        "createdAt": "2026-10-23T11:17:36.429Z",
+        "reason": "Claude: unchosen decision-round sketch, not shipped"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/r3/collage.html"
+        ],
+        "createdAt": "2026-10-23T11:17:36.446Z",
+        "reason": "Claude: unchosen decision-round sketch, not shipped"
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/r3/collage.html"
+        ],
+        "createdAt": "2026-10-23T11:17:36.462Z",
+        "reason": "Claude: unchosen decision-round sketch, not shipped"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/r4/chickz.html"
+        ],
+        "createdAt": "2026-10-23T11:17:36.477Z",
+        "reason": "Claude: unchosen decision-round sketch, not shipped"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/r4/chickz.html"
+        ],
+        "createdAt": "2026-10-23T11:17:36.492Z",
+        "reason": "Claude: decision sketch built from the user's own Chickz reference palette; not shipped"
       }
     ]
   }

@@ -3,42 +3,40 @@ layout: layouts/base.njk
 section: home
 ---
 
-<section class="couvercle" aria-labelledby="titre-boite">
-	<header class="couvercle-bord">
-		<a class="bord-nom" href="/">Sophie Lenaerts<span>, logopède</span></a>
-		{% include "components/nav.njk" %}
-	</header>
+<section class="accueil" aria-labelledby="titre-accueil">
+	<span class="tache tache-1" aria-hidden="true"></span>
+	<span class="tache tache-2" aria-hidden="true"></span>
 
-	<div class="couvercle-face">
-		<div class="couvercle-titre">
-			<h1 id="titre-boite">Sophie Lenaerts</h1>
-			<p class="couvercle-devise">La logopédie, ça se joue.</p>
-			<p class="couvercle-intro">{{ intro }}</p>
-		</div>
+	{% include "components/entete.njk" %}
 
-		<div class="contenu-boite">
-			<h2>Où me trouver</h2>
-			<ul class="lieux">
-				{% for lieu in lieux %}
-					<li>
-						<p class="lieu-ville">{{ lieu.ville }}</p>
-						<p class="lieu-structure">{{ lieu.structure }}</p>
-						<a class="lieu-tel" href="tel:{{ lieu.telephone | replace(' ', '') }}">{{ lieu.telephone }}</a>
-						{% if lieu.provisoire %}<p class="provisoire">Coordonnées provisoires, à remplacer</p>{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
-			<a class="bouton" href="/contact/">Écrire à Sophie</a>
+	<div class="accueil-face">
+		<h1 id="titre-accueil">La logopédie, ça se <span class="surligne">joue</span>&nbsp;!</h1>
+		<p class="accueil-intro">Sophie Lenaerts, {{ intro | replace('Logopède ', 'logopède ') }} Conventionnée INAMI.</p>
+		<div class="accueil-actions">
+			<a class="bouton" href="/contact/">Prendre contact</a>
 		</div>
 	</div>
 
-	<nav class="legende" aria-label="Domaines pris en charge">
-		<ul>
-			{% for d in domaines %}
-				<li><a href="/prises-en-charge/#{{ d.id }}" style="--puce: {{ d.couleur }}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</a></li>
+	<div class="accueil-pied">
+		{% set frimousseId = "accueil" %}
+		{% include "components/frimousse.njk" %}
+
+		<div class="accueil-infos">
+		<nav class="legende" aria-label="Domaines pris en charge">
+			<ul>
+				{% for d in domaines %}
+					<li><a href="/prises-en-charge/#{{ d.id }}" style="--puce: {{ d.couleur }}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</a></li>
+				{% endfor %}
+			</ul>
+		</nav>
+
+		<ul class="accueil-lieux" aria-label="Où consulter">
+			{% for lieu in lieux | reverse %}
+				<li><p class="lieu-structure">{{ lieu.structure }}</p><p>{{ lieu.ville }}</p></li>
 			{% endfor %}
 		</ul>
-	</nav>
+		</div>
+	</div>
 </section>
 
 <section class="regles livret" aria-labelledby="titre-regles">
@@ -74,5 +72,28 @@ section: home
 		<h2 id="titre-jeux-en-ligne">Les jeux en ligne</h2>
 		<p>Des jeux conçus par des logopèdes et par des patients, à jouer en séance ou à la maison : lecture, grammaire, cognition mathématique, langage oral.</p>
 	</div>
-	<a class="bouton bouton-bleu" href="{{ metadata.jeuxEnLigne }}">Ouvrir jeux.sophielenaerts.be</a>
+	<a class="bouton bouton-encre" href="{{ metadata.jeuxEnLigne }}">Ouvrir les jeux en ligne</a>
 </section>
+
+<script>
+	// Les yeux de la frimousse suivent le pointeur
+	(function () {
+		var f = document.querySelector(".accueil .frimousse");
+		if (!f || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+		var pupilles = f.querySelectorAll(".pupille");
+		var attente = false;
+		addEventListener("pointermove", function (e) {
+			if (attente) return;
+			attente = true;
+			requestAnimationFrame(function () {
+				attente = false;
+				var r = f.getBoundingClientRect();
+				var dx = (e.clientX - (r.left + r.width / 2)) / innerWidth;
+				var dy = (e.clientY - (r.top + r.height * .6)) / innerHeight;
+				var x = Math.max(-1, Math.min(1, dx * 2)) * 10;
+				var y = Math.max(-1, Math.min(1, dy * 2)) * 14;
+				pupilles.forEach(function (p) { p.style.transform = "translate(" + x + "px," + y + "px)"; });
+			});
+		}, { passive: true });
+	})();
+</script>

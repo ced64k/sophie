@@ -14,10 +14,7 @@
 		</svg>
 
 		{% if section != "home" %}
-			<header class="bord">
-				<a class="bord-nom" href="/">Sophie Lenaerts<span>, logopède</span></a>
-				{% include "components/nav.njk" %}
-			</header>
+			{% include "components/entete.njk" %}
 		{% endif %}
 
 		<main id="contenu">

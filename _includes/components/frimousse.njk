@@ -1,0 +1,20 @@
+{# La frimousse : mascotte qui dépasse du bas d'une section. Ses pupilles (.pupille) suivent le pointeur sur l'accueil. #}
+<svg class="frimousse{% if frimousseClasse %} {{ frimousseClasse }}{% endif %}" viewBox="0 0 600 400" aria-hidden="true" focusable="false">
+	<defs>
+		<linearGradient id="peau-{{ frimousseId or 'f' }}" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" style="stop-color: var(--peau-1)"/>
+			<stop offset=".55" style="stop-color: var(--peau-2)"/>
+			<stop offset="1" style="stop-color: var(--peau-3)"/>
+		</linearGradient>
+	</defs>
+	<path d="M120 150 C 90 120, 70 80, 100 60 C 140 50, 170 90, 175 115 Z" fill="var(--oreille)"/>
+	<path d="M480 150 C 510 120, 530 80, 500 60 C 460 50, 430 90, 425 115 Z" fill="var(--oreille)"/>
+	<path d="M60 400 C 40 220, 150 90, 300 90 C 450 90, 560 220, 540 400 Z" fill="url(#peau-{{ frimousseId or 'f' }})"/>
+	<ellipse cx="225" cy="250" rx="34" ry="44" fill="#fff"/>
+	<ellipse cx="375" cy="250" rx="34" ry="44" fill="#fff"/>
+	<g class="pupilles">
+		<circle class="pupille" cx="230" cy="238" r="18" fill="var(--encre)"/>
+		<circle class="pupille" cx="370" cy="238" r="18" fill="var(--encre)"/>
+	</g>
+	<path d="M265 320 Q 300 360 335 320 Q 300 335 265 320 Z" fill="var(--encre)"/>
+</svg>

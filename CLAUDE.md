@@ -18,10 +18,15 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 
 ## Décisions de design (ne pas rouvrir sans demande)
 
-- Direction « boîte de jeu », palette « vert tapis de jeu » : vert #17734A sur fond orange #FF8A3D, contours noirs, livrets blancs, bouton rose #C92E63, jeton bleu « Jeux en ligne ».
+- Direction « frimousse » (inspirée de l'identité « nook »), palette « cyan corail » : fond cyan #A9E4EF avec taches #93D8E6, texte noir #111 (pas de gris), boutons rouge corail #D2381F, panneaux blancs très arrondis sans contour. L'ancienne boîte de jeu verte est abandonnée.
+- La frimousse (`_includes/components/frimousse.njk`) : mascotte SVG corail aux oreilles noires qui dépasse du bas de l'accueil et du haut du pied de page ; ses pupilles suivent le pointeur sur l'accueil. C'est un dessin provisoire, à remplacer par une vraie illustration si Sophie en commande une.
+- Logo « sophie » en Fredoka, avec un point dans le « o ».
+- Boutons : aplat plus foncé de 4 px sous chaque bouton (ombre « vectorielle », sans flou), qui s'écrase au clic.
+- Accueil : un seul bouton « Prendre contact », **pas de numéros de téléphone** (ils sont dans le pied de page et sur /contact/). Le premier écran doit tenir dans la fenêtre sur ordinateur, liste des domaines comprise.
+- Alignements : en-tête, accueil, bandeau et pied de page s'alignent sur la colonne de 1180px des panneaux (variable `--bord`) ; sur l'accueil, tous les textes partagent le même bord intérieur.
+- Numéros de téléphone en Fredoka (classe `.tel`) : le zéro barré d'Atkinson leur donnait un air de code.
 - **Ni pions ni dés** : refusés par l'utilisateur. Les domaines sont repérés par une pastille ronde de couleur à côté de leur nom.
-- Polices hébergées dans `static/fonts/` : Bricolage Grotesque (titres), Atkinson Hyperlegible (texte, choisie pour la lisibilité / dyslexie).
-- Le « couvercle » = le premier écran vert de l'accueil (nom de travail, jamais affiché).
+- Polices hébergées dans `static/fonts/` : Fredoka (titres), Atkinson Hyperlegible (texte, choisie pour la lisibilité / dyslexie).
 - Tous les contenus existants sont conservés ; les URL des articles (`/AAAA/MM/JJ/slug/`) et des fiches (`/slug/`) ne changent pas.
 
 ## Organisation du code
@@ -36,8 +41,8 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 ## Reste à faire
 
 1. **Formulaire de contact** : envoie via FormSubmit vers lenaerts.sophie@gmail.com. Au premier envoi, FormSubmit envoie un e-mail de confirmation à Sophie : elle doit cliquer dessus. Les coordonnées des lieux (`_data/lieux.json`, Up-toi en premier) sont réelles.
-3. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
-4. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
-5. Photos de Concept Kids et Cuisto Dingo : en place.
-6. Redirections des anciennes pages `/authors/…` vers `/qui-suis-je/` (nécessite nginx, donc depuis le Mac).
-7. Fin du parcours Impeccable : relecture finale (agent `impeccable-finish-reviewer`) puis DESIGN.md (agent `impeccable-documenter`).
+2. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
+3. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
+4. Redirections des anciennes pages `/authors/…` vers `/qui-suis-je/` (nécessite nginx, donc depuis le Mac).
+5. Palette d'essai « menthe » (`?palette=menthe`, bloc `[data-palette="menthe"]` dans `site.css`) : à garder ou supprimer selon le choix de l'utilisateur.
+6. DESIGN.md (agent `impeccable-documenter`) une fois la palette arrêtée.

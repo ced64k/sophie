@@ -1,14 +1,16 @@
 <footer class="pied">
+  {% set frimousseId = "pied" %}
+  {% include "components/frimousse.njk" %}
   <div class="pied-grille">
     <div class="pied-bloc">
       <p class="pied-nom">Sophie Lenaerts, logopède</p>
       <p>Conventionnée INAMI. Enfants de l'âge préscolaire au début du secondaire.</p>
-      <p><a href="/contact/">Écrire à Sophie</a></p>
+      <p><a href="/contact/">Prendre contact</a></p>
     </div>
     {% for lieu in lieux %}
       <div class="pied-bloc">
         <p class="pied-titre">{{ lieu.ville }}</p>
-        <p>{{ lieu.structure }}<br>{{ lieu.adresse }}<br><a href="tel:{{ lieu.telephone | replace(' ', '') }}">{{ lieu.telephone }}</a></p>
+        <p>{{ lieu.structure }}<br>{{ lieu.adresse }}<br><a class="tel" href="tel:{{ lieu.telephone | replace(' ', '') }}">{{ lieu.telephone }}</a></p>
         {% if lieu.provisoire %}<p class="provisoire">Coordonnées provisoires, à remplacer</p>{% endif %}
       </div>
     {% endfor %}

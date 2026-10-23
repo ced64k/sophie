@@ -6,9 +6,11 @@
   var boutons = Array.prototype.slice.call(document.querySelectorAll(".filtre"));
   var vide = document.querySelector(".vide");
   var choix = {};
+  var groupes = boutons.map(function (b) { return b.getAttribute("data-filtre"); });
 
+  // Seuls les groupes de filtres de la page comptent (pas ?palette=…, par exemple)
   new URLSearchParams(location.search).forEach(function (valeur, groupe) {
-    choix[groupe] = valeur;
+    if (groupes.indexOf(groupe) !== -1) choix[groupe] = valeur;
   });
 
   function appliquer() {
