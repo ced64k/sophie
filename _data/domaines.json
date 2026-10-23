@@ -4,7 +4,7 @@
     "nom": "Prise en charge précoce",
     "court": "Précoce",
     "couleur": "#7CC76E",
-    "texte": "Les prémices de la communication chez les tout-petits : regard, attention partagée, gestes, premiers mots."
+    "texte": "Les prémices de la communication chez les tout-petits : regard, attention partagée, gestes, premiers mots."
   },
   {
     "id": "oral",
@@ -32,6 +32,6 @@
     "nom": "Méthodologie",
     "court": "Méthodo",
     "couleur": "#FF8A3D",
-    "texte": "Apprendre à apprendre : organisation, mémorisation, fonctions exécutives, compréhension des lectures longues."
+    "texte": "Apprendre à apprendre : organisation, mémorisation, compréhension des lectures longues."
   }
 ]
