@@ -1,9 +1,10 @@
 ---
 title: "Cuisto Dingo"
 author: "Estelle Richard"
+image: "/static/img/fiches/cuisto-dingo.jpg"
 ---
 
-![](/static/img/cuisto-dingo.jpg)
+![](/static/img/fiches/cuisto-dingo.jpg)
 
 Tout d’abord, qu’est ce que Cuisto Dingo ?
 

@@ -1,9 +1,10 @@
 ---
 title: "Additions"
 author: "Sophie Lenaerts"
+image: "/static/img/fiches/addition.jpg"
 ---
 
-![](/static/img/334347.jpg)
+![](/static/img/fiches/addition.jpg)
 
 Comme son nom l’indique, ce must have de Djeco favorise la manipulation des éléments pour comprendre les additions jusque 10. La boîte contient une petite mare, des petits animaux en carton et des fiches-consignes. Ces fiches indiquent à l’enfant combien il doit placer de groupes d’animaux dans la mare. Les enfants doivent ensuite compter combien cela fait d’animaux « en tout ». Certains auront encore tendance à compter séparément les poissons des grenouilles, et recommencer à zéro pour chaque collection.  Le verso de la fiche permet l’autocorrection.
 

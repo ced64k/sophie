@@ -1,9 +1,10 @@
 ---
 title: "Roads"
 author: "Sophie Lenaerts"
+image: "/static/img/fiches/roads.jpg"
 ---
 
-![](/static/img/roads-e1604920226843.jpg)
+![](/static/img/fiches/roads.jpg)
 
 Roads, c’est une pépite! Vendu au rayon puzzle dans les bonnes boutiques (coucou [Cotontige](https://web.archive.org/web/20221005214652/https://www.facebook.com/boutique.cotontige)), mais tellement plus qu’un puzzle!
 

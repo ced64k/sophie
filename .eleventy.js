@@ -127,12 +127,19 @@ module.exports = function(eleventyConfig) {
 
   // Vignettes : les photos des cartes (fiches, articles) sont servies en WebP réduit, générées à la compilation
   const vignettes = new Map();
-  eleventyConfig.addFilter("vignette", (src, largeur = 480) => {
-    const m = /^\/static\/img\/([^/]+)\.(jpe?g|png)$/i.exec(src || "");
+  const vignette = (src, largeur = 480) => {
+    const m = /^\/static\/img\/(.+)\.(jpe?g|png)$/i.exec(src || "");
     if (!m || !fs.existsSync("." + src)) return src;
     const sortie = `/static/img/v/${m[1].replace(/[^A-Za-z0-9_-]/g, "_")}-${largeur}.webp`;
     vignettes.set(sortie, { source: "." + src, largeur });
     return sortie;
+  };
+  eleventyConfig.addFilter("vignette", vignette);
+
+  // Les photos de couverture des fiches (static/img/fiches/) sont servies en WebP de 1200 px dans le texte de la fiche
+  eleventyConfig.addTransform("photosFiches", function(content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    return content.replace(/<img([^>]*?) src="(\/static\/img\/fiches\/[^"]+\.(?:jpe?g|png))"/gi, (m, avant, src) => `<img${avant} src="${vignette(src, 1200)}" width="1200" height="900"`);
   });
   eleventyConfig.on("eleventy.after", async ({ dir }) => {
     for (const [sortie, { source, largeur }] of vignettes) {

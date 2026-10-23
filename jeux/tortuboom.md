@@ -1,9 +1,10 @@
 ---
 title: "Tortuboom"
 author: "Fanny Jonckheere"
+image: "/static/img/fiches/turboboom.jpg"
 ---
 
-![](/static/img/61unP8tIQ5L._AC_SL1500_-e1604323007223.jpg)
+![](/static/img/fiches/turboboom.jpg)
 
 Tortuboom est un jeu Djeco constitué d’un plateau représentant une plage. Au milieu de ce plateau sont disposées des tuiles rondes représentant des tortues. Les crabes veulent chasser les tortues de leur plage!  
 Un dé indique combien de crabes pourront être insérés dans le plateau pour chasser les tortues, trois crabes auront davantage de chances de chasser les tortues que si le joueur n’en place qu’un seul.  

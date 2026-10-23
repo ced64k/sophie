@@ -1,9 +1,10 @@
 ---
 title: "Kioukoi"
 author: "Sophie Lenaerts"
+image: "/static/img/fiches/kioukoi.jpg"
 ---
 
-![](/static/img/51jK4ivZYaL._AC_SY355_.jpg)
+![](/static/img/fiches/kioukoi.jpg)
 
 Kioukoi est avant tout du beau matériel. Des tuiles rondes, recto-verso représentant des photos. C’est chouette le recto-verso, ça évite de passer du temps à les retourner avant de jouer!  
 Le jeu existe en 3 versions : animaux, maison et fruits/légumes.  
