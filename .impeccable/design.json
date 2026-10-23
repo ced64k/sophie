@@ -309,159 +309,6 @@
           "#FEEADF"
         ],
         "palette": "commune"
-      },
-      "cyan-fond": {
-        "role": "neutral",
-        "displayName": "Cyan corail (option) : fond",
-        "canonical": "#A9E4EF",
-        "oklch": "oklch(88.2% 0.062 210.3)",
-        "tonalRamp": [
-          "#000E11",
-          "#04292F",
-          "#064852",
-          "#2E6771",
-          "#528B95",
-          "#76B0BA",
-          "#9BD6E1",
-          "#D0F7FE"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "cyan-tache": {
-        "role": "neutral",
-        "displayName": "Cyan corail (option) : taches",
-        "canonical": "#93D8E6",
-        "oklch": "oklch(84.1% 0.072 211.7)",
-        "tonalRamp": [
-          "#000E12",
-          "#042930",
-          "#064852",
-          "#206875",
-          "#488C99",
-          "#6DB1BF",
-          "#93D8E6",
-          "#D0F7FF"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "cyan-givre": {
-        "role": "neutral",
-        "displayName": "Cyan corail (option) : givre",
-        "canonical": "#E4F6FA",
-        "oklch": "oklch(96.1% 0.020 212.5)",
-        "tonalRamp": [
-          "#030D10",
-          "#19272A",
-          "#344346",
-          "#516164",
-          "#738487",
-          "#97A8AC",
-          "#BDCED2",
-          "#E0F2F6"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "corail": {
-        "role": "primary",
-        "displayName": "Cyan corail (option) : rouge corail des boutons",
-        "canonical": "#D2381F",
-        "oklch": "oklch(57.2% 0.195 31.9)",
-        "tonalRamp": [
-          "#1E0100",
-          "#490500",
-          "#791101",
-          "#AC1E04",
-          "#DC4229",
-          "#FF745B",
-          "#FDB7A8",
-          "#FFE9E4"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "corail-fonce": {
-        "role": "primary",
-        "displayName": "Cyan corail (option) : aplat corail",
-        "canonical": "#B02C15",
-        "oklch": "oklch(50.0% 0.172 32.2)",
-        "tonalRamp": [
-          "#1E0100",
-          "#480700",
-          "#781302",
-          "#A9240C",
-          "#D34E37",
-          "#FD755C",
-          "#FEB6A7",
-          "#FDEAE5"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "corail-vif": {
-        "role": "primary",
-        "displayName": "Cyan corail (option) : corail vif",
-        "canonical": "#E2402F",
-        "oklch": "oklch(60.9% 0.201 29.9)",
-        "tonalRamp": [
-          "#1F0000",
-          "#4A0401",
-          "#7B0802",
-          "#B00D02",
-          "#DF3D2C",
-          "#FD7461",
-          "#FEB6A9",
-          "#FDEAE6"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "cyan-encre-douce": {
-        "role": "neutral",
-        "displayName": "Cyan corail (option) : encre douce",
-        "canonical": "#3A4447",
-        "oklch": "oklch(37.9% 0.014 217.8)",
-        "tonalRamp": [
-          "#050D0F",
-          "#1D2629",
-          "#384245",
-          "#556063",
-          "#778286",
-          "#9BA7AA",
-          "#C1CDD1",
-          "#E5F1F5"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "cyan-peau-clair": {
-        "role": "tertiary",
-        "displayName": "Cyan corail (option) : pêche (frimousse)",
-        "canonical": "#FF9A85",
-        "oklch": "oklch(78.6% 0.126 32.6)",
-        "tonalRamp": [
-          "#1D0100",
-          "#480801",
-          "#741B0A",
-          "#973D2C",
-          "#BF614E",
-          "#E88571",
-          "#FDB7A7",
-          "#FCEAE6"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
-      },
-      "cyan-peau-milieu": {
-        "role": "tertiary",
-        "displayName": "Cyan corail (option) : corail moyen (frimousse)",
-        "canonical": "#F2604A",
-        "oklch": "oklch(67.3% 0.184 31.0)",
-        "tonalRamp": [
-          "#1E0100",
-          "#490501",
-          "#7A0B00",
-          "#AE1804",
-          "#D84833",
-          "#FF745D",
-          "#FDB7A9",
-          "#FEE9E5"
-        ],
-        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
       }
     },
     "typographyMeta": {
@@ -497,36 +344,9 @@
     "palettes": [
       {
         "name": "menthe",
-        "status": "défaut, choisie par l'utilisateur",
+        "status": "unique, choisie par l'utilisateur",
         "selector": ":root",
         "note": "Noms historiques : --cyan = fond, --corail = boutons et accents, --jaune = petites touches."
-      },
-      {
-        "name": "cyan-corail",
-        "status": "option",
-        "selector": "[data-palette=\"cyan\"]",
-        "activation": "?palette=cyan dans l'adresse, gardée en sessionStorage",
-        "overrides": {
-          "--cyan": "#A9E4EF",
-          "--cyan-fort": "#8CC7B8",
-          "--cyan-pale": "#E6F4F0",
-          "--corail": "#464A96",
-          "--corail-fonce": "#35387A",
-          "--corail-vif": "#E2402F",
-          "--encre-douce": "#3A4447",
-          "--peau-1": "#8A8FE0",
-          "--peau-2": "#5F64B8",
-          "--peau-3": "#E2402F",
-          "--jaune": "var(--corail)",
-          "--bandeau-texte": "var(--blanc)",
-          "--point": "var(--cyan)",
-          "--surligne": "transparent",
-          "--etiquette": "var(--cyan)",
-          "--selection": "var(--encre)",
-          "--selection-texte": "var(--cyan)",
-          "--souligne-lien": "currentColor",
-          "--pied-survol": "var(--cyan)"
-        }
       }
     ],
     "shadows": [
@@ -687,7 +507,7 @@
   ],
   "narrative": {
     "northStar": "La frimousse",
-    "overview": "Le site est doux, rond et curieux, comme l'identité d'une marque de livres jeunesse : une mascotte indigo aux oreilles noires dépasse du bas de l'accueil et du haut du pied de page, et regarde le visiteur. Tout est rond (pilules, panneaux très arrondis, pastilles, taches de fond), posé à plat sur un grand fond menthe, avec un texte noir franc, un accent indigo pour agir et quelques petites touches de jaune.\n\nLa densité reste basse : grands titres en Fredoka, lecture en Atkinson Hyperlegible dans des panneaux blancs sans contour, une colonne de 1180 px. Le mouvement est rare et doux : la frimousse monte une fois à l'arrivée, ses pupilles suivent le pointeur, les cartes se soulèvent en penchant à peine. Le site refuse le cabinet pastel « portrait + grille de services » et l'ancienne boîte de jeu verte.\n\nDeux palettes coexistent dans le code. **Menthe** est la palette par défaut (`:root`), choisie par l'utilisateur. **Cyan corail** reste en option, activée par `?palette=cyan` (gardée en sessionStorage, bloc `[data-palette=\"cyan\"]`), qui redéfinit les mêmes variables. Les noms de variables sont historiques : `--cyan` est le fond, `--corail` l'accent des boutons, `--jaune` les petites touches. Les composants n'utilisent que les variables, jamais les valeurs : toute nouvelle surface doit fonctionner dans les deux palettes.",
+    "overview": "Le site est doux, rond et curieux, comme l'identité d'une marque de livres jeunesse : une mascotte indigo aux oreilles noires dépasse du bas de l'accueil et du haut du pied de page, et regarde le visiteur. Tout est rond (pilules, panneaux très arrondis, pastilles, taches de fond), posé à plat sur un grand fond menthe, avec un texte noir franc, un accent indigo pour agir et quelques petites touches de jaune.\n\nLa densité reste basse : grands titres en Fredoka, lecture en Atkinson Hyperlegible dans des panneaux blancs sans contour, une colonne de 1180 px. Le mouvement est rare et doux : la frimousse monte une fois à l'arrivée, ses pupilles suivent le pointeur, les cartes se soulèvent en penchant à peine. Le site refuse le cabinet pastel « portrait + grille de services » et l'ancienne boîte de jeu verte.\n\nUne seule palette, **menthe**, définie dans `:root`. Les noms de variables sont historiques (vestiges d'une palette cyan corail abandonnée) : `--cyan` est le fond, `--corail` l'accent des boutons, `--jaune` les petites touches. Les composants n'utilisent que les variables, jamais les valeurs.",
     "keyCharacteristics": [
       "Fond menthe plein avec de grandes taches ovales d'une menthe plus soutenue.",
       "Texte noir franc ; un accent indigo réservé aux actions et à la mascotte.",
@@ -700,7 +520,7 @@
     "rules": [
       {
         "name": "La règle de l'accent unique",
-        "body": "Une seule couleur pour agir : l'indigo (le corail dans la palette cyan). Boutons, pilule de navigation et mascotte la partagent ; rien d'autre ne la prend en fond.",
+        "body": "Une seule couleur pour agir : l'indigo. Boutons, pilule de navigation et mascotte la partagent ; rien d'autre ne la prend en fond.",
         "section": "colors"
       },
       {
@@ -715,7 +535,7 @@
       },
       {
         "name": "La règle des variables",
-        "body": "Une surface nouvelle utilise les variables (`--cyan`, `--cyan-fort`, `--cyan-pale`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`…) et jamais les hex, sinon elle casse l'autre palette. Les noms sont historiques et ne disent pas la couleur.",
+        "body": "Une surface nouvelle utilise les variables (`--cyan`, `--cyan-fort`, `--cyan-pale`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`…) et jamais les hex. Les noms sont historiques et ne disent pas la couleur.",
         "section": "colors"
       },
       {
@@ -740,7 +560,7 @@
       }
     ],
     "dos": [
-      "Do passer par les variables de palette (`--cyan`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`) pour que menthe et cyan corail fonctionnent toutes les deux.",
+      "Do passer par les variables de palette (`--cyan`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`) plutôt que des valeurs en dur.",
       "Do repérer un domaine par sa pastille ronde cerclée d'encre, à côté de son nom.",
       "Do donner aux boutons l'aplat vertical de 4 px de leur teinte foncée, qui s'écrase à l'appui.",
       "Do composer les numéros de téléphone en Fredoka 600 (`.tel`).",

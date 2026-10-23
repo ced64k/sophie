@@ -18,7 +18,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 
 ## Décisions de design (ne pas rouvrir sans demande)
 
-- Direction « frimousse » (inspirée de l'identité « nook »), palette **« menthe » par défaut** : fond menthe #A3D9CB avec taches #8CC7B8, texte noir #111 (pas de gris), boutons indigo #464A96, frimousse indigo, petites touches de jaune #E4AF1A (trait sous « joue », point du logo, bandeau jeux en ligne, étiquettes) mais jamais sur la frimousse ni les boutons ; panneaux blancs très arrondis sans contour. Palette « cyan corail » (fond #A9E4EF, boutons #D2381F, frimousse corail) disponible via `?palette=cyan` (bloc `[data-palette="cyan"]`). Les noms de variables CSS sont historiques (`--cyan` = fond, `--corail` = boutons). L'ancienne boîte de jeu verte est abandonnée.
+- Direction « frimousse » (inspirée de l'identité « nook »), palette **« menthe »** : fond menthe #A3D9CB avec taches #8CC7B8, texte noir #111 (pas de gris), boutons indigo #464A96, frimousse indigo, petites touches de jaune #E4AF1A (trait sous « joue », point du logo, bandeau jeux en ligne, étiquettes) mais jamais sur la frimousse ni les boutons ; panneaux blancs très arrondis sans contour. Les noms de variables CSS sont historiques (`--cyan` = fond, `--corail` = boutons, `--jaune` = petites touches). L'ancienne boîte de jeu verte est abandonnée.
 - La frimousse (`_includes/components/frimousse.njk`) : mascotte SVG (couleurs par variables `--peau-*`, `--oreille`) aux oreilles noires qui dépasse du bas de l'accueil et du haut du pied de page ; ses pupilles suivent le pointeur sur l'accueil. C'est un dessin provisoire, à remplacer par une vraie illustration si Sophie en commande une.
 - Logo « sophie » en Fredoka, avec un point dans le « o ».
 - Boutons : aplat plus foncé de 4 px sous chaque bouton (ombre « vectorielle », sans flou), qui s'écrase au clic.
@@ -44,5 +44,4 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 2. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
 3. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
 4. Redirections des anciennes pages `/authors/…` vers `/qui-suis-je/` (nécessite nginx, donc depuis le Mac).
-5. Palette « cyan corail » en paramètre (`?palette=cyan`) : à supprimer quand l'utilisateur n'en aura plus besoin.
-6. DESIGN.md (agent `impeccable-documenter`) une fois la palette arrêtée.
+5. Relecture finale Impeccable de la version menthe avant la mise en production.

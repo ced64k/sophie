@@ -20,15 +20,6 @@ colors:
   domaine-ecrit: "#2F6BE0"
   domaine-math: "#FFD23F"
   domaine-methodo: "#FF8A3D"
-  cyan-fond: "#A9E4EF"
-  cyan-tache: "#93D8E6"
-  cyan-givre: "#E4F6FA"
-  corail: "#D2381F"
-  corail-fonce: "#B02C15"
-  corail-vif: "#E2402F"
-  cyan-encre-douce: "#3A4447"
-  cyan-peau-clair: "#FF9A85"
-  cyan-peau-milieu: "#F2604A"
 typography:
   display:
     fontFamily: "Fredoka, Atkinson Hyperlegible, system-ui, sans-serif"
@@ -148,7 +139,7 @@ Le site est doux, rond et curieux, comme l'identité d'une marque de livres jeun
 
 La densité reste basse : grands titres en Fredoka, lecture en Atkinson Hyperlegible dans des panneaux blancs sans contour, une colonne de 1180 px. Le mouvement est rare et doux : la frimousse monte une fois à l'arrivée, ses pupilles suivent le pointeur, les cartes se soulèvent en penchant à peine. Le site refuse le cabinet pastel « portrait + grille de services » et l'ancienne boîte de jeu verte.
 
-Deux palettes coexistent dans le code. **Menthe** est la palette par défaut (`:root`), choisie par l'utilisateur. **Cyan corail** reste en option, activée par `?palette=cyan` (gardée en sessionStorage, bloc `[data-palette="cyan"]`), qui redéfinit les mêmes variables. Les noms de variables sont historiques : `--cyan` est le fond, `--corail` l'accent des boutons, `--jaune` les petites touches. Les composants n'utilisent que les variables, jamais les valeurs : toute nouvelle surface doit fonctionner dans les deux palettes.
+Une seule palette, **menthe**, définie dans `:root`. Les noms de variables sont historiques (vestiges d'une palette cyan corail abandonnée) : `--cyan` est le fond, `--corail` l'accent des boutons, `--jaune` les petites touches. Les composants n'utilisent que les variables, jamais les valeurs.
 
 **Key Characteristics:**
 - Fond menthe plein avec de grandes taches ovales d'une menthe plus soutenue.
@@ -174,7 +165,7 @@ Un fond frais et doux, de l'encre noire, un indigo qui fait agir et un jaune qui
 
 ### Tertiary
 - **Lavande** (peau-clair) et **Indigo moyen** (peau-milieu) : dégradé diagonal de la frimousse, de la lavande à l'indigo. Réservés à la mascotte.
-- **Couleurs des domaines** (domaine-precoce, domaine-oral, domaine-ecrit, domaine-math, domaine-methodo), définies dans `_data/domaines.json` et passées en `--puce` : elles n'apparaissent que dans les pastilles rondes, jamais en fond de surface ni en texte. Communes aux deux palettes.
+- **Couleurs des domaines** (domaine-precoce, domaine-oral, domaine-ecrit, domaine-math, domaine-methodo), définies dans `_data/domaines.json` et passées en `--puce` : elles n'apparaissent que dans les pastilles rondes, jamais en fond de surface ni en texte.
 
 ### Neutral
 - **Menthe** (menthe-fond, `--cyan`) : fond de toute la page et couleur de thème du navigateur.
@@ -184,17 +175,15 @@ Un fond frais et doux, de l'encre noire, un indigo qui fait agir et un jaune qui
 - **Encre douce** (encre-douce) : texte secondaire seulement (auteur, métadonnées et extraits d'articles, descriptions de domaines, aides de formulaire).
 - **Blanc** (blanc) : panneaux de lecture, cartes de fiches, texte sur indigo et sur encre.
 
-### Palette en option « cyan corail »
-Mêmes variables, autres valeurs : fond cyan (cyan-fond), taches (cyan-tache), givre (cyan-givre), encre douce (cyan-encre-douce) ; le rouge corail (corail, aplat corail-fonce) remplace l'indigo sur les boutons, les liens et la frimousse (dégradé cyan-peau-clair → cyan-peau-milieu → corail-vif) ; il n'y a pas de jaune : `--jaune` vaut le corail (bandeau en corail avec texte blanc, page active soulignée en corail), le point du logo et les étiquettes sont cyan, le trait sous « joue » disparaît, la sélection est encre sur cyan, les fiches sans image alternent corail vif et cyan tache.
 
 ### Named Rules
-**La règle de l'accent unique.** Une seule couleur pour agir : l'indigo (le corail dans la palette cyan). Boutons, pilule de navigation et mascotte la partagent ; rien d'autre ne la prend en fond.
+**La règle de l'accent unique.** Une seule couleur pour agir : l'indigo. Boutons, pilule de navigation et mascotte la partagent ; rien d'autre ne la prend en fond.
 
 **La règle des touches jaunes.** Le jaune ponctue (point, trait, bandeau, étiquette, sélection), il ne touche jamais la frimousse ni les boutons, et porte toujours du texte encre.
 
 **La règle de l'encre franche.** Le texte principal est noir (encre), sur menthe comme sur blanc. L'encre douce est réservée au texte secondaire ; aucun autre gris dans le contenu.
 
-**La règle des variables.** Une surface nouvelle utilise les variables (`--cyan`, `--cyan-fort`, `--cyan-pale`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`…) et jamais les hex, sinon elle casse l'autre palette. Les noms sont historiques et ne disent pas la couleur.
+**La règle des variables.** Une surface nouvelle utilise les variables (`--cyan`, `--cyan-fort`, `--cyan-pale`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`…) et jamais les hex. Les noms sont historiques et ne disent pas la couleur.
 
 ## Typography
 
@@ -255,7 +244,7 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 
 ### Chips
 - **Filtres de domaine :** pilule blanche à 55 %, Atkinson 700 1rem, 10 × 18 px, pastille du domaine à gauche ; blanc plein au survol ; actif (`aria-pressed`) en encre avec texte blanc, la pastille monte de 2 px et se cercle de blanc. Le filtre « Tous » n'a pas de pastille.
-- **Étiquettes d'articles :** pilule `--etiquette` (jaune paille ; cyan dans l'autre palette), Atkinson 700 0.85rem, 2 × 12 px.
+- **Étiquettes d'articles :** pilule `--etiquette` (jaune paille), Atkinson 700 0.85rem, 2 × 12 px.
 
 ### Cards / Containers
 - **Livret :** panneau blanc, rayon 32 px, sans ombre ni contour, padding fluide de 28 à 72 px.
@@ -265,7 +254,7 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 
 ### Inputs / Fields
 - **Style :** fond menthe givrée, bordure 2 px transparente, rayon 20 px, 14 × 18 px ; libellé Atkinson 700 au-dessus.
-- **Survol :** bordure menthe tache. **Focus :** bordure encre, fond blanc, sans halo. **Invalide** (`:user-invalid`) : bordure `--erreur` (#B3261E, rouge commun aux deux palettes).
+- **Survol :** bordure menthe tache. **Focus :** bordure encre, fond blanc, sans halo. **Invalide** (`:user-invalid`) : bordure `--erreur` (#B3261E, rouge réservé aux erreurs).
 
 ### Navigation
 - Logo « sophie » en Fredoka 700 (clamp 1.8–2.3rem) avec un petit point `--point` (jaune) dans le « o ».
@@ -277,7 +266,7 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 Le marqueur des domaines : un cercle SVG (symbole `#puce`) rempli par `--puce` et cerclé de 2 px d'encre, à 0.8em de la taille du texte voisin. Toujours à côté du nom du domaine (légende de l'accueil, filtres, sommaire, titres de variantes) ou, sur les cartes, avec le nom en `aria-label`.
 
 ### Frimousse
-Mascotte SVG (600 × 400) : tête en dôme au dégradé `--peau-1` → `--peau-3` (lavande → indigo ; corail dans l'autre palette), oreilles `--oreille` (noires), yeux blancs, pupilles et bouche en encre. Elle dépasse du bas de l'accueil (centrée, passe derrière le panneau suivant, monte en 1.1 s une seule fois à l'arrivée) et du haut du pied de page (à droite). Sur l'accueil, ses pupilles suivent le pointeur (désactivé si mouvement réduit). **Dessin provisoire**, à remplacer par une vraie illustration si Sophie en commande une ; la remplaçante garde ce rôle et ces emplacements.
+Mascotte SVG (600 × 400) : tête en dôme au dégradé `--peau-1` → `--peau-3` (lavande → indigo), oreilles `--oreille` (noires), yeux blancs, pupilles et bouche en encre. Elle dépasse du bas de l'accueil (centrée, passe derrière le panneau suivant, monte en 1.1 s une seule fois à l'arrivée) et du haut du pied de page (à droite). Sur l'accueil, ses pupilles suivent le pointeur (désactivé si mouvement réduit). **Dessin provisoire**, à remplacer par une vraie illustration si Sophie en commande une ; la remplaçante garde ce rôle et ces emplacements.
 
 ### Pied de page
 Grand panneau encre, rayon 32 px, texte blanc ; noms et villes en Fredoka 600 1.3rem ; téléphones en `.tel` ; liens qui passent en `--pied-survol` (jaune) au survol ; mention de droits sous un filet blanc à 20 %.
@@ -285,7 +274,7 @@ Grand panneau encre, rayon 32 px, texte blanc ; noms et villes en Fredoka 600 1.
 ## Do's and Don'ts
 
 ### Do:
-- **Do** passer par les variables de palette (`--cyan`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`) pour que menthe et cyan corail fonctionnent toutes les deux.
+- **Do** passer par les variables de palette (`--cyan`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`) plutôt que des valeurs en dur.
 - **Do** repérer un domaine par sa pastille ronde cerclée d'encre, à côté de son nom.
 - **Do** donner aux boutons l'aplat vertical de 4 px de leur teinte foncée, qui s'écrase à l'appui.
 - **Do** composer les numéros de téléphone en Fredoka 600 (`.tel`).

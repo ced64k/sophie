@@ -7,17 +7,6 @@
   <meta name="theme-color" content="#A3D9CB">
   <link rel="preload" href="/static/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/static/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
-  <script>
-    // Autre palette : ?palette=cyan
-    (function () {
-      var p = new URLSearchParams(location.search).get("palette");
-      try {
-        if (p !== null) sessionStorage.setItem("palette", p);
-        else p = sessionStorage.getItem("palette");
-      } catch (e) {}
-      if (p) document.documentElement.dataset.palette = p;
-    })();
-  </script>
   {% set css %}
     {% include "assets/css/site.css" %}
   {% endset %}
