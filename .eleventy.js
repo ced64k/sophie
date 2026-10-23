@@ -161,10 +161,26 @@ module.exports = function(eleventyConfig) {
   };
   eleventyConfig.addFilter("vignette", vignette);
 
-  // Les photos de couverture des fiches (static/img/fiches/) sont servies en WebP de 1200 px dans le texte de la fiche
-  eleventyConfig.addTransform("photosFiches", function(content, outputPath) {
+  // Les images du texte (articles, fiches) sont servies en WebP de 1200 px max, avec leurs dimensions réelles
+  const dimensions = new Map();
+  eleventyConfig.addTransform("imagesDuTexte", async function(content, outputPath) {
     if (!outputPath || !outputPath.endsWith(".html")) return content;
-    return content.replace(/<img([^>]*?) src="(\/static\/img\/fiches\/[^"]+\.(?:jpe?g|png))"/gi, (m, avant, src) => `<img${avant} src="${vignette(src, 1200)}" width="1200" height="900"`);
+    const re = /<img([^>]*?) src="(\/static\/img\/(?!v\/)[^"]+\.(?:jpe?g|png))"([^>]*)>/gi;
+    const trouvees = [...content.matchAll(re)];
+    if (!trouvees.length) return content;
+    for (const [, , src] of trouvees) {
+      if (dimensions.has(src) || !fs.existsSync("." + src)) continue;
+      const { width, height } = await sharp("." + src).metadata();
+      dimensions.set(src, { width, height });
+    }
+    return content.replace(re, (m, avant, src, apres) => {
+      const d = dimensions.get(src);
+      if (!d) return m;
+      const largeur = Math.min(1200, d.width);
+      const hauteur = Math.round(d.height * largeur / d.width);
+      const lazy = /loading=/.test(avant + apres) ? "" : ' loading="lazy"';
+      return `<img${avant} src="${vignette(src, 1200)}" width="${largeur}" height="${hauteur}"${lazy}${apres}>`;
+    });
   });
   eleventyConfig.on("eleventy.after", async ({ dir }) => {
     for (const [sortie, { source, largeur }] of vignettes) {
