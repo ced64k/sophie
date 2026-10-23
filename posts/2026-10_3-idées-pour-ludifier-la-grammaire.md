@@ -5,7 +5,7 @@ image: /static/img/IMG_0194.jpeg
 categories: []
 ---
 
-**Le détective des fonctions** : Tout d’abord on pioche une phrase mystère, celle-ci est construite selon une structure grammaticale cible, avec un ou plusieurs compléments. On donne un premier indice : l'infinitif du verbe principal. Le patient pose ensuite des questions pour découvrir la phrase mystère. Il retient les reponses et forme la phrase grâce aux indices qu'il a decouverts. 
+**Le détective des fonctions** : Tout d’abord on pioche une phrase mystère, celle-ci est construite selon une structure grammaticale cible, avec un ou plusieurs compléments. On donne un premier indice : l'infinitif du verbe principal. Le patient pose ensuite des questions pour découvrir la phrase mystère. Il retient les reponses et forme la phrase grâce aux indices qu'il a decouverts. Téléchargez le pdf. 
 
 **Le collectionneur de natures** : Chaque « case » d’un parcours est un petit tas de cartes sur lesquelles sont écrits des mots. Lorsque l’on s’arrête sur une case, on pioche une carte. Le but est d’obtenir un mot de chaque nature. Des cartes « échange » permettent de retourner la situation. L’enfant va comparer sa carte à celles qu’il a déjà triées dans son jeu et c’est exactement ce qu’on souhaite ! Petit à petit, cette categorisation se fluidifie. Téléchargez le pdf
 
