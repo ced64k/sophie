@@ -1178,7 +1178,7 @@ p { margin: 0; }
   position: relative;
   margin-top: clamp(90px, 10vw, 140px);
   background: var(--encre);
-  color: #CBD2D4;
+  color: #A9B3B6;
   border-radius: var(--rayon);
   padding: clamp(36px, 4vw, 60px) var(--bord) 28px;
   font-size: .98rem;
@@ -1198,7 +1198,7 @@ p { margin: 0; }
   gap: 28px 40px;
 }
 .pied-nom, .pied-titre {
-  color: var(--blanc);
+  color: #A9B3B6;
   font-family: var(--titre);
   font-weight: 600;
   font-size: 1.3rem;
@@ -1222,7 +1222,7 @@ p { margin: 0; }
   padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, .2);
   font-size: .88rem;
-  color: #A9B3B6;
+  color: #8A9598;
 }
 
 /* Les règles du jeu : 4 paragraphes en 2 colonnes, chacun précédé d'une pastille jaune avec une coche */
