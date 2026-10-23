@@ -1,10 +1,11 @@
 {% set navPages = collections.all | eleventyNavigation %}
 <nav class="nav" aria-label="Navigation principale">
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-liens">Menu</button>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-liens" aria-label="Menu"><span class="nav-toggle-texte">Menu</span></button>
   <ul class="nav-liens" id="nav-liens">
     {%- for entry in navPages %}
       <li><a href="{{ entry.url | url }}"{% if entry.url == page.url or (entry.url != "/" and page.url.startsWith(entry.url)) %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
     {%- endfor %}
+    <li class="nav-jeux"><a class="jeton-jeux" href="{{ jeuxEnLigne }}">Jeux en ligne<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
   </ul>
   <a class="jeton-jeux" href="{{ jeuxEnLigne }}">Jeux en ligne<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </nav>

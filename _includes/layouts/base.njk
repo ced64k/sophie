@@ -35,13 +35,25 @@
 		{% include "components/footer.njk" %}
 
 		<script>
-			// Menu mobile
-			document.querySelectorAll(".nav-toggle").forEach(function (b) {
-				b.addEventListener("click", function () {
-					var ouvert = b.getAttribute("aria-expanded") === "true";
-					b.setAttribute("aria-expanded", ouvert ? "false" : "true");
+			// Menu mobile : le reste de la page est légèrement flouté tant qu'il est ouvert ; un clic à côté le ferme
+			(function () {
+				var racine = document.documentElement;
+				function regler(b, ouvert) {
+					b.setAttribute("aria-expanded", ouvert ? "true" : "false");
+					racine.classList.toggle("menu-ouvert", ouvert);
+				}
+				document.querySelectorAll(".nav-toggle").forEach(function (b) {
+					b.addEventListener("click", function () {
+						regler(b, b.getAttribute("aria-expanded") !== "true");
+					});
+					document.addEventListener("click", function (e) {
+						if (b.getAttribute("aria-expanded") === "true" && !e.target.closest(".nav")) regler(b, false);
+					});
+					document.addEventListener("keydown", function (e) {
+						if (e.key === "Escape" && b.getAttribute("aria-expanded") === "true") { regler(b, false); b.focus(); }
+					});
 				});
-			});
+			})();
 
 		// Les grandes taches défilent à une autre vitesse que le reste (parallaxe)
 		(function () {

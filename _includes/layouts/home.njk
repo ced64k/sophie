@@ -50,8 +50,8 @@ section: home
 		<div class="regles-liste">
 			{{ layoutContent | safe }}
 		</div>
-		<p><a class="lien-fort" href="/qui-suis-je/">Mon parcours</a></p>
 	</div>
+	<p class="lien-hors"><a class="lien-fort" href="/qui-suis-je/">Mon parcours</a></p>
 </section>
 
 <section class="etagere" aria-labelledby="titre-etagere">
@@ -71,8 +71,8 @@ section: home
 		{% set articles = collections.post | reverse %}
 		{% set limite = 3 %}
 		{% include "components/articles.njk" %}
-		<p><a class="lien-fort" href="/blog/">Tous les articles</a></p>
 	</div>
+	<p class="lien-hors"><a class="lien-fort" href="/blog/">Tous les articles</a></p>
 </section>
 
 <section class="bandeau-jeux" aria-labelledby="titre-jeux-en-ligne">
@@ -85,6 +85,38 @@ section: home
 </div>
 
 <script>
+	// Sliders sur téléphone (« Mon approche », jeux du commerce) : défilement par étapes, avec des points pour y aller directement
+	(function () {
+		function slider(liste, libelle, apres) {
+			if (!liste) return;
+			var etapes = liste.children;
+			var points = document.createElement("div");
+			points.className = "slider-points";
+			points.setAttribute("role", "group");
+			points.setAttribute("aria-label", libelle);
+			Array.prototype.forEach.call(etapes, function (e, i) {
+				var b = document.createElement("button");
+				b.type = "button";
+				b.setAttribute("aria-label", "Diapositive " + (i + 1) + " sur " + etapes.length);
+				b.addEventListener("click", function () { liste.scrollTo({ left: etapes[i].offsetLeft - etapes[0].offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); });
+				points.appendChild(b);
+			});
+			(apres || liste).insertAdjacentElement("afterend", points);
+			function maj() {
+				var pas = etapes.length > 1 ? etapes[1].offsetLeft - etapes[0].offsetLeft : liste.clientWidth;
+				var i = Math.round(liste.scrollLeft / Math.max(pas, 1));
+				Array.prototype.forEach.call(points.children, function (b, k) {
+					if (k === i) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
+				});
+			}
+			liste.addEventListener("scroll", maj, { passive: true });
+			maj();
+		}
+		var approche = document.querySelector(".regles-liste");
+		slider(approche, "Étapes de mon approche", approche && approche.closest(".livret-page"));
+		slider(document.querySelector(".etagere .fiches"), "Fiches jeux");
+	})();
+
 	// Les reflets des yeux du koala suivent le pointeur
 	(function () {
 		var f = document.querySelector(".accueil .frimousse");

@@ -278,30 +278,103 @@ p { margin: 0; }
 .jeton-jeux:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--corail-fonce); }
 .jeton-jeux:active { transform: translateY(4px); box-shadow: 0 0 0 var(--corail-fonce); }
 
+.nav-jeux { display: none; }
+
 @media (max-width: 960px) {
-  .nav { width: 100%; flex-wrap: wrap; justify-content: space-between; }
+  /* Mobile : logo à gauche, icône de menu à droite ; « Jeux en ligne » est dans le menu */
+  .bord { position: relative; z-index: 30; flex-wrap: nowrap; }
+  .nav { width: auto; margin-left: auto; }
+  .nav > .jeton-jeux { display: none; }
   .nav-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font: inherit;
-    font-weight: 700;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
     color: inherit;
     background: var(--blanc);
     cursor: pointer;
-    padding: 9px 18px;
     border: 0;
-    border-radius: 999px;
+    border-radius: 50%;
+  }
+  .nav-toggle-texte {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .nav-toggle::before {
     content: "";
-    width: 18px;
-    height: 12px;
-    border-block: 2px solid currentColor;
-    background: linear-gradient(currentColor 0 0) center / 100% 2px no-repeat;
+    width: 20px;
+    height: 14px;
+    border-block: 2.5px solid currentColor;
+    background: linear-gradient(currentColor 0 0) center / 100% 2.5px no-repeat;
+    transition: background .2s;
   }
-  .nav-liens { display: none; order: 3; width: 100%; flex-direction: column; padding-top: 6px; }
+  /* Menu ouvert : l'icône devient une croix (deux barres croisées) */
+  .nav-toggle { position: relative; }
+  .nav-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 22px;
+    height: 2.5px;
+    border-radius: 2px;
+    background: currentColor;
+    translate: -50% -50%;
+    rotate: -45deg;
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"]::before {
+    height: 2.5px;
+    width: 22px;
+    border: 0;
+    border-radius: 2px;
+    background: currentColor;
+    rotate: 45deg;
+  }
+  .nav-toggle[aria-expanded="true"]::after { opacity: 1; }
+  /* Menu ouvert : panneau blanc sous l'en-tête, éléments centrés et séparés par un fin trait */
+  .nav-liens {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 24px 22px;
+    background: var(--blanc);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    text-align: center;
+  }
   .nav-toggle[aria-expanded="true"] ~ .nav-liens { display: flex; }
+  /* Menu ouvert : voile légèrement flouté sur toute la page, sous le menu */
+  .menu-ouvert .accueil, .menu-ouvert .suite-page { z-index: 40; }
+  /* Un élément nommé pour les transitions de page isole son fond : sans ça, le flou ne verrait rien derrière */
+  .menu-ouvert .bord { view-transition-name: none; }
+  .menu-ouvert .bord::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, .18);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+  .nav-liens li + li { border-top: 2px solid var(--cyan-pale); }
+  .nav-liens a { padding: 15px 0; font-size: 1.15rem; }
+  .nav-liens a[aria-current="page"]::after { left: 50%; right: auto; width: 100%; translate: -50% 0; bottom: .6em; }
+  .nav-jeux { display: block; padding-top: 18px; }
+  .nav-liens li.nav-jeux { border-top: 0; }
+  .nav-liens .jeton-jeux { display: inline-flex; padding: 12px 24px; color: var(--blanc); }
+  .nav-liens .jeton-jeux:hover { color: var(--blanc); }
 }
 
 /* ——— Accueil ——— */
@@ -669,6 +742,14 @@ p { margin: 0; }
 .section-tete h1, .section-tete h2 { margin-bottom: .35em; }
 .section-tete p, .section-tete .texte { max-width: 60ch; font-size: 1.1em; }
 .section-pied { max-width: 1180px; margin-inline: auto; }
+/* Lien sous un panneau blanc : toujours posé sur le fond, aligné sur le texte du panneau */
+.lien-hors {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(20px, 2.4vw, 28px) var(--gouttiere) 0;
+}
+.lien-hors .lien-fort, .section-pied .lien-fort { margin-top: 0; }
+.section-pied { padding-top: clamp(20px, 2.4vw, 28px); }
 
 /* Fiches jeux */
 
@@ -943,14 +1024,12 @@ p { margin: 0; }
   column-gap: 28px;
 }
 .sommaire li { break-inside: avoid; padding: 3px 0; }
-.sommaire a {
+.sommaire-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-weight: 700;
-  text-decoration: none;
 }
-.sommaire a:hover { text-decoration: underline; }
 .sommaire .puce { font-size: 1.1rem; }
 
 .variante {
@@ -998,13 +1077,40 @@ p { margin: 0; }
   font-size: 1.4rem;
   line-height: 1.1;
 }
-.lieu-tel {
-  display: inline-block;
-  font-size: 1.3rem;
-  font-family: var(--titre);
-  font-weight: 600;
-  margin-top: 4px;
+.lieu-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
 }
+/* Téléphone et e-mail : pastilles menthe avec une petite icône, sans soulignement */
+.lieu-lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  padding: 9px 18px 9px 12px;
+  border-radius: 999px;
+  background-color: var(--cyan-pale);
+  color: var(--encre);
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background-color .2s var(--sortie), color .2s var(--sortie), transform .15s var(--sortie);
+}
+.lieu-lien svg {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: var(--corail);
+  color: var(--blanc);
+}
+.lieu-tel { font-family: var(--titre); font-size: 1.25rem; font-weight: 600; letter-spacing: .01em; }
+.lieu-lien:hover { background-color: var(--corail); color: var(--blanc); transform: translateY(-1px); }
+.lieu-lien:hover svg { background-color: var(--blanc); color: var(--corail); }
 
 .provisoire {
   display: block;
@@ -1151,16 +1257,112 @@ p { margin: 0; }
   rotate: 5deg;
   border-radius: 46% 54% 44% 56% / 55% 45% 55% 45%;
 }
+/* Points de navigation des sliders (créés par le script de home.njk, visibles sur téléphone seulement) */
+.slider-points { display: none; }
 @media (max-width: 760px) {
   .regles-liste { grid-template-columns: 1fr; }
+}
+/* Téléphone : les 4 paragraphes deviennent 4 étapes à faire défiler */
+@media (max-width: 600px) {
+  .regles .livret-page .regles-liste {
+    display: flex;
+    position: relative;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    margin-inline: calc(-1 * var(--gouttiere));
+    padding-inline: 0;
+  }
+  .regles-liste::-webkit-scrollbar { display: none; }
+  .regles .livret-page .regles-liste > p {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    padding: 0 var(--gouttiere);
+  }
+  /* Pas de pastille à coche sur téléphone */
+  .regles-liste > p::before { display: none; }
+  .slider-points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .slider-points button {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--cyan-fort);
+    cursor: pointer;
+    transition: width .25s var(--sortie), background-color .25s;
+  }
+  /* Les points sont toujours sur le fond menthe, sous le bloc */
+  .slider-points button { background: rgba(17, 17, 17, .22); }
+  .regles .slider-points { margin-top: 18px; }
+  /* Les jeux du commerce : une fiche par diapositive */
+  .etagere .fiches {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    padding-block: 4px 26px;
+    margin-bottom: -12px;
+  }
+  .etagere .fiches::-webkit-scrollbar { display: none; }
+  .etagere .fiche {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    padding-inline: 2px;
+    box-sizing: border-box;
+  }
+  .slider-points button[aria-current="true"] {
+    width: 34px;
+    border-radius: 999px;
+    background: var(--jaune);
+  }
 }
 
 /* Téléphone : une seule marge de 16 px entre le bord de l'écran et tous les blocs (panneaux, cartes, textes, en-tête) */
 @media (max-width: 600px) {
-  :root { --marge-page: 16px; --bord: 0px; }
+  :root { --marge-page: 16px; --bord: 0px; --espace: 28px; }
   .etagere, .rayon { padding-inline: 0; }
   .accueil-face, .titre-page { padding-inline: 0; }
-  .pied { padding-inline: var(--gouttiere); }
+  .pied { padding: 44px 28px 36px; }
+  .logo { font-size: 2.15rem; }
+  /* Pastilles de contact : l'adresse e-mail la plus longue doit tenir sur une ligne */
+  .lieu-lien { padding: 8px 14px 8px 8px; gap: 8px; overflow-wrap: normal; }
+  .lieu-mail { font-size: .88rem; }
+  .lieu-lien svg { width: 28px; height: 28px; }
+  .lien-hors { padding-inline: 0; }
+  /* Rythme vertical : 28 px entre deux blocs, 20 px entre un panneau et son lien */
+  .lien-hors, .section-pied { padding-top: 20px; }
+  .etagere { padding-block: 0; }
+  .etagere > .section-tete { margin-bottom: 20px; }
+  .etagere .slider-points { margin-top: 6px; }
+  /* Accueil : plus d'air entre l'en-tête, le titre, l'intro, le bouton et le koala */
+  .accueil-face { padding-block: 36px 8px; }
+  .accueil-intro { margin-top: 30px; }
+  .accueil-actions { margin-top: 34px; }
+  .accueil-pied .frimousse { margin-top: 40px; }
+  /* Introductions de section : interligne resserré, et un vrai espace sous le titre */
+  .section-tete h1, .section-tete h2 { margin-bottom: .6em; }
+  /* Domaines de l'accueil : texte plus petit, plusieurs par ligne */
+  .legende ul { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+  .legende a { font-size: .95rem; }
+  .section-tete h1, .section-tete h2 { line-height: 1.12; }
+  .section-tete p, .section-tete .texte { line-height: 1.35; }
+  /* Pied de page : présentation en haut, Ath et Elouges côte à côte, puis Facebook */
+  .ville-precision { display: none; }
+  .pied-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+  .pied-grille > .pied-bloc:first-child, .pied-grille > .pied-bloc:last-child { grid-column: 1 / -1; }
 }
 
 /* ——— Transitions de filtre ——— */

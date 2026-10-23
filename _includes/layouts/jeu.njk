@@ -12,15 +12,15 @@ section: jeu
 <article class="livret fiche-jeu">
 	<div class="livret-page">
 		{% if sections.length %}
-			<nav class="sommaire" aria-label="Variantes de la fiche">
+			<div class="sommaire" role="group" aria-label="Variantes de la fiche">
 				<p class="sommaire-titre">Les variantes</p>
 				<ul>
 					{% for s in sections %}
 						{% set d = domaines | domaine(s.domaine) if s.domaine %}
-						<li><a href="#{{ s.id }}"{% if d %} style="--puce: {{ d.couleur }}"{% endif %}>{% if d %}<span class="marque">{{ s.titre }}</span>{% else %}{{ s.titre }}{% endif %}</a></li>
+						<li><span class="sommaire-item"{% if d %} style="--puce: {{ d.couleur }}"{% endif %}>{% if d %}<span class="marque">{{ s.titre }}</span>{% else %}{{ s.titre }}{% endif %}</span></li>
 					{% endfor %}
 				</ul>
-			</nav>
+			</div>
 		{% endif %}
 
 		<div class="texte">

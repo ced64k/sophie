@@ -8,9 +8,6 @@
 				<a class="article-lien" href="{{ article.url | url }}">
 					<span class="article-image">{% if image %}<img src="{{ image | vignette(320) }}" alt="" decoding="async"{% if loop.index > 3 or sousLaFlottaison %} loading="lazy"{% endif %}>{% endif %}</span>
 					<span class="article-texte">
-						{% if c.publics.length %}
-							<span class="article-meta">{% for p in c.publics %}<span class="etiquette">{{ p.nom }}</span>{% endfor %}</span>
-						{% endif %}
 						<span class="article-titre">{{ article.data.title }}</span>
 						<span class="article-extrait">{{ article.data.summary or (article.templateContent | excerpt(170)) }}</span>
 						{% if c.domaines.length %}
