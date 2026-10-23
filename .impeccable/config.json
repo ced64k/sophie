@@ -74,6 +74,105 @@
         ],
         "createdAt": "2026-10-23T11:17:36.492Z",
         "reason": "Claude: decision sketch built from the user's own Chickz reference palette; not shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r2/assigned.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.525Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r2/model-pick.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.543Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r2/challenger-glazier.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.560Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r2/challenger-massin.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.578Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r3/plancton.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.595Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r3/boite-a-rythmes.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.612Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r3/collage.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.628Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r4/tomate.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.644Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r4/funtyx.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.660Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r4/chickz.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.677Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "bricolage grotesque",
+        "files": [
+          ".impeccable/mocks/decision/r4/kidsbook.html"
+        ],
+        "createdAt": "2026-10-23T11:40:36.693Z",
+        "reason": "Claude: unshipped decision-round sketch drawn before the font change; not part of the site"
       }
     ]
   }

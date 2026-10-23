@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T11:41:47.909Z",
+  "title": "Design System: Sophie Lenaerts, logopède",
+  "extensions": {
+    "colorMeta": {
+      "menthe-fond": {
+        "role": "neutral",
+        "displayName": "Menthe",
+        "canonical": "#A3D9CB",
+        "oklch": "oklch(84.4% 0.059 177.1)",
+        "tonalRamp": [
+          "#010E0B",
+          "#052B24",
+          "#134A3F",
+          "#35695D",
+          "#588C7F",
+          "#7CB1A4",
+          "#A2D8CA",
+          "#C5FCEE"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "menthe-tache": {
+        "role": "neutral",
+        "displayName": "Menthe tache",
+        "canonical": "#8CC7B8",
+        "oklch": "oklch(78.5% 0.065 177.0)",
+        "tonalRamp": [
+          "#010E0B",
+          "#042B24",
+          "#094B3F",
+          "#306A5D",
+          "#548D7F",
+          "#78B2A4",
+          "#9DD9CA",
+          "#C1FDEE"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "menthe-givre": {
+        "role": "neutral",
+        "displayName": "Menthe givrée",
+        "canonical": "#E6F4F0",
+        "oklch": "oklch(95.6% 0.016 177.1)",
+        "tonalRamp": [
+          "#050D0B",
+          "#1C2724",
+          "#37433F",
+          "#55615D",
+          "#778380",
+          "#9BA8A4",
+          "#C0CECA",
+          "#E4F2EE"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "indigo": {
+        "role": "primary",
+        "displayName": "Indigo",
+        "canonical": "#464A96",
+        "oklch": "oklch(44.6% 0.122 278.0)",
+        "tonalRamp": [
+          "#080030",
+          "#1B145D",
+          "#33347E",
+          "#4F54A1",
+          "#7077C8",
+          "#939CF0",
+          "#BEC6FD",
+          "#EBEDFE"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "indigo-fonce": {
+        "role": "primary",
+        "displayName": "Indigo nuit",
+        "canonical": "#35387A",
+        "oklch": "oklch(37.6% 0.110 277.7)",
+        "tonalRamp": [
+          "#07012F",
+          "#1B1857",
+          "#343678",
+          "#50559A",
+          "#7179C1",
+          "#949EE9",
+          "#BEC7FC",
+          "#EBEEFC"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "jaune": {
+        "role": "secondary",
+        "displayName": "Jaune d'or",
+        "canonical": "#E4AF1A",
+        "oklch": "oklch(78.2% 0.155 85.8)",
+        "tonalRamp": [
+          "#110A00",
+          "#2F2202",
+          "#513C01",
+          "#765908",
+          "#A07A0B",
+          "#CD9C0D",
+          "#F8C23A",
+          "#FEEDC9"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "jaune-surligne": {
+        "role": "secondary",
+        "displayName": "Jaune surligné",
+        "canonical": "#F2C94C",
+        "oklch": "oklch(85.0% 0.146 90.5)",
+        "tonalRamp": [
+          "#100A00",
+          "#2D2301",
+          "#4E3E07",
+          "#725B05",
+          "#9C7C05",
+          "#C79F05",
+          "#EFC648",
+          "#FEEEC0"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "jaune-etiquette": {
+        "role": "secondary",
+        "displayName": "Jaune paille",
+        "canonical": "#F7DB84",
+        "oklch": "oklch(89.6% 0.111 92.1)",
+        "tonalRamp": [
+          "#100B00",
+          "#2D2302",
+          "#4D3E07",
+          "#715B05",
+          "#987E20",
+          "#BDA24B",
+          "#E4C972",
+          "#FEEEBC"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "encre": {
+        "role": "neutral",
+        "displayName": "Encre",
+        "canonical": "#111111",
+        "oklch": "oklch(17.8% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A4A4A4",
+          "#CACACA",
+          "#EEEEEE"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "encre-douce": {
+        "role": "neutral",
+        "displayName": "Encre douce",
+        "canonical": "#33443F",
+        "oklch": "oklch(37.0% 0.023 175.0)",
+        "tonalRamp": [
+          "#020E0B",
+          "#182823",
+          "#33443F",
+          "#50625D",
+          "#72857F",
+          "#96AAA4",
+          "#BCD0CA",
+          "#DFF4ED"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "blanc": {
+        "role": "neutral",
+        "displayName": "Blanc",
+        "canonical": "#FFFFFF",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A4A4A4",
+          "#CACACA",
+          "#EEEEEE"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "peau-clair": {
+        "role": "tertiary",
+        "displayName": "Lavande (frimousse)",
+        "canonical": "#8A8FE0",
+        "oklch": "oklch(67.9% 0.119 280.0)",
+        "tonalRamp": [
+          "#09002F",
+          "#1D145B",
+          "#36347C",
+          "#52539F",
+          "#7377C6",
+          "#969CEE",
+          "#C0C6FE",
+          "#EBEDFF"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "peau-milieu": {
+        "role": "tertiary",
+        "displayName": "Indigo moyen (frimousse)",
+        "canonical": "#5F64B8",
+        "oklch": "oklch(54.0% 0.130 278.5)",
+        "tonalRamp": [
+          "#08002F",
+          "#1C1160",
+          "#343382",
+          "#4F52A5",
+          "#7076CC",
+          "#939BF4",
+          "#BEC6FF",
+          "#EBEDFC"
+        ],
+        "palette": "menthe (défaut, :root)"
+      },
+      "domaine-precoce": {
+        "role": "tertiary",
+        "displayName": "Domaine : prise en charge précoce",
+        "canonical": "#7CC76E",
+        "oklch": "oklch(75.9% 0.143 140.6)",
+        "tonalRamp": [
+          "#011000",
+          "#062D01",
+          "#114E02",
+          "#257014",
+          "#4B943D",
+          "#70BA62",
+          "#95E187",
+          "#CDFFC4"
+        ],
+        "palette": "commune"
+      },
+      "domaine-oral": {
+        "role": "tertiary",
+        "displayName": "Domaine : langage oral",
+        "canonical": "#E8467C",
+        "oklch": "oklch(63.9% 0.201 4.7)",
+        "tonalRamp": [
+          "#1E0008",
+          "#48021E",
+          "#780336",
+          "#AC0450",
+          "#DA3871",
+          "#FD6C96",
+          "#FEB2C3",
+          "#FFE8EC"
+        ],
+        "palette": "commune"
+      },
+      "domaine-ecrit": {
+        "role": "tertiary",
+        "displayName": "Domaine : langage écrit",
+        "canonical": "#2F6BE0",
+        "oklch": "oklch(55.6% 0.189 261.9)",
+        "tonalRamp": [
+          "#000728",
+          "#001C5C",
+          "#003497",
+          "#1853C6",
+          "#3C79EF",
+          "#71A3FE",
+          "#B0CBFC",
+          "#E7EFFC"
+        ],
+        "palette": "commune"
+      },
+      "domaine-math": {
+        "role": "tertiary",
+        "displayName": "Domaine : cognition mathématique",
+        "canonical": "#FFD23F",
+        "oklch": "oklch(87.9% 0.162 90.9)",
+        "tonalRamp": [
+          "#100A00",
+          "#2D2301",
+          "#4E3E06",
+          "#725B04",
+          "#9B7C04",
+          "#C7A003",
+          "#F2C52C",
+          "#FEEEC0"
+        ],
+        "palette": "commune"
+      },
+      "domaine-methodo": {
+        "role": "tertiary",
+        "displayName": "Domaine : méthodologie",
+        "canonical": "#FF8A3D",
+        "oklch": "oklch(75.0% 0.167 50.5)",
+        "tonalRamp": [
+          "#170601",
+          "#3C1801",
+          "#662D00",
+          "#924508",
+          "#C75E02",
+          "#F48031",
+          "#FEB991",
+          "#FEEADF"
+        ],
+        "palette": "commune"
+      },
+      "cyan-fond": {
+        "role": "neutral",
+        "displayName": "Cyan corail (option) : fond",
+        "canonical": "#A9E4EF",
+        "oklch": "oklch(88.2% 0.062 210.3)",
+        "tonalRamp": [
+          "#000E11",
+          "#04292F",
+          "#064852",
+          "#2E6771",
+          "#528B95",
+          "#76B0BA",
+          "#9BD6E1",
+          "#D0F7FE"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "cyan-tache": {
+        "role": "neutral",
+        "displayName": "Cyan corail (option) : taches",
+        "canonical": "#93D8E6",
+        "oklch": "oklch(84.1% 0.072 211.7)",
+        "tonalRamp": [
+          "#000E12",
+          "#042930",
+          "#064852",
+          "#206875",
+          "#488C99",
+          "#6DB1BF",
+          "#93D8E6",
+          "#D0F7FF"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "cyan-givre": {
+        "role": "neutral",
+        "displayName": "Cyan corail (option) : givre",
+        "canonical": "#E4F6FA",
+        "oklch": "oklch(96.1% 0.020 212.5)",
+        "tonalRamp": [
+          "#030D10",
+          "#19272A",
+          "#344346",
+          "#516164",
+          "#738487",
+          "#97A8AC",
+          "#BDCED2",
+          "#E0F2F6"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "corail": {
+        "role": "primary",
+        "displayName": "Cyan corail (option) : rouge corail des boutons",
+        "canonical": "#D2381F",
+        "oklch": "oklch(57.2% 0.195 31.9)",
+        "tonalRamp": [
+          "#1E0100",
+          "#490500",
+          "#791101",
+          "#AC1E04",
+          "#DC4229",
+          "#FF745B",
+          "#FDB7A8",
+          "#FFE9E4"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "corail-fonce": {
+        "role": "primary",
+        "displayName": "Cyan corail (option) : aplat corail",
+        "canonical": "#B02C15",
+        "oklch": "oklch(50.0% 0.172 32.2)",
+        "tonalRamp": [
+          "#1E0100",
+          "#480700",
+          "#781302",
+          "#A9240C",
+          "#D34E37",
+          "#FD755C",
+          "#FEB6A7",
+          "#FDEAE5"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "corail-vif": {
+        "role": "primary",
+        "displayName": "Cyan corail (option) : corail vif",
+        "canonical": "#E2402F",
+        "oklch": "oklch(60.9% 0.201 29.9)",
+        "tonalRamp": [
+          "#1F0000",
+          "#4A0401",
+          "#7B0802",
+          "#B00D02",
+          "#DF3D2C",
+          "#FD7461",
+          "#FEB6A9",
+          "#FDEAE6"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "cyan-encre-douce": {
+        "role": "neutral",
+        "displayName": "Cyan corail (option) : encre douce",
+        "canonical": "#3A4447",
+        "oklch": "oklch(37.9% 0.014 217.8)",
+        "tonalRamp": [
+          "#050D0F",
+          "#1D2629",
+          "#384245",
+          "#556063",
+          "#778286",
+          "#9BA7AA",
+          "#C1CDD1",
+          "#E5F1F5"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "cyan-peau-clair": {
+        "role": "tertiary",
+        "displayName": "Cyan corail (option) : pêche (frimousse)",
+        "canonical": "#FF9A85",
+        "oklch": "oklch(78.6% 0.126 32.6)",
+        "tonalRamp": [
+          "#1D0100",
+          "#480801",
+          "#741B0A",
+          "#973D2C",
+          "#BF614E",
+          "#E88571",
+          "#FDB7A7",
+          "#FCEAE6"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      },
+      "cyan-peau-milieu": {
+        "role": "tertiary",
+        "displayName": "Cyan corail (option) : corail moyen (frimousse)",
+        "canonical": "#F2604A",
+        "oklch": "oklch(67.3% 0.184 31.0)",
+        "tonalRamp": [
+          "#1E0100",
+          "#490501",
+          "#7A0B00",
+          "#AE1804",
+          "#D84833",
+          "#FF745D",
+          "#FDB7A9",
+          "#FEE9E5"
+        ],
+        "palette": "cyan corail (option, [data-palette=\"cyan\"], ?palette=cyan)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titre d'accueil",
+        "purpose": "Uniquement le h1 de l'accueil, centré, max 11ch, incliné de -2°, taille liée aussi à la hauteur de fenêtre."
+      },
+      "headline": {
+        "displayName": "Titre de page",
+        "purpose": "h1 des pages intérieures."
+      },
+      "title": {
+        "displayName": "Titre de section",
+        "purpose": "h2 de section ; réduit à clamp(1.5rem, 1.2rem + 1vw, 2.1rem) dans un texte long."
+      },
+      "title-small": {
+        "displayName": "Petit titre Fredoka",
+        "purpose": "Boutons, noms de fiches, titres d'articles, domaines, structures, villes, titres du pied, h3."
+      },
+      "body": {
+        "displayName": "Texte",
+        "purpose": "Lecture en Atkinson Hyperlegible, 44rem max dans les livrets."
+      },
+      "label": {
+        "displayName": "Libellé",
+        "purpose": "Navigation, filtres, libellés de champs, étiquettes (0.85rem), métadonnées (0.95rem) ; toujours en gras 700."
+      },
+      "telephone": {
+        "displayName": "Numéro de téléphone",
+        "purpose": "Classe .tel : Fredoka pour un zéro rond, le zéro barré d'Atkinson se lisait comme du code."
+      }
+    },
+    "palettes": [
+      {
+        "name": "menthe",
+        "status": "défaut, choisie par l'utilisateur",
+        "selector": ":root",
+        "note": "Noms historiques : --cyan = fond, --corail = boutons et accents, --jaune = petites touches."
+      },
+      {
+        "name": "cyan-corail",
+        "status": "option",
+        "selector": "[data-palette=\"cyan\"]",
+        "activation": "?palette=cyan dans l'adresse, gardée en sessionStorage",
+        "overrides": {
+          "--cyan": "#A9E4EF",
+          "--cyan-fort": "#8CC7B8",
+          "--cyan-pale": "#E6F4F0",
+          "--corail": "#464A96",
+          "--corail-fonce": "#35387A",
+          "--corail-vif": "#E2402F",
+          "--encre-douce": "#3A4447",
+          "--peau-1": "#8A8FE0",
+          "--peau-2": "#5F64B8",
+          "--peau-3": "#E2402F",
+          "--jaune": "var(--corail)",
+          "--bandeau-texte": "var(--blanc)",
+          "--point": "var(--cyan)",
+          "--surligne": "transparent",
+          "--etiquette": "var(--cyan)",
+          "--selection": "var(--encre)",
+          "--selection-texte": "var(--cyan)",
+          "--souligne-lien": "currentColor",
+          "--pied-survol": "var(--cyan)"
+        }
+      }
+    ],
+    "shadows": [
+      {
+        "name": "aplat-bouton",
+        "value": "0 4px 0 var(--corail-fonce)",
+        "purpose": "Aplat vertical sans flou sous les boutons et la pilule « Jeux en ligne » ; 0 6px 0 au survol (bouton monte de 2 px), 0 0 0 à l'appui (bouton descend de 4 px). Bouton encre : rgba(0, 0, 0, .35). Demande de l'utilisateur."
+      },
+      {
+        "name": "ombre-carte",
+        "value": "0 2px 4px rgba(17, 60, 72, .06), 0 18px 40px -22px rgba(17, 60, 72, .35)",
+        "purpose": "Cartes de fiches jeux au repos, et lien « suite » au survol."
+      },
+      {
+        "name": "ombre-carte-survol",
+        "value": "0 4px 8px rgba(17, 60, 72, .08), 0 28px 50px -24px rgba(17, 60, 72, .5)",
+        "purpose": "Carte de fiche jeu au survol (avec translateY(-6px) rotate(-1deg))."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 3px solid var(--encre); outline-offset: 3px; border-radius: 6px",
+        "purpose": "Anneau de focus clavier, partout."
+      }
+    ],
+    "motion": [
+      {
+        "name": "sortie",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Courbe unique de toutes les transitions et de la montée de la frimousse."
+      },
+      {
+        "name": "bouton",
+        "value": "transform .15s, box-shadow .15s",
+        "purpose": "Montée et écrasement des boutons."
+      },
+      {
+        "name": "carte",
+        "value": "transform .3s, box-shadow .3s ; image scale(1.04) .5s",
+        "purpose": "Soulèvement des cartes de fiches."
+      },
+      {
+        "name": "monte",
+        "value": "1.1s, délai .15s, translateY(40%) → 0",
+        "purpose": "Arrivée de la frimousse sur l'accueil, une seule fois."
+      },
+      {
+        "name": "pupilles",
+        "value": "transform .35s",
+        "purpose": "Les pupilles suivent le pointeur (accueil seulement)."
+      },
+      {
+        "name": "filtre",
+        "value": "view-transition .28s",
+        "purpose": "Transition de page au changement de filtre."
+      },
+      {
+        "name": "mouvement-reduit",
+        "value": "animation: none; transition: none",
+        "purpose": "prefers-reduced-motion coupe tout, pupilles comprises."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-repliee",
+        "value": "960px"
+      },
+      {
+        "name": "accueil-empile",
+        "value": "860px"
+      },
+      {
+        "name": "contact-une-colonne",
+        "value": "760px"
+      },
+      {
+        "name": "deux-fiches",
+        "value": "600px"
+      },
+      {
+        "name": "mobile-etroit",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton primaire",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Action principale (« Prendre contact », envoi du formulaire) : pilule indigo sur aplat de 4 px qui s'écrase.",
+      "html": "<a class=\"ds-bouton\" href=\"#\">Prendre contact</a>",
+      "css": ".ds-bouton { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--corail, #464A96); color: #fff; font-family: \"Fredoka\", \"Atkinson Hyperlegible\", system-ui, sans-serif; font-weight: 600; font-size: 1.3rem; line-height: 1.1; text-decoration: none; padding: 18px 34px; border: 0; border-radius: 999px; cursor: pointer; --ds-ombre: var(--corail-fonce, #35387A); box-shadow: 0 4px 0 var(--ds-ombre); transition: transform .15s cubic-bezier(.16, 1, .3, 1), box-shadow .15s cubic-bezier(.16, 1, .3, 1); } .ds-bouton:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ds-ombre); } .ds-bouton:active { transform: translateY(4px); box-shadow: 0 0 0 var(--ds-ombre); } .ds-bouton:focus-visible { outline: 3px solid var(--encre, #111); outline-offset: 3px; }"
+    },
+    {
+      "name": "Bouton encre",
+      "kind": "button",
+      "refersTo": "button-encre",
+      "description": "Bouton secondaire, posé sur le bandeau jaune.",
+      "html": "<a class=\"ds-bouton-encre\" href=\"#\">Ouvrir les jeux en ligne</a>",
+      "css": ".ds-bouton-encre { display: inline-flex; align-items: center; justify-content: center; background: var(--encre, #111); color: #fff; font-family: \"Fredoka\", \"Atkinson Hyperlegible\", system-ui, sans-serif; font-weight: 600; font-size: 1.3rem; line-height: 1.1; text-decoration: none; padding: 18px 34px; border-radius: 999px; box-shadow: 0 4px 0 rgba(0, 0, 0, .35); transition: transform .15s cubic-bezier(.16, 1, .3, 1), box-shadow .15s cubic-bezier(.16, 1, .3, 1); } .ds-bouton-encre:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0, 0, 0, .35); } .ds-bouton-encre:active { transform: translateY(4px); box-shadow: 0 0 0 rgba(0, 0, 0, .35); } .ds-bouton-encre:focus-visible { outline: 3px solid var(--encre, #111); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-pill-jeux",
+      "description": "Logo « sophie » avec point dans le « o », liens en gras soulignés d'un trait de 3 px, pilule « Jeux en ligne ».",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\">s<b>o</b>phie</a><ul class=\"ds-liens\"><li><a href=\"#\" aria-current=\"page\">Accueil</a></li><li><a href=\"#\">Prises en charge</a></li><li><a href=\"#\">Jeux</a></li><li><a href=\"#\">Contact</a></li></ul><a class=\"ds-jeton\" href=\"#\">Jeux en ligne<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M5 3h8v8M13 3 3 13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 16px 32px; flex-wrap: wrap; padding: 16px 24px; background: var(--cyan, #A3D9CB); color: var(--encre, #111); font-family: \"Atkinson Hyperlegible\", system-ui, sans-serif; } .ds-logo { font-family: \"Fredoka\", system-ui, sans-serif; font-weight: 700; font-size: 2.1rem; line-height: 1; letter-spacing: -.02em; text-decoration: none; color: inherit; margin-right: auto; } .ds-logo b { position: relative; display: inline-block; font-weight: inherit; } .ds-logo b::after { content: \"\"; position: absolute; left: 50%; bottom: .22em; width: .19em; height: .19em; margin-left: -.095em; border-radius: 50%; background: var(--point, #E4AF1A); } .ds-liens { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 26px; } .ds-liens a { font-weight: 700; text-decoration: none; color: inherit; padding: 6px 0; border-bottom: 3px solid transparent; transition: border-color .2s cubic-bezier(.16, 1, .3, 1); } .ds-liens a:hover { border-color: rgba(17, 17, 17, .35); } .ds-liens a[aria-current=\"page\"] { border-color: var(--jaune, #E4AF1A); } .ds-liens a:focus-visible, .ds-jeton:focus-visible { outline: 3px solid var(--encre, #111); outline-offset: 3px; border-radius: 6px; } .ds-jeton { display: inline-flex; align-items: center; gap: 8px; background: var(--corail, #464A96); color: #fff; font-weight: 700; text-decoration: none; padding: 10px 20px; border-radius: 999px; white-space: nowrap; box-shadow: 0 4px 0 var(--corail-fonce, #35387A); transition: transform .15s cubic-bezier(.16, 1, .3, 1), box-shadow .15s cubic-bezier(.16, 1, .3, 1); } .ds-jeton svg { width: .8em; height: .8em; } .ds-jeton:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--corail-fonce, #35387A); } .ds-jeton:active { transform: translateY(4px); box-shadow: 0 0 0 var(--corail-fonce, #35387A); }"
+    },
+    {
+      "name": "Filtres de domaine",
+      "kind": "chip",
+      "refersTo": "chip-filtre",
+      "description": "Pilules de filtre avec pastille ronde du domaine ; l'actif passe en encre.",
+      "html": "<div class=\"ds-filtres\"><button class=\"ds-filtre\" aria-pressed=\"true\">Tous</button><button class=\"ds-filtre\" aria-pressed=\"false\" style=\"--puce: #E8467C\"><svg class=\"ds-puce\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"var(--puce, currentColor)\" stroke=\"var(--encre, #111)\" stroke-width=\"2\"/></svg>Langage oral</button><button class=\"ds-filtre\" aria-pressed=\"false\" style=\"--puce: #2F6BE0\"><svg class=\"ds-puce\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"var(--puce, currentColor)\" stroke=\"var(--encre, #111)\" stroke-width=\"2\"/></svg>Langage écrit</button><button class=\"ds-filtre\" aria-pressed=\"false\" style=\"--puce: #FFD23F\"><svg class=\"ds-puce\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"var(--puce, currentColor)\" stroke=\"var(--encre, #111)\" stroke-width=\"2\"/></svg>Cognition mathématique</button></div>",
+      "css": ".ds-filtres { display: flex; flex-wrap: wrap; gap: 10px; padding: 16px; background: var(--cyan, #A3D9CB); } .ds-filtre { display: inline-flex; align-items: center; gap: 8px; font-family: \"Atkinson Hyperlegible\", system-ui, sans-serif; font-weight: 700; font-size: 1rem; color: var(--encre, #111); background: rgba(255, 255, 255, .55); border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; transition: background-color .2s, color .2s; } .ds-filtre:hover { background: #fff; } .ds-filtre[aria-pressed=\"true\"] { background: var(--encre, #111); color: #fff; } .ds-filtre:focus-visible { outline: 3px solid var(--encre, #111); outline-offset: 3px; } .ds-puce { width: .8em; height: .8em; flex: none; overflow: visible; font-size: 1.15rem; transition: transform .25s cubic-bezier(.16, 1, .3, 1); } .ds-filtre[aria-pressed=\"true\"] .ds-puce { transform: translateY(-2px); } .ds-filtre[aria-pressed=\"true\"] .ds-puce circle { stroke: #fff; }"
+    },
+    {
+      "name": "Carte de fiche jeu",
+      "kind": "card",
+      "refersTo": "carte-fiche",
+      "description": "Carte blanche arrondie 20 px, image 4:3 (ou aplat jaune avec le nom), nom en Fredoka, pastilles des domaines ; se soulève en penchant au survol.",
+      "html": "<a class=\"ds-fiche\" href=\"#\"><span class=\"ds-fiche-image\">Dobble</span><span class=\"ds-fiche-nom\">Dobble</span><span class=\"ds-fiche-puces\"><svg class=\"ds-puce\" viewBox=\"0 0 24 24\" style=\"--puce: #E8467C\" role=\"img\" aria-label=\"Langage oral\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"var(--puce)\" stroke=\"var(--encre, #111)\" stroke-width=\"2\"/></svg><svg class=\"ds-puce\" viewBox=\"0 0 24 24\" style=\"--puce: #2F6BE0\" role=\"img\" aria-label=\"Langage écrit\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"var(--puce)\" stroke=\"var(--encre, #111)\" stroke-width=\"2\"/></svg></span></a>",
+      "css": ".ds-fiche { display: flex; flex-direction: column; width: 260px; background: #fff; color: var(--encre, #111); border-radius: 20px; overflow: hidden; text-decoration: none; box-shadow: 0 2px 4px rgba(17, 60, 72, .06), 0 18px 40px -22px rgba(17, 60, 72, .35); transition: transform .3s cubic-bezier(.16, 1, .3, 1), box-shadow .3s cubic-bezier(.16, 1, .3, 1); } .ds-fiche:hover { transform: translateY(-6px) rotate(-1deg); box-shadow: 0 4px 8px rgba(17, 60, 72, .08), 0 28px 50px -24px rgba(17, 60, 72, .5); } .ds-fiche:focus-visible { outline: 3px solid var(--encre, #111); outline-offset: 3px; } .ds-fiche-image { display: grid; place-items: center; aspect-ratio: 4 / 3; background: var(--corail-vif, #E4AF1A); font-family: \"Fredoka\", system-ui, sans-serif; font-weight: 700; font-size: 2rem; line-height: 1; } .ds-fiche-nom { font-family: \"Fredoka\", system-ui, sans-serif; font-weight: 600; font-size: 1.5rem; line-height: 1.05; padding: 16px 18px 6px; } .ds-fiche-puces { display: flex; gap: 4px; padding: 4px 18px 18px; font-size: 1.3rem; } .ds-puce { width: .8em; height: .8em; overflow: visible; }"
+    },
+    {
+      "name": "Livret",
+      "kind": "card",
+      "refersTo": "panneau-livret",
+      "description": "Panneau blanc de lecture, rayon 32 px, sans ombre ni contour, sur le fond menthe.",
+      "html": "<div class=\"ds-fond\"><div class=\"ds-livret\"><h2>Les règles du jeu</h2><p>Je reçois les enfants de l'âge préscolaire au début du secondaire, en cabinet à Elouges et à Ath.</p><a class=\"ds-lien-fort\" href=\"#\">Mon parcours</a></div></div>",
+      "css": ".ds-fond { background: var(--cyan, #A3D9CB); padding: 16px; } .ds-livret { background: #fff; color: var(--encre, #111); border-radius: 32px; padding: 48px 40px; font-family: \"Atkinson Hyperlegible\", system-ui, sans-serif; font-size: 1.125rem; line-height: 1.6; } .ds-livret h2 { font-family: \"Fredoka\", system-ui, sans-serif; font-weight: 700; font-size: 2.4rem; line-height: 1; letter-spacing: -.015em; margin: 0 0 .5em; } .ds-livret p { margin: 0; max-width: 44rem; } .ds-lien-fort { display: inline-block; margin-top: 1.6em; font-family: \"Fredoka\", system-ui, sans-serif; font-weight: 600; font-size: 1.3rem; color: var(--corail-fonce, #35387A); text-decoration-thickness: 3px; text-underline-offset: .2em; text-decoration-color: var(--souligne-lien, #E4AF1A); } .ds-lien-fort:hover { color: var(--encre, #111); } .ds-lien-fort:focus-visible { outline: 3px solid var(--encre, #111); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Champ de formulaire",
+      "kind": "input",
+      "refersTo": "champ",
+      "description": "Champ menthe givrée arrondi 20 px ; bordure encre et fond blanc au focus, indigo si invalide.",
+      "html": "<label class=\"ds-champ\"><span class=\"ds-champ-libelle\">Votre e-mail</span><input type=\"email\" placeholder=\"prenom@exemple.be\" required></label>",
+      "css": ".ds-champ { display: grid; gap: 6px; font-family: \"Atkinson Hyperlegible\", system-ui, sans-serif; color: var(--encre, #111); max-width: 360px; } .ds-champ-libelle { font-weight: 700; } .ds-champ input { font: inherit; color: var(--encre, #111); background: var(--cyan-pale, #E6F4F0); border: 2px solid transparent; border-radius: 20px; padding: 14px 18px; caret-color: var(--corail, #464A96); transition: border-color .2s, background-color .2s; } .ds-champ input:hover { border-color: var(--cyan-fort, #8CC7B8); } .ds-champ input:focus { outline: none; border-color: var(--encre, #111); background: #fff; } .ds-champ input:user-invalid { border-color: var(--erreur, #B3261E); }"
+    },
+    {
+      "name": "Étiquette",
+      "kind": "chip",
+      "refersTo": "etiquette",
+      "description": "Pilule de catégorie dans les métadonnées d'articles.",
+      "html": "<span class=\"ds-etiquette\">Conseils aux parents</span>",
+      "css": ".ds-etiquette { display: inline-block; font-family: \"Atkinson Hyperlegible\", system-ui, sans-serif; font-weight: 700; font-size: .85rem; background: var(--etiquette, #F7DB84); color: var(--encre, #111); padding: 2px 12px; border-radius: 999px; }"
+    },
+    {
+      "name": "Frimousse",
+      "kind": "custom",
+      "refersTo": "frimousse",
+      "description": "Mascotte SVG provisoire : dôme au dégradé indigo, oreilles noires, pupilles qui suivent le pointeur. Dépasse du bas de l'accueil et du haut du pied.",
+      "html": "<div class=\"ds-scene\"><svg class=\"ds-frimousse\" viewBox=\"0 0 600 400\" aria-hidden=\"true\"><defs><linearGradient id=\"ds-peau\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" style=\"stop-color: var(--peau-1, #8A8FE0)\"/><stop offset=\".55\" style=\"stop-color: var(--peau-2, #5F64B8)\"/><stop offset=\"1\" style=\"stop-color: var(--peau-3, #464A96)\"/></linearGradient></defs><path d=\"M120 150 C 90 120, 70 80, 100 60 C 140 50, 170 90, 175 115 Z\" fill=\"var(--oreille, #111)\"/><path d=\"M480 150 C 510 120, 530 80, 500 60 C 460 50, 430 90, 425 115 Z\" fill=\"var(--oreille, #111)\"/><path d=\"M60 400 C 40 220, 150 90, 300 90 C 450 90, 560 220, 540 400 Z\" fill=\"url(#ds-peau)\"/><ellipse cx=\"225\" cy=\"250\" rx=\"34\" ry=\"44\" fill=\"#fff\"/><ellipse cx=\"375\" cy=\"250\" rx=\"34\" ry=\"44\" fill=\"#fff\"/><circle cx=\"230\" cy=\"238\" r=\"18\" fill=\"var(--encre, #111)\"/><circle cx=\"370\" cy=\"238\" r=\"18\" fill=\"var(--encre, #111)\"/><path d=\"M265 320 Q 300 360 335 320 Q 300 335 265 320 Z\" fill=\"var(--encre, #111)\"/></svg><div class=\"ds-panneau\"></div></div>",
+      "css": ".ds-scene { background: var(--cyan, #A3D9CB); padding: 24px 24px 0; text-align: center; } .ds-frimousse { display: block; width: 240px; height: auto; margin: 0 auto -12px; animation: ds-monte 1.1s cubic-bezier(.16, 1, .3, 1) .15s both; } .ds-panneau { position: relative; height: 40px; background: #fff; border-radius: 32px 32px 0 0; } @keyframes ds-monte { from { transform: translateY(40%); } } @media (prefers-reduced-motion: reduce) { .ds-frimousse { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La frimousse",
+    "overview": "Le site est doux, rond et curieux, comme l'identité d'une marque de livres jeunesse : une mascotte indigo aux oreilles noires dépasse du bas de l'accueil et du haut du pied de page, et regarde le visiteur. Tout est rond (pilules, panneaux très arrondis, pastilles, taches de fond), posé à plat sur un grand fond menthe, avec un texte noir franc, un accent indigo pour agir et quelques petites touches de jaune.\n\nLa densité reste basse : grands titres en Fredoka, lecture en Atkinson Hyperlegible dans des panneaux blancs sans contour, une colonne de 1180 px. Le mouvement est rare et doux : la frimousse monte une fois à l'arrivée, ses pupilles suivent le pointeur, les cartes se soulèvent en penchant à peine. Le site refuse le cabinet pastel « portrait + grille de services » et l'ancienne boîte de jeu verte.\n\nDeux palettes coexistent dans le code. **Menthe** est la palette par défaut (`:root`), choisie par l'utilisateur. **Cyan corail** reste en option, activée par `?palette=cyan` (gardée en sessionStorage, bloc `[data-palette=\"cyan\"]`), qui redéfinit les mêmes variables. Les noms de variables sont historiques : `--cyan` est le fond, `--corail` l'accent des boutons, `--jaune` les petites touches. Les composants n'utilisent que les variables, jamais les valeurs : toute nouvelle surface doit fonctionner dans les deux palettes.",
+    "keyCharacteristics": [
+      "Fond menthe plein avec de grandes taches ovales d'une menthe plus soutenue.",
+      "Texte noir franc ; un accent indigo réservé aux actions et à la mascotte.",
+      "Petites touches de jaune (point du logo, trait sous « joue », bandeau, étiquettes, page active), jamais sur la mascotte ni les boutons.",
+      "Panneaux blancs très arrondis, sans contour, pour la lecture.",
+      "Domaines repérés par une pastille ronde de couleur cerclée de noir.",
+      "Boutons pilules posés sur un aplat plus foncé de 4 px qui s'écrase au clic.",
+      "Mascotte « frimousse » en SVG, dessin provisoire en attendant une vraie illustration."
+    ],
+    "rules": [
+      {
+        "name": "La règle de l'accent unique",
+        "body": "Une seule couleur pour agir : l'indigo (le corail dans la palette cyan). Boutons, pilule de navigation et mascotte la partagent ; rien d'autre ne la prend en fond.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle des touches jaunes",
+        "body": "Le jaune ponctue (point, trait, bandeau, étiquette, sélection), il ne touche jamais la frimousse ni les boutons, et porte toujours du texte encre.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle de l'encre franche",
+        "body": "Le texte principal est noir (encre), sur menthe comme sur blanc. L'encre douce est réservée au texte secondaire ; aucun autre gris dans le contenu.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle des variables",
+        "body": "Une surface nouvelle utilise les variables (`--cyan`, `--cyan-fort`, `--cyan-pale`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`…) et jamais les hex, sinon elle casse l'autre palette. Les noms sont historiques et ne disent pas la couleur.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du zéro rond",
+        "body": "Les numéros de téléphone sont en Fredoka 600 (letter-spacing 0.01em) : le zéro barré d'Atkinson les faisait lire comme du code.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle du gras qui porte",
+        "body": "Liens de navigation, filtres, liens de texte et domaines sont en gras 700 ; la hiérarchie passe par la graisse et la police, pas par la couleur.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle du bouton qu'on enfonce",
+        "body": "Seuls les boutons ont un aplat dur, toujours vertical, de leur propre teinte foncée, jamais décalé en diagonale ni noir sur fond clair.",
+        "section": "elevation"
+      },
+      {
+        "name": "La règle des panneaux à plat",
+        "body": "Panneaux de lecture, bandeau et pied n'ont ni ombre ni contour.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do passer par les variables de palette (`--cyan`, `--corail`, `--corail-fonce`, `--jaune`, `--point`, `--etiquette`, `--surligne`) pour que menthe et cyan corail fonctionnent toutes les deux.",
+      "Do repérer un domaine par sa pastille ronde cerclée d'encre, à côté de son nom.",
+      "Do donner aux boutons l'aplat vertical de 4 px de leur teinte foncée, qui s'écrase à l'appui.",
+      "Do composer les numéros de téléphone en Fredoka 600 (`.tel`).",
+      "Do garder trois rayons : 32 px pour les panneaux, 20 px pour l'intérieur, pilule pour ce qui se clique.",
+      "Do respecter `prefers-reduced-motion` : animations et transitions coupées, pupilles immobiles."
+    ],
+    "donts": [
+      "Don't utiliser de pions ni de dés pour représenter les domaines (refusés par l'utilisateur).",
+      "Don't revenir à la boîte de jeu verte ni au cabinet pastel « portrait + grille de services ».",
+      "Don't mettre de contour ou d'ombre sur les panneaux de lecture.",
+      "Don't écrire le texte principal en gris : encre noire, encre douce seulement pour le secondaire.",
+      "Don't utiliser les couleurs des domaines ailleurs que dans les pastilles.",
+      "Don't mettre le jaune sur la frimousse ni sur les boutons."
+    ]
+  }
+}

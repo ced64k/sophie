@@ -18,8 +18,8 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 
 ## Décisions de design (ne pas rouvrir sans demande)
 
-- Direction « frimousse » (inspirée de l'identité « nook »), palette « cyan corail » : fond cyan #A9E4EF avec taches #93D8E6, texte noir #111 (pas de gris), boutons rouge corail #D2381F, panneaux blancs très arrondis sans contour. L'ancienne boîte de jeu verte est abandonnée.
-- La frimousse (`_includes/components/frimousse.njk`) : mascotte SVG corail aux oreilles noires qui dépasse du bas de l'accueil et du haut du pied de page ; ses pupilles suivent le pointeur sur l'accueil. C'est un dessin provisoire, à remplacer par une vraie illustration si Sophie en commande une.
+- Direction « frimousse » (inspirée de l'identité « nook »), palette **« menthe » par défaut** : fond menthe #A3D9CB avec taches #8CC7B8, texte noir #111 (pas de gris), boutons indigo #464A96, frimousse indigo, petites touches de jaune #E4AF1A (trait sous « joue », point du logo, bandeau jeux en ligne, étiquettes) mais jamais sur la frimousse ni les boutons ; panneaux blancs très arrondis sans contour. Palette « cyan corail » (fond #A9E4EF, boutons #D2381F, frimousse corail) disponible via `?palette=cyan` (bloc `[data-palette="cyan"]`). Les noms de variables CSS sont historiques (`--cyan` = fond, `--corail` = boutons). L'ancienne boîte de jeu verte est abandonnée.
+- La frimousse (`_includes/components/frimousse.njk`) : mascotte SVG (couleurs par variables `--peau-*`, `--oreille`) aux oreilles noires qui dépasse du bas de l'accueil et du haut du pied de page ; ses pupilles suivent le pointeur sur l'accueil. C'est un dessin provisoire, à remplacer par une vraie illustration si Sophie en commande une.
 - Logo « sophie » en Fredoka, avec un point dans le « o ».
 - Boutons : aplat plus foncé de 4 px sous chaque bouton (ombre « vectorielle », sans flou), qui s'écrase au clic.
 - Accueil : un seul bouton « Prendre contact », **pas de numéros de téléphone** (ils sont dans le pied de page et sur /contact/). Le premier écran doit tenir dans la fenêtre sur ordinateur, liste des domaines comprise.
@@ -31,7 +31,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 
 ## Organisation du code
 
-- Données : `_data/domaines.json` (6 domaines, couleurs), `_data/lieux.json` (Elouges, Ath), `_data/classement.json`
+- Données : `_data/domaines.json` (5 domaines, couleurs), `_data/lieux.json` (Elouges, Ath), `_data/classement.json`
   (catégories WordPress des articles → domaines, publics, thèmes). Ne pas nommer une donnée globale `categories` :
   elle écraserait le champ `categories` des articles.
 - Les domaines d'une fiche jeu sont déduits de ses titres `##` (filtres dans `.eleventy.js`).
@@ -44,5 +44,5 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 2. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
 3. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
 4. Redirections des anciennes pages `/authors/…` vers `/qui-suis-je/` (nécessite nginx, donc depuis le Mac).
-5. Palette d'essai « menthe » (`?palette=menthe`, bloc `[data-palette="menthe"]` dans `site.css`) : à garder ou supprimer selon le choix de l'utilisateur.
+5. Palette « cyan corail » en paramètre (`?palette=cyan`) : à supprimer quand l'utilisateur n'en aura plus besoin.
 6. DESIGN.md (agent `impeccable-documenter`) une fois la palette arrêtée.

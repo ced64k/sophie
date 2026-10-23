@@ -27,29 +27,31 @@
 }
 
 :root {
-  --cyan: #A9E4EF;
-  --cyan-fort: #93D8E6;
-  --cyan-pale: #E4F6FA;
-  --corail: #D2381F;
-  --corail-fonce: #B02C15;
-  --corail-vif: #E2402F;
+  /* Palette « menthe » (par défaut). Les noms sont historiques :
+     --cyan = fond, --corail = boutons et accents, --jaune = petites touches */
+  --cyan: #A3D9CB;
+  --cyan-fort: #8CC7B8;
+  --cyan-pale: #E6F4F0;
+  --corail: #464A96;
+  --corail-fonce: #35387A;
+  --corail-vif: #E4AF1A;
   --encre: #111111;
-  --encre-douce: #3A4447;
+  --encre-douce: #33443F;
   --blanc: #FFFFFF;
-  --peau-1: #FF9A85;
-  --peau-2: #F2604A;
-  --peau-3: #E2402F;
+  --erreur: #B3261E;
+  --peau-1: #8A8FE0;
+  --peau-2: #5F64B8;
+  --peau-3: #464A96;
   --oreille: var(--encre);
-  --jaune: var(--corail);
-  --bandeau-texte: var(--blanc);
-  /* Petites touches (jaunes dans la palette menthe) */
-  --point: var(--cyan);
-  --surligne: transparent;
-  --etiquette: var(--cyan);
-  --selection: var(--encre);
-  --selection-texte: var(--cyan);
-  --souligne-lien: currentColor;
-  --pied-survol: var(--cyan);
+  --jaune: #E4AF1A;
+  --bandeau-texte: var(--encre);
+  --point: #E4AF1A;
+  --surligne: #F2C94C;
+  --etiquette: #F7DB84;
+  --selection: #F2C94C;
+  --selection-texte: var(--encre);
+  --souligne-lien: #E4AF1A;
+  --pied-survol: #F2C94C;
 
   --titre: "Fredoka", "Atkinson Hyperlegible", system-ui, sans-serif;
   --texte: "Atkinson Hyperlegible", system-ui, sans-serif;
@@ -65,28 +67,27 @@
   --sortie: cubic-bezier(.16, 1, .3, 1);
 }
 
-/* Palette d'essai « menthe » (?palette=menthe dans l'adresse) */
-[data-palette="menthe"] {
-  --cyan: #A3D9CB;
-  --cyan-fort: #8CC7B8;
-  --cyan-pale: #E6F4F0;
-  --corail: #464A96;
-  --corail-fonce: #35387A;
-  --corail-vif: #E4AF1A;
-  --encre-douce: #33443F;
-  --peau-1: #8A8FE0;
-  --peau-2: #5F64B8;
-  --peau-3: #464A96;
-  --oreille: #111111;
-  --jaune: #E4AF1A;
-  --bandeau-texte: #111111;
-  --point: #E4AF1A;
-  --surligne: #F2C94C;
-  --etiquette: #F7DB84;
-  --selection: #F2C94C;
-  --selection-texte: #111111;
-  --souligne-lien: #E4AF1A;
-  --pied-survol: #F2C94C;
+/* Palette « cyan corail » (?palette=cyan dans l'adresse) */
+[data-palette="cyan"] {
+  --cyan: #A9E4EF;
+  --cyan-fort: #93D8E6;
+  --cyan-pale: #E4F6FA;
+  --corail: #D2381F;
+  --corail-fonce: #B02C15;
+  --corail-vif: #E2402F;
+  --encre-douce: #3A4447;
+  --peau-1: #FF9A85;
+  --peau-2: #F2604A;
+  --peau-3: #E2402F;
+  --jaune: var(--corail);
+  --bandeau-texte: var(--blanc);
+  --point: var(--cyan);
+  --surligne: transparent;
+  --etiquette: var(--cyan);
+  --selection: var(--encre);
+  --selection-texte: var(--cyan);
+  --souligne-lien: currentColor;
+  --pied-survol: var(--cyan);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -889,7 +890,7 @@ p { margin: 0; }
 }
 .champ input:hover, .champ textarea:hover { border-color: var(--cyan-fort); }
 .champ input:focus, .champ textarea:focus { outline: none; border-color: var(--encre); background: var(--blanc); }
-.champ input:user-invalid, .champ textarea:user-invalid { border-color: var(--corail); }
+.champ input:user-invalid, .champ textarea:user-invalid { border-color: var(--erreur); }
 .aide { font-size: .92rem; color: var(--encre-douce); }
 .piege { position: absolute; left: -9999px; }
 .formulaire .bouton { justify-self: start; }
