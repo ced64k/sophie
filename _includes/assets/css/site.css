@@ -96,7 +96,7 @@ body {
   font-family: var(--texte);
   font-size: clamp(1.0625rem, 1rem + .3vw, 1.1875rem);
   line-height: 1.6;
-  padding: clamp(8px, 1.2vw, 16px);
+  padding: var(--marge-page);
 }
 
 ::selection { background: var(--selection); color: var(--selection-texte); }
@@ -1153,6 +1153,14 @@ p { margin: 0; }
 }
 @media (max-width: 760px) {
   .regles-liste { grid-template-columns: 1fr; }
+}
+
+/* Téléphone : une seule marge de 16 px entre le bord de l'écran et tous les blocs (panneaux, cartes, textes, en-tête) */
+@media (max-width: 600px) {
+  :root { --marge-page: 16px; --bord: 0px; }
+  .etagere, .rayon { padding-inline: 0; }
+  .accueil-face, .titre-page { padding-inline: 0; }
+  .pied { padding-inline: var(--gouttiere); }
 }
 
 /* ——— Transitions de filtre ——— */
