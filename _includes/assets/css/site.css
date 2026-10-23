@@ -48,10 +48,10 @@
   --encre-douce: #33443F;
   --blanc: #FFFFFF;
   --erreur: #B3261E;
-  --peau-1: #8A8FE0;
-  --peau-2: #5F64B8;
-  --peau-3: #464A96;
-  --oreille: var(--encre);
+  --koala-visage: #A5A8D5;
+  --koala-oreille: #9295CA;
+  --koala-creux: #D5D0E9;
+  --koala-oeil: #262E59;
   --jaune: #E4AF1A;
   --bandeau-texte: var(--encre);
   --point: #E4AF1A;
@@ -60,6 +60,8 @@
   --selection: #F2C94C;
   --selection-texte: var(--encre);
   --souligne-lien: #E4AF1A;
+  /* Texture de tissu, posée en overlay sur les aplats de couleur (voir .grain) */
+  --tex: url("/static/img/fabric-texture-gris.webp");
   --pied-survol: #F2C94C;
 
   --titre: "Fredoka", "Atkinson Hyperlegible", system-ui, sans-serif;
@@ -87,7 +89,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--cyan);
+  /* Texture de tissu en mode incrustation (overlay) sur la couleur de fond, à demi-échelle */
+  background: var(--tex) 0 0 / 250px auto, var(--cyan);
+  background-blend-mode: overlay, normal;
   color: var(--encre);
   font-family: var(--texte);
   font-size: clamp(1.0625rem, 1rem + .3vw, 1.1875rem);
@@ -152,10 +156,22 @@ p { margin: 0; }
 
 /* Nom du domaine surligné au marqueur dans sa couleur */
 .marque {
-  background: linear-gradient(color-mix(in srgb, var(--puce) 55%, white) 0 0) 0 90% / 100% .55em no-repeat;
+  position: relative;
+  isolation: isolate;
   padding-inline: .1em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+}
+.marque::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: calc((100% - .55em) * .9);
+  height: .55em;
+  background-color: color-mix(in srgb, var(--puce) 55%, white);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
 }
 
 /* ——— En-tête ——— */
@@ -177,20 +193,22 @@ p { margin: 0; }
   letter-spacing: -.02em;
   text-decoration: none;
 }
-/* Le petit point dans le « o » */
+/* Fond jaune du « o » : un disque derrière la lettre, visible par son creux */
 .logo b {
   position: relative;
+  z-index: 0;
   display: inline-block;
   font-weight: inherit;
 }
-.logo b::after {
+.logo b::before {
   content: "";
   position: absolute;
+  z-index: -1;
   left: 50%;
-  bottom: .22em;
-  width: .19em;
-  height: .19em;
-  margin-left: -.095em;
+  bottom: .2em;
+  width: .32em;
+  height: .34em;
+  margin-left: -.156em;
   border-radius: 50%;
   background: var(--point);
 }
@@ -231,7 +249,10 @@ p { margin: 0; }
   right: -.15em;
   bottom: .45em;
   height: .42em;
-  background: var(--surligne);
+  background-color: var(--surligne);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
   border-radius: .12em .3em .15em .25em;
   rotate: -1.5deg;
 }
@@ -240,7 +261,10 @@ p { margin: 0; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--corail);
+  background-color: var(--corail);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
   color: var(--blanc);
   font-weight: 700;
   text-decoration: none;
@@ -299,12 +323,25 @@ p { margin: 0; }
 .tache {
   position: absolute;
   z-index: -1;
-  background: var(--cyan-fort);
+  background: var(--tex) 0 0 / 250px auto, var(--cyan-fort);
+  background-blend-mode: overlay, normal;
   border-radius: 50%;
   pointer-events: none;
+  will-change: translate;
 }
 .tache-1 { left: -8vw; top: 42%; width: clamp(220px, 30vw, 440px); aspect-ratio: 1.4; }
 .tache-2 { right: -6vw; top: 12%; width: clamp(200px, 26vw, 380px); aspect-ratio: 1.4; border-radius: 60% 40% 50% 50%; }
+
+/* Les sections sous l'accueil : un calque d'ovales en fond, sur toute la hauteur */
+.suite-accueil {
+  position: relative;
+  isolation: isolate;
+  margin-inline: calc(-1 * var(--marge-page));
+  padding-inline: var(--marge-page);
+  overflow-x: clip;
+}
+
+.suite-page { overflow: clip; }
 
 .accueil-face {
   /* Prend l'espace libre entre le menu et le bas de l'accueil, et s'y centre verticalement */
@@ -327,13 +364,41 @@ p { margin: 0; }
 
 /* Trait jaune sous un mot du titre */
 .surligne {
-  background: linear-gradient(var(--surligne) 0 0) 0 88% / 100% .16em no-repeat;
+  position: relative;
+  isolation: isolate;
   padding-inline: .04em;
 }
+.surligne::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: calc((100% - .16em) * .88);
+  height: .16em;
+  background-color: var(--surligne);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
+}
+
+.lieu { white-space: nowrap; }
+.pin {
+  display: inline-block;
+  width: 1em;
+  height: 1.25em;
+  margin-right: .15em;
+  vertical-align: -.26em;
+  rotate: -8deg;
+  overflow: visible;
+}
+.lieu + .lieu .pin, .pin:nth-of-type(2n) { rotate: 7deg; }
+.pin-corps { fill: var(--pin-corps, var(--corail)); }
+.pin-trou { fill: var(--pin-trou, var(--jaune)); }
 
 .accueil-intro {
   max-width: 52ch;
-  margin-top: clamp(16px, 3.4vh, 40px);
+  margin-top: calc(clamp(16px, 3.4vh, 40px) + 5px);
   font-size: clamp(1.0625rem, 2.6vh, 1.25rem);
 }
 
@@ -356,7 +421,7 @@ p { margin: 0; }
 .accueil-pied {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr minmax(200px, min(560px, 46vh)) 1fr;
+  grid-template-columns: 1fr minmax(260px, min(900px, 72vh));
   align-items: end;
   gap: 24px;
   padding: 0 var(--bord) clamp(16px, 3.2vh, 40px);
@@ -366,14 +431,21 @@ p { margin: 0; }
 .accueil-pied .frimousse {
   grid-column: 2;
   grid-row: 1;
-  /* Le bas de la frimousse passe derrière le panneau suivant */
+  /* Le koala est à droite ; son bas passe derrière le panneau suivant */
   margin-bottom: calc(-1 * clamp(16px, 3.2vh, 40px));
-  translate: 0 20%;
+  /* Plus grand, mais sans pousser la liste des domaines hors de la fenêtre */
+  margin-top: -9.5vh;
+  translate: 0 24%;
   animation: monte 1.1s var(--sortie) .15s both;
 }
 @keyframes monte {
   from { transform: translateY(40%); }
 }
+.koala-visage { fill: var(--koala-visage); }
+.koala-oreille { fill: var(--koala-oreille); }
+.koala-creux { fill: var(--koala-creux); }
+.koala-oeil, .koala-nez { fill: var(--koala-oeil); }
+.koala-reflet { fill: var(--blanc); }
 .pupille { transition: transform .35s var(--sortie); }
 
 .accueil-infos { display: contents; }
@@ -399,23 +471,6 @@ p { margin: 0; }
 .legende a:hover { text-decoration: underline; }
 .legende .puce { font-size: 1.2rem; }
 
-.accueil-lieux {
-  grid-column: 3;
-  grid-row: 1;
-  text-align: right;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-.lieu-structure {
-  font-family: var(--titre);
-  font-weight: 600;
-  font-size: 1.3rem;
-  line-height: 1.15;
-}
-
 /* Sur tablette et téléphone : la frimousse suit les boutons et se cache derrière le panneau des domaines */
 @media (max-width: 860px) {
   .accueil { min-height: 0; }
@@ -423,26 +478,25 @@ p { margin: 0; }
   .accueil-pied .frimousse {
     position: relative;
     z-index: 0;
-    width: min(72%, 380px, 40vh);
-    margin: 0 auto -19%;
+    width: min(86%, 460px, 46vh);
+    margin: 0 auto -18%;
     translate: none;
   }
   .accueil-infos {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px 24px;
     background: var(--blanc);
     border-radius: var(--rayon);
     padding: 26px var(--gouttiere);
   }
-  .legende, .accueil-lieux { grid-row: auto; grid-column: auto; }
+  .legende { grid-row: auto; grid-column: auto; }
 }
 @media (max-width: 520px) {
   .accueil-actions { flex-direction: column; align-items: stretch; width: 100%; }
   .accueil-infos { grid-template-columns: 1fr; }
-  .accueil-lieux { text-align: left; }
 }
 
 /* ——— Bouton ——— */
@@ -452,7 +506,10 @@ p { margin: 0; }
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background: var(--corail);
+  background-color: var(--corail);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
   color: var(--blanc);
   font-family: var(--titre);
   font-weight: 600;
@@ -470,7 +527,7 @@ p { margin: 0; }
 }
 .bouton:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--bouton-ombre); }
 .bouton:active { transform: translateY(4px); box-shadow: 0 0 0 var(--bouton-ombre); }
-.bouton-encre { background: var(--encre); --bouton-ombre: rgba(0, 0, 0, .35); }
+.bouton-encre { background-color: var(--encre); --bouton-ombre: rgba(0, 0, 0, .35); }
 
 /* ——— Livret (panneau blanc de lecture) ——— */
 
@@ -487,9 +544,33 @@ p { margin: 0; }
 .livret-page.large > * { max-width: 62rem; }
 .livret-page > h1, .livret-page > h2 { margin-bottom: .5em; }
 
+.titre-page {
+  max-width: 1180px;
+  margin: clamp(20px, 4vw, 56px) auto clamp(24px, 3.4vw, 44px);
+  padding-inline: var(--gouttiere);
+  text-align: center;
+}
+.titre-page h1 {
+  max-width: 20ch;
+  margin-inline: auto;
+  font-size: clamp(2.2rem, 1.5rem + 3.2vw, 4rem);
+}
+
+.titre-intro {
+  max-width: 60ch;
+  margin: clamp(12px, 1.6vw, 20px) auto 0;
+  font-size: 1.1rem;
+}
+.titre-meta { margin-top: clamp(14px, 1.8vw, 22px); }
+.titre-meta .etiquette {
+  display: inline-block;
+  font-size: 1.05rem;
+  padding: 5px 16px;
+}
+
 .auteur {
   color: var(--encre-douce);
-  margin-top: -.2em;
+  margin-top: 0;
   margin-bottom: 2em;
 }
 
@@ -533,9 +614,23 @@ p { margin: 0; }
   color: var(--encre);
   text-decoration: none;
   margin-top: 1.6em;
-  /* Trait jaune au marqueur sous le texte ; il s'arrête avant la flèche */
-  background: linear-gradient(var(--surligne) 0 0) 0 88% / calc(100% - 1.15em) .4em no-repeat;
+  position: relative;
+  isolation: isolate;
   transition: color .2s var(--sortie);
+}
+/* Trait jaune au marqueur sous le texte ; il s'arrête avant la flèche */
+.lien-fort::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  width: calc(100% - 1.15em);
+  top: calc((100% - .4em) * .88);
+  height: .4em;
+  background-color: var(--surligne);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
 }
 .lien-fort::after, .suite a::after {
   content: "";
@@ -678,17 +773,20 @@ p { margin: 0; }
   position: absolute;
   z-index: -1;
   inset: 18% 2px 12%;
-  background: rgba(255, 255, 255, .55);
+  background-color: color-mix(in srgb, var(--cyan) 45%, white);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
   border-radius: .2em .55em .3em .45em;
   rotate: -1deg;
   transition: background-color .2s;
 }
 .filtre:nth-child(2n)::before { rotate: .8deg; border-radius: .45em .25em .5em .2em; }
-.filtre:hover::before { background: var(--blanc); }
-.filtre[aria-pressed="true"]::before { background: var(--surligne); }
-.filtre[style*="--puce"]::before { background: color-mix(in srgb, var(--puce) 38%, white); }
-.filtre[style*="--puce"]:hover::before { background: color-mix(in srgb, var(--puce) 58%, white); }
-.filtre[style*="--puce"][aria-pressed="true"]::before { background: color-mix(in srgb, var(--puce) 82%, white); }
+.filtre:hover::before { background-color: var(--blanc); }
+.filtre[aria-pressed="true"]::before { background-color: var(--surligne); }
+.filtre[style*="--puce"]::before { background-color: color-mix(in srgb, var(--puce) 38%, white); }
+.filtre[style*="--puce"]:hover::before { background-color: color-mix(in srgb, var(--puce) 58%, white); }
+.filtre[style*="--puce"][aria-pressed="true"]::before { background-color: color-mix(in srgb, var(--puce) 82%, white); }
 .filtre[aria-pressed="true"] .puce { transform: translateY(-2px); }
 .filtre .puce { transition: transform .25s var(--sortie); font-size: 1.15rem; }
 
@@ -750,7 +848,10 @@ p { margin: 0; }
   position: absolute;
   z-index: -1;
   inset: 12% 1px 8%;
-  background: var(--etiquette);
+  background-color: var(--etiquette);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
   border-radius: .2em .55em .3em .45em;
   rotate: -1.2deg;
 }
@@ -765,7 +866,7 @@ p { margin: 0; }
   margin-top: 6px;
   text-wrap: balance;
 }
-.article-lien:hover .article-titre { color: var(--corail-fonce); text-decoration: underline; text-decoration-thickness: 3px; }
+.article-lien:hover .article-titre { color: var(--corail-fonce); }
 
 .article-extrait {
   display: block;
@@ -952,7 +1053,10 @@ p { margin: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 20px 40px;
-  background: var(--jaune);
+  background-color: var(--jaune);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
   color: var(--bandeau-texte);
   border-radius: var(--rayon);
   padding: clamp(32px, 5vw, 64px) var(--gouttiere);
@@ -967,7 +1071,7 @@ p { margin: 0; }
   position: relative;
   margin-top: clamp(90px, 10vw, 140px);
   background: var(--encre);
-  color: var(--blanc);
+  color: #CBD2D4;
   border-radius: var(--rayon);
   padding: clamp(36px, 4vw, 60px) var(--bord) 28px;
   font-size: .98rem;
@@ -976,9 +1080,10 @@ p { margin: 0; }
   position: absolute;
   right: clamp(24px, 8vw, 120px);
   bottom: 100%;
-  width: clamp(130px, 14vw, 190px);
-  margin-bottom: -2px;
-  clip-path: inset(0 0 2px 0);
+  z-index: -1;
+  width: clamp(150px, 16vw, 220px);
+  /* Le bas du koala se cache derrière le pied de page */
+  translate: 0 22%;
 }
 .pied-grille {
   display: grid;
@@ -986,6 +1091,7 @@ p { margin: 0; }
   gap: 28px 40px;
 }
 .pied-nom, .pied-titre {
+  color: var(--blanc);
   font-family: var(--titre);
   font-weight: 600;
   font-size: 1.3rem;
@@ -994,16 +1100,67 @@ p { margin: 0; }
 .pied p + p { margin-top: 8px; }
 .pied .tel { color: inherit; }
 .pied a:hover { color: var(--pied-survol); }
+.pied .pied-reseau {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  border-bottom: 0;
+}
+.pied-reseau svg { width: 24px; height: 24px; }
+.pied-reseau:hover svg { rotate: -6deg; }
+/* Sur le fond noir du pied de page, l'épingle prend le jaune */
+.pied { --pin-corps: var(--jaune); --pin-trou: var(--encre); }
 .pied-droits {
   margin-top: 32px;
   padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, .2);
   font-size: .88rem;
-  color: #C8D3D6;
+  color: #A9B3B6;
+}
+
+/* Les règles du jeu : 4 paragraphes en 2 colonnes, chacun précédé d'une pastille jaune avec une coche */
+.regles .livret-page > .regles-liste { max-width: none; }
+.regles-liste {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px) clamp(28px, 4vw, 56px);
+  margin-top: clamp(20px, 2.4vw, 32px);
+}
+.regles .livret-page .regles-liste > p {
+  position: relative;
+  margin-top: 0;
+  padding-left: 3.1rem;
+}
+.regles-liste > p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .1em;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 58% 42% 52% 48% / 48% 56% 44% 52%;
+  rotate: -6deg;
+  background-color: var(--jaune);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5.5 12.8l4.2 4.2 8.8-9.6' fill='none' stroke='%23111' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"), var(--tex);
+  background-size: 62% 62%, 250px auto;
+  background-position: center, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-blend-mode: normal, overlay;
+}
+.regles-liste > p:nth-child(2n)::before {
+  rotate: 5deg;
+  border-radius: 46% 54% 44% 56% / 55% 45% 55% 45%;
+}
+@media (max-width: 760px) {
+  .regles-liste { grid-template-columns: 1fr; }
 }
 
 /* ——— Transitions de filtre ——— */
 
+/* Fondu entre deux pages (navigateurs qui gèrent les transitions de page) ; l'en-tête reste en place */
+@view-transition { navigation: auto; }
+.bord { view-transition-name: entete; }
+::view-transition-group(entete) { animation-duration: 0s; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
 
 @media (prefers-reduced-motion: reduce) {

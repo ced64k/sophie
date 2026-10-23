@@ -13,13 +13,24 @@
 			</symbol>
 		</svg>
 
+		{# Épingle de carte, à côté des lieux (couleurs par le CSS) #}
+		<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+			<symbol id="pin" viewBox="0 0 24 30">
+				<path class="pin-corps" d="M12 1.2C6.3 1.2 2 5.5 2 11c0 6.9 7.1 13.6 9.2 17.1.4.7 1.3.7 1.7 0C15 24.6 22 17.9 22 11 22 5.5 17.7 1.2 12 1.2z"/>
+				<circle class="pin-trou" cx="12" cy="11" r="4.1"/>
+			</symbol>
+		</svg>
+
 		{% if section != "home" %}
+		<div class="suite-accueil suite-page">
+			{% include "components/taches.njk" %}
 			{% include "components/entete.njk" %}
 		{% endif %}
 
 		<main id="contenu">
 			{{ layoutContent | safe }}
 		</main>
+		{% if section != "home" %}</div>{% endif %}
 
 		{% include "components/footer.njk" %}
 
@@ -31,6 +42,34 @@
 					b.setAttribute("aria-expanded", ouvert ? "false" : "true");
 				});
 			});
+
+		// Les grandes taches défilent à une autre vitesse que le reste (parallaxe)
+		(function () {
+			var taches = Array.prototype.slice.call(document.querySelectorAll("[data-parallaxe]"));
+			if (!taches.length || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+			var attente = false;
+			function placer() {
+				attente = false;
+				taches.forEach(function (t) {
+					var f = parseFloat(t.dataset.parallaxe), d;
+					if (t.hasAttribute("data-relatif")) {
+						// Plus bas dans la page : l'écart se mesure depuis le centre de la fenêtre
+						var r = t.getBoundingClientRect();
+						var centre = r.top + r.height / 2 - (t._dec || 0);
+						d = (innerHeight / 2 - centre) * f;
+					} else {
+						d = Math.min(scrollY, innerHeight * 1.2) * f;
+					}
+					t._dec = d;
+					t.style.translate = "0 " + d.toFixed(1) + "px";
+				});
+			}
+			addEventListener("scroll", function () {
+				if (!attente) { attente = true; requestAnimationFrame(placer); }
+			}, { passive: true });
+			addEventListener("resize", placer);
+			placer();
+		})();
 		</script>
 
 		{% if filtres %}

@@ -4,14 +4,14 @@ section: home
 ---
 
 <section class="accueil" aria-labelledby="titre-accueil">
-	<span class="tache tache-1" aria-hidden="true"></span>
-	<span class="tache tache-2" aria-hidden="true"></span>
+	<span class="tache tache-1" data-parallaxe=".38" aria-hidden="true"></span>
+	<span class="tache tache-2" data-parallaxe="-.16" aria-hidden="true"></span>
 
 	{% include "components/entete.njk" %}
 
 	<div class="accueil-face">
 		<h1 id="titre-accueil">La logopédie, ça se <span class="surligne">joue</span>&nbsp;!</h1>
-		<p class="accueil-intro">Sophie Lenaerts, {{ intro | replace('Logopède ', 'logopède ') }} Conventionnée INAMI.</p>
+		<p class="accueil-intro">Sophie Lenaerts, {{ intro | replace('Logopède ', 'logopède ') | replace('Elouges', '<span class="lieu"><svg class="pin" aria-hidden="true" focusable="false"><use href="#pin"/></svg>Elouges</span>') | replace('Ath', '<span class="lieu"><svg class="pin" aria-hidden="true" focusable="false"><use href="#pin"/></svg>Ath</span>') | safe }} Conventionnée INAMI.</p>
 		<div class="accueil-actions">
 			<a class="bouton" href="/contact/">Prendre contact</a>
 		</div>
@@ -30,19 +30,26 @@ section: home
 			</ul>
 		</nav>
 
-		<ul class="accueil-lieux" aria-label="Où consulter">
-			{% for lieu in lieux | reverse %}
-				<li><p class="lieu-structure">{{ lieu.structure }}</p><p>{{ lieu.ville }}</p></li>
-			{% endfor %}
-		</ul>
 		</div>
 	</div>
 </section>
 
+<div class="suite-accueil">
+	<span class="tache tache-page tache-3" data-parallaxe="-.22" data-relatif style="right:-7vw;top:5%;width:clamp(160px,20vw,300px);aspect-ratio:1.2;border-radius:50% 50% 45% 55%" aria-hidden="true"></span>
+	<span class="tache tache-page tache-4" data-parallaxe=".3" data-relatif style="left:-9vw;top:17%;width:clamp(120px,15vw,230px);aspect-ratio:1.5;border-radius:60% 40% 50% 50%" aria-hidden="true"></span>
+	<span class="tache tache-page tache-5" data-parallaxe=".18" data-relatif style="right:-10vw;top:30%;width:clamp(240px,32vw,480px);aspect-ratio:1.3;border-radius:45% 55% 60% 40%" aria-hidden="true"></span>
+	<span class="tache tache-page tache-6" data-parallaxe="-.28" data-relatif style="left:-5vw;top:44%;width:clamp(100px,12vw,180px);aspect-ratio:1;border-radius:50%" aria-hidden="true"></span>
+	<span class="tache tache-page tache-7" data-parallaxe=".32" data-relatif style="right:-6vw;top:57%;width:clamp(140px,18vw,270px);aspect-ratio:1.6;border-radius:55% 45% 50% 50%" aria-hidden="true"></span>
+	<span class="tache tache-page tache-8" data-parallaxe="-.14" data-relatif style="left:-12vw;top:68%;width:clamp(260px,34vw,500px);aspect-ratio:1.35;border-radius:50% 50% 40% 60%" aria-hidden="true"></span>
+	<span class="tache tache-page tache-9" data-parallaxe="-.3" data-relatif style="right:-4vw;top:82%;width:clamp(110px,14vw,210px);aspect-ratio:1.1;border-radius:60% 40% 55% 45%" aria-hidden="true"></span>
+	<span class="tache tache-page tache-10" data-parallaxe=".22" data-relatif style="left:-6vw;top:93%;width:clamp(150px,19vw,280px);aspect-ratio:1.5;border-radius:50% 50% 55% 45%" aria-hidden="true"></span>
+
 <section class="regles livret" aria-labelledby="titre-regles">
 	<div class="livret-page">
-		<h2 id="titre-regles">Les règles du jeu</h2>
-		{{ layoutContent | safe }}
+		<h2 id="titre-regles">Mon approche</h2>
+		<div class="regles-liste">
+			{{ layoutContent | safe }}
+		</div>
 		<p><a class="lien-fort" href="/qui-suis-je/">Mon parcours</a></p>
 	</div>
 </section>
@@ -52,6 +59,7 @@ section: home
 		<h2 id="titre-etagere">Les jeux du commerce et leur utilisation en séances</h2>
 		<p>Chaque fiche détourne un jeu qu'on trouve en magasin, domaine par domaine, pour que les parents puissent le refaire à la maison.</p>
 	</div>
+	{% set sousLaFlottaison = true %}
 	{% set fiches = collections.jeux %}
 	{% include "components/fiches.njk" %}
 	<p class="section-pied"><a class="lien-fort" href="/jeux/">Toutes les fiches jeux</a></p>
@@ -74,9 +82,10 @@ section: home
 	</div>
 	<a class="bouton bouton-encre" href="{{ metadata.jeuxEnLigne }}">Ouvrir les jeux en ligne</a>
 </section>
+</div>
 
 <script>
-	// Les yeux de la frimousse suivent le pointeur
+	// Les reflets des yeux du koala suivent le pointeur
 	(function () {
 		var f = document.querySelector(".accueil .frimousse");
 		if (!f || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -90,8 +99,8 @@ section: home
 				var r = f.getBoundingClientRect();
 				var dx = (e.clientX - (r.left + r.width / 2)) / innerWidth;
 				var dy = (e.clientY - (r.top + r.height * .6)) / innerHeight;
-				var x = Math.max(-1, Math.min(1, dx * 2)) * 10;
-				var y = Math.max(-1, Math.min(1, dy * 2)) * 14;
+				var x = Math.max(-1, Math.min(1, dx * 2)) * 6;
+				var y = Math.max(-1, Math.min(1, dy * 2)) * 6;
 				pupilles.forEach(function (p) { p.style.transform = "translate(" + x + "px," + y + "px)"; });
 			});
 		}, { passive: true });

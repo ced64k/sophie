@@ -18,9 +18,9 @@ eleventyComputed:
 ---
 
 <div class="rayon">
-	<div class="section-tete">
+	<header class="titre-page">
 		<h1>Articles « {{ tag }} »</h1>
-	</div>
+	</header>
 	<div class="livret-page large liste-articles">
 		{% set articles = collections[tag] | reverse %}
 		{% include "components/articles.njk" %}

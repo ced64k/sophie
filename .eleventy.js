@@ -2,6 +2,9 @@ const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
+const sharp = require("sharp");
+const fs = require("fs");
+const path = require("path");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const classement = require("./_data/classement.json");
 const domaines = require("./_data/domaines.json");
@@ -121,6 +124,24 @@ module.exports = function(eleventyConfig) {
 
   // Retrouve un domaine par son id
   eleventyConfig.addFilter("domaine", (domaines, id) => domaines.find(d => d.id === id));
+
+  // Vignettes : les photos des cartes (fiches, articles) sont servies en WebP réduit, générées à la compilation
+  const vignettes = new Map();
+  eleventyConfig.addFilter("vignette", (src, largeur = 480) => {
+    const m = /^\/static\/img\/([^/]+)\.(jpe?g|png)$/i.exec(src || "");
+    if (!m || !fs.existsSync("." + src)) return src;
+    const sortie = `/static/img/v/${m[1].replace(/[^A-Za-z0-9_-]/g, "_")}-${largeur}.webp`;
+    vignettes.set(sortie, { source: "." + src, largeur });
+    return sortie;
+  });
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    for (const [sortie, { source, largeur }] of vignettes) {
+      const fichier = path.join(dir.output, sortie);
+      if (fs.existsSync(fichier) && fs.statSync(fichier).mtimeMs > fs.statSync(source).mtimeMs) continue;
+      fs.mkdirSync(path.dirname(fichier), { recursive: true });
+      await sharp(source).resize({ width: largeur, withoutEnlargement: true }).webp({ quality: 72 }).toFile(fichier);
+    }
+  });
 
   // Minify CSS
   eleventyConfig.addFilter("cssmin", function(code) {

@@ -4,19 +4,12 @@ section: blog
 ---
 
 <div class="rayon">
-	<div class="section-tete">
+	<header class="titre-page">
 		<h1>{{ title }}</h1>
-		<div class="texte">{{ layoutContent | safe }}</div>
-	</div>
+		<div class="texte titre-intro">{{ layoutContent | safe }}</div>
+	</header>
 
 	{% include "components/filtres-domaines.njk" %}
-	<div class="filtres" role="group" aria-label="Filtrer par public ou par thème">
-		<button type="button" class="filtre" data-filtre="publics" data-valeur="" aria-pressed="true">Tout le monde</button>
-		{% for cle, p in classement.publics %}
-			<button type="button" class="filtre" data-filtre="publics" data-valeur="{{ p.id }}" aria-pressed="false">{{ p.nom }}</button>
-		{% endfor %}
-		<button type="button" class="filtre" data-filtre="themes" data-valeur="telecharger" aria-pressed="false">À télécharger</button>
-	</div>
 
 	<div class="livret-page large liste-articles">
 		{% set articles = collections.post | reverse %}

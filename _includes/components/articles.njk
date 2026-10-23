@@ -6,12 +6,11 @@
 			<li class="article" data-domaines="{{ c.domaines | join(' ') }}" data-publics="{% for p in c.publics %}{{ p.id }} {% endfor %}" data-themes="{% for t in c.themes %}{{ t.id }} {% endfor %}">
 				{% set image = article.data.image or (article.templateContent | firstImage) %}
 				<a class="article-lien" href="{{ article.url | url }}">
-					<span class="article-image">{% if image %}<img src="{{ image }}" alt="" loading="lazy">{% endif %}</span>
+					<span class="article-image">{% if image %}<img src="{{ image | vignette(320) }}" alt="" decoding="async"{% if loop.index > 3 or sousLaFlottaison %} loading="lazy"{% endif %}>{% endif %}</span>
 					<span class="article-texte">
-						<span class="article-meta">
-							<time datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
-							{% for p in c.publics %}<span class="etiquette">{{ p.nom }}</span>{% endfor %}
-						</span>
+						{% if c.publics.length %}
+							<span class="article-meta">{% for p in c.publics %}<span class="etiquette">{{ p.nom }}</span>{% endfor %}</span>
+						{% endif %}
 						<span class="article-titre">{{ article.data.title }}</span>
 						<span class="article-extrait">{{ article.data.summary or (article.templateContent | excerpt(170)) }}</span>
 						{% if c.domaines.length %}

@@ -4,11 +4,13 @@ section: jeu
 ---
 
 {% set sections = content | sectionsFiche %}
+<header class="titre-page">
+	<h1>{{ title }}</h1>
+	<p class="titre-meta"><span class="etiquette">Fiche de {{ author }}</span></p>
+</header>
+
 <article class="livret fiche-jeu">
 	<div class="livret-page">
-		<h1>{{ title }}</h1>
-		<p class="auteur">Fiche de {{ author }}</p>
-
 		{% if sections.length %}
 			<nav class="sommaire" aria-label="Variantes de la fiche">
 				<p class="sommaire-titre">Les variantes</p>

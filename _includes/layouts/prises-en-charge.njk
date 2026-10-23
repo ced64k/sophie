@@ -3,9 +3,12 @@ layout: layouts/base.njk
 section: prises-en-charge
 ---
 
+<header class="titre-page">
+	<h1>{{ title }}</h1>
+</header>
+
 <article class="livret">
 	<div class="livret-page large">
-		<h1>{{ title }}</h1>
 		<div class="texte chapeau">
 			{{ layoutContent | safe }}
 		</div>

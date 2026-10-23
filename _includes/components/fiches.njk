@@ -1,4 +1,4 @@
-{# Liste de fiches jeux : attend `fiches` (une collection) #}
+{# Liste de fiches jeux : attend `fiches` (une collection). `sousLaFlottaison` : toutes les images en chargement différé (accueil) #}
 <ul class="fiches" data-liste>
 	{% for fiche in fiches %}
 		{% set domainesFiche = fiche.templateContent | domainesFiche %}
@@ -6,7 +6,7 @@
 			<a href="{{ fiche.url | url }}">
 				{# La photo générique d'enfant (ancien en-tête WordPress) ne représente aucun jeu : on affiche un aplat à la place #}
 				{% set image = fiche.data.image or (fiche.templateContent | firstImage) %}
-				<span class="fiche-image{% if not image or 'cropped-4176463964' in image %} fiche-image-vide{% endif %}">{% if image and not 'cropped-4176463964' in image %}<img src="{{ image }}" alt="" loading="lazy">{% else %}<span aria-hidden="true">{{ fiche.data.title }}</span>{% endif %}</span>
+				<span class="fiche-image{% if not image or 'cropped-4176463964' in image %} fiche-image-vide{% endif %}">{% if image and not 'cropped-4176463964' in image %}<img src="{{ image | vignette(540) }}" srcset="{{ image | vignette(360) }} 360w, {{ image | vignette(540) }} 540w" sizes="(max-width: 860px) 180px, 270px" alt="" decoding="async"{% if loop.index <= 4 and not sousLaFlottaison %}{% if loop.first %} fetchpriority="high"{% endif %}{% else %} loading="lazy"{% endif %}>{% else %}<span aria-hidden="true">{{ fiche.data.title }}</span>{% endif %}</span>
 				<span class="fiche-nom">{{ fiche.data.title }}</span>
 				<span class="fiche-puces">
 					{% for id in domainesFiche %}{% set d = domaines | domaine(id) %}<svg class="puce" style="--puce: {{ d.couleur }}" role="img" aria-label="{{ d.nom }}"><use href="#puce"/></svg>{% endfor %}

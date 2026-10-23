@@ -10,4 +10,4 @@ eleventyNavigation:
   order: 4
 ---
 
-Des idées de jeux, du matériel à imprimer, des astuces pour la maison ou pour la classe. Filtrez par domaine ou par public.
+Des idées de jeux, du matériel à imprimer, des astuces pour la maison ou pour la classe. Filtrez par domaine.

@@ -13,8 +13,8 @@ colors:
   encre: "#111111"
   encre-douce: "#33443F"
   blanc: "#FFFFFF"
-  peau-clair: "#8A8FE0"
-  peau-milieu: "#5F64B8"
+  koala-visage: "#A5A8D5"
+  koala-oreille: "#9295CA"
   domaine-precoce: "#7CC76E"
   domaine-oral: "#E8467C"
   domaine-ecrit: "#2F6BE0"
@@ -144,7 +144,7 @@ Une seule palette, **menthe**, définie dans `:root`. Les noms de variables sont
 **Key Characteristics:**
 - Fond menthe plein avec de grandes taches ovales d'une menthe plus soutenue.
 - Texte noir franc ; un accent indigo réservé aux actions et à la mascotte.
-- Petites touches de jaune (point du logo, trait sous « joue », bandeau, étiquettes, page active), jamais sur la mascotte ni les boutons.
+- Petites touches de jaune (fond jaune du « o » du logo, trait sous « joue », bandeau, étiquettes, page active), jamais sur la mascotte ni les boutons.
 - Panneaux blancs très arrondis, sans contour, pour la lecture.
 - Domaines repérés par leur nom surligné au marqueur dans leur couleur ; sur les cartes de fiches, par une petite tache de couleur.
 - Boutons pilules posés sur un aplat plus foncé de 4 px qui s'écrase au clic.
@@ -159,12 +159,12 @@ Un fond frais et doux, de l'encre noire, un indigo qui fait agir et un jaune qui
 - **Indigo nuit** (indigo-fonce, `--corail-fonce`) : l'aplat de 4 px sous les boutons indigo ; couleur des liens dans les textes et des liens forts (« Mon parcours », « Tous les articles »), et du titre d'article au survol.
 
 ### Secondary
-- **Jaune d'or** (jaune, `--jaune`, `--point`, `--souligne-lien`, `--corail-vif`) : point du logo, trait sous la page active du menu, fond du bandeau « Jeux en ligne » (texte encre), soulignement des liens forts, aplat d'une fiche sans image sur deux.
+- **Jaune d'or** (jaune, `--jaune`, `--point`, `--souligne-lien`, `--corail-vif`) : fond jaune du « o » du logo, trait sous la page active du menu, fond du bandeau « Jeux en ligne » (texte encre), soulignement des liens forts, aplat d'une fiche sans image sur deux.
 - **Jaune surligné** (jaune-surligne, `--surligne`, `--selection`, `--pied-survol`) : trait sous « joue » dans le titre d'accueil, sélection de texte (texte encre), liens du pied au survol.
 - **Jaune paille** (jaune-etiquette, `--etiquette`) : fond des étiquettes d'articles.
 
 ### Tertiary
-- **Lavande** (peau-clair) et **Indigo moyen** (peau-milieu) : dégradé diagonal de la frimousse, de la lavande à l'indigo. Réservés à la mascotte.
+- **Lavande** (koala-visage, koala-oreille, koala-creux) et **Bleu nuit** (koala-oeil) : les couleurs du koala. Réservées à la mascotte.
 - **Couleurs des domaines** (domaine-precoce, domaine-oral, domaine-ecrit, domaine-math, domaine-methodo), définies dans `_data/domaines.json` et passées en `--puce` : elles n'apparaissent que dans le marqueur sous le nom du domaine (mélangées à du blanc) et dans les taches des cartes de fiches, jamais en fond de surface ni en texte.
 
 ### Neutral
@@ -259,7 +259,7 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 - **Survol :** bordure menthe tache. **Focus :** bordure encre, fond blanc, sans halo. **Invalide** (`:user-invalid`) : bordure `--erreur` (#B3261E, rouge réservé aux erreurs).
 
 ### Navigation
-- Logo « sophie » en Fredoka 700 (clamp 1.8–2.3rem) avec un petit point `--point` (jaune) dans le « o ».
+- Logo « sophie » en Fredoka 700 (clamp 1.8–2.3rem) dont le creux du « o » est rempli de jaune `--point` (disque derrière la lettre).
 - Liens en Atkinson 700 sans soulignement ; survol en indigo (`--corail`) ; page courante marquée d'un trait jaune au marqueur (`--surligne`) derrière le bas du mot, incliné de −1.5°.
 - **Liens dans les textes et liens fléchés :** texte encre, trait jaune au marqueur (`--surligne`) sous le texte (il s'arrête avant la flèche), survol en indigo.
 - Sous 960 px : bouton pilule blanc « Menu » avec icône trois traits en CSS, liens en colonne.
@@ -269,7 +269,7 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 Partout où le nom du domaine est écrit (légende de l'accueil, domaines d'articles, page Prises en charge, sommaire et titres de variantes des fiches), il est surligné au marqueur dans sa couleur : classe `.marque`, dégradé de `--puce` à 55 % mélangé à du blanc, sur 0.55em au bas du texte. Sur les cartes de fiches, où le nom n'est pas écrit, une tache SVG (symbole `#puce`, ovale irrégulier sans contour) rempli par `--puce`, avec le nom en `aria-label`.
 
 ### Frimousse
-Mascotte SVG (600 × 400) : tête en dôme au dégradé `--peau-1` → `--peau-3` (lavande → indigo), oreilles `--oreille` (noires), yeux blancs, pupilles et bouche en encre. Elle dépasse du bas de l'accueil (centrée, passe derrière le panneau suivant, monte en 1.1 s une seule fois à l'arrivée) et du haut du pied de page (à droite). Sur l'accueil, ses pupilles suivent le pointeur (désactivé si mouvement réduit). **Dessin provisoire**, à remplacer par une vraie illustration si Sophie en commande une ; la remplaçante garde ce rôle et ces emplacements.
+Mascotte : le koala (dessin fourni, SVG 417 × 247 inline dans `frimousse.njk`, couleurs par variables `--koala-*`). Elle dépasse du bas de l'accueil (centrée, passe derrière le panneau suivant, monte en 1.1 s une seule fois à l'arrivée) et du haut du pied de page (à droite). Sur l'accueil, les reflets blancs de ses yeux suivent le pointeur (désactivé si mouvement réduit). Le fichier source est `static/img/koala.svg`.
 
 ### Pied de page
 Grand panneau encre, rayon 32 px, texte blanc ; noms et villes en Fredoka 600 1.3rem ; téléphones en `.tel` ; liens qui passent en `--pied-survol` (jaune) au survol ; mention de droits sous un filet blanc à 20 %.

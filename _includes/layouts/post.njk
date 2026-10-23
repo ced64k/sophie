@@ -3,11 +3,13 @@ layout: layouts/base.njk
 section: post
 ---
 
+<header class="titre-page">
+	<h1>{{ title }}</h1>
+	<p class="titre-meta"><time class="etiquette" datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></p>
+</header>
+
 <article class="livret">
 	<div class="livret-page">
-		<h1>{{ title }}</h1>
-		<p class="auteur"><time datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></p>
-
 		<div class="texte">
 			{{ layoutContent | safe }}
 		</div>

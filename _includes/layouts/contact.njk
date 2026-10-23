@@ -3,9 +3,12 @@ layout: layouts/base.njk
 section: contact
 ---
 
+<header class="titre-page">
+	<h1>{{ title }}</h1>
+</header>
+
 <article class="livret">
 	<div class="livret-page large">
-		<h1>{{ title }}</h1>
 		<div class="texte chapeau">
 			{{ layoutContent | safe }}
 		</div>
@@ -15,7 +18,7 @@ section: contact
 				<h2 id="titre-appeler">Appeler</h2>
 				{% for lieu in lieux %}
 					<div class="lieu-carte">
-						<p class="lieu-ville">{{ lieu.ville }}</p>
+						<p class="lieu-ville"><svg class="pin" aria-hidden="true" focusable="false"><use href="#pin"/></svg>{{ lieu.ville }}</p>
 						<p>{{ lieu.structure }}<br>{{ lieu.adresse }}</p>
 						<a class="lieu-tel" href="tel:{{ lieu.telephone | replace(' ', '') }}">{{ lieu.telephone }}</a>
 						<p><a href="mailto:{{ lieu.email }}">{{ lieu.email }}</a></p>
