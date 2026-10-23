@@ -6,6 +6,15 @@
   font-weight: 300 700;
   font-display: swap;
 }
+/* Chiffres du texte courant en Fredoka : le zéro barré d'Atkinson donnait un air de code
+   aux dates, codes postaux et numéros. Seuls les chiffres (U+0030-0039) viennent de cette police. */
+@font-face {
+  font-family: "Chiffres";
+  src: url("/static/fonts/fredoka.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
 @font-face {
   font-family: "Atkinson Hyperlegible";
   src: url("/static/fonts/atkinson-400.woff2") format("woff2");
@@ -54,7 +63,7 @@
   --pied-survol: #F2C94C;
 
   --titre: "Fredoka", "Atkinson Hyperlegible", system-ui, sans-serif;
-  --texte: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --texte: "Chiffres", "Atkinson Hyperlegible", system-ui, sans-serif;
 
   --rayon: 32px;
   --rayon-petit: 20px;
@@ -713,13 +722,24 @@ p { margin: 0; }
 }
 
 .etiquette {
+  position: relative;
+  isolation: isolate;
   font-weight: 700;
   font-size: .85rem;
-  background: var(--etiquette);
   color: var(--encre);
-  padding: 2px 12px;
-  border-radius: 999px;
+  padding: 2px 8px;
 }
+/* Étiquette surlignée au marqueur, comme les filtres */
+.etiquette::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 12% 1px 8%;
+  background: var(--etiquette);
+  border-radius: .2em .55em .3em .45em;
+  rotate: -1.2deg;
+}
+.etiquette + .etiquette::before { rotate: .9deg; border-radius: .45em .25em .5em .2em; }
 
 .article-titre {
   display: block;

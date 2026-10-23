@@ -201,7 +201,9 @@ Un fond frais et doux, de l'encre noire, un indigo qui fait agir et un jaune qui
 - **Label** : Atkinson 700, 1rem pour les filtres et la navigation ; 0.85rem pour les étiquettes, 0.95rem pour les métadonnées.
 
 ### Named Rules
-**La règle du zéro rond.** Les numéros de téléphone sont en Fredoka 600 (letter-spacing 0.01em) : le zéro barré d'Atkinson les faisait lire comme du code.
+**La règle du zéro rond.** Tous les chiffres du texte courant viennent de Fredoka (famille « Chiffres », `unicode-range: U+0030-0039`, placée en tête de `--texte`) : le zéro barré d'Atkinson faisait lire dates, codes postaux et numéros comme du code. Les numéros de téléphone sont en plus en Fredoka 600 (`.tel`).
+
+**La règle du marqueur.** Ce qui est mis en avant est surligné au marqueur jaune (ou au blanc translucide pour les filtres au repos) : trait sous « joue », page active du menu, liens, filtres, étiquettes. Bord irrégulier (rayons inégaux) et légère inclinaison (±1°), jamais de pilule pour ces éléments, jamais de soulignement classique.
 
 **La règle du gras qui porte.** Liens de navigation, filtres, liens de texte et domaines sont en gras 700 ; la hiérarchie passe par la graisse et la police, pas par la couleur.
 
@@ -243,8 +245,8 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 - **Pilule « Jeux en ligne » :** version compacte (10 × 20 px, Atkinson 700) dans la navigation, avec flèche sortante SVG.
 
 ### Chips
-- **Filtres de domaine :** pilule blanche à 55 %, Atkinson 700 1rem, 10 × 18 px, pastille du domaine à gauche ; blanc plein au survol ; actif (`aria-pressed`) en encre avec texte blanc, la pastille monte de 2 px et se cercle de blanc. Le filtre « Tous » n'a pas de pastille.
-- **Étiquettes d'articles :** pilule `--etiquette` (jaune paille), Atkinson 700 0.85rem, 2 × 12 px.
+- **Filtres de domaine :** libellé Atkinson 700 1rem surligné au marqueur blanc à 55 % (pseudo-élément incliné, rayons inégaux), pastille du domaine à gauche ; marqueur blanc plein au survol ; actif (`aria-pressed`) au marqueur `--surligne` (jaune), texte encre, la pastille monte de 2 px. Le filtre « Tous » n'a pas de pastille.
+- **Étiquettes d'articles :** Atkinson 700 0.85rem surligné au marqueur `--etiquette` (jaune paille), incliné de −1.2° (la suivante de +0.9°).
 
 ### Cards / Containers
 - **Livret :** panneau blanc, rayon 32 px, sans ombre ni contour, padding fluide de 28 à 72 px.
@@ -258,7 +260,8 @@ Charnus et tactiles, comme une touche qu'on enfonce.
 
 ### Navigation
 - Logo « sophie » en Fredoka 700 (clamp 1.8–2.3rem) avec un petit point `--point` (jaune) dans le « o ».
-- Liens en Atkinson 700 sans soulignement ; survol par un trait inférieur de 3 px en encre à 35 % ; page courante soulignée en `--jaune`.
+- Liens en Atkinson 700 sans soulignement ; survol en indigo (`--corail`) ; page courante marquée d'un trait jaune au marqueur (`--surligne`) derrière le bas du mot, incliné de −1.5°.
+- **Liens dans les textes et liens fléchés :** texte encre, trait jaune au marqueur (`--surligne`) sous le texte (il s'arrête avant la flèche), survol en indigo.
 - Sous 960 px : bouton pilule blanc « Menu » avec icône trois traits en CSS, liens en colonne.
 - **Focus partout :** anneau encre 3 px décalé de 3 px, rayon 6 px.
 
