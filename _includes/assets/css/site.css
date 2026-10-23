@@ -192,14 +192,28 @@ p { margin: 0; }
 }
 
 .nav-liens a {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
   font-weight: 700;
   text-decoration: none;
   padding: 6px 0;
-  border-bottom: 3px solid transparent;
-  transition: border-color .2s var(--sortie);
+  transition: color .2s var(--sortie);
 }
-.nav-liens a:hover { border-color: rgba(17, 17, 17, .35); }
-.nav-liens a[aria-current="page"] { border-color: var(--jaune); }
+.nav-liens a:hover { color: var(--corail); }
+/* Page active : trait jaune au marqueur derrière le bas du mot, comme sous « joue » */
+.nav-liens a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -.15em;
+  right: -.15em;
+  bottom: .45em;
+  height: .42em;
+  background: var(--surligne);
+  border-radius: .12em .3em .15em .25em;
+  rotate: -1.5deg;
+}
 
 .jeton-jeux {
   display: inline-flex;
