@@ -271,22 +271,6 @@ p { margin: 0; }
   font-size: 1.15em;
 }
 
-.couvercle-lien {
-  display: inline-block;
-  margin-top: 32px;
-  padding: 14px 22px;
-  background: var(--carton);
-  color: var(--encre);
-  border: var(--trait);
-  border-radius: var(--rayon);
-  box-shadow: 0 2px 0 var(--encre);
-  font-family: var(--titre);
-  font-weight: 800;
-  font-size: 1.15rem;
-  line-height: 1.2;
-  text-decoration: none;
-}
-.couvercle-lien:hover { background: var(--jaune); }
 
 .contenu-boite {
   background: var(--carton);
