@@ -37,7 +37,7 @@ Une logopède qui travaille par le jeu : elle détourne des jeux du commerce (qu
 - **INAMI** : Sophie est **conventionnée INAMI** ; le site le mentionne, sans détailler tarifs ni remboursements.
 - **Stack** : Eleventy (site statique), sources sur GitHub `ced64k/sophie`. GitHub Actions déploie `main` sur sophielenaerts.be et `dev` sur dev.sophielenaerts.be (VPS Infomaniak, nginx).
 - **Édition** : Sophie doit pouvoir écrire et modifier articles et fiches jeux sans toucher au code, via **Sveltia CMS** (backend GitHub ; Sophie a un compte GitHub). Les contenus restent des fichiers Markdown dans le dépôt.
-- **Formulaire de contact** : à mettre en place côté VPS (le site est statique, Netlify Forms n'existe plus), envoi vers l'e-mail de Sophie.
+- **Formulaire de contact** : envoi par FormSubmit vers l'e-mail de Sophie (le site est statique).
 - **Contenus existants** : tout est conservé et mieux organisé (par public et par domaine, avec résumés et images). Les URL actuelles (`/AAAA/MM/JJ/slug/` pour les articles, `/slug/` pour les fiches jeux, `/tags/…`) sont conservées ou redirigées.
 - Le site est en français (Belgique) ; dates et interface en français.
 - Le site des jeux en ligne (jeux.sophielenaerts.be) reste séparé ; le site principal le met en avant de façon bien visible dans la navigation.
