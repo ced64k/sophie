@@ -8,7 +8,11 @@ section: post
 	<p class="titre-meta"><time class="etiquette" datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></p>
 </header>
 
-<article class="livret">
+{% if image %}
+<div class="couverture"><img src="{{ image | vignette(1600) }}" alt="" fetchpriority="high"></div>
+{% endif %}
+
+<article class="livret{% if image %} livret-couverture{% endif %}">
 	<div class="livret-page">
 		<div class="texte">
 			{{ content | safe }}
