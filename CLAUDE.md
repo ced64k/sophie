@@ -35,10 +35,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 
 ## Reste à faire
 
-1. **Coordonnées réelles** des Locaux des Chaperons et d'Up-toi dans `_data/lieux.json` (actuellement factices,
-   `provisoire: true` affiche un badge « à remplacer »). Introuvables en ligne : à demander à l'utilisateur.
-2. **Formulaire de contact** (`_includes/components/form.njk`) : n'envoie rien pour l'instant. Sans accès au VPS,
-   passer par un service de formulaire (Web3Forms, Formspree…) ; l'adresse de réception est à demander, ne pas l'inventer.
+1. **Formulaire de contact** : envoie via FormSubmit vers lenaerts.sophie@gmail.com. Au premier envoi, FormSubmit envoie un e-mail de confirmation à Sophie : elle doit cliquer dessus. Les coordonnées des lieux (`_data/lieux.json`, Up-toi en premier) sont réelles.
 3. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
 4. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
 5. Photos manquantes pour les fiches Concept Kids et Cuisto Dingo (vignette en aplat de couleur en attendant).

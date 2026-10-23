@@ -1,5 +1,9 @@
-{# L'envoi sera branché sur un script du VPS (/contact/envoyer) #}
-<form class="formulaire" method="post" action="/contact/envoyer">
+{# Envoi par FormSubmit (formsubmit.co) vers l'adresse de Sophie. Premier envoi : FormSubmit demande une confirmation par e-mail. #}
+<form class="formulaire" method="post" action="https://formsubmit.co/lenaerts.sophie@gmail.com">
+  <input type="hidden" name="_subject" value="Message depuis sophielenaerts.be">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://sophielenaerts.be/contact/merci/">
   <p class="champ">
     <label for="nom">Votre nom</label>
     <input type="text" name="nom" id="nom" autocomplete="name" required>
@@ -17,6 +21,6 @@
     <textarea name="message" id="message" rows="7" required aria-describedby="aide-message"></textarea>
     <span class="aide" id="aide-message">Indiquez l'âge de l'enfant et ce qui vous amène, si vous le souhaitez.</span>
   </p>
-  <p class="piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site" tabindex="-1" autocomplete="off"></label></p>
+  <p class="piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
   <button class="bouton" type="submit">Envoyer le message</button>
 </form>
