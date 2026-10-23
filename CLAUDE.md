@@ -39,6 +39,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
   (catégories WordPress des articles → domaines, publics, thèmes). Ne pas nommer une donnée globale `categories` :
   elle écraserait le champ `categories` des articles.
 - Les domaines d'une fiche jeu sont déduits de ses titres `##` (filtres dans `.eleventy.js`).
+- Images de partage : `_og/generate.js` (satori + resvg + sharp, polices dans `_og/fonts/`) dessine à la compilation, pour chaque page, une carte 1200×630 (`/og/<slug>.jpg`, balises `og:image` de `head.njk`) et une image 9/16 pour les stories (`/og/story/<slug>.jpg`), avec le logo, la texture, le koala, la photo de la fiche et les domaines. Le texte vient du titre de la page ; on peut le changer par page avec `ogTitre`, `ogEtiquette` et `ogBouton` dans l'en-tête du fichier. Les textes des pages fixes (accueil, contact…) sont dans `TEXTES_PAGES` de `.eleventy.js`. Les images déjà dessinées sont gardées dans `.cache/og` (et dans le cache de GitHub Actions). Page de téléchargement : `/partage/` (non indexée, hors menu).
 - Styles : un seul fichier `_includes/assets/css/site.css`, inliné dans la page. Filtres : `_includes/assets/js/filtres.js`.
 - Les valeurs `metaDescription` contenant « : » doivent être entre guillemets (YAML).
 

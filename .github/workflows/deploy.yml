@@ -18,6 +18,14 @@ jobs:
           node-version: 22
 
       - run: npm install
+
+      # Social images already drawn are kept between two builds (the cache key changes with the design or the photos)
+      - uses: actions/cache@v4
+        with:
+          path: .cache/og
+          key: og-${{ hashFiles('_og/**', 'static/img/fiches/**', 'static/img/koala.svg', 'static/img/fabric-texture-gris.webp') }}-${{ github.run_id }}
+          restore-keys: og-
+
       - run: npx @11ty/eleventy
 
       - uses: actions/upload-artifact@v4

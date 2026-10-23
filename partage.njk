@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Images de partage
+permalink: /partage/
+section: partage
+metaDescription: "Images à télécharger pour partager les articles, fiches et pages du site sur les réseaux sociaux."
+eleventyExcludeFromCollections: true
+---
+
+<header class="titre-page">
+	<h1>Images de partage</h1>
+	<div class="texte titre-intro"><p>Pour chaque page du site : une image pour les aperçus de lien (1200 × 630) et une image verticale 9/16 (1080 × 1920) pour les stories Instagram, TikTok ou Facebook. Touche une image pour la télécharger.</p></div>
+</header>
+
+{% set cartes = collections.all | ogListe %}
+{% for groupe in ["Accueil", "Page", "Fiche jeu", "Article"] %}
+	{% set liste = [] %}
+	{% for c in cartes %}{% if c.type == groupe %}{% set liste = (liste.push(c), liste) %}{% endif %}{% endfor %}
+	{% if liste.length %}
+	<section class="partage-groupe" aria-labelledby="partage-{{ loop.index }}">
+		<h2 id="partage-{{ loop.index }}">{% if groupe == "Accueil" %}Accueil{% elif groupe == "Page" %}Pages{% elif groupe == "Fiche jeu" %}Fiches jeux{% else %}Articles{% endif %}</h2>
+		<ul class="partage-liste">
+			{% for c in liste %}
+			<li class="partage-carte">
+				<a class="partage-apercu" href="/og/{{ c.slug }}.jpg" download="{{ c.slug }}.jpg"><img src="/og/{{ c.slug }}.jpg" alt="Aperçu de lien : {{ c.titre }}" width="1200" height="630" loading="lazy" decoding="async"></a>
+				<p class="partage-titre">{{ c.titre }}</p>
+				<p class="partage-liens">
+					<a class="partage-lien" href="/og/{{ c.slug }}.jpg" download="{{ c.slug }}.jpg">Aperçu de lien</a>
+					<a class="partage-lien" href="/og/story/{{ c.slug }}.jpg" download="{{ c.slug }}-story.jpg">Story 9/16</a>
+				</p>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+	{% endif %}
+{% endfor %}

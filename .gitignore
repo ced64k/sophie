@@ -9,3 +9,4 @@ package-lock.json
 .impeccable/review/
 .impeccable/mocks/
 .impeccable/live/
+.cache/

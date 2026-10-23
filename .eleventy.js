@@ -5,6 +5,7 @@ const htmlmin = require("html-minifier");
 const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
+const og = require("./_og/generate.js");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const classement = require("./_data/classement.json");
 const domaines = require("./_data/domaines.json");
@@ -29,6 +30,30 @@ function texteBrut(html) {
     .replace(/&nbsp;/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+
+// Domaines d'une fiche jeu (objets de _data/domaines.json), d'après ses titres de section
+function domainesDeLaFiche(html) {
+  const vus = new Set();
+  String(html || "").replace(/<h2[^>]*>([\s\S]*?)<\/h2>/g, (m, titre) => {
+    const id = domaineDuTitre(texteBrut(titre));
+    if (id) vus.add(id);
+  });
+  return [...vus].map(id => domaines.find(d => d.id === id)).filter(Boolean);
+}
+
+function premiereImage(html) {
+  const trouve = String(html || "").match(/<img[^>]+src="([^"]+)"/);
+  return trouve ? trouve[1] : null;
+}
+
+function classementDe(data) {
+  const domainesTrouves = new Set();
+  [...(data.categories || []), ...(data.tags || [])].forEach(e => {
+    if (classement.domaines[e]) domainesTrouves.add(classement.domaines[e]);
+  });
+  return { domaines: [...domainesTrouves] };
 }
 
 module.exports = function(eleventyConfig) {
@@ -148,6 +173,106 @@ module.exports = function(eleventyConfig) {
       fs.mkdirSync(path.dirname(fichier), { recursive: true });
       await sharp(source).resize({ width: largeur, withoutEnlargement: true }).webp({ quality: 72 }).toFile(fichier);
     }
+  });
+
+  // ——— Social images (1200×630 og:image and 1080×1920 story), see _og/generate.js ———
+  // Every page registers its card while it renders (the layout calls the ogCarte filter); the images are drawn after the build.
+  const cartesOg = new Map();
+  const PAGES_SANS_CARTE = ["./tags.njk", "./404.md", "./pages/contact-merci.md", "./partage.njk"];
+  const TEXTES_PAGES = {
+    "qui-suis-je": { titre: "Qui suis-je ?", etiquette: "Sophie Lenaerts, logopède", bouton: "Faire connaissance" },
+    "prises-en-charge": { titre: "Ce que je prends en charge", etiquette: "Prises en charge", bouton: "Voir les domaines", tousLesDomaines: true },
+    "jeux": { titre: "Les jeux du commerce, détournés en séances", etiquette: "Fiches jeux", bouton: "Voir les fiches" },
+    "blog": { titre: "Idées de jeux et astuces pour la maison ou la classe", etiquette: "Articles", bouton: "Lire les articles" },
+    "contact": { titre: "Prenons contact", etiquette: "Logopède à Elouges et Ath", bouton: "Appeler ou écrire" },
+    "accueil": { titre: "La logopédie, ça se joue !", etiquette: "Logopède à Elouges et Ath", bouton: "Découvrir" }
+  };
+
+  function slugCarte(page) {
+    if (!page || PAGES_SANS_CARTE.includes(page.inputPath)) return null;
+    if (page.url === "/") return "accueil";
+    return page.fileSlug || null;
+  }
+
+  function fichierLocal(src) {
+    const m = /^\/static\/img\/([^?#]+)$/.exec(src || "");
+    if (!m || /cropped-4176463964/.test(src)) return null;
+    const f = path.join(__dirname, "static/img", decodeURIComponent(m[1]));
+    return /\.(jpe?g|png|webp)$/i.test(f) && fs.existsSync(f) ? f : null;
+  }
+
+  // Called from the head of every page: registers the card and returns the slug of the image to use
+  eleventyConfig.addFilter("ogCarte", (page, data, contenu) => {
+    const slug = slugCarte(page);
+    if (!slug) return "accueil";
+    const texte = TEXTES_PAGES[slug] || {};
+    const dossier = (page.inputPath || "").split("/")[1];
+    let carte;
+    if (dossier === "jeux" && page.inputPath !== "./pages/jeux.md") {
+      const trouves = domainesDeLaFiche(contenu);
+      carte = {
+        titre: data.title,
+        etiquette: `Fiche jeu · ${data.author || "Sophie Lenaerts"}`,
+        bouton: "Découvrir la fiche",
+        domaines: trouves,
+        photo: fichierLocal(data.image || premiereImage(contenu))
+      };
+    } else if (dossier === "posts") {
+      const c = classementDe(data);
+      carte = {
+        titre: data.title,
+        etiquette: `Article · ${DateTime.fromJSDate(page.date, { zone: "utc" }).setLocale("fr").toFormat("d LLLL yyyy")}`,
+        bouton: "Lire l’article",
+        domaines: c.domaines.map(id => domaines.find(d => d.id === id)).filter(Boolean),
+        photo: fichierLocal(data.image || premiereImage(contenu))
+      };
+    } else {
+      carte = {
+        titre: texte.titre || data.title,
+        etiquette: texte.etiquette || "Sophie Lenaerts, logopède",
+        bouton: texte.bouton || "Découvrir",
+        domaines: texte.tousLesDomaines ? domaines.filter(d => d.id !== "precoce").slice(0, 3) : [],
+        photo: null
+      };
+    }
+    // Optional overrides in a page's front matter: ogTitre, ogEtiquette, ogBouton
+    if (data.ogTitre) carte.titre = data.ogTitre;
+    if (data.ogEtiquette) carte.etiquette = data.ogEtiquette;
+    if (data.ogBouton) carte.bouton = data.ogBouton;
+    cartesOg.set(slug, carte);
+    return slug;
+  });
+
+  // Description for link previews: the page's own description, else the first real paragraph of an article or fiche
+  eleventyConfig.addFilter("ogDescription", (data, contenu, parDefaut) => {
+    if (data.metaDescription || data.summary) return data.metaDescription || data.summary;
+    const trouve = /<p>([\s\S]*?)<\/p>/g;
+    let m;
+    while ((m = trouve.exec(String(contenu || "")))) {
+      const t = texteBrut(m[1]).replace(/ ([,.;:!?…])/g, "$1");
+      if (t.length >= 60) return t.length <= 160 ? t : t.slice(0, t.lastIndexOf(" ", 158)) + "…";
+    }
+    return parDefaut;
+  });
+
+  // List of the cards (for the /partage/ page): one entry per page that has its own images
+  eleventyConfig.addFilter("ogListe", items =>
+    items
+      .map(item => {
+        const slug = slugCarte(item.page || item);
+        if (!slug || !item.data || !item.data.title) return null;
+        const dossier = (item.inputPath || "").split("/")[1];
+        const type = slug === "accueil" ? "Accueil" : dossier === "posts" ? "Article" : dossier === "jeux" && item.inputPath !== "./pages/jeux.md" ? "Fiche jeu" : "Page";
+        return { slug, titre: item.data.title === "Accueil" ? "Accueil" : item.data.title, type, url: item.url };
+      })
+      .filter(Boolean)
+      .sort((a, b) => ["Accueil", "Page", "Fiche jeu", "Article"].indexOf(a.type) - ["Accueil", "Page", "Fiche jeu", "Article"].indexOf(b.type) || a.titre.localeCompare(b.titre, "fr"))
+  );
+
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const { faites, reutilisees } = await og.generer(cartesOg, dir.output);
+    if (faites) console.log(`[og] ${faites} image(s) générée(s), ${reutilisees} réutilisée(s) du cache`);
+    cartesOg.clear();
   });
 
   // Minify CSS
