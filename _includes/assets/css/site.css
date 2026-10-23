@@ -484,8 +484,16 @@ p { margin: 0; }
   max-height: 560px;
   width: auto;
 }
-.texte a { color: var(--corail-fonce); font-weight: 700; }
-.texte a:hover { color: var(--encre); }
+.texte a {
+  color: var(--encre);
+  font-weight: 700;
+  text-decoration: none;
+  /* Trait jaune au marqueur sous le lien, comme sous « joue » */
+  background: linear-gradient(var(--surligne) 0 0) 0 92% / 100% .38em no-repeat;
+  padding-inline: .08em;
+  transition: color .2s var(--sortie);
+}
+.texte a:hover { color: var(--corail); }
 .texte strong { font-weight: 700; }
 .texte blockquote {
   margin-inline: 0;
@@ -501,10 +509,12 @@ p { margin: 0; }
   font-family: var(--titre);
   font-weight: 600;
   font-size: 1.3rem;
-  color: var(--corail-fonce);
-  text-decoration-thickness: 3px;
-  text-decoration-color: var(--souligne-lien);
+  color: var(--encre);
+  text-decoration: none;
   margin-top: 1.6em;
+  /* Trait jaune au marqueur sous le texte ; il s'arrête avant la flèche */
+  background: linear-gradient(var(--surligne) 0 0) 0 88% / calc(100% - 1.15em) .4em no-repeat;
+  transition: color .2s var(--sortie);
 }
 .lien-fort::after, .suite a::after {
   content: "";
@@ -519,7 +529,7 @@ p { margin: 0; }
   transition: translate .2s var(--sortie);
 }
 .lien-fort:hover::after, .suite a:hover::after { translate: 3px 0; }
-.lien-fort:hover { color: var(--encre); }
+.lien-fort:hover { color: var(--corail); }
 
 /* Sur l'accueil, tous les textes partagent un même bord gauche intérieur
    (bord des panneaux + gouttière), au lieu d'être centrés chacun à sa largeur */
@@ -543,7 +553,6 @@ p { margin: 0; }
 .section-tete h1, .section-tete h2 { margin-bottom: .35em; }
 .section-tete p, .section-tete .texte { max-width: 60ch; font-size: 1.1em; }
 .section-pied { max-width: 1180px; margin-inline: auto; }
-.etagere .lien-fort, .rayon .lien-fort { color: var(--encre); }
 
 /* Fiches jeux */
 
