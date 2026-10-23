@@ -4,7 +4,8 @@ package-lock.json
 .DS_Store
 
 # Outils de design (locaux)
-.claude/
+.claude/settings.local.json
+.claude/skills/impeccable/scripts/bin/
 .impeccable/review/
 .impeccable/mocks/
 .impeccable/live/
