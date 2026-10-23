@@ -4,7 +4,7 @@
 		{% if not limite or loop.index <= limite %}
 			{% set c = article.data | classementArticle %}
 			<li class="article" data-domaines="{{ c.domaines | join(' ') }}" data-publics="{% for p in c.publics %}{{ p.id }} {% endfor %}" data-themes="{% for t in c.themes %}{{ t.id }} {% endfor %}">
-				{% set image = article.templateContent | firstImage %}
+				{% set image = article.data.image or (article.templateContent | firstImage) %}
 				<a class="article-lien" href="{{ article.url | url }}">
 					<span class="article-image">{% if image %}<img src="{{ image }}" alt="" loading="lazy">{% endif %}</span>
 					<span class="article-texte">
