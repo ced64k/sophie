@@ -11,8 +11,6 @@ categories: []
 
 **Le voleur** : Une grande quantité de cartes sur lesquelles sont écrits des mots de natures diverses sont dispersées sur la table, faces cachées. On chronomètre 15 secondes pendant lesquelles on attrape le plus possible de mots avec les jolis petits personnages-ventouses. Il faut ensuite être le premier à avoir une phrase complète. Des cartes « vol » pimentent le jeu. Téléchargez le pdf 
 
-![les mains d'un enfant qui joue à un jeu de grammaire](/static/img/IMG_0195.jpeg)
-
 #### **Bonus!**
 
 J’ai créé un petit jeu en ligne. Le principe est simple, l’enfant lit les mots et les trie selon leur nature, puis utilise ces mêmes mots dans des phrases où il doit leur attribuer l’accord correct. Après quoi, il appuie sur l’interrupteur et si la guirlande s’allume, c’est que la phrase est bien accordée. En tant qu’accompagnant: pendant le tri, nous l’aidons à faire les liens entre la nature et l’accord, nous l’amenons à organiser sa pensée et prendre des points de repère; et lorsqu’il doit accorder, nous lui rappelons ces points de repère.
