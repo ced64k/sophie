@@ -28,6 +28,12 @@ function texteBrut(html) {
   return String(html || "")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
+    .replace(/&#(x?)([0-9a-f]+);/gi, (m, hex, n) => String.fromCodePoint(parseInt(n, hex ? 16 : 10)))
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -72,6 +78,8 @@ module.exports = function(eleventyConfig) {
 
   // Filters
 
+  // Fin d'URL sans accents (les liens accentués sont illisibles une fois encodés : %C3%A9)
+  eleventyConfig.addFilter("urlSansAccents", texte => String(texte).normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
   eleventyConfig.addFilter("permalink_year", dateObj => dateObj.getFullYear());
   eleventyConfig.addFilter("permalink_month", dateObj =>
     String(dateObj.getMonth() + 1).padStart(2, "0")
