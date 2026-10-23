@@ -29,7 +29,8 @@ jobs:
       # L'admin Sveltia écrit sur la branche du site où il est servi : sur main, il édite main (production)
       - name: Admin pointe sur main
         if: github.ref == 'refs/heads/main'
-        run: sed -i -e 's/^  branch: dev$/  branch: main/' -e 's#^site_url: .*#site_url: https://sophielenaerts.be#' admin/config.yml
+        run: |
+          sed -i -e 's/^  branch: dev$/  branch: main/' -e 's#^site_url: .*#site_url: https://sophielenaerts.be#' admin/config.yml
 
       - run: npx @11ty/eleventy
 
