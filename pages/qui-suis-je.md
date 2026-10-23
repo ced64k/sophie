@@ -18,9 +18,6 @@ Aujourd'hui, je suis logopède indépendante, conventionnée INAMI, dans l'équi
 
 Sensibilisée aux pédagogies alternatives, je favorise autant que possible les expérimentations et axe les prises en charge sur les intérêts et le rythme de chaque enfant. Lorsque l'enfant se dirige vers ce qu'il a envie de faire, il nous ouvre une porte vers ce que ses émotions et son esprit sont prêts à apprendre. J'emprunte cette porte et je rebondis sur les envies pour travailler les aspects nécessaires au développement des compétences et au bon déroulement du projet thérapeutique.
 
-J'ai aussi organisé et animé des ateliers et des stages :
+J'ai aussi organisé et animé des ateliers et des stages : « Prérequis au langage et communication chez les tout-petits », « L'oralité et la communication de 2 à 6 ans » avec Madison Cleves, logopède, « Relaxation, jeux éducatifs et littérature jeunesse » et « Des livres et du langage » avec Virginie Dubois, conteuse.
 
-- Prérequis au langage et communication chez les tout-petits
-- L'oralité et la communication de 2 à 6 ans, avec Madison Cleves, logopède spécialisée en troubles de l'oralité
-- Relaxation, jeux éducatifs et littérature jeunesse, avec Virginie Dubois, conteuse
-- Ateliers « des livres et du langage » à la librairie Florilège à Mons, avec Virginie Dubois
+J'ai également suivi diverses formations en CAA (communication alternative et améliorée), en bégaiement et en cognition mathématique.

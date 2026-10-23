@@ -12,8 +12,7 @@ const DOMAINES_TITRES = [
   [/m[ée]taphonologie|lecture|orthographe|graphisme|[ée]crit/i, "ecrit"],
   [/oral|lexique|syntaxe|phonologie/i, "oral"],
   [/math|calcul|nombre|logique/i, "math"],
-  [/ex[ée]cutive|m[ée]thod|m[ée]moris/i, "methodo"],
-  [/b[ée]gaiement/i, "begaiement"]
+  [/ex[ée]cutive|m[ée]thod|m[ée]moris/i, "methodo"]
 ];
 
 function domaineDuTitre(titre) {

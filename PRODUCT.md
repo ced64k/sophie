@@ -27,13 +27,13 @@ Une logopède qui travaille par le jeu : elle détourne des jeux du commerce (qu
 
 - Consultations : équipe des **Locaux des Chaperons à Elouges (Dour)** et équipe **Up-toi à Ath**.
 - Prise de rendez-vous : les gens appellent ou écrivent aux Chaperons ou à Up-toi (téléphone, e-mail, adresse de chaque structure), qui renvoient vers Sophie. Le formulaire de contact du site arrive directement chez Sophie.
-- Sophie prend de nouveaux patients ; il existe une liste d'attente, faible.
+- Sophie prend de nouveaux patients ; 
 - Pas de stages ni d'ateliers actuellement : aucune rubrique d'agenda à prévoir.
 - Page Facebook existante, utilisée comme canal de contact.
 
 ## Capabilities and Constraints
 
-- **Prises en charge** : enfants de l'âge préscolaire au début du secondaire. Domaines : prise en charge précoce et prémices de la communication, langage oral, langage écrit, bégaiement, cognition mathématique (anciennement « logique et mathématique »), méthodologie (méthode de travail, dont la compréhension des lectures longues).
+- **Prises en charge** : enfants de l'âge préscolaire au début du secondaire. Domaines : prise en charge précoce et prémices de la communication, langage oral, langage écrit, cognition mathématique (anciennement « logique et mathématique »), méthodologie (méthode de travail, dont la compréhension des lectures longues).
 - **INAMI** : Sophie est **conventionnée INAMI** ; le site le mentionne, sans détailler tarifs ni remboursements.
 - **Stack** : Eleventy (site statique), sources sur GitHub `ced64k/sophie`. GitHub Actions déploie `main` sur sophielenaerts.be et `dev` sur dev.sophielenaerts.be (VPS Infomaniak, nginx).
 - **Édition** : Sophie doit pouvoir écrire et modifier articles et fiches jeux sans toucher au code, via **Sveltia CMS** (backend GitHub ; Sophie a un compte GitHub). Les contenus restent des fichiers Markdown dans le dépôt.

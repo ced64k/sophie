@@ -2,7 +2,7 @@
 <div class="filtres" role="group" aria-label="Filtrer par domaine">
 	<button type="button" class="filtre" data-filtre="domaines" data-valeur="" aria-pressed="true">Tous</button>
 	{% for d in domaines %}
-		{% if d.id != "precoce" and d.id != "begaiement" %}
+		{% if d.id != "precoce" %}
 			<button type="button" class="filtre" data-filtre="domaines" data-valeur="{{ d.id }}" aria-pressed="false" style="--puce: {{ d.couleur }}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</button>
 		{% endif %}
 	{% endfor %}

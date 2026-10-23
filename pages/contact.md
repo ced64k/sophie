@@ -9,4 +9,4 @@ eleventyNavigation:
   order: 5
 ---
 
-Pour un premier rendez-vous, le plus simple est d'appeler la structure la plus proche de chez vous : elle transmet votre demande. Vous pouvez aussi m'écrire directement avec le formulaire. Je prends de nouveaux patients ; la liste d'attente est courte.
+Pour un premier rendez-vous, le plus simple est d'appeler la structure la plus proche de chez vous : elle transmet votre demande. Vous pouvez aussi m'écrire directement avec le formulaire.

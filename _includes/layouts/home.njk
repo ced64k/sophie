@@ -14,11 +14,7 @@ section: home
 			<h1 id="titre-boite">Sophie Lenaerts</h1>
 			<p class="couvercle-devise">La logopédie, ça se joue.</p>
 			<p class="couvercle-intro">{{ intro }}</p>
-			<ul class="pastilles" aria-label="En bref">
-				<li class="pastille">Préscolaire <span>à</span> secondaire</li>
-				<li class="pastille">Conventionnée <span>INAMI</span></li>
-				<li class="pastille"><a href="/jeux/">{{ collections.jeux.length }} fiches <span>jeux</span></a></li>
-			</ul>
+			<a class="couvercle-lien" href="/jeux/">{{ collections.jeux.length }} fiches jeux à refaire à la maison <span aria-hidden="true">→</span></a>
 		</div>
 
 		<div class="contenu-boite">
@@ -34,7 +30,6 @@ section: home
 				{% endfor %}
 			</ul>
 			<a class="bouton" href="/contact/">Écrire à Sophie</a>
-			<p class="contenu-note">Nouveaux patients acceptés, liste d'attente courte.</p>
 		</div>
 	</div>
 

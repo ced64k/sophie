@@ -1,7 +1,7 @@
 ---
 layout: layouts/prises-en-charge.njk
 title: Prises en charge
-metaDescription: "Ce que Sophie Lenaerts prend en charge, de l'âge préscolaire au début du secondaire : prise en charge précoce, langage oral et écrit, bégaiement, cognition mathématique, méthodologie."
+metaDescription: "Ce que Sophie Lenaerts prend en charge, de l'âge préscolaire au début du secondaire : prise en charge précoce, langage oral et écrit, cognition mathématique, méthodologie."
 permalink: /prises-en-charge/
 eleventyNavigation:
   key: Prises en charge
