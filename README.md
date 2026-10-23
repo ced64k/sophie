@@ -19,9 +19,10 @@ GitHub Actions (`.github/workflows/deploy.yml`) compile le site et l'envoie sur 
 
 ## Édition des contenus (Sveltia CMS)
 
-1. Créer un jeton d'accès personnel GitHub (GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens), limité au dépôt `ced64k/sophie`, avec les droits **Contents : lecture et écriture**.
-2. Ouvrir https://dev.sophielenaerts.be/admin/ et choisir « Se connecter avec un jeton d'accès personnel ».
-3. Écrire ou modifier un article, une fiche jeu ou une page, puis publier : l'enregistrement crée un commit sur `dev` et le site dev se met à jour en une ou deux minutes.
+1. Le compte GitHub de Sophie doit avoir accès en écriture au dépôt `ced64k/sophie` (invitation « collaborateur » à accepter). Sans cela, la connexion répond « Not found ».
+2. Créer un jeton **classique** : GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token, avec la case **repo** cochée. (Un jeton « fine-grained » ne voit pas un dépôt appartenant à un autre compte.)
+3. Ouvrir https://dev.sophielenaerts.be/admin/ et choisir « Se connecter avec un jeton d'accès personnel ».
+4. Écrire ou modifier un article, une fiche jeu ou une page, puis publier : l'enregistrement crée un commit sur `dev` et le site dev se met à jour en une ou deux minutes.
 
 La mise en ligne sur sophielenaerts.be (branche `main`) se fait ensuite en fusionnant `dev`.
 
