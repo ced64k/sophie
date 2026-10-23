@@ -272,11 +272,14 @@ p { margin: 0; }
 .tache-2 { right: -6vw; top: 12%; width: clamp(200px, 26vw, 380px); aspect-ratio: 1.4; border-radius: 60% 40% 50% 50%; }
 
 .accueil-face {
+  /* Prend l'espace libre entre le menu et le bas de l'accueil, et s'y centre verticalement */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: clamp(8px, 3.5vh, 56px) var(--gouttiere) 0;
+  padding: clamp(8px, 2vh, 32px) var(--gouttiere);
 }
 
 .accueil h1 {
@@ -317,12 +320,10 @@ p { margin: 0; }
 
 .accueil-pied {
   position: relative;
-  flex: 1;
   display: grid;
   grid-template-columns: 1fr minmax(200px, min(560px, 46vh)) 1fr;
   align-items: end;
   gap: 24px;
-  margin-top: clamp(12px, 2vh, 40px);
   padding: 0 var(--bord) clamp(16px, 3.2vh, 40px);
 }
 
