@@ -1,6 +1,6 @@
 # sophielenaerts.be
 
-Site de Sophie Lenaerts, logopède. Site statique [Eleventy](https://www.11ty.dev/) 2, contenus en Markdown.
+Site de Sophie Lenaerts, logopède. Site statique [Eleventy](https://www.11ty.dev/) 3, contenus en Markdown.
 
 ## Développer
 

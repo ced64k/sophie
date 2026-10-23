@@ -6,7 +6,7 @@ section: blog
 <div class="rayon">
 	<header class="titre-page">
 		<h1>{{ title }}</h1>
-		<div class="texte titre-intro">{{ layoutContent | safe }}</div>
+		<div class="texte titre-intro">{{ content | safe }}</div>
 	</header>
 
 	{% include "components/filtres-domaines.njk" %}

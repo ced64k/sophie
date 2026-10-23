@@ -1,6 +1,6 @@
 # sophielenaerts.be
 
-Site de Sophie Lenaerts, logopède. Eleventy 2 (site statique), sources Markdown. Le projet se poursuit
+Site de Sophie Lenaerts, logopède. Eleventy 3 (site statique), sources Markdown. Le projet se poursuit
 surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, tout passe par GitHub.
 
 - Réponses en français, avec tutoiement.
