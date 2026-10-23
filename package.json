@@ -1,42 +1,26 @@
 {
-  "name": "eleventy-netlify-boilerplate",
-  "version": "1.0.4",
-  "description": "A boilerplate for building a fast static website with the Eleventy static site generator, for deployment to Netlify.",
+  "name": "sophielenaerts-be",
+  "version": "2.0.0",
+  "description": "Site de Sophie Lenaerts, logopède (Eleventy).",
   "scripts": {
-    "build": "npm run eleventy & npm run sass",
-    "eleventy": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
     "serve": "npx @11ty/eleventy --serve",
-    "debug": "DEBUG=* npx @11ty/eleventy",
-    "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass _includes/assets/scss:_site/_includes/assets/css --watch",
-    "sass": "npx sass _includes/assets/scss:_site/_includes/assets/css",
-    "start": "npm run watch:eleventy & npm run watch:sass"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate"
-  },
-  "author": {
-    "name": "Dan Urbanowicz",
-    "email": "dan.urbanowicz@gmail.com",
-    "url": "https://github.com/danurbanowicz"
+    "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate/issues"
-  },
-  "homepage": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.3",
     "@11ty/eleventy-navigation": "^0.3.5",
     "clean-css": "^5.3.2",
-    "eleventy-sass": "^2.2.3",
     "html-minifier": "^4.0.0",
     "luxon": "^3.2.1",
     "markdown-it-anchor": "^8.6.6",
-    "sass": "^1.66.1",
     "uglify-js": "^3.17.4"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ced64k/sophie"
   }
 }
-

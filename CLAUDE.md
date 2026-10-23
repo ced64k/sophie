@@ -39,10 +39,8 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
    `provisoire: true` affiche un badge « à remplacer »). Introuvables en ligne : à demander à l'utilisateur.
 2. **Formulaire de contact** (`_includes/components/form.njk`) : n'envoie rien pour l'instant. Sans accès au VPS,
    passer par un service de formulaire (Web3Forms, Formspree…) ; l'adresse de réception est à demander, ne pas l'inventer.
-3. **Sveltia CMS** pour que Sophie édite articles et fiches : remplacer l'ancien Netlify CMS de `admin/`
-   (backend GitHub, connexion par jeton d'accès personnel, branche `dev`). Supprimer `netlify.toml`.
+3. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
 4. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
 5. Photos manquantes pour les fiches Concept Kids et Cuisto Dingo (vignette en aplat de couleur en attendant).
 6. Redirections des anciennes pages `/authors/…` vers `/qui-suis-je/` (nécessite nginx, donc depuis le Mac).
 7. Fin du parcours Impeccable : relecture finale (agent `impeccable-finish-reviewer`) puis DESIGN.md (agent `impeccable-documenter`).
-8. Nettoyer `package.json` et le README, encore ceux du modèle « eleventy-netlify-boilerplate ».

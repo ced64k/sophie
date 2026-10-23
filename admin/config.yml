@@ -1,59 +1,48 @@
-# Netlify CMS Configuration File
-
-# The backend option specifies how to access the content for your site
+# Sveltia CMS : édition des articles et des fiches jeux.
+# Connexion : « Se connecter avec un jeton d'accès personnel » (GitHub).
+# Les modifications sont enregistrées sur la branche dev (https://dev.sophielenaerts.be).
 backend:
-  name: git-gateway
-  branch: main # The branch to update (optional; defaults to master)
+  name: github
+  repo: ced64k/sophie
+  branch: dev
 
-# Uncomment below to enable drafts https://www.netlifycms.org/docs/add-to-your-site/#editorial-workflow
-# publish_mode: editorial_workflow
-
-# Uncomment below to enable a link to your published site in the header bar of Netlify CMS
-# site_url: https://eleventy-netlify-boilerplate.netlify.app/
-
-media_folder: "static/img" # Media files will be stored in the repo under images/uploads
-public_folder: "/static/img"
+locale: fr
+site_url: https://dev.sophielenaerts.be
+media_folder: static/img
+public_folder: /static/img
 
 collections:
-  # Our blog posts
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Article" # Used in the UI
-    folder: "posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}_{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "Sophie Lenaerts" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
-      - { label: "Body", name: "body", widget: "markdown" }
-  # Our pages e.g. About
-  - name: "pages"
-    label: "Page"
-    folder: "pages"
-    create: false # Change to true to allow editors to create new pages
+  - name: blog
+    label: Articles
+    label_singular: Article
+    folder: posts
+    create: true
+    slug: "{{year}}-{{month}}_{{slug}}"
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - { label: Date de publication, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Catégories, name: categories, widget: list, required: false, hint: "Mêmes identifiants que les anciennes catégories du site (ex. langage-oral)." }
+      - { label: Texte, name: body, widget: markdown }
+
+  - name: jeux
+    label: Fiches jeux
+    label_singular: Fiche jeu
+    folder: jeux
+    create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
-      - label: "Navigation" # https://www.11ty.dev/docs/plugins/navigation/
-        name: "eleventyNavigation"
-        widget: "object"
-        fields:
-          - { label: "Key", name: "key", widget: "string" }
-          - { label: "Order", name: "order", widget: "number", default: 0 }
-      - { label: "Body", name: "body", widget: "markdown" }
-  # Games
-  - name: "Jeux"
-    label: "Jeu"
-    folder: "jeux"
-    create: true # Change to true to allow editors to create new pages
-    slug: "{{slug}}"
+      - { label: Titre, name: title, widget: string }
+      - { label: Auteur, name: author, widget: string, default: Sophie Lenaerts }
+      - { label: Texte, name: body, widget: markdown, hint: "Les titres de niveau 2 (##) classent la fiche par domaine : Langage oral, Langage écrit, Mathématiques, Méthodologie, Bégaiement." }
+
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: pages
+    create: false
+    extension: md
+    filter: { field: layout, value: layouts/page.njk }
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
-      - { label: "Author", name: "author", widget: "string", default: "Sophie Lenaerts" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: Titre, name: title, widget: string }
+      - { label: Description (moteurs de recherche), name: metaDescription, widget: text, required: false }
+      - { label: Texte, name: body, widget: markdown }
