@@ -26,6 +26,11 @@ jobs:
           key: og-${{ hashFiles('_og/**', 'static/img/fiches/**', 'static/img/koala.svg', 'static/img/fabric-texture-gris.webp') }}-${{ github.run_id }}
           restore-keys: og-
 
+      # L'admin Sveltia écrit sur la branche du site où il est servi : sur main, il édite main (production)
+      - name: Admin pointe sur main
+        if: github.ref == 'refs/heads/main'
+        run: sed -i -e 's/^  branch: dev$/  branch: main/' -e 's#^site_url: .*#site_url: https://sophielenaerts.be#' admin/config.yml
+
       - run: npx @11ty/eleventy
 
       - uses: actions/upload-artifact@v4
