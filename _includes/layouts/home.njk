@@ -85,7 +85,7 @@ section: home
 </div>
 
 <script>
-	// Sliders sur téléphone (« Mon approche », jeux du commerce) : défilement par étapes, avec des points pour y aller directement
+	// Phone sliders ("Mon approche", shop-bought games): step-by-step scrolling, with dots to jump straight to a slide
 	(function () {
 		function slider(liste, libelle, apres) {
 			if (!liste) return;
@@ -117,7 +117,7 @@ section: home
 		slider(document.querySelector(".etagere .fiches"), "Fiches jeux");
 	})();
 
-	// Les reflets des yeux du koala suivent le pointeur
+	// The koala's eye highlights follow the pointer
 	(function () {
 		var f = document.querySelector(".accueil .frimousse");
 		if (!f || matchMedia("(prefers-reduced-motion: reduce)").matches) return;

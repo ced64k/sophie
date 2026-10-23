@@ -1,5 +1,5 @@
-// Filtres par domaine : un choix par groupe (domaines, publics, themes),
-// gardé dans l'URL pour pouvoir partager une liste filtrée.
+// Domain filters: one choice per group (domaines, publics, themes),
+// kept in the URL so a filtered list can be shared.
 (function () {
   var liste = document.querySelector("[data-liste]");
   if (!liste) return;
@@ -8,7 +8,7 @@
   var choix = {};
   var groupes = boutons.map(function (b) { return b.getAttribute("data-filtre"); });
 
-  // Seuls les groupes de filtres de la page comptent (pas ?palette=…, par exemple)
+  // Only the page's own filter groups count (not ?palette=…, for example)
   new URLSearchParams(location.search).forEach(function (valeur, groupe) {
     if (groupes.indexOf(groupe) !== -1) choix[groupe] = valeur;
   });
@@ -29,7 +29,7 @@
     boutons.forEach(function (b) {
       var groupe = b.getAttribute("data-filtre");
       var actif = (choix[groupe] || "") === b.getAttribute("data-valeur");
-      // « À télécharger » est seul dans son groupe : il se coupe au second clic
+      // "À télécharger" is alone in its group: a second click switches it off
       b.setAttribute("aria-pressed", actif ? "true" : "false");
     });
   }

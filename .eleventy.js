@@ -164,7 +164,9 @@ module.exports = function(eleventyConfig) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        // Inline <script> blocks are minified too (comments removed, names shortened)
+        minifyJS: true
       });
       return minified;
     }

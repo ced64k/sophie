@@ -35,7 +35,7 @@
 		{% include "components/footer.njk" %}
 
 		<script>
-			// Menu mobile : le reste de la page est légèrement flouté tant qu'il est ouvert ; un clic à côté le ferme
+			// Mobile menu: the rest of the page is slightly blurred while it is open; a click outside closes it
 			(function () {
 				var racine = document.documentElement;
 				function regler(b, ouvert) {
@@ -55,7 +55,7 @@
 				});
 			})();
 
-		// Les grandes taches défilent à une autre vitesse que le reste (parallaxe)
+		// The large background blobs scroll at a different speed from the rest (parallax)
 		(function () {
 			var taches = Array.prototype.slice.call(document.querySelectorAll("[data-parallaxe]"));
 			if (!taches.length || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -65,7 +65,7 @@
 				taches.forEach(function (t) {
 					var f = parseFloat(t.dataset.parallaxe), d;
 					if (t.hasAttribute("data-relatif")) {
-						// Plus bas dans la page : l'écart se mesure depuis le centre de la fenêtre
+						// Further down the page: the offset is measured from the centre of the window
 						var r = t.getBoundingClientRect();
 						var centre = r.top + r.height / 2 - (t._dec || 0);
 						d = (innerHeight / 2 - centre) * f;
