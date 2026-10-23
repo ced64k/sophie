@@ -46,6 +46,7 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy
-        run: DEST=sophie
+        run: |
+          DEST=sophie
           if [ "$GITHUB_REF" = "refs/heads/dev" ]; then DEST=devsophie; fi
           rsync -rlptz --delete _site/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/$DEST/
