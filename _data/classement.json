@@ -1,0 +1,21 @@
+{
+  "domaines": {
+    "langage-oral": "oral",
+    "langage-ecrit": "ecrit",
+    "grammaire": "ecrit",
+    "mathematique": "math"
+  },
+  "publics": {
+    "pour-les-parents": { "id": "parents", "nom": "Pour les parents" },
+    "pour-les-instits": { "id": "instits", "nom": "Pour les instits" }
+  },
+  "themes": {
+    "telechargements-gratuits": { "id": "telecharger", "nom": "À télécharger" },
+    "jeux-educatifs": { "id": "jeux", "nom": "Jeux" },
+    "materiel-pedagogique": { "id": "materiel", "nom": "Matériel" },
+    "creation-de-materiel": { "id": "materiel", "nom": "Matériel" },
+    "livres": { "id": "livres", "nom": "Livres" },
+    "ateliers": { "id": "ateliers", "nom": "Ateliers" },
+    "du-blabla": { "id": "reflexions", "nom": "Réflexions" }
+  }
+}

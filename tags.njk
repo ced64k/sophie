@@ -8,18 +8,22 @@ pagination:
     - nav
     - post
     - posts
+    - jeu
+    - jeux
 permalink: /tags/{{ tag }}/
 layout: layouts/base.njk
 eleventyComputed:
-  title: "Tagged “{{ tag }}”"
-  metaDescription: "All posts from the Blog tagged with “{{ tag }}”"
+  title: "Articles « {{ tag }} »"
+  metaDescription: "Les articles classés « {{ tag }} »."
 ---
 
-<h1>Tagged “{{ tag }}”</h1>
-
-{% set postslist = collections[tag] %}
-{% include "components/postslist.njk" %}
-
-<nav>
-  <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>
+<div class="rayon">
+	<div class="section-tete">
+		<h1>Articles « {{ tag }} »</h1>
+	</div>
+	<div class="livret-page large liste-articles">
+		{% set articles = collections[tag] | reverse %}
+		{% include "components/articles.njk" %}
+		<p><a class="lien-fort" href="/blog/">Tous les articles</a></p>
+	</div>
+</div>

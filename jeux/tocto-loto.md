@@ -3,7 +3,7 @@ title: "Tocto Loto"
 author: "Fanny Jonckheere"
 ---
 
-![](/static/img/cropped-4176463964_be7d765ef9_o-1.jpg)
+![Le jeu Tocto Loto](/static/img/Tocto-loto.jpg)
 
 Tocto Loto est un jeu édité par Djeco. Il se constitue de 3 planches riches de détails. Les personnages présents ont des similitudes et des différences.
 

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "precoce",
+    "nom": "Prise en charge précoce",
+    "court": "Précoce",
+    "couleur": "#7CC76E",
+    "texte": "Les prémices de la communication chez les tout-petits : regard, attention partagée, gestes, premiers mots."
+  },
+  {
+    "id": "oral",
+    "nom": "Langage oral",
+    "court": "Oral",
+    "couleur": "#E8467C",
+    "texte": "Le vocabulaire, la construction des phrases, la prononciation et la compréhension de ce qu'on entend."
+  },
+  {
+    "id": "ecrit",
+    "nom": "Langage écrit",
+    "court": "Écrit",
+    "couleur": "#2F6BE0",
+    "texte": "L'entrée dans la lecture, l'orthographe, la conscience des sons et des syllabes, le graphisme."
+  },
+  {
+    "id": "begaiement",
+    "nom": "Bégaiement",
+    "court": "Bégaiement",
+    "couleur": "#8E5BE8",
+    "texte": "Retrouver une parole plus fluide et le plaisir de prendre la parole, avec l'enfant et sa famille."
+  },
+  {
+    "id": "math",
+    "nom": "Cognition mathématique",
+    "court": "Maths",
+    "couleur": "#FFD23F",
+    "texte": "Le sens du nombre, le calcul, les tables, la logique et le raisonnement."
+  },
+  {
+    "id": "methodo",
+    "nom": "Méthodologie",
+    "court": "Méthodo",
+    "couleur": "#FF8A3D",
+    "texte": "Apprendre à apprendre : organisation, mémorisation, fonctions exécutives, compréhension des lectures longues."
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "oversized-h1",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-10-23T07:20:47.822Z",
+        "reason": "Claude: decision-round sketch, not shipped; h1 is the two-word name plus a subtitle"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          ".eleventy.js"
+        ],
+        "createdAt": "2026-10-23T07:24:44.809Z",
+        "reason": "Claude: L67 is a regex matching <img src> in a build filter, not markup"
+      }
+    ]
+  }
+}

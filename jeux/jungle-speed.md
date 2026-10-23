@@ -3,7 +3,7 @@ title: "Jungle Speed"
 author: "Fanny Jonckheere"
 ---
 
-![](/static/img/cropped-5188304120_8453d7e675_o-1.jpg)
+![Le jeu Jungle Speed](/static/img/JUNGLE-SPEED-2016.jpg)
 
 Le jeu contient un totem et des cartes qui présentent parfois de légères différences.  
 le but est d’attraper le totem dès que l’on constate que deux cartes sont identiques par leur dessin (mais pas par la couleur)  

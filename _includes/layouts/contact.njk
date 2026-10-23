@@ -3,14 +3,31 @@ layout: layouts/base.njk
 section: contact
 ---
 
-<div class="intro">
-	<h1>{{ title }}<span class="dot">.</span></h1>
-</div>
+<article class="livret">
+	<div class="livret-page large">
+		<h1>{{ title }}</h1>
+		<div class="texte chapeau">
+			{{ layoutContent | safe }}
+		</div>
 
-<div class="content">
-	{{ layoutContent | safe }}
+		<div class="contact-grille">
+			<section class="contact-lieux" aria-labelledby="titre-appeler">
+				<h2 id="titre-appeler">Appeler</h2>
+				{% for lieu in lieux %}
+					<div class="lieu-carte">
+						<p class="lieu-ville">{{ lieu.ville }}</p>
+						<p>{{ lieu.structure }}<br>{{ lieu.adresse }}</p>
+						<a class="lieu-tel" href="tel:{{ lieu.telephone | replace(' ', '') }}">{{ lieu.telephone }}</a>
+						<p><a href="mailto:{{ lieu.email }}">{{ lieu.email }}</a></p>
+						{% if lieu.provisoire %}<p class="provisoire">Coordonnées provisoires, à remplacer</p>{% endif %}
+					</div>
+				{% endfor %}
+			</section>
 
-	{% include "components/form.njk" %}
-</div>
-
-
+			<section aria-labelledby="titre-ecrire">
+				<h2 id="titre-ecrire">Écrire à Sophie</h2>
+				{% include "components/form.njk" %}
+			</section>
+		</div>
+	</div>
+</article>

@@ -1,31 +1,25 @@
 ---
 layout: layouts/base.njk
 section: jeux
-permalink: /jeux/index.html
 ---
 
-<div class="intro">
-	<h1>{{ title }}<span class="dot">.</span></h1>
+<div class="rayon">
+	<div class="section-tete">
+		<h1>{{ title }}</h1>
+	</div>
+
+	{% include "components/filtres-domaines.njk" %}
+
+	{% set fiches = collections.jeux %}
+	{% include "components/fiches.njk" %}
+	<p class="vide" hidden>Aucune fiche pour ce domaine pour l'instant.</p>
 </div>
 
-<div class="content">
-	{{ layoutContent | safe }}
-</div>
-{% set postslist = collections.jeu %}
-<section>
-	{% for post in postslist | reverse %}
-		<article{% if post.url == url %} data-current="current item"{% endif %} class="summary">
-			<h2 class="summary-title">
-				<a href="{{ post.url | url }}">
-					{% if post.data.title %}
-						{{ post.data.title }}
-					{% else %}
-						Untitled
-					{% endif %}
-				</a>
-			</h2>
-		</article>
-	{% endfor %}
-</section>
-
-
+<article class="livret">
+	<div class="livret-page">
+		<h2>Pourquoi des jeux du commerce</h2>
+		<div class="texte">
+			{{ layoutContent | safe }}
+		</div>
+	</div>
+</article>

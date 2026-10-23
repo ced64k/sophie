@@ -3,33 +3,18 @@ layout: layouts/base.njk
 section: post
 ---
 
-<article>
-  <div class="intro">
-    <h1>{{ title }}</h1>
-  </div>
-  <div class="summary">
-    <div class="summary-date">
-    <time datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></a>
-    </div>
-  </div>
-  
-  <div class="content">
-    {{ layoutContent | safe }}
-  </div>
+<article class="livret">
+	<div class="livret-page">
+		<h1>{{ title }}</h1>
+		<p class="auteur"><time datetime="{{ page.date | machineDate }}">{{ page.date | readableDate }}</time></p>
 
-  {% if tags %}
-    <p>
-    {% for tag in tags %}
-      {%- if tag != "post" -%}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-      {%- endif -%}
-    {% endfor %}
-    </p>
-  {% endif %}
-
+		<div class="texte">
+			{{ layoutContent | safe }}
+		</div>
+	</div>
 </article>
 
-<nav>
-  <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>
+{% set suivant = collections.post | getPreviousCollectionItem(page) %}
+{% if suivant %}
+	<p class="suite"><a href="{{ suivant.url }}">Article précédent : {{ suivant.data.title }}</a></p>
+{% endif %}

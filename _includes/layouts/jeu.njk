@@ -1,25 +1,31 @@
 ---
 layout: layouts/base.njk
-section: post
+section: jeu
 ---
 
-<article>
-  <div class="intro">
-    <h1>{{ title }}</h1>
-  </div>
-  <div class="summary">
-    <div class="summary-date">
-    Par <a href="/authors/{{ author | slug }}/">{{ author }}</a>
-    </div>
-  </div>
+{% set sections = content | sectionsFiche %}
+<article class="livret fiche-jeu">
+	<div class="livret-page">
+		<h1>{{ title }}</h1>
+		<p class="auteur">Fiche de {{ author }}</p>
 
+		{% if sections.length %}
+			<nav class="sommaire" aria-label="Variantes de la fiche">
+				<p class="sommaire-titre">Les variantes</p>
+				<ul>
+					{% for s in sections %}
+						{% set d = domaines | domaine(s.domaine) if s.domaine %}
+						<li><a href="#{{ s.id }}"{% if d %} style="--puce: {{ d.couleur }}"{% endif %}>{% if d %}<svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{% endif %}{{ s.titre }}</a></li>
+					{% endfor %}
+				</ul>
+			</nav>
+		{% endif %}
 
-  <div class="content">
-    {{ layoutContent | safe }}
-  </div>
-
+		<div class="texte">
+			{{ content | puceFiche | safe }}
+		</div>
+	</div>
 </article>
 
-<nav>
-  <a href="{{ '/jeux/' | url }}">← Tous les jeux</a>
-</nav>
+{% set suivante = collections.jeux | getNextCollectionItem(page) or collections.jeux[0] %}
+<p class="suite"><a href="{{ suivante.url }}">Fiche suivante : {{ suivante.data.title }}</a></p>

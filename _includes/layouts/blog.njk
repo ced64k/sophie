@@ -1,13 +1,26 @@
 ---
 layout: layouts/base.njk
 section: blog
-permalink: /blog/index.html
 ---
-<div class="intro">
-	<h1>{{ title }}<span class="dot">.</span></h1>
+
+<div class="rayon">
+	<div class="section-tete">
+		<h1>{{ title }}</h1>
+		<div class="texte">{{ layoutContent | safe }}</div>
+	</div>
+
+	{% include "components/filtres-domaines.njk" %}
+	<div class="filtres" role="group" aria-label="Filtrer par public ou par thème">
+		<button type="button" class="filtre" data-filtre="publics" data-valeur="" aria-pressed="true">Tout le monde</button>
+		{% for cle, p in classement.publics %}
+			<button type="button" class="filtre" data-filtre="publics" data-valeur="{{ p.id }}" aria-pressed="false">{{ p.nom }}</button>
+		{% endfor %}
+		<button type="button" class="filtre" data-filtre="themes" data-valeur="telecharger" aria-pressed="false">À télécharger</button>
+	</div>
+
+	<div class="livret-page large liste-articles">
+		{% set articles = collections.post | reverse %}
+		{% include "components/articles.njk" %}
+		<p class="vide" hidden>Aucun article ne correspond à ces filtres.</p>
+	</div>
 </div>
-
-{{ layoutContent | safe }}
-
-{% set postslist = collections.post %}
-{% include "components/postslist.njk" %}

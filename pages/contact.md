@@ -1,12 +1,12 @@
 ---
 layout: layouts/contact.njk
 title: Contact
-metaDescription: This is a sample meta description. If one is not present in your page/post's front matter, the default metadata.description will be used instead.
+metaDescription: "Contacter Sophie Lenaerts, logopède à Elouges (Dour) et à Ath : par téléphone via les structures, ou par le formulaire."
 section: contact
-date: 2018-01-01
 permalink: /contact/index.html
 eleventyNavigation:
   key: Contact
-  order: 3
+  order: 5
 ---
 
+Pour un premier rendez-vous, le plus simple est d'appeler la structure la plus proche de chez vous : elle transmet votre demande. Vous pouvez aussi m'écrire directement avec le formulaire. Je prends de nouveaux patients ; la liste d'attente est courte.

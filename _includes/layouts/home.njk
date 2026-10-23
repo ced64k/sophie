@@ -3,11 +3,82 @@ layout: layouts/base.njk
 section: home
 ---
 
-<div class="intro">
-	<h1>Qui suis-je<span class="dot">.</span></h1>
-	<img src="/static/img/cropped-4860084382_c8a130d413_o-1.jpg" alt="">
-</div>
+<section class="couvercle" aria-labelledby="titre-boite">
+	<header class="couvercle-bord">
+		<a class="bord-nom" href="/">Sophie Lenaerts<span>, logopède</span></a>
+		{% include "components/nav.njk" %}
+	</header>
 
-<div class="content">
-	{{ layoutContent | safe }}
-</div>
+	<div class="couvercle-face">
+		<div class="couvercle-titre">
+			<h1 id="titre-boite">Sophie Lenaerts</h1>
+			<p class="couvercle-devise">La logopédie, ça se joue.</p>
+			<p class="couvercle-intro">{{ intro }}</p>
+			<ul class="pastilles" aria-label="En bref">
+				<li class="pastille">Préscolaire <span>à</span> secondaire</li>
+				<li class="pastille">Conventionnée <span>INAMI</span></li>
+				<li class="pastille"><a href="/jeux/">{{ collections.jeux.length }} fiches <span>jeux</span></a></li>
+			</ul>
+		</div>
+
+		<div class="contenu-boite">
+			<h2>Contenu de la boîte</h2>
+			<ul class="lieux">
+				{% for lieu in lieux %}
+					<li>
+						<p class="lieu-ville">{{ lieu.ville }}</p>
+						<p class="lieu-structure">{{ lieu.structure }}</p>
+						<a class="lieu-tel" href="tel:{{ lieu.telephone | replace(' ', '') }}">{{ lieu.telephone }}</a>
+						{% if lieu.provisoire %}<p class="provisoire">Coordonnées provisoires, à remplacer</p>{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+			<a class="bouton" href="/contact/">Écrire à Sophie</a>
+			<p class="contenu-note">Nouveaux patients acceptés, liste d'attente courte.</p>
+		</div>
+	</div>
+
+	<nav class="legende" aria-label="Domaines pris en charge">
+		<ul>
+			{% for d in domaines %}
+				<li><a href="/prises-en-charge/#{{ d.id }}" style="--puce: {{ d.couleur }}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
+</section>
+
+<section class="regles livret" aria-labelledby="titre-regles">
+	<div class="livret-page">
+		<h2 id="titre-regles">Les règles du jeu</h2>
+		{{ layoutContent | safe }}
+		<p><a class="lien-fort" href="/qui-suis-je/">Mon parcours</a></p>
+	</div>
+</section>
+
+<section class="etagere" aria-labelledby="titre-etagere">
+	<div class="section-tete">
+		<h2 id="titre-etagere">Un jeu du commerce, dix façons de l'utiliser</h2>
+		<p>Chaque fiche détourne un jeu qu'on trouve en magasin, domaine par domaine, pour que les parents puissent le refaire à la maison.</p>
+	</div>
+	{% set fiches = collections.jeux %}
+	{% include "components/fiches.njk" %}
+	<p class="section-pied"><a class="lien-fort" href="/jeux/">Toutes les fiches jeux</a></p>
+</section>
+
+<section class="derniers livret" aria-labelledby="titre-articles">
+	<div class="livret-page large">
+		<h2 id="titre-articles">Derniers articles</h2>
+		{% set articles = collections.post | reverse %}
+		{% set limite = 3 %}
+		{% include "components/articles.njk" %}
+		<p><a class="lien-fort" href="/blog/">Tous les articles</a></p>
+	</div>
+</section>
+
+<section class="bandeau-jeux" aria-labelledby="titre-jeux-en-ligne">
+	<div>
+		<h2 id="titre-jeux-en-ligne">Les jeux en ligne</h2>
+		<p>Des jeux conçus par des logopèdes et par des patients, à jouer en séance ou à la maison : lecture, grammaire, cognition mathématique, langage oral.</p>
+	</div>
+	<a class="bouton bouton-bleu" href="{{ metadata.jeuxEnLigne }}">Ouvrir jeux.sophielenaerts.be</a>
+</section>

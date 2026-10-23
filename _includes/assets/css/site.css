@@ -1,0 +1,869 @@
+/* Sophie Lenaerts — la boîte de jeu, version « vert tapis de jeu » */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/static/fonts/bricolage.woff2") format("woff2");
+  font-weight: 500 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/static/fonts/atkinson-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/static/fonts/atkinson-400i.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/static/fonts/atkinson-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --feutre: #17734A;
+  --feutre-fonce: #0E5233;
+  --feutre-clair: #E3F1E8;
+  --table: #FF8A3D;
+  --jaune: #FFD23F;
+  --rose: #C92E63;
+  --rose-fonce: #A8204F;
+  --bleu: #1E5BD8;
+  --encre: #161616;
+  --encre-douce: #3D4A42;
+  --carton: #FFFFFF;
+  --carton-ombre: #E9EFEA;
+
+  --titre: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;
+  --texte: "Atkinson Hyperlegible", system-ui, sans-serif;
+
+  --trait: 3px solid var(--encre);
+  --rayon: 14px;
+  --ombre: 0 2px 0 rgba(22, 22, 22, .9), 0 18px 40px -18px rgba(14, 82, 51, .55);
+  --gouttiere: clamp(16px, 4vw, 48px);
+  --sortie: cubic-bezier(.16, 1, .3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 24px;
+  accent-color: var(--feutre);
+  scrollbar-color: var(--feutre) var(--feutre-clair);
+}
+
+body {
+  margin: 0;
+  background: var(--table);
+  color: var(--encre);
+  font-family: var(--texte);
+  font-size: clamp(1.0625rem, 1rem + .3vw, 1.1875rem);
+  line-height: 1.6;
+  padding: clamp(8px, 1.2vw, 16px);
+}
+
+::selection { background: var(--jaune); color: var(--encre); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: inherit;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .2em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1, h2, h3 {
+  font-family: var(--titre);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(2.4rem, 1.6rem + 3.6vw, 4.5rem); }
+h2 { font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.6rem); }
+h3 { font-size: 1.35rem; }
+p { margin: 0; }
+
+.evitement {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  background: var(--jaune);
+  padding: 10px 16px;
+  font-weight: 700;
+  z-index: 10;
+}
+.evitement:focus { top: 16px; }
+
+/* ——— Pastille de domaine ——— */
+
+.puce {
+  width: .8em;
+  height: .8em;
+  flex: none;
+  overflow: visible;
+}
+
+/* ——— Bord du couvercle (en-tête) ——— */
+
+.bord, .couvercle-bord {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  flex-wrap: wrap;
+}
+
+.bord {
+  background: var(--feutre);
+  color: var(--carton);
+  border: var(--trait);
+  border-radius: var(--rayon);
+  padding: 14px var(--gouttiere);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.bord-nom {
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.35rem;
+  text-decoration: none;
+  letter-spacing: -.01em;
+}
+.bord-nom span { font-weight: 500; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.nav-toggle { display: none; }
+
+.nav-liens {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+}
+
+.nav-liens a {
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 3px solid transparent;
+  transition: border-color .2s var(--sortie);
+}
+.nav-liens a:hover { border-color: rgba(255, 255, 255, .6); }
+.nav-liens a[aria-current="page"] { border-color: var(--jaune); }
+
+.jeton-jeux {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bleu);
+  color: var(--carton);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 7px 16px;
+  border: 2px solid var(--encre);
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: transform .2s var(--sortie);
+}
+.jeton-jeux svg { width: .8em; height: .8em; }
+.jeton-jeux:hover { transform: translateY(-2px); }
+
+@media (max-width: 960px) {
+  .nav { width: 100%; flex-wrap: wrap; justify-content: space-between; }
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font: inherit;
+    font-weight: 700;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 2px solid var(--carton);
+    border-radius: 999px;
+  }
+  .nav-toggle::before {
+    content: "";
+    width: 18px;
+    height: 12px;
+    border-block: 2px solid currentColor;
+    background: linear-gradient(currentColor 0 0) center / 100% 2px no-repeat;
+  }
+  .nav-liens { display: none; order: 3; width: 100%; flex-direction: column; padding-top: 6px; }
+  .nav-toggle[aria-expanded="true"] ~ .nav-liens { display: flex; }
+}
+
+/* ——— Couvercle (accueil) ——— */
+
+.couvercle {
+  position: relative;
+  background: var(--feutre);
+  color: var(--carton);
+  border: var(--trait);
+  border-bottom-width: 10px;
+  border-bottom-color: var(--feutre-fonce);
+  outline: 3px solid var(--encre);
+  outline-offset: -3px;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px -30px rgba(70, 25, 0, .55);
+  padding: 18px var(--gouttiere) 0;
+  min-height: min(100svh - 32px, 980px);
+  display: flex;
+  flex-direction: column;
+  animation: pose .9s var(--sortie) both;
+}
+
+@keyframes pose {
+  from { transform: translateY(-18px) scale(1.01); box-shadow: 0 60px 90px -30px rgba(70, 25, 0, .35); }
+}
+
+.couvercle-face {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .9fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 80px);
+  padding-block: clamp(32px, 6vh, 72px);
+}
+
+.couvercle-titre h1 {
+  font-size: clamp(2.6rem, 1.2rem + 6vw, 6rem);
+  line-height: .92;
+  letter-spacing: -.035em;
+}
+
+.couvercle-devise {
+  font-family: var(--titre);
+  font-weight: 800;
+  color: var(--jaune);
+  font-size: clamp(1.7rem, 1.1rem + 2.4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  margin-top: .3em;
+}
+
+.couvercle-intro {
+  max-width: 34ch;
+  margin-top: 22px;
+  font-size: 1.15em;
+}
+
+.pastilles {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.pastille {
+  width: 142px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--carton);
+  color: var(--encre);
+  border: var(--trait);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: .9rem;
+  line-height: 1.12;
+  padding: 18px;
+  hyphens: none;
+  box-shadow: 0 2px 0 var(--encre);
+}
+.pastille span { display: block; font-weight: 500; font-size: .92em; }
+.pastille a { text-decoration: none; }
+.pastille:nth-child(2) { background: var(--jaune); }
+.pastille:nth-child(3) { transform: rotate(-6deg); }
+
+.contenu-boite {
+  background: var(--carton);
+  color: var(--encre);
+  border: var(--trait);
+  border-radius: var(--rayon);
+  padding: clamp(22px, 2.6vw, 34px);
+  box-shadow: var(--ombre);
+}
+.contenu-boite h2 { font-size: 1.6rem; }
+
+.lieux {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 20px;
+}
+.lieux li {
+  padding: 16px 0;
+  border-top: 2px dashed var(--encre);
+}
+.lieu-ville {
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+.lieu-structure { color: var(--encre-douce); }
+.lieu-tel {
+  display: inline-block;
+  font-family: var(--titre);
+  font-weight: 700;
+  font-size: 1.35rem;
+  font-variant-numeric: tabular-nums;
+  margin-top: 4px;
+}
+
+.provisoire {
+  display: block;
+  width: fit-content;
+  font-size: .8rem;
+  font-weight: 700;
+  background: var(--jaune);
+  color: var(--encre);
+  padding: 1px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.contenu-note {
+  margin-top: 14px;
+  font-size: .95rem;
+  color: var(--encre-douce);
+}
+
+.legende {
+  border-top: 2px solid rgba(255, 255, 255, .35);
+  padding-block: 18px 22px;
+}
+.legende ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+.legende a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.legende a:hover { text-decoration: underline; }
+.legende .puce { font-size: 1.25rem; }
+
+@media (max-width: 860px) {
+  .couvercle { min-height: 0; }
+  .couvercle-face { grid-template-columns: 1fr; }
+  .pastille { width: 118px; font-size: .8rem; padding: 14px; }
+}
+
+/* ——— Bouton ——— */
+
+.bouton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--rose);
+  color: var(--carton);
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 16px 28px;
+  border: var(--trait);
+  border-radius: 999px;
+  box-shadow: 0 4px 0 var(--encre);
+  cursor: pointer;
+  transition: transform .18s var(--sortie), box-shadow .18s var(--sortie), background-color .18s;
+}
+.bouton:hover { background: var(--rose-fonce); transform: translateY(-2px); box-shadow: 0 6px 0 var(--encre); }
+.bouton:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--encre); }
+.bouton-bleu { background: var(--bleu); }
+.bouton-bleu:hover { background: #1749B3; }
+
+/* ——— Livret (pages de contenu) ——— */
+
+.livret { margin-top: clamp(16px, 2vw, 24px); }
+
+.livret-page {
+  background: var(--carton);
+  border: var(--trait);
+  border-radius: var(--rayon);
+  padding: clamp(28px, 5vw, 72px) var(--gouttiere);
+  max-width: 1180px;
+  margin-inline: auto;
+}
+.livret-page > * { max-width: 44rem; margin-inline: auto; }
+.livret-page.large > * { max-width: 62rem; }
+.livret-page > h1, .livret-page > h2 { margin-bottom: .55em; }
+
+.auteur {
+  color: var(--encre-douce);
+  margin-top: -.3em;
+  margin-bottom: 2em;
+}
+
+.texte > * + * { margin-top: 1em; }
+.texte h2 { margin-top: 2.2em; font-size: clamp(1.45rem, 1.2rem + 1vw, 2rem); }
+.texte h3 { margin-top: 1.8em; }
+.texte ul, .texte ol { padding-left: 1.3em; }
+.texte li + li { margin-top: .4em; }
+.texte li::marker { color: var(--feutre); }
+.texte img {
+  border: var(--trait);
+  border-radius: 10px;
+  margin-block: 1.6em;
+  max-height: 560px;
+  width: auto;
+}
+.texte a { color: var(--feutre-fonce); font-weight: 700; }
+.texte a:hover { color: var(--rose); }
+.texte strong { font-weight: 700; }
+.texte blockquote {
+  margin-inline: 0;
+  padding: 18px 22px;
+  background: var(--feutre-clair);
+  border-radius: 10px;
+}
+
+.chapeau { font-size: 1.15em; }
+
+.lien-fort {
+  display: inline-block;
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--feutre-fonce);
+  text-decoration-thickness: 3px;
+  margin-top: 1.6em;
+}
+.lien-fort::after { content: " →"; }
+.lien-fort:hover { color: var(--rose); }
+
+/* Règles du jeu (accueil) */
+
+.regles .texte p, .regles > .livret-page > p:not(:last-child) { font-size: 1.1em; }
+.regles .livret-page p + p { margin-top: 1em; }
+
+/* ——— Sections sur le tapis ——— */
+
+.etagere, .rayon {
+  background: var(--feutre);
+  color: var(--carton);
+  border: var(--trait);
+  border-radius: var(--rayon);
+  padding: clamp(32px, 5vw, 72px) var(--gouttiere);
+  margin-top: clamp(16px, 2vw, 24px);
+}
+
+.section-tete { max-width: 1180px; margin: 0 auto clamp(24px, 3vw, 40px); }
+.section-tete h1, .section-tete h2 { margin-bottom: .35em; }
+.section-tete p, .section-tete .texte { max-width: 60ch; font-size: 1.1em; }
+.section-pied { max-width: 1180px; margin-inline: auto; }
+.etagere .lien-fort, .rayon .lien-fort { color: var(--jaune); }
+
+/* Fiches jeux : les boîtes sur l'étagère */
+
+.fiches {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: clamp(16px, 2vw, 26px);
+}
+
+.fiche a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--carton);
+  color: var(--encre);
+  border: var(--trait);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 3px 0 var(--encre);
+  transition: transform .25s var(--sortie), box-shadow .25s var(--sortie);
+}
+.fiche a:hover { transform: translateY(-4px) rotate(-.6deg); box-shadow: 0 8px 0 var(--encre); }
+
+.fiche-image {
+  aspect-ratio: 4 / 3;
+  background: var(--carton-ombre);
+  border-bottom: var(--trait);
+  overflow: hidden;
+}
+.fiche-image img { width: 100%; height: 100%; object-fit: cover; }
+.fiche-image-vide {
+  display: grid;
+  place-items: center;
+  background: var(--jaune);
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: -.02em;
+  padding: 16px;
+  text-align: center;
+}
+.fiche:nth-child(3n) .fiche-image-vide { background: var(--feutre-clair); }
+
+.fiche-nom {
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  padding: 14px 16px 6px;
+}
+
+.fiche-puces {
+  display: flex;
+  gap: 4px;
+  padding: 4px 16px 16px;
+  margin-top: auto;
+  font-size: 1.3rem;
+}
+
+/* ——— Filtres par domaine ——— */
+
+.filtres {
+  max-width: 1180px;
+  margin: 0 auto 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.filtres + .filtres { margin-bottom: clamp(24px, 3vw, 36px); }
+.rayon > .filtres:last-of-type { margin-bottom: clamp(24px, 3vw, 36px); }
+
+.filtre {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--carton);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .7);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color .2s, color .2s, transform .2s var(--sortie);
+}
+.filtre:hover { background: rgba(255, 255, 255, .12); }
+.filtre[aria-pressed="true"] {
+  background: var(--carton);
+  color: var(--encre);
+  border-color: var(--encre);
+}
+.filtre[aria-pressed="true"] .puce { transform: translateY(-2px); }
+.filtre .puce { transition: transform .25s var(--sortie); font-size: 1.15rem; }
+
+.vide {
+  max-width: 1180px;
+  margin: 24px auto 0;
+  font-weight: 700;
+}
+.rayon .vide { color: var(--carton); }
+.liste-articles .vide { color: var(--encre); }
+
+.rayon .livret-page { margin-top: 0; color: var(--encre); }
+
+/* ——— Articles ——— */
+
+.articles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.article + .article { border-top: 2px dashed var(--encre); }
+
+.article-lien {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: clamp(16px, 2.5vw, 32px);
+  padding-block: 24px;
+  text-decoration: none;
+  align-items: start;
+}
+.article:first-child .article-lien { padding-top: 0; }
+
+.article-image {
+  aspect-ratio: 1;
+  border: var(--trait);
+  border-radius: 10px;
+  background: var(--feutre-clair);
+  overflow: hidden;
+}
+.article-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.article-meta time, .auteur time { font-family: var(--titre); font-weight: 500; }
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  color: var(--encre-douce);
+  font-size: .95rem;
+}
+
+.etiquette {
+  font-weight: 700;
+  font-size: .85rem;
+  background: var(--feutre-clair);
+  color: var(--feutre-fonce);
+  padding: 1px 10px;
+  border-radius: 999px;
+}
+
+.article-titre {
+  display: block;
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 1.1rem + .8vw, 1.75rem);
+  line-height: 1.12;
+  letter-spacing: -.015em;
+  margin-top: 6px;
+  text-wrap: balance;
+}
+.article-lien:hover .article-titre { color: var(--feutre); text-decoration: underline; text-decoration-thickness: 3px; }
+
+.article-extrait {
+  display: block;
+  margin-top: 8px;
+  color: var(--encre-douce);
+}
+
+.article-puces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 10px;
+  font-size: .95rem;
+  font-weight: 700;
+}
+.article-domaine { display: inline-flex; align-items: center; gap: 6px; }
+
+@media (max-width: 600px) {
+  .article-lien { grid-template-columns: 84px 1fr; }
+  .article-extrait { display: none; }
+}
+
+/* ——— Prises en charge ——— */
+
+.domaines {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 0 clamp(24px, 4vw, 56px);
+  margin: 2.4em auto 3em;
+}
+.domaine {
+  padding-block: 22px;
+  border-top: 2px dashed var(--encre);
+  scroll-margin-top: 24px;
+}
+.domaine dt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+.domaine dt .puce { font-size: 1.6rem; }
+.domaine dd { margin: 8px 0 0; color: var(--encre-douce); }
+.domaine:target { background: var(--feutre-clair); box-shadow: -12px 0 0 var(--feutre-clair), 12px 0 0 var(--feutre-clair); }
+
+.faits { list-style: none; padding: 0; margin: 1em auto 0; }
+.faits li { padding: 10px 0; border-top: 1px solid var(--carton-ombre); }
+.faits strong { font-weight: 700; }
+
+.appel { margin-top: 2em; }
+.appel .bouton { width: auto; }
+
+/* ——— Fiche jeu ——— */
+
+.sommaire {
+  background: var(--feutre-clair);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 2.2em;
+}
+.sommaire-titre {
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.sommaire ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2 220px;
+  column-gap: 28px;
+}
+.sommaire li { break-inside: avoid; padding: 3px 0; }
+.sommaire a:not([style]) { padding-left: calc(1.1rem * .8 + 8px); }
+.sommaire a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.sommaire a:hover { text-decoration: underline; }
+.sommaire .puce { font-size: 1.1rem; }
+
+.variante {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 1em;
+  border-top: 2px dashed var(--encre);
+}
+.variante .puce { font-size: 1.5em; }
+
+.fiche-jeu .texte > p:first-of-type img { margin-top: 0; }
+
+.suite {
+  max-width: 1180px;
+  margin: clamp(16px, 2vw, 24px) auto 0;
+  text-align: right;
+}
+.suite a {
+  display: inline-block;
+  background: var(--jaune);
+  border: var(--trait);
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 3px 0 var(--encre);
+}
+.suite a::after { content: " →"; }
+.suite a:hover { transform: translateY(-2px); }
+
+/* ——— Contact ——— */
+
+.contact-grille {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(28px, 5vw, 64px);
+  margin-top: 2.4em;
+}
+.contact-grille h2 { font-size: 1.7rem; margin-bottom: .6em; }
+.lieu-carte { padding: 18px 0; border-top: 2px dashed var(--encre); }
+
+.formulaire { display: grid; gap: 18px; }
+.champ { display: grid; gap: 6px; }
+.champ label { font-weight: 700; }
+.champ label span { font-weight: 400; color: var(--encre-douce); }
+.champ input, .champ textarea {
+  font: inherit;
+  color: var(--encre);
+  background: var(--carton);
+  border: 2px solid var(--encre);
+  border-radius: 10px;
+  padding: 12px 14px;
+  width: 100%;
+}
+.champ input:focus, .champ textarea:focus { outline: 3px solid var(--bleu); outline-offset: 1px; }
+.champ input:user-invalid, .champ textarea:user-invalid { border-color: var(--rose); }
+.aide { font-size: .92rem; color: var(--encre-douce); }
+.piege { position: absolute; left: -9999px; }
+.formulaire .bouton { width: auto; justify-self: start; }
+
+@media (max-width: 760px) {
+  .contact-grille { grid-template-columns: 1fr; }
+}
+
+/* ——— Bandeau jeux en ligne ——— */
+
+.bandeau-jeux {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 40px;
+  background: var(--jaune);
+  border: var(--trait);
+  border-radius: var(--rayon);
+  padding: clamp(28px, 4vw, 56px) var(--gouttiere);
+  margin-top: clamp(16px, 2vw, 24px);
+}
+.bandeau-jeux h2 { margin-bottom: .3em; }
+.bandeau-jeux p { max-width: 56ch; }
+.bandeau-jeux .bouton { width: auto; }
+
+/* ——— Pied ——— */
+
+.pied {
+  margin-top: clamp(16px, 2vw, 24px);
+  background: var(--encre);
+  color: var(--carton);
+  border-radius: var(--rayon);
+  padding: clamp(32px, 4vw, 56px) var(--gouttiere) 28px;
+  font-size: .98rem;
+}
+.pied-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 28px 40px;
+}
+.pied-nom, .pied-titre {
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.pied p + p { margin-top: 8px; }
+.pied a:hover { color: var(--jaune); }
+.pied-droits {
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .25);
+  font-size: .88rem;
+  color: #C9D1CC;
+}
+
+/* ——— Transitions de filtre ——— */
+
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

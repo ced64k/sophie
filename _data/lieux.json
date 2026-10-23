@@ -1,0 +1,18 @@
+[
+  {
+    "ville": "Elouges (Dour)",
+    "structure": "Les Locaux des Chaperons",
+    "adresse": "Rue à compléter, 7370 Elouges",
+    "telephone": "065 00 00 00",
+    "email": "contact@exemple.be",
+    "provisoire": true
+  },
+  {
+    "ville": "Ath",
+    "structure": "Équipe Up-toi",
+    "adresse": "Rue à compléter, 7800 Ath",
+    "telephone": "068 00 00 00",
+    "email": "contact@exemple.be",
+    "provisoire": true
+  }
+]

@@ -1,49 +1,45 @@
 <!doctype html>
-<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+<html lang="fr-BE"{% if section %} data-section="{{ section }}"{% endif %}>
 
 	{% include "components/head.njk" %}
 
-	<body class="frame">
+	<body>
+		<a class="evitement" href="#contenu">Aller au contenu</a>
 
-		<a class="coin-jeux" href="https://jeux.sophielenaerts.be" aria-label="Les jeux de logopédie de Sophie Lenaerts">
-			<span class="coin-jeux-texte" aria-hidden="true">Les jeux <span class="coin-jeux-emoji">🐱</span></span>
-		</a>
+		{# Pastille de couleur d'un domaine (la couleur vient du CSS) #}
+		<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+			<symbol id="puce" viewBox="0 0 24 24">
+				<circle cx="12" cy="12" r="10" fill="var(--puce, currentColor)" stroke="var(--encre)" stroke-width="2"/>
+			</symbol>
+		</svg>
 
-		<div id="wrapper" class="wrapper">
-			<header class="header">
-				<a class="header-logo" href="{{ '/' | url }}">{{ metadata.title }}</a>
-
+		{% if section != "home" %}
+			<header class="bord">
+				<a class="bord-nom" href="/">Sophie Lenaerts<span>, logopède</span></a>
 				{% include "components/nav.njk" %}
 			</header>
+		{% endif %}
 
-			<main>
-				{{ layoutContent | safe }}
-			</main>
+		<main id="contenu">
+			{{ layoutContent | safe }}
+		</main>
 
-			{% include "components/footer.njk" %}
-		</div>
+		{% include "components/footer.njk" %}
 
-		{# Uncomment below if you want to include minified inline JavaScript #}
-		{% set js %}
-		  {% include "assets/js/scripts.js" %}
-		{% endset %}
 		<script>
-			var body = document.querySelector('body');
-			var menuTrigger = document.querySelector('#toggle-menu-main-mobile');
-			var menuContainer = document.querySelector('#menu-main-mobile');
-			var hamburgerIcon = document.querySelector('.hamburger');
-
-			if (menuTrigger !== null) {
-				console.log('test');
-			  menuTrigger.addEventListener('click', function(e) {
-			    menuContainer.classList.toggle('open');
-			    hamburgerIcon.classList.toggle('is-active');
-			    body.classList.toggle('lock-scroll');
-			  });
-			}
+			// Menu mobile
+			document.querySelectorAll(".nav-toggle").forEach(function (b) {
+				b.addEventListener("click", function () {
+					var ouvert = b.getAttribute("aria-expanded") === "true";
+					b.setAttribute("aria-expanded", ouvert ? "false" : "true");
+				});
+			});
 		</script>
 
-
+		{% if filtres %}
+			{% set js %}{% include "assets/js/filtres.js" %}{% endset %}
+			<script>{{ js | jsmin | safe }}</script>
+		{% endif %}
 	</body>
 
 </html>

@@ -2,3 +2,9 @@ _site/
 node_modules/
 package-lock.json
 .DS_Store
+
+# Outils de design (locaux)
+.claude/
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/live/

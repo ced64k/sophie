@@ -2,46 +2,46 @@ const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
-const eleventySass = require("eleventy-sass");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const classement = require("./_data/classement.json");
+const domaines = require("./_data/domaines.json");
+
+// Domaine d'une section de fiche jeu, d'après le texte de son titre.
+// « Métaphonologie » est testé avant « phonologie » (langage oral).
+const DOMAINES_TITRES = [
+  [/m[ée]taphonologie|lecture|orthographe|graphisme|[ée]crit/i, "ecrit"],
+  [/oral|lexique|syntaxe|phonologie/i, "oral"],
+  [/math|calcul|nombre|logique/i, "math"],
+  [/ex[ée]cutive|m[ée]thod|m[ée]moris/i, "methodo"],
+  [/b[ée]gaiement/i, "begaiement"]
+];
+
+function domaineDuTitre(titre) {
+  const trouve = DOMAINES_TITRES.find(([motif]) => motif.test(titre));
+  return trouve ? trouve[1] : null;
+}
+
+function texteBrut(html) {
+  return String(html || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 module.exports = function(eleventyConfig) {
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // Configuration API: use eleventyConfig.addLayoutAlias(from, to) to add
-  // layout aliases! Say you have a bunch of existing content using
-  // layout: post. If you don’t want to rewrite all of those values, just map
-  // post to a new file like this:
-  // eleventyConfig.addLayoutAlias("post", "layouts/my_new_post_layout.njk");
-
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
 
-  // Add support for maintenance-free post authors
-  // Adds an authors collection using the author key in our post frontmatter
-  // Thanks to @pdehaan: https://github.com/pdehaan
-  eleventyConfig.addCollection("authors", collection => {
-    const blogs = collection.getFilteredByGlob("posts/*.md");
-    return blogs.reduce((coll, post) => {
-      const author = post.data.author;
-      if (!author) {
-        return coll;
-      }
-      if (!coll.hasOwnProperty(author)) {
-        coll[author] = [];
-      }
-      coll[author].push(post.data);
-      return coll;
-    }, {});
-  });
-
-  // Define collection "jeux"
-  eleventyConfig.addCollection("jeux", function(collection) {
-    return collection.getFilteredByGlob("/jeux/**/*.md");
-  });
+  // Fiches jeux
+  eleventyConfig.addCollection("jeux", collection =>
+    collection.getFilteredByGlob("./jeux/*.md").sort((a, b) => a.data.title.localeCompare(b.data.title, "fr"))
+  );
 
   // Filters
 
@@ -53,25 +53,75 @@ module.exports = function(eleventyConfig) {
     String(dateObj.getDate()).padStart(2, "0")
   );
 
-  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-    // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-    return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
+  // Date lisible, en français (« 22 octobre 2022 »)
+  eleventyConfig.addFilter("readableDate", dateObj =>
+    DateTime.fromJSDate(dateObj, { zone: "utc" }).setLocale("fr").toFormat("d LLLL yyyy")
+  );
+
+  // Date machine (attribut datetime)
+  eleventyConfig.addFilter("machineDate", dateObj =>
+    DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-MM-dd")
+  );
+
+  // Première image d'un contenu HTML rendu
+  eleventyConfig.addFilter("firstImage", html => {
+    const trouve = String(html || "").match(/<img[^>]+src="([^"]+)"/);
+    return trouve ? trouve[1] : null;
   });
 
-  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  // Début du texte d'un contenu HTML rendu, coupé sur un mot
+  eleventyConfig.addFilter("excerpt", (html, longueur = 180) => {
+    const texte = texteBrut(html);
+    if (texte.length <= longueur) return texte;
+    return texte.slice(0, texte.lastIndexOf(" ", longueur)) + "…";
   });
 
-  // Date formatting (human readable)
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
+  // Sections (h2) d'une fiche jeu avec leur domaine
+  eleventyConfig.addFilter("sectionsFiche", html => {
+    const sections = [];
+    String(html || "").replace(/<h2[^>]*?(?:id="([^"]*)")?[^>]*>([\s\S]*?)<\/h2>/g, (m, id, titre) => {
+      const texte = texteBrut(titre);
+      sections.push({ id, titre: texte, domaine: domaineDuTitre(texte) });
+    });
+    return sections;
   });
 
-  // Date formatting (machine readable)
-  eleventyConfig.addFilter("machineDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
+  // Domaines distincts couverts par une fiche jeu
+  eleventyConfig.addFilter("domainesFiche", html => {
+    const vus = new Set();
+    String(html || "").replace(/<h2[^>]*>([\s\S]*?)<\/h2>/g, (m, titre) => {
+      const domaine = domaineDuTitre(texteBrut(titre));
+      if (domaine) vus.add(domaine);
+    });
+    return [...vus];
   });
+
+  // Ajoute la pastille de domaine devant chaque h2 d'une fiche jeu
+  eleventyConfig.addFilter("puceFiche", html =>
+    String(html || "").replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (m, attributs, titre) => {
+      const domaine = domaineDuTitre(texteBrut(titre));
+      if (!domaine) return m;
+      const couleur = domaines.find(d => d.id === domaine).couleur;
+      return `<h2${attributs} class="variante" style="--puce: ${couleur}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>${titre}</h2>`;
+    })
+  );
+
+  // Classement d'un article (catégories WordPress ou tags)
+  eleventyConfig.addFilter("classementArticle", data => {
+    const etiquettes = [...(data.categories || []), ...(data.tags || [])];
+    const domaines = new Set();
+    const publics = new Map();
+    const themes = new Map();
+    etiquettes.forEach(e => {
+      if (classement.domaines[e]) domaines.add(classement.domaines[e]);
+      if (classement.publics[e]) publics.set(classement.publics[e].id, classement.publics[e]);
+      if (classement.themes[e]) themes.set(classement.themes[e].id, classement.themes[e]);
+    });
+    return { domaines: [...domaines], publics: [...publics.values()], themes: [...themes.values()] };
+  });
+
+  // Retrouve un domaine par son id
+  eleventyConfig.addFilter("domaine", (domaines, id) => domaines.find(d => d.id === id));
 
   // Minify CSS
   eleventyConfig.addFilter("cssmin", function(code) {
@@ -90,7 +140,7 @@ module.exports = function(eleventyConfig) {
 
   // Minify HTML output
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if (outputPath.indexOf(".html") > -1) {
+    if (outputPath && outputPath.indexOf(".html") > -1) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
@@ -104,36 +154,20 @@ module.exports = function(eleventyConfig) {
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("static/img");
+  eleventyConfig.addPassthroughCopy("static/fonts");
   eleventyConfig.addPassthroughCopy("admin/");
-  // We additionally output a copy of our CSS for use in Netlify CMS previews
-  eleventyConfig.addPassthroughCopy("_includes/assets/css/inline.css");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
   let markdownItAnchor = require("markdown-it-anchor");
   let options = {
+    html: true,
     breaks: true,
     linkify: true
   };
   let opts = {
     permalink: false
   };
-
-  eleventyConfig.setBrowserSyncConfig({
-      files: './_site/_includes/assets/css/**/*.css'
-    });
-
-  eleventyConfig.addPlugin(eleventySass, {
-      compileOptions: {
-        permalink: function(contents, inputPath) {
-          return (data) => data.page.filePathStem.replace(/^\/scss\//, "/css/") + ".css";
-        }
-      },
-      sass: {
-        style: "compressed",
-        sourceMap: false
-      }
-    });
 
   eleventyConfig.setLibrary("md", markdownIt(options)
     .use(markdownItAnchor, opts)

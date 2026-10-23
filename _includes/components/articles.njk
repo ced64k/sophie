@@ -1,0 +1,25 @@
+{# Liste d'articles : attend `articles` (déjà trié) et éventuellement `limite` #}
+<ul class="articles" data-liste>
+	{% for article in articles %}
+		{% if not limite or loop.index <= limite %}
+			{% set c = article.data | classementArticle %}
+			<li class="article" data-domaines="{{ c.domaines | join(' ') }}" data-publics="{% for p in c.publics %}{{ p.id }} {% endfor %}" data-themes="{% for t in c.themes %}{{ t.id }} {% endfor %}">
+				{% set image = article.templateContent | firstImage %}
+				<a class="article-lien" href="{{ article.url | url }}">
+					<span class="article-image">{% if image %}<img src="{{ image }}" alt="" loading="lazy">{% endif %}</span>
+					<span class="article-texte">
+						<span class="article-meta">
+							<time datetime="{{ article.date | machineDate }}">{{ article.date | readableDate }}</time>
+							{% for p in c.publics %}<span class="etiquette">{{ p.nom }}</span>{% endfor %}
+						</span>
+						<span class="article-titre">{{ article.data.title }}</span>
+						<span class="article-extrait">{{ article.data.summary or (article.templateContent | excerpt(170)) }}</span>
+						{% if c.domaines.length %}
+							<span class="article-puces">{% for id in c.domaines %}{% set d = domaines | domaine(id) %}<span class="article-domaine" style="--puce: {{ d.couleur }}"><svg class="puce" aria-hidden="true"><use href="#puce"/></svg>{{ d.nom }}</span>{% endfor %}</span>
+						{% endif %}
+					</span>
+				</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
