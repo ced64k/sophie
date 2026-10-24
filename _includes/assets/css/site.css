@@ -347,46 +347,35 @@ p { margin: 0; }
     rotate: 45deg;
   }
   .nav-toggle[aria-expanded="true"]::after { opacity: 1; }
-  /* Menu : l'en-tête et la liste des liens forment un seul panneau blanc qui touche les bords de l'écran
-     (la croix n'a plus de rond visible). Tout est toujours présent et s'estompe à l'ouverture et à la fermeture. */
+  /* Menu : l'en-tête et la liste des liens forment une seule feuille blanche qui touche les bords de l'écran
+     (la croix n'a plus de rond visible). Elle part du haut de l'écran, derrière le logo et la croix, et descend d'un bloc. */
   .nav-liens {
     display: flex;
     position: absolute;
+    z-index: -1;
     left: calc(-1 * var(--marge-page));
     right: calc(-1 * var(--marge-page));
-    top: 100%;
+    top: -40px;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 10px 24px 22px;
+    /* 40px au-dessus de l'en-tête + la hauteur de la ligne du logo (48px + son espacement) + 10px d'air */
+    padding: calc(40px + 48px + 2 * clamp(10px, 1.6vw, 22px) + 10px) 24px 22px;
     background: var(--blanc);
     border-radius: 0 0 var(--rayon) var(--rayon);
     box-shadow: var(--ombre);
     text-align: center;
-    /* Le panneau se déroule vers le bas sous l'en-tête (rognage, sans fondu : deux blancs qui s'estompent en se chevauchant faisaient un éclair) */
     visibility: hidden;
     clip-path: inset(0 -60px 100% -60px);
     pointer-events: none;
-    transition: clip-path .35s var(--sortie), visibility 0s .35s;
+    transition: clip-path .4s var(--sortie), visibility 0s .4s;
   }
   .nav-toggle[aria-expanded="true"] ~ .nav-liens {
     visibility: visible;
     clip-path: inset(0 -60px -80px -60px);
     pointer-events: auto;
-    transition: clip-path .35s var(--sortie), visibility 0s;
+    transition: clip-path .4s var(--sortie), visibility 0s;
   }
-  /* Le blanc de l'en-tête, jusqu'en haut de l'écran */
-  .bord::after {
-    content: "";
-    position: absolute;
-    inset: -100px calc(-1 * var(--marge-page)) -1px;
-    z-index: -1;
-    background: var(--blanc);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .22s ease;
-  }
-  .menu-ouvert .bord::after { opacity: 1; }
   /* Voile légèrement assombri (sans flou) sur toute la page, sous le menu */
   .menu-ouvert .accueil, .menu-ouvert .suite-page { z-index: 40; }
   /* Le blanc de l'en-tête doit dépasser jusqu'en haut de l'écran : la page ne le rogne plus tant que le menu est ouvert */
