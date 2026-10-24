@@ -1257,6 +1257,8 @@ p { margin: 0; }
 .carte .leaflet-control-attribution a { color: inherit; }
 .lieu-carte { padding: 18px 0; }
 .lieu-carte:first-of-type { padding-top: 0; }
+.lieu-carte .lieu-nom { margin: .7em 0 0; font-weight: 700; line-height: 1.3; }
+.lieu-carte .lieu-adresse { margin: .1em 0 0; line-height: 1.3; }
 .lieu-ville {
   font-family: var(--titre);
   font-weight: 600;
