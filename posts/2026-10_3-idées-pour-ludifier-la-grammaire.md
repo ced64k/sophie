@@ -2,7 +2,8 @@
 title: 3 idées pour ludifier la grammaire
 date: 2026-10-23
 image: /static/img/IMG_0194.jpeg
-categories: []
+categories:
+  - langage-ecrit
 ---
 
 S'il y a bien une matière qui trône en haut de la catégorie "bof", c'est la grammaire, ex aequo avec la conjugaison. Natures, fonctions, accords, rien de bien amusant. Pourtant, certains patients en redemandent. Mystère? Voici trois jeux à télécharger, plastifier, découper, pour démystifier la grammaire (et un bonus à la fin). 

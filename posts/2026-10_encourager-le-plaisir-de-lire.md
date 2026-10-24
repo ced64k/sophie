@@ -2,7 +2,8 @@
 title: Encourager le plaisir de lire
 date: 2026-10-20
 image: /static/img/IMG_0204.jpeg
-categories: []
+categories:
+  - langage-ecrit
 ---
 
 C’est comme une mission qu’on s’est donnée depuis que cet enfant est tout petit, lui insuffler le plaisir de lire, de se laisser aller dans une multitude d’univers. Cette image rêvée d’un enfant calme dans le canapé, dans son monde, dans sa lecture, pendant qu’une tarte aux pommes dore dans le four, l’odeur embaume toute la maison, il neige un peu, le feu crépite dans la cheminée… Bon je digresse. Alors du coup, il en mange du bouquin. Et une histoire pour s’endormir (ou deux ou trois ou quatre…) et une activité bibliothèque chaque week-end, et un atelier avec la gentille conteuse, et des petites étagères mignonnes comme sur Pinterest. Je le sais, je l’ai fait. ![](/static/img/IMG_0206.jpeg)
