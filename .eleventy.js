@@ -114,7 +114,7 @@ module.exports = function(eleventyConfig) {
   // Sections (h2) d'une fiche jeu avec leur domaine
   eleventyConfig.addFilter("sectionsFiche", html => {
     const sections = [];
-    String(html || "").replace(/<h2[^>]*?(?:id="([^"]*)")?[^>]*>([\s\S]*?)<\/h2>/g, (m, id, titre) => {
+    String(html || "").replace(/<h2(?:[^>]*?\sid="([^"]*)")?[^>]*>([\s\S]*?)<\/h2>/g, (m, id, titre) => {
       const texte = texteBrut(titre);
       sections.push({ id, titre: texte, domaine: domaineDuTitre(texte) });
     });

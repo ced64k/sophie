@@ -1052,6 +1052,17 @@ p { margin: 0; }
   font-weight: 700;
 }
 .sommaire .puce { font-size: 1.1rem; }
+.sommaire a.sommaire-item { text-decoration: none; color: inherit; }
+.sommaire a.sommaire-item:hover .marque, .sommaire a.sommaire-item:focus-visible .marque { filter: brightness(.95) saturate(1.15); }
+.variante { scroll-margin-top: 1.5rem; }
+
+/* Mobile : la photo de la fiche passe avant les variantes */
+@media (max-width: 760px) {
+  .fiche-jeu .livret-page { display: flex; flex-direction: column; }
+  .fiche-jeu .texte { display: contents; }
+  .fiche-jeu .livret-page > *, .fiche-jeu .texte > * { width: 100%; max-width: 44rem; margin-inline: auto; }
+  .fiche-jeu .texte > p:first-child:has(> img:only-child) { order: -1; margin-bottom: 1.2em; }
+}
 
 .variante {
   display: flex;
