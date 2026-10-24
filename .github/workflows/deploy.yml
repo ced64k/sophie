@@ -1,7 +1,7 @@
 name: Build et déploiement
 
-# Chaque push compile le site. Un push sur main publie sur https://sophielenaerts.be (VPS Infomaniak, dossier /var/www/sophie),
-# un push sur dev publie sur https://dev.sophielenaerts.be (dossier /var/www/devsophie).
+# Chaque push compile le site. Un push sur main publie sur https://sophielogo.be (VPS Infomaniak, dossier /var/www/sophie),
+# un push sur dev publie sur https://dev.sophielogo.be (dossier /var/www/devsophie).
 on:
   push:
   pull_request:
@@ -30,7 +30,7 @@ jobs:
       - name: Admin pointe sur main
         if: github.ref == 'refs/heads/main'
         run: |
-          sed -i -e 's/^  branch: dev$/  branch: main/' -e 's#^site_url: .*#site_url: https://sophielenaerts.be#' admin/config.yml
+          sed -i -e 's/^  branch: dev$/  branch: main/' -e 's#^site_url: .*#site_url: https://sophielogo.be#' admin/config.yml
 
       - run: npx @11ty/eleventy
 

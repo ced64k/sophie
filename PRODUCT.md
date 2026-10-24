@@ -35,7 +35,7 @@ Une logopède qui travaille par le jeu : elle détourne des jeux du commerce (qu
 
 - **Prises en charge** : enfants de l'âge préscolaire au début du secondaire. Domaines : prise en charge précoce et prémices de la communication, langage oral, langage écrit, cognition mathématique (anciennement « logique et mathématique »), méthodologie (méthode de travail, dont la compréhension des lectures longues).
 - **INAMI** : Sophie est **conventionnée INAMI** ; le site le mentionne, sans détailler tarifs ni remboursements.
-- **Stack** : Eleventy (site statique), sources sur GitHub `ced64k/sophie`. GitHub Actions déploie `main` sur sophielenaerts.be et `dev` sur dev.sophielenaerts.be (VPS Infomaniak, nginx).
+- **Stack** : Eleventy (site statique), sources sur GitHub `ced64k/sophie`. GitHub Actions déploie `main` sur sophielogo.be et `dev` sur dev.sophielogo.be (VPS Infomaniak, nginx).
 - **Édition** : Sophie doit pouvoir écrire et modifier articles et fiches jeux sans toucher au code, via **Sveltia CMS** (backend GitHub ; Sophie a un compte GitHub). Les contenus restent des fichiers Markdown dans le dépôt.
 - **Formulaire de contact** : envoi par FormSubmit vers l'e-mail de Sophie (le site est statique).
 - **Contenus existants** : tout est conservé et mieux organisé (par public et par domaine, avec résumés et images). Les URL actuelles (`/AAAA/MM/JJ/slug/` pour les articles, `/slug/` pour les fiches jeux, `/tags/…`) sont conservées ou redirigées.

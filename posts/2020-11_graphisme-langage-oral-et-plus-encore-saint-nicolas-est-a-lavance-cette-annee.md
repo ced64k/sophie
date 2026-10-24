@@ -13,7 +13,7 @@ Les patients se suivent et ne se ressemblent pas. Et c'est bientôt Saint Nicola
 
 ![](/static/img/IMG_20201123_104815-768x1024.jpg)
 
-Promis, j'analyserai ces jeux sous toutes leurs coutures pour [la nouvelle section jeux du site](https://sophielenaerts.be/jeux/) (où nous dressons une liste non-exhaustive des utilisations possibles des jeux du commerce, dans un contexte de prise en charge logopédique ou de renforcement à la maison avec les parents) . Mais en attendant, je ne résiste pas à ce petit aperçu.
+Promis, j'analyserai ces jeux sous toutes leurs coutures pour [la nouvelle section jeux du site](/jeux/) (où nous dressons une liste non-exhaustive des utilisations possibles des jeux du commerce, dans un contexte de prise en charge logopédique ou de renforcement à la maison avec les parents) . Mais en attendant, je ne résiste pas à ce petit aperçu.
 
 ![](/static/img/IMG_20201123_104218-768x1024.jpg)
 

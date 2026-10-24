@@ -5,7 +5,7 @@ primary_target: "pages/home.md"
 related_targets: ["jeux","posts","pages"]
 ---
 
-# Surface : site sophielenaerts.be (accueil, fiches jeux, articles, contact)
+# Surface : site sophielogo.be (accueil, fiches jeux, articles, contact)
 
 Mode : Persuade pour l'accueil ; Read pour les fiches jeux et les articles (même monde, ambition en précision).
 

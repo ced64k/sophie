@@ -1,4 +1,4 @@
-# sophielenaerts.be
+# sophielogo.be
 
 Site de Sophie Lenaerts, logopède. Eleventy 3 (site statique), sources Markdown. Le projet se poursuit
 surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, tout passe par GitHub.
@@ -9,10 +9,13 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 
 ## Déploiement
 
-- Travailler sur la branche `dev` : chaque push publie sur https://dev.sophielenaerts.be.
-- `main` = production (https://sophielenaerts.be). Fusionner `dev` dans `main` seulement quand l'utilisateur valide le site dev.
+- Travailler sur la branche `dev` : chaque push publie sur https://dev.sophielogo.be.
+- `main` = production (https://sophielogo.be). Fusionner `dev` dans `main` seulement quand l'utilisateur valide le site dev.
 - GitHub Actions (`.github/workflows/deploy.yml`) compile et envoie le site par rsync sur le VPS Infomaniak
   (`/var/www/sophie` pour main, `/var/www/devsophie` pour dev). Les secrets SSH sont dans GitHub, pas dans le dépôt.
+- Domaine : sophielogo.be depuis le 2026-10-24. L'ancien domaine (sophielenaerts.be, www et dev) redirige en 301 vers le nouveau,
+  chemin compris (nginx : `/etc/nginx/sites-available/sophie` et `devsophie`, sauvegardes `*.bak-domaine`). Les jeux en ligne
+  restent sur jeux.sophielenaerts.be (dépôt séparé).
 - Vérifier un déploiement : `gh run list -R ced64k/sophie -L 3`.
 - Compiler en local : `npm install` puis `npx @11ty/eleventy` (sortie dans `_site/`).
 
@@ -46,7 +49,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 ## Reste à faire
 
 1. **Formulaire de contact** : `/contact/envoi.php` (script PHP du dépôt, `serveur/contact-envoi.php`) envoie le message à lenaerts.sophie@gmail.com par le SMTP de Brevo (domaine authentifié). Installé sur le VPS le 2026-10-24 (`/etc/sophie/contact.ini`, règle nginx dans `sophie` et `devsophie`, sauvegardes `*.bak-contact`) ; testé sur dev. Voir `serveur/README.md`. Reste : vérifier l'arrivée du message de test chez Sophie (et ses indésirables), puis fusionner `dev` dans `main`, et régénérer la clé SMTP Brevo (elle a transité par une conversation) en mettant à jour `contact.ini`. Les coordonnées des lieux (`_data/lieux.json`, Up-toi en premier) sont réelles.
-2. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
+2. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielogo.be/admin/.
 3. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
 4. Redirections des anciennes pages `/authors/…` vers `/qui-suis-je/` (nécessite nginx, donc depuis le Mac).
 5. Relecture finale Impeccable de la version menthe avant la mise en production.

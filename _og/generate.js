@@ -306,7 +306,7 @@ async function carteStory(tache) {
     bloc.push(h("div", { position: "absolute", left: 90, top: yZone + zonePhoto.h + 78, width: largeur - 180, gap: 20, flexWrap: "wrap", justifyContent: "center" }, marqueurs(tache.domaines.slice(0, 3), 36)));
   }
   bloc.push(h("div", { position: "absolute", left: 0, top: 1408, width: largeur, justifyContent: "center" }, bouton(nettoyer(tache.bouton), 56)));
-  bloc.push(h("div", { position: "absolute", left: 0, top: 1542, width: largeur, justifyContent: "center", fontFamily: "Atkinson Hyperlegible", fontWeight: 700, fontSize: 38, color: COULEURS.encre }, "sophielenaerts.be"));
+  bloc.push(h("div", { position: "absolute", left: 0, top: 1542, width: largeur, justifyContent: "center", fontFamily: "Atkinson Hyperlegible", fontWeight: 700, fontSize: 38, color: COULEURS.encre }, "sophielogo.be"));
   const contenu = await dessiner(h("div", { position: "relative", width: largeur, height: hauteur }, bloc), largeur, hauteur);
 
   const taches = [

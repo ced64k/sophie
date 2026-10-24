@@ -1,13 +1,13 @@
 # Sveltia CMS : édition des articles et des fiches jeux.
 # Connexion : « Se connecter avec un jeton d'accès personnel » (GitHub).
-# Les modifications sont enregistrées sur la branche dev (https://dev.sophielenaerts.be).
+# Les modifications sont enregistrées sur la branche dev (https://dev.sophielogo.be).
 backend:
   name: github
   repo: ced64k/sophie
   branch: dev
 
 locale: fr
-site_url: https://dev.sophielenaerts.be
+site_url: https://dev.sophielogo.be
 media_folder: static/img
 public_folder: /static/img
 

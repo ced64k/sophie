@@ -1,5 +1,5 @@
 <?php
-// Réception du formulaire de contact de sophielenaerts.be : envoie le message à Sophie par le SMTP de Brevo.
+// Réception du formulaire de contact de sophielogo.be : envoie le message à Sophie par le SMTP de Brevo.
 // Publié sur /contact/envoi.php (voir .eleventy.js). Les identifiants SMTP sont dans /etc/sophie/contact.ini,
 // hors du site et hors du dépôt (modèle : serveur/contact.ini.exemple).
 declare(strict_types=1);
@@ -66,13 +66,13 @@ function smtp_envoyer(array $c, string $de, string $a, string $donnees): void
     };
 
     $dialoguer('', '220');
-    $dialoguer('EHLO sophielenaerts.be', '250');
+    $dialoguer('EHLO sophielogo.be', '250');
     if (($c['starttls'] ?? '1') !== '0') {
         $dialoguer('STARTTLS', '220');
         if (!stream_socket_enable_crypto($flux, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
             throw new RuntimeException('SMTP : échec du chiffrement TLS');
         }
-        $dialoguer('EHLO sophielenaerts.be', '250');
+        $dialoguer('EHLO sophielogo.be', '250');
     }
     $dialoguer('AUTH LOGIN', '334');
     $dialoguer(base64_encode($c['smtp_user']), '334');
@@ -134,19 +134,19 @@ foreach (['smtp_host', 'smtp_port', 'smtp_user', 'smtp_key', 'from', 'to'] as $c
     }
 }
 
-$corps = "Nouveau message depuis sophielenaerts.be\n\n"
+$corps = "Nouveau message depuis sophielogo.be\n\n"
     . "Nom : $nom\n"
     . "E-mail : $email\n"
     . ($telephone !== '' ? "Téléphone : $telephone\n" : '')
     . "\nMessage :\n$message\n";
 
-$domaine = substr(strrchr($config['from'], '@') ?: '@sophielenaerts.be', 1);
+$domaine = substr(strrchr($config['from'], '@') ?: '@sophielogo.be', 1);
 $entetes = [
     'Date: ' . date('r'),
     'From: ' . entete_utf8($config['from_name'] ?? 'Site de Sophie Lenaerts') . " <{$config['from']}>",
     "To: <{$config['to']}>",
     'Reply-To: ' . entete_utf8($nom) . " <$email>",
-    'Subject: ' . entete_utf8("Message de $nom (sophielenaerts.be)"),
+    'Subject: ' . entete_utf8("Message de $nom (sophielogo.be)"),
     'Message-ID: <' . bin2hex(random_bytes(12)) . "@$domaine>",
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',

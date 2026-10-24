@@ -15,7 +15,7 @@ hors du dossier du site (rsync `--delete` n'y touche pas).
    sudo chown root:www-data /etc/sophie/contact.ini && sudo chmod 640 /etc/sophie/contact.ini
    ```
 
-2. Nginx : dans les blocs `server` de **sophielenaerts.be** et de **dev.sophielenaerts.be**
+2. Nginx : dans les blocs `server` de **sophielogo.be** et de **dev.sophielogo.be**
    (`/etc/nginx/sites-available/…`), ajouter :
 
    ```nginx
@@ -27,13 +27,14 @@ hors du dossier du site (rsync `--delete` n'y touche pas).
    location ~ \.php$ { return 404; }                  # aucun autre script PHP n'est exécuté
    ```
 
-   puis `sudo nginx -t && sudo systemctl reload nginx`.
+   puis `sudo nginx -t && sudo systemctl reload nginx`. Depuis le 2026-10-24, les blocs de l'ancien domaine
+   (sophielenaerts.be, www et dev) ne font plus qu'une redirection 301 vers sophielogo.be.
 
 3. Test (depuis le VPS ou le Mac) :
 
    ```sh
    curl -i -H "Accept: application/json" \
-     -d "nom=Test&email=toi@example.org&message=Essai" https://dev.sophielenaerts.be/contact/envoi.php
+     -d "nom=Test&email=toi@example.org&message=Essai" https://dev.sophielogo.be/contact/envoi.php
    ```
 
    Réponse attendue : `{"ok":true,…}` et un e-mail chez lenaerts.sophie@gmail.com (vérifier aussi les indésirables).
@@ -44,5 +45,5 @@ hors du dossier du site (rsync `--delete` n'y touche pas).
 - Champ piège `site_web` (invisible) : rempli → faux succès, rien n'est envoyé.
 - Limite : 5 messages par heure et par adresse IP.
 - « Répondre » dans Gmail répond à la personne qui a écrit (en-tête `Reply-To`).
-- Brevo : domaine `sophielenaerts.be` authentifié (TXT `brevo-code`, DKIM `brevo1`/`brevo2`, DMARC). Clé SMTP : Brevo →
+- Brevo : domaine `sophielogo.be` authentifié (TXT `brevo-code`, DKIM `brevo1`/`brevo2`, DMARC). Clé SMTP : Brevo →
   SMTP et API → Clés SMTP. Elle expire après 90 jours sans utilisation : la régénérer et mettre à jour le fichier.

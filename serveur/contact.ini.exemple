@@ -4,6 +4,6 @@ smtp_host = "smtp-relay.brevo.com"
 smtp_port = 587
 smtp_user = "LOGIN_SMTP_BREVO"
 smtp_key = "CLE_SMTP_BREVO"
-from = "contact@sophielenaerts.be"
+from = "contact@sophielogo.be"
 from_name = "Site de Sophie Lenaerts"
 to = "lenaerts.sophie@gmail.com"
