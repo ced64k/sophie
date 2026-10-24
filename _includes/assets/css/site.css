@@ -347,50 +347,67 @@ p { margin: 0; }
     rotate: 45deg;
   }
   .nav-toggle[aria-expanded="true"]::after { opacity: 1; }
-  /* Menu ouvert : panneau blanc sous l'en-tête, éléments centrés et séparés par un fin trait */
+  /* Menu : l'en-tête et la liste des liens forment un seul panneau blanc qui touche les bords de l'écran
+     (la croix n'a plus de rond visible). Tout est toujours présent et s'estompe à l'ouverture et à la fermeture. */
   .nav-liens {
-    display: none;
+    display: flex;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% + 4px);
+    left: calc(-1 * var(--marge-page));
+    right: calc(-1 * var(--marge-page));
+    top: 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     padding: 10px 24px 22px;
     background: var(--blanc);
-    border-radius: var(--rayon);
+    border-radius: 0 0 var(--rayon) var(--rayon);
     box-shadow: var(--ombre);
     text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    translate: 0 -12px;
+    pointer-events: none;
+    transition: opacity .22s ease, translate .35s var(--sortie), visibility 0s .35s;
   }
-  .nav-toggle[aria-expanded="true"] ~ .nav-liens { display: flex; }
-  /* Menu ouvert : voile légèrement assombri (sans flou) sur toute la page, sous le menu */
-  .menu-ouvert .accueil, .menu-ouvert .suite-page { z-index: 40; }
-  /* Menu ouvert : la page derrière ne défile plus */
-  html.menu-ouvert, html.menu-ouvert body { overflow: hidden; overscroll-behavior: none; }
-  /* Un élément nommé pour les transitions de page isole son fond : sans ça, le voile ne couvrirait pas la page */
-  .menu-ouvert .bord { view-transition-name: none; }
-  .menu-ouvert .bord::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: rgba(17, 17, 17, .22);
+  .nav-toggle[aria-expanded="true"] ~ .nav-liens {
+    visibility: visible;
+    opacity: 1;
+    translate: 0 0;
+    pointer-events: auto;
+    transition: opacity .22s ease, translate .35s var(--sortie), visibility 0s;
   }
-  /* Menu ouvert : l'en-tête et le menu forment un seul panneau blanc qui touche les bords de l'écran ; la croix n'a plus de rond visible */
-  .menu-ouvert .bord::after {
+  /* Le blanc de l'en-tête, jusqu'en haut de l'écran */
+  .bord::after {
     content: "";
     position: absolute;
     inset: -100px calc(-1 * var(--marge-page)) 0;
     z-index: -1;
     background: var(--blanc);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .22s ease;
   }
-  .menu-ouvert .nav-liens {
-    left: calc(-1 * var(--marge-page));
-    right: calc(-1 * var(--marge-page));
-    top: 100%;
-    border-radius: 0 0 var(--rayon) var(--rayon);
+  .menu-ouvert .bord::after { opacity: 1; }
+  /* Voile légèrement assombri (sans flou) sur toute la page, sous le menu */
+  .menu-ouvert .accueil, .menu-ouvert .suite-page { z-index: 40; }
+  /* Le blanc de l'en-tête doit dépasser jusqu'en haut de l'écran : la page ne le rogne plus tant que le menu est ouvert */
+  .menu-ouvert .suite-page { overflow: visible; }
+  /* Menu ouvert : la page derrière ne défile plus */
+  html.menu-ouvert, html.menu-ouvert body { overflow: hidden; overscroll-behavior: none; }
+  /* Un élément nommé pour les transitions de page isole son fond (le voile fixe ne couvrirait pas la page) */
+  html .bord { view-transition-name: none; }
+  .bord::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(17, 17, 17, .22);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s ease, visibility 0s .3s;
   }
+  .menu-ouvert .bord::before { opacity: 1; visibility: visible; transition: opacity .3s ease, visibility 0s; }
   .nav-liens li + li { border-top: 2px solid var(--cyan-pale); }
   .nav-liens a { padding: 15px 0; font-size: 1.15rem; }
   .nav-liens a[aria-current="page"]::after { left: 50%; right: auto; width: 100%; translate: -50% 0; bottom: .6em; }
