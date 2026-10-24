@@ -19,7 +19,7 @@ Cette compétence est soumise à un apprentissage. Prenons un cas extrême : si 
 >  Ma tasse reste ma tasse même si la anse est à gauche ou à droite. 
 
 Et voilà où je voulais en venir. Quand on commence à présenter des lettres aux enfants, la boule du d et celle du b ont la même valeur, qu’elles soient à gauche ou à droite. Le p et le q, même combat. Le W et le M, le n et le u, le t et le f, le a et le o…  les enfants très jeunes n’ont parfois même pas encore assez de vocabulaire topologique pour décrire ces petits détails qui changent d’un signe à l’autre. 
-A l’âge où leur vocabulaire, leur langage, leur logique et leur vie sociale s’enrichit, l’apprentissage est constant, envahissant, épuisant. Leur demander de « bloquer » cette invariance alors qu’ils ne sont eux-mêmes parfois pas encore latéralisés, demande un effort cognitif et dans un premier temps, il est tout à fait normal que ça ne coule pas de source. 
+A l’âge où leur vocabulaire, leur langage, leur logique et leur vie sociale s’enrichissent, l’apprentissage est constant, envahissant, épuisant. Leur demander de « bloquer » cette invariance alors qu’ils ne sont eux-mêmes parfois pas encore latéralisés, demande un effort cognitif et dans un premier temps, il est tout à fait normal que ça ne coule pas de source. 
 
 > Au début de l’apprentissage de la lecture, on force le cerveau à désapprendre une règle naturelle (ignorer l’orientation) pour intégrer une règle culturelle, arbitraire et rigide. 
 
