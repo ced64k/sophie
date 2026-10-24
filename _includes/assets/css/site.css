@@ -406,8 +406,8 @@ p { margin: 0; }
     position: absolute;
     left: 50%;
     top: 0;
-    width: 52px;
-    height: 6px;
+    width: 32px;
+    height: 5px;
     translate: -50% -50%;
     rotate: -1.5deg;
     border-radius: 3px 6px 4px 5px;
@@ -417,7 +417,7 @@ p { margin: 0; }
     background-blend-mode: overlay;
     opacity: .75;
   }
-  .nav-liens li:nth-child(even):not(.nav-jeux) + li::before { width: 40px; rotate: 1.2deg; border-radius: 5px 3px 6px 4px; }
+  .nav-liens li:nth-child(even):not(.nav-jeux) + li::before { width: 24px; rotate: 1.2deg; border-radius: 5px 3px 6px 4px; }
   .nav-liens a { padding: 17px 0; font-size: 1.15rem; }
   /* Menu mobile : la page active est surlignée au marqueur derrière le bas du texte (et non un trait dessous) */
   .nav-liens a[aria-current="page"]::after { left: -.25em; right: -.25em; bottom: calc(17px + .12em); height: .68em; }
