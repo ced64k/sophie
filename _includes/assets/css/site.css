@@ -1255,7 +1255,8 @@ p { margin: 0; }
 .carte .leaflet-bar a:hover { background: var(--cyan-pale); }
 .carte .leaflet-control-attribution { font-size: .72rem; background: rgba(255, 255, 255, .75); border-radius: 10px 0 0 0; padding: 1px 8px; color: var(--encre); }
 .carte .leaflet-control-attribution a { color: inherit; }
-.lieu-carte { padding: 18px 0; border-top: 2px solid var(--cyan-pale); }
+.lieu-carte { padding: 18px 0; }
+.lieu-carte:first-of-type { padding-top: 0; }
 .lieu-ville {
   font-family: var(--titre);
   font-weight: 600;
