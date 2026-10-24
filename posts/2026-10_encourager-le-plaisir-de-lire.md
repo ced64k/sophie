@@ -58,7 +58,7 @@ L’enfant est acteur, le livre est un terrain de jeu. On active différents mod
 
 Avec mon jeune public, j’utilise régulièrement « Wahiohio Quel est ce cri bizarre ? ». Deux enfants se promènent dans la jungle à la recherche de ce qui a crié. Deux choix s’offrent à la sortie de chaque page, soit le choix de la sécurité pour l’un des enfants, soit celui de l’aventure pour l’autre. Selon le choix, on suit les onglets au bord des pages, on se promène dans le livre et en faisant les bons choix, on trouve la solution. 
 
-![](/static/img/IMG_0197.jpeg)
+![](/static/img/IMG_0212.jpeg)
 
 La collection « Le livre dont vous êtes le héros » n’est plus à présenter, elle rend les livres interactifs depuis les années 80, dans une thématique généralement issue du monde fantastique et horrifique. Différents éditeurs empruntent le concept et le proposent à différentes tranches d’âges. ![](/static/img/IMG_0208.jpeg)
 
