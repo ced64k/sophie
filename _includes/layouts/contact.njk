@@ -82,7 +82,7 @@ section: contact
 			lien.rel = "noopener";
 			lien.textContent = "Itinéraire";
 			contenu.append(nom, lien);
-			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: true, closeOnClick: false, minWidth: 180, offset: [0, 4], autoPan: false });
+			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: true, closeOnClick: false, offset: [0, 4], autoPan: false });
 			marqueurs[l.ville].on("click", function () { epingle = l.ville; });
 			marqueurs[l.ville].on("popupclose", function () { if (epingle === l.ville) epingle = null; });
 			marqueurs[l.ville].on("popupopen", function (ev) {
