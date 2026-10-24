@@ -44,6 +44,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
   `categories` dans `admin/config.yml`) doivent rester alignées sur les clés de `classement.json`.
 - Les domaines d'une fiche jeu sont déduits de ses titres `##` (filtres dans `.eleventy.js`).
 - Images de partage : `_og/generate.js` (satori + resvg + sharp, polices dans `_og/fonts/`) dessine à la compilation, pour chaque page, une carte 1200×630 (`/og/<slug>.jpg`, balises `og:image` de `head.njk`) et une image 9/16 pour les stories (`/og/story/<slug>.jpg`), avec le logo, la texture, le koala, la photo de la fiche et les domaines. Le texte vient du titre de la page ; on peut le changer par page avec `ogTitre`, `ogEtiquette` et `ogBouton` dans l'en-tête du fichier. Les textes des pages fixes (accueil, contact…) sont dans `TEXTES_PAGES` de `.eleventy.js`. Les images déjà dessinées sont gardées dans `.cache/og` (et dans le cache de GitHub Actions). Page de téléchargement : `/partage/` (non indexée, hors menu).
+  Favicon des deux sites (« so » du logo sur carré menthe) : `node _og/favicon.js . ../jeuxlogo/public`.
   Couverture de la page Facebook : `node _og/facebook.js` (même style, 1640×624) écrit `static/img/partage/facebook-couverture.jpg`.
 - Styles : un seul fichier `_includes/assets/css/site.css`, inliné dans la page. Filtres : `_includes/assets/js/filtres.js`.
 - Les valeurs `metaDescription` contenant « : » doivent être entre guillemets (YAML).

@@ -5,6 +5,9 @@
   <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ metadata.title }}</title>
   <meta name="description" content="{{ metaDescription or summary or metadata.description }}">
   <meta name="theme-color" content="#A3D9CB">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   {%- if section == 'partage' %}
   <meta name="robots" content="noindex">
   {%- endif %}
