@@ -1437,7 +1437,7 @@ p { margin: 0; }
   margin-bottom: 6px;
 }
 .pied p + p { margin-top: 8px; }
-.pied .tel { color: inherit; }
+.pied .tel { color: inherit; font: inherit; letter-spacing: normal; }
 .pied a:hover { color: var(--pied-survol); }
 .pied .pied-reseau {
   display: inline-block;
