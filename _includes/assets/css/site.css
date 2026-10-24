@@ -363,24 +363,23 @@ p { margin: 0; }
     border-radius: 0 0 var(--rayon) var(--rayon);
     box-shadow: var(--ombre);
     text-align: center;
+    /* Le panneau se déroule vers le bas sous l'en-tête (rognage, sans fondu : deux blancs qui s'estompent en se chevauchant faisaient un éclair) */
     visibility: hidden;
-    opacity: 0;
-    translate: 0 -12px;
+    clip-path: inset(0 -60px 100% -60px);
     pointer-events: none;
-    transition: opacity .22s ease, translate .35s var(--sortie), visibility 0s .35s;
+    transition: clip-path .35s var(--sortie), visibility 0s .35s;
   }
   .nav-toggle[aria-expanded="true"] ~ .nav-liens {
     visibility: visible;
-    opacity: 1;
-    translate: 0 0;
+    clip-path: inset(0 -60px -80px -60px);
     pointer-events: auto;
-    transition: opacity .22s ease, translate .35s var(--sortie), visibility 0s;
+    transition: clip-path .35s var(--sortie), visibility 0s;
   }
   /* Le blanc de l'en-tête, jusqu'en haut de l'écran */
   .bord::after {
     content: "";
     position: absolute;
-    inset: -100px calc(-1 * var(--marge-page)) 0;
+    inset: -100px calc(-1 * var(--marge-page)) -1px;
     z-index: -1;
     background: var(--blanc);
     opacity: 0;
