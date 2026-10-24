@@ -41,7 +41,7 @@ On instaure un système en binôme, un travail d’équipe, chacun une page, cha
 **Ca change quoi?** 
 En plus de transformer la lecture en un moment de complicité, ça permet à l’enfant de souffler un peu et de revenir sur le sens qu’il avait peut-être perdu en chemin. 
 
-La collection « tu lis, je lis » chez Bayard est parfaite, les textes sont de couleur et de difficulté différentes pour l’adulte et pour l’enfant, le personnage qui parle est représenté dans la marge.
+La collection « tu lis, je lis » chez Bayard est parfaite, les textes sont de couleurs et de difficultés différentes pour l’adulte et pour l’enfant, le personnage qui parle est représenté dans la marge.
 
 ![](/static/img/IMG_0200.jpeg)
 
