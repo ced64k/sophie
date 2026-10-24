@@ -724,6 +724,20 @@ p { margin: 0; }
   max-height: 560px;
   width: auto;
 }
+.duo-paysage {
+  display: flex;
+  gap: 12px;
+  margin-block: 1.6em;
+}
+.duo-paysage span { min-width: 0; }
+.texte .duo-paysage img {
+  margin: 0;
+  width: 100%;
+  max-height: none;
+}
+@media (max-width: 480px) {
+  .duo-paysage { flex-direction: column; }
+}
 .texte a {
   color: var(--encre);
   font-weight: 700;

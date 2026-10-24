@@ -190,6 +190,17 @@ module.exports = function(eleventyConfig) {
       return `<img${avant} src="${vignette(src, 1200)}" width="${largeur}" height="${hauteur}"${lazy}${apres}>`;
     });
   });
+  // Deux images paysage qui se suivent dans un texte sont présentées côte à côte, à la même hauteur
+  eleventyConfig.addTransform("duosPaysage", function(content, outputPath) {
+    if (!outputPath || !outputPath.endsWith(".html")) return content;
+    const img = '(<img\\b[^>]*?\\bwidth="(\\d+)"[^>]*?\\bheight="(\\d+)"[^>]*>)';
+    const re = new RegExp(`<p>((?:(?!<p>|<img)[\\s\\S])*?)${img}(?:\\s*<br\\s*/?>)?\\s*(?:</p>\\s*<p>)?${img}</p>`, "g");
+    return content.replace(re, (m, texte, a, wa, ha, b, wb, hb) => {
+      if (+wa <= +ha || +wb <= +hb) return m;
+      const avant = texte.replace(/<br\s*\/?>\s*$/, "").trim() ? `<p>${texte.trim()}</p>` : "";
+      return `${avant}<div class="duo-paysage"><span style="flex:${(wa / ha).toFixed(3)} 1 0">${a}</span><span style="flex:${(wb / hb).toFixed(3)} 1 0">${b}</span></div>`;
+    });
+  });
   eleventyConfig.on("eleventy.after", async ({ dir }) => {
     for (const [sortie, { source, largeur }] of vignettes) {
       const fichier = path.join(dir.output, sortie);
