@@ -1264,8 +1264,9 @@ p { margin: 0; }
 }
 .lieu-contacts {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   margin-top: 14px;
 }
@@ -1559,7 +1560,6 @@ p { margin: 0; }
   .logo { font-size: 2.15rem; }
   /* Pastilles de contact : l'adresse e-mail la plus longue doit tenir sur une ligne */
   .lieu-lien { padding: 8px 14px 8px 8px; gap: 8px; overflow-wrap: normal; }
-  .lieu-mail { font-size: .88rem; }
   .lieu-lien svg { width: 28px; height: 28px; }
   .lien-hors { padding-inline: 0; }
   /* Rythme vertical : 28 px entre deux blocs, 20 px entre un panneau et son lien */
