@@ -2,6 +2,8 @@
 title: "Roads"
 author: "Sophie Lenaerts"
 image: "/static/img/fiches/roads.jpg"
+marque: "Londji"
+age: "4 ans et +"
 ---
 
 ![](/static/img/fiches/roads.jpg)

@@ -2,6 +2,8 @@
 title: "Jungle Speed"
 author: "Fanny Jonckheere"
 image: "/static/img/fiches/jungle-speed.jpg"
+marque: "Asmodee"
+age: "7 ans et +"
 ---
 
 ![Le jeu Jungle Speed](/static/img/fiches/jungle-speed.jpg)

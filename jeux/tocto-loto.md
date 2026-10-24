@@ -2,6 +2,7 @@
 title: "Tocto Loto"
 author: "Fanny Jonckheere"
 image: "/static/img/fiches/tocto-loto.jpg"
+marque: "Djeco"
 ---
 
 ![Le jeu Tocto Loto](/static/img/fiches/tocto-loto.jpg)

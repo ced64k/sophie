@@ -2,6 +2,8 @@
 title: "Cuisto Dingo"
 author: "Estelle Richard"
 image: "/static/img/fiches/cuisto-dingo.jpg"
+marque: "Goliath"
+age: "4 ans et +"
 ---
 
 ![](/static/img/fiches/cuisto-dingo.jpg)

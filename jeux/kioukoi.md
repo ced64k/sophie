@@ -2,6 +2,8 @@
 title: "Kioukoi"
 author: "Sophie Lenaerts"
 image: "/static/img/fiches/kioukoi.jpg"
+marque: "Djeco"
+age: "3 ans et +"
 ---
 
 ![](/static/img/fiches/kioukoi.jpg)
