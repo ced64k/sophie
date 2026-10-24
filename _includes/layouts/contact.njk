@@ -59,20 +59,21 @@ section: contact
 		});
 		var points = lieux.map(function (l, i) {
 			var contenu = document.createElement("div");
-			var ville = document.createElement("strong");
+			var ville = document.createElement("p");
+			ville.className = "carte-ville";
 			ville.textContent = l.ville;
-			var adresse = document.createElement("span");
-			adresse.appendChild(document.createElement("br"));
+			var adresse = document.createElement("p");
 			adresse.appendChild(document.createTextNode(l.structure));
 			adresse.appendChild(document.createElement("br"));
 			adresse.appendChild(document.createTextNode(l.adresse));
 			var lien = document.createElement("a");
+			lien.className = "carte-lien";
 			lien.href = "https://www.openstreetmap.org/directions?to=" + l.lat + "%2C" + l.lon;
 			lien.target = "_blank";
 			lien.rel = "noopener";
 			lien.textContent = "Itinéraire";
-			contenu.append(ville, adresse, document.createElement("br"), lien);
-			L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu);
+			contenu.append(ville, adresse, lien);
+			L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: false, minWidth: 200, offset: [0, 4] });
 			return [l.lat, l.lon];
 		});
 		carte.fitBounds(points, { padding: [48, 48], maxZoom: 12 });

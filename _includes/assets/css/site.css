@@ -1205,7 +1205,8 @@ p { margin: 0; }
   background: var(--cyan-pale);
   isolation: isolate;
 }
-.carte .leaflet-tile-pane { filter: saturate(.7) contrast(.96); }
+/* Fond de carte OpenStreetMap passé en monochrome menthe par des filtres, pour s'accorder au site */
+.carte .leaflet-tile-pane { filter: grayscale(1) brightness(1.02) contrast(1.05) sepia(.9) hue-rotate(96deg) saturate(.8); }
 .carte-pin { background: none; border: 0; }
 .carte-pin .pin {
   width: 36px;
@@ -1218,10 +1219,42 @@ p { margin: 0; }
 }
 .carte-pin:hover .pin, .carte-pin:focus-visible .pin { translate: 0 -3px; }
 .carte .leaflet-container { font: inherit; }
-.carte .leaflet-popup-content-wrapper { border-radius: 18px; box-shadow: 0 4px 0 rgba(17, 17, 17, .12); color: var(--encre); }
-.carte .leaflet-popup-content { margin: 14px 18px; font-size: 1rem; line-height: 1.5; }
-.carte .leaflet-popup-content a { font-weight: 700; }
-.carte .leaflet-control-attribution { font-size: .72rem; }
+/* Infobulle : petit panneau blanc très arrondi, sans contour, comme les panneaux du site */
+.carte .leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 22px;
+  background: var(--blanc);
+  color: var(--encre);
+  box-shadow: 0 4px 0 rgba(17, 17, 17, .12);
+}
+.carte .leaflet-popup-content { margin: 16px 20px 18px; font-size: 1rem; line-height: 1.5; }
+.carte .leaflet-popup-content p { margin: 0; }
+.carte .leaflet-popup-tip { background: var(--blanc); box-shadow: none; }
+.carte .leaflet-popup-tip-container { margin-top: -1px; }
+.carte-ville { font-family: var(--titre); font-weight: 600; font-size: 1.35rem; line-height: 1.15; margin-bottom: 4px !important; }
+.carte .carte-lien {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background-color: var(--corail);
+  background-image: var(--tex);
+  background-size: 250px auto;
+  background-blend-mode: overlay;
+  color: var(--blanc);
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  box-shadow: 0 3px 0 rgba(17, 17, 17, .22);
+}
+.carte .carte-lien:hover { color: var(--blanc); translate: 0 1px; box-shadow: 0 2px 0 rgba(17, 17, 17, .22); }
+/* Boutons de zoom et mention : dans le style du site */
+.carte .leaflet-bar { border: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 3px 0 rgba(17, 17, 17, .13); }
+.carte .leaflet-bar a { width: 34px; height: 34px; line-height: 34px; background: var(--blanc); color: var(--encre); border-bottom: 2px solid var(--cyan-pale); font-weight: 700; }
+.carte .leaflet-bar a:last-child { border-bottom: 0; }
+.carte .leaflet-bar a:hover { background: var(--cyan-pale); }
+.carte .leaflet-control-attribution { font-size: .72rem; background: rgba(255, 255, 255, .75); border-radius: 10px 0 0 0; padding: 1px 8px; color: var(--encre); }
+.carte .leaflet-control-attribution a { color: inherit; }
 .lieu-carte { padding: 18px 0; border-top: 2px solid var(--cyan-pale); }
 .lieu-ville {
   font-family: var(--titre);
