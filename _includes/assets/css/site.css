@@ -304,9 +304,6 @@ p { margin: 0; }
     cursor: pointer;
     border: 0;
     border-radius: 50%;
-    /* Aplat plus foncé dessous, comme les boutons du site, qui s'écrase au toucher */
-    box-shadow: 0 4px 0 rgba(17, 17, 17, .13);
-    transition: translate .15s var(--sortie), box-shadow .15s var(--sortie);
     /* Pas de carré de surbrillance du navigateur mobile derrière le rond au toucher */
     -webkit-tap-highlight-color: transparent;
   }
@@ -318,28 +315,40 @@ p { margin: 0; }
     clip-path: inset(50%);
     white-space: nowrap;
   }
-  /* Icônes tracées au marqueur (traits irréguliers, bouts ronds) : trois traits, qui tournent en croix à l'ouverture */
+  .nav-toggle::before {
+    content: "";
+    width: 20px;
+    height: 14px;
+    border-block: 2.5px solid currentColor;
+    background: linear-gradient(currentColor 0 0) center / 100% 2.5px no-repeat;
+    transition: background .2s;
+  }
+  /* Menu ouvert : l'icône devient une croix (deux barres croisées) */
   .nav-toggle { position: relative; }
-  .nav-toggle:active { translate: 0 3px; box-shadow: 0 1px 0 rgba(17, 17, 17, .13); }
-  .nav-toggle::before, .nav-toggle::after {
+  .nav-toggle::after {
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 28px;
-    height: 28px;
-    margin: -14px 0 0 -14px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    transition: rotate .4s var(--sortie), opacity .2s ease;
+    width: 22px;
+    height: 2.5px;
+    border-radius: 2px;
+    background: currentColor;
+    translate: -50% -50%;
+    rotate: -45deg;
+    opacity: 0;
   }
-  .nav-toggle::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2.7' stroke-linecap='round'%3E%3Cpath d='M3.4 6.9C8 6.1 15 6.5 20.6 5.9'/%3E%3Cpath d='M3 12.4C9 12.9 15.2 11.7 21 12.3'/%3E%3Cpath d='M4 18C8.6 17.4 14 18.5 18.2 17.8'/%3E%3C/svg%3E"); }
-  .nav-toggle::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2.7' stroke-linecap='round'%3E%3Cpath d='M5.6 5.8C9 9 15 15.3 18.6 18.5'/%3E%3Cpath d='M18.3 5.4C14.7 9 9.2 15 5.4 18.7'/%3E%3C/svg%3E"); opacity: 0; rotate: -80deg; }
-  .nav-toggle[aria-expanded="true"]::before { opacity: 0; rotate: 80deg; }
-  .nav-toggle[aria-expanded="true"]::after { opacity: 1; rotate: 0deg; }
+  .nav-toggle[aria-expanded="true"]::before {
+    height: 2.5px;
+    width: 22px;
+    border: 0;
+    border-radius: 2px;
+    background: currentColor;
+    rotate: 45deg;
+  }
+  .nav-toggle[aria-expanded="true"]::after { opacity: 1; }
   /* Menu ouvert : la croix se pose directement sur la feuille, sans rond blanc */
-  .nav-toggle[aria-expanded="true"] { background: transparent; box-shadow: none; }
+  .nav-toggle[aria-expanded="true"] { background: transparent; }
   /* Menu : l'en-tête et la liste des liens forment une seule feuille blanche qui touche les bords de l'écran
      (la croix n'a plus de rond visible). Elle part du haut de l'écran, derrière le logo et la croix, et descend d'un bloc. */
   .nav-liens {
