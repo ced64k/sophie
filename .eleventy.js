@@ -343,8 +343,10 @@ module.exports = function(eleventyConfig) {
     breaks: true,
     linkify: true
   };
+  // Identifiants de titres sans accents : un id « ex%C3%A9cutives » ne correspond pas au lien #exécutives décodé par le navigateur
   let opts = {
-    permalink: false
+    permalink: false,
+    slugify: titre => String(titre).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
   };
 
   eleventyConfig.setLibrary("md", markdownIt(options)
