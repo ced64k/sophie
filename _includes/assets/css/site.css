@@ -247,6 +247,7 @@ p { margin: 0; }
   transition: color .2s var(--sortie);
 }
 .nav-liens a:hover { color: var(--corail); }
+.nav-liens a[aria-current="page"]:hover { color: var(--encre); }
 /* Page active : trait jaune au marqueur derrière le bas du mot, comme sous « joue » */
 .nav-liens a[aria-current="page"]::after {
   content: "";
