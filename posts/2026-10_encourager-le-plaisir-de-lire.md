@@ -19,7 +19,9 @@ Bon, mettons qu’on le voit galérer et qu’on aimerait lui montrer que c’es
 
 #### **On démystifie la lecture et le format.** 
 
-Non, un roman sur lequel on sera interrogé, ce n’est pas censé être une lecture agréable. Ce n’est pas représentatif de ce qu’une lecture peut apporter. C’est normal de trouver difficile de se créer des images mentales, de retenir les personnages, les lieux. C’est normal de préférer quand il y a des images. Un livre s’aime sans condition. Sans devoir tout comprendre, tout relater. 
+Non, un roman sur lequel on sera interrogé, ce n’est pas censé être une lecture agréable. Ce n’est pas représentatif de ce qu’une lecture peut apporter. C’est normal de trouver difficile de se créer des images mentales, de retenir les personnages, les lieux. C’est normal de préférer quand il y a des images. 
+
+> _Un livre s’aime sans condition. Sans devoir tout comprendre, tout relater._ 
 
 Alors on sort les bd, les mangas, les magazines spécialisés. 
 
