@@ -5,7 +5,7 @@
 déploiement. Les identifiants, eux, ne sont **jamais dans le dépôt** : ils sont dans `/etc/sophie/contact.ini`,
 hors du dossier du site (rsync `--delete` n'y touche pas).
 
-## Une seule fois, sur le VPS (`ssh ubuntu@etf.64k.be`)
+## Une seule fois, sur le VPS (`ssh ubuntu@etf.64k.be`) — fait le 2026-10-24
 
 1. Réglages SMTP (modèle : `contact.ini.exemple`) :
 
