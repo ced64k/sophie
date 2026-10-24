@@ -34,7 +34,7 @@ J’aime beaucoup Mortelle Adèle et Ariol. 
 
 ![](/static/img/IMG_0210.jpeg)
 
-- On pratique la lecture partagée.
+- **On pratique la lecture partagée.**
 
 On instaure un système en binôme, un travail d’équipe, chacun une page, chacun un paragraphe, chacun un personnage, chacun une phrase… on fait les voix, on mime les personnages, on utilise des figurines.
 
@@ -45,7 +45,7 @@ La collection « tu lis, je lis » chez Bayard est parfaite, les textes sont d
 
 ![](/static/img/IMG_0200.jpeg)
 
-- On utilise des livres-jeux.
+- **On utilise des livres-jeux.**
 
 On tourne les pages par ci, par là, on renverse le livre, on tapote dessus, on plie des pages, on souffle dessus, on résout des énigmes, on cherche la sortie…
 
@@ -68,7 +68,7 @@ Avec les plus petits, ma référence est Hervé Tullet, voir ci-dessous. Je pens
 
 ![](/static/img/IMG_0202.jpeg)
 
-- On se laisse le droit d’abandonner un livre. 
+- **On se laisse le droit d’abandonnerf un livre.** 
 
 Ce n’est pas grave, promis. 
 
