@@ -1205,8 +1205,8 @@ p { margin: 0; }
   background: var(--cyan-pale);
   isolation: isolate;
 }
-/* Fond de carte OpenStreetMap passé en monochrome menthe par des filtres, pour s'accorder au site */
-.carte .leaflet-tile-pane { filter: grayscale(1) brightness(1.02) contrast(1.05) sepia(.9) hue-rotate(96deg) saturate(.8); }
+/* Fond de carte OpenStreetMap remappé sur la palette menthe du site (filtre SVG #carte-menthe, défini dans la page contact) */
+.carte .leaflet-tile-pane { filter: url(#carte-menthe); }
 .carte-pin { background: none; border: 0; }
 .carte-pin .pin {
   width: 36px;
@@ -1221,13 +1221,13 @@ p { margin: 0; }
 .carte .leaflet-container { font: inherit; }
 /* Infobulle : petit panneau blanc très arrondi, sans contour, comme les panneaux du site */
 .carte .leaflet-popup-content-wrapper {
-  padding: 0;
+  padding: 18px 22px 20px;
   border-radius: 22px;
   background: var(--blanc);
   color: var(--encre);
   box-shadow: 0 4px 0 rgba(17, 17, 17, .12);
 }
-.carte .leaflet-popup-content { margin: 16px 20px 18px; font-size: 1rem; line-height: 1.5; }
+.carte .leaflet-popup-content { margin: 0; font-size: 1rem; line-height: 1.5; }
 .carte .leaflet-popup-content p { margin: 0; }
 .carte .leaflet-popup-tip { background: var(--blanc); box-shadow: none; }
 .carte .leaflet-popup-tip-container { margin-top: -1px; }
