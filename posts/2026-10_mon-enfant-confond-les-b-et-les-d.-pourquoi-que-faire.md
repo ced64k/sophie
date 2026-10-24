@@ -37,7 +37,8 @@ Les confusions visuelles ne sont pas le seul signe de la dyslexie, il est néanm
 **Offrez assez tôt un vocabulaire topologique stable**. L’objet n’est pas « là », il est « en dessous » de la table, «sur» le meuble, « entre »  la chaise et le mur, « au dessus » de l’arbre. En offrant un accès à ce vocabulaire, l’enfant s’approprie et précise ce qui était abstrait. 
 
 >
-> « Nommer, c’est posséder » (copyright Monsieur S., 1998, premier cours de logo) 
+> « Nommer, c’est posséder » 
+> (Copyright Monsieur S., 1998, premier cours de logo) 
 
 **Levez le pouce droit devant vous.** Ca forme un d, comme « droite ».
 Et plus généralement, cherchez avec l’enfant un geste qui fait penser à la forme des lettres qui posent problème. Mes patients adorent quand j’écris sur leurs mains. 
@@ -60,7 +61,7 @@ Et plus généralement, cherchez avec l’enfant un geste qui fait penser à la 
 
 Mettez des lettres magnétiques sur le frigo, faites des jeux, des dessins et des mots avec ces lettres, faites entrer les jeux de lettres dans le quotidien, révisez les dictées en direct du frigo. Lorsqu’il y a une difficulté visuo-spatiale, la charge cognitive liée au geste d’écriture est très lourde. On évite cette charge en utilisant des lettres mobiles. 
 
-Certains sites de vente en ligne trient les jeux selon les compétences qu’ils favorisent, je vais citer [didacto]([https://www.didacto.com/](https://www.didacto.com/)) et [hoptoys]([https://www.hoptoys.fr/](https://www.hoptoys.fr/))  mais il y en a plein, ils sont remplis d’idées et d’informations utiles. 
+Certains sites de vente en ligne trient les jeux selon les compétences qu’ils favorisent, je vais citer [didacto]([https://www.didacto.com/]\(https://www.didacto.com/\)) et [hoptoys]([https://www.hoptoys.fr/]\(https://www.hoptoys.fr/\))  mais il y en a plein, ils sont remplis d’idées et d’informations utiles. 
 
 #### Ce qu’on ne fait pas : 
 
