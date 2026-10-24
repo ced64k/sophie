@@ -721,6 +721,7 @@ p { margin: 0; }
 .texte img {
   border-radius: var(--rayon-petit);
   margin-block: 1.6em;
+  margin-inline: auto;
   max-height: 560px;
   width: auto;
 }
