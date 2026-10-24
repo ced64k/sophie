@@ -71,25 +71,21 @@ section: contact
 		var marqueurs = {};
 		var points = lieux.map(function (l, i) {
 			var contenu = document.createElement("div");
-			var ville = document.createElement("p");
-			ville.className = "carte-ville";
-			ville.textContent = l.ville;
-			var adresse = document.createElement("p");
-			adresse.appendChild(document.createTextNode(l.structure));
-			adresse.appendChild(document.createElement("br"));
-			adresse.appendChild(document.createTextNode(l.adresse));
+			var nom = document.createElement("p");
+			nom.className = "carte-ville";
+			nom.textContent = l.structure;
 			var lien = document.createElement("a");
 			lien.className = "carte-lien";
 			lien.href = "https://www.openstreetmap.org/directions?to=" + l.lat + "%2C" + l.lon;
 			lien.target = "_blank";
 			lien.rel = "noopener";
 			lien.textContent = "Itinéraire";
-			contenu.append(ville, adresse, lien);
-			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: false, minWidth: 200, offset: [0, 4], autoPan: false });
+			contenu.append(nom, lien);
+			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: false, minWidth: 180, offset: [0, 4], autoPan: false });
 			return [l.lat, l.lon];
 		});
 		// Cadrage large : de la place en haut pour l'infobulle d'Ath, et un peu de recul autour des deux lieux
-		carte.fitBounds(points, { paddingTopLeft: [40, 235], paddingBottomRight: [40, 40], maxZoom: 11 });
+		carte.fitBounds(points, { paddingTopLeft: [40, 190], paddingBottomRight: [40, 40], maxZoom: 11 });
 		// Au survol (ou au clavier) d'un lieu dans la liste, son infobulle s'ouvre sur la carte
 		document.querySelectorAll(".lieu-carte[data-lieu]").forEach(function (bloc) {
 			var m = marqueurs[bloc.getAttribute("data-lieu")];
