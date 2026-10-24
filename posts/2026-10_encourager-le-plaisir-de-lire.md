@@ -68,7 +68,7 @@ Avec les plus petits, ma référence est Hervé Tullet, voir ci-dessous. Je pens
 
 ![](/static/img/IMG_0202.jpeg)
 
-- **On se laisse le droit d’abandonnerf un livre.** 
+- **On se laisse le droit d’abandonner un livre.** 
 
 Ce n’est pas grave, promis. 
 
