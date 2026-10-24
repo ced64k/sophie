@@ -21,11 +21,17 @@
   <p class="statut" id="statut" role="status" aria-live="polite" hidden></p>
   <button class="bouton" type="submit">Envoyer le message</button>
 </form>
+<div class="merci" id="merci" tabindex="-1" hidden>
+  <p class="merci-titre">Merci, votre message est bien parti.</p>
+  <p>Je vous répondrai dès que possible.</p>
+  <button class="bouton" type="button" id="autre-message">Écrire un autre message</button>
+</div>
 <script>
   (function () {
     var f = document.querySelector("form.formulaire");
     if (!f || !window.fetch) return;
     var statut = document.getElementById("statut");
+    var merci = document.getElementById("merci");
     var bouton = f.querySelector("button[type=submit]");
     f.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -36,7 +42,16 @@
       fetch(f.action, { method: "POST", body: new FormData(f), headers: { Accept: "application/json" } })
         .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
         .then(function (r) {
-          if (r.ok) { location.href = "/contact/merci/"; return; }
+          if (r.ok) {
+            // Le remerciement s'affiche à la place du formulaire, sans quitter la page
+            f.reset();
+            f.hidden = true;
+            merci.hidden = false;
+            merci.focus();
+            bouton.disabled = false;
+            bouton.textContent = texte;
+            return;
+          }
           throw new Error(r.message);
         })
         .catch(function (err) {
@@ -45,6 +60,11 @@
           bouton.disabled = false;
           bouton.textContent = texte;
         });
+    });
+    document.getElementById("autre-message").addEventListener("click", function () {
+      merci.hidden = true;
+      f.hidden = false;
+      f.querySelector("input").focus();
     });
   })();
 </script>

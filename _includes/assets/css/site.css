@@ -1280,6 +1280,18 @@ p { margin: 0; }
 }
 .formulaire .statut[hidden] { display: none; }
 .formulaire .bouton:disabled { opacity: .7; cursor: progress; }
+.merci {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  padding: 24px 26px;
+  border-radius: var(--rayon-petit);
+  background: var(--cyan-pale);
+}
+.merci[hidden], .formulaire[hidden] { display: none; }
+.merci p { margin: 0; }
+.merci-titre { font-family: var(--titre); font-weight: 600; font-size: 1.4rem; }
+.merci:focus { outline: none; }
 
 @media (max-width: 760px) {
   .contact-grille { grid-template-columns: 1fr; }
