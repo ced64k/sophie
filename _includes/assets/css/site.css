@@ -1080,17 +1080,21 @@ p { margin: 0; }
 .fiche-infos {
   margin: 0;
   display: grid;
-  gap: 10px;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: baseline;
   padding-left: 28px;
   border-left: 2px solid rgba(17, 17, 17, .12);
 }
-.fiche-infos > div { display: flex; align-items: baseline; gap: 10px; }
+.fiche-infos > div { display: contents; }
 .fiche-infos dt {
   font-family: var(--titre);
   font-weight: 600;
   font-size: .95rem;
+  padding-right: 14px;
+  border-right: 2px solid rgba(17, 17, 17, .12);
 }
-.fiche-infos dt::after { content: "|"; margin-left: 10px; font-weight: 400; opacity: .4; }
 .fiche-infos dd { margin: 0; font-weight: 700; }
 @media (max-width: 760px) {
   .fiche-entete { grid-template-columns: minmax(0, 1fr); padding: 20px 22px; gap: 18px; }
