@@ -334,6 +334,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/img");
   eleventyConfig.addPassthroughCopy("static/fonts");
   eleventyConfig.addPassthroughCopy("admin/");
+  // Script d'envoi du formulaire de contact (exécuté par PHP-FPM sur le VPS, voir serveur/README.md)
+  eleventyConfig.addPassthroughCopy({ "serveur/contact-envoi.php": "contact/envoi.php" });
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");

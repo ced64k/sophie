@@ -1271,6 +1271,15 @@ p { margin: 0; }
 .aide { font-size: .92rem; color: var(--encre-douce); }
 .piege { position: absolute; left: -9999px; }
 .formulaire .bouton { justify-self: start; }
+.formulaire .statut {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--rayon-petit);
+  background: var(--cyan-pale);
+  font-weight: 700;
+}
+.formulaire .statut[hidden] { display: none; }
+.formulaire .bouton:disabled { opacity: .7; cursor: progress; }
 
 @media (max-width: 760px) {
   .contact-grille { grid-template-columns: 1fr; }

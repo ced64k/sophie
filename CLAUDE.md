@@ -45,7 +45,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
 
 ## Reste à faire
 
-1. **Formulaire de contact** : envoie via FormSubmit vers lenaerts.sophie@gmail.com. Au premier envoi, FormSubmit envoie un e-mail de confirmation à Sophie : elle doit cliquer dessus. Les coordonnées des lieux (`_data/lieux.json`, Up-toi en premier) sont réelles.
+1. **Formulaire de contact** : `/contact/envoi.php` (script PHP du dépôt, `serveur/contact-envoi.php`) envoie le message à lenaerts.sophie@gmail.com par le SMTP de Brevo (domaine authentifié). **À installer une fois sur le VPS depuis le Mac** : réglages `/etc/sophie/contact.ini` et règle nginx, voir `serveur/README.md` ; tant que ce n'est pas fait, le formulaire renvoie une erreur. Les coordonnées des lieux (`_data/lieux.json`, Up-toi en premier) sont réelles.
 2. **Sveltia CMS** : en place (`admin/`, branche `dev`, jeton d'accès personnel GitHub). À tester par Sophie sur dev.sophielenaerts.be/admin/.
 3. **Images** : `static/img` fait 228 Mo, surtout des déclinaisons WordPress (`-150x150`, `-300x167`…) inutilisées. Trier en vérifiant chaque référence.
 4. Redirections des anciennes pages `/authors/…` vers `/qui-suis-je/` (nécessite nginx, donc depuis le Mac).

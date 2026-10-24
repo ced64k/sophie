@@ -1,0 +1,9 @@
+; Modèle de /etc/sophie/contact.ini (sur le VPS, hors du site et hors du dépôt).
+; Droits conseillés : chown root:www-data /etc/sophie/contact.ini && chmod 640 /etc/sophie/contact.ini
+smtp_host = "smtp-relay.brevo.com"
+smtp_port = 587
+smtp_user = "LOGIN_SMTP_BREVO"
+smtp_key = "CLE_SMTP_BREVO"
+from = "contact@sophielenaerts.be"
+from_name = "Site de Sophie Lenaerts"
+to = "lenaerts.sophie@gmail.com"
