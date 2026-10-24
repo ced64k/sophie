@@ -59,7 +59,7 @@ Et plus généralement, cherchez avec l’enfant un geste qui fait penser à la 
 
 ![](/static/img/IMG_0218.jpeg)
 
-Mettez des lettres magnétiques sur le frigo, faites des jeux, des dessins et des mots avec ces lettres, faites entrer les jeux de lettres dans le quotidien, révisez les dictées en direct du frigo. Lorsqu’il y a une difficulté visuo-spatiale, la charge cognitive liée au geste d’écriture est très lourde. On évite cette charge en utilisant des lettres mobiles. 
+**Mettez des lettres magnétiques sur le frigo**, faites des jeux, des dessins et des mots avec ces lettres, faites entrer les jeux de lettres dans le quotidien, révisez les dictées en direct du frigo. Lorsqu’il y a une difficulté visuo-spatiale, la charge cognitive liée au geste d’écriture est très lourde. On évite cette charge en utilisant des lettres mobiles. 
 
 Certains sites de vente en ligne trient les jeux selon les compétences qu’ils favorisent, je vais citer [didacto]([https://www.didacto.com/]\(https://www.didacto.com/\)) et [hoptoys]([https://www.hoptoys.fr/]\(https://www.hoptoys.fr/\))  mais il y en a plein, ils sont remplis d’idées et d’informations utiles. 
 
