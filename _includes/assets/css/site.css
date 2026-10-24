@@ -592,7 +592,9 @@ p { margin: 0; }
   font-weight: 700;
   text-decoration: none;
 }
-.legende a:hover { text-decoration: underline; }
+/* Au survol : le surlignage prend sa couleur pleine (pas de soulignement par-dessus le marqueur) */
+.legende .marque::before { transition: background-color .2s var(--sortie); }
+.legende a:hover .marque::before, .legende a:focus-visible .marque::before { background-color: var(--puce); }
 .legende .puce { font-size: 1.2rem; }
 
 /* Sur tablette et téléphone : la frimousse suit les boutons et se cache derrière le panneau des domaines */
