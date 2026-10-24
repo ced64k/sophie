@@ -52,4 +52,4 @@ On va donc travailler sur plusieurs choses en même temps:
 Pourquoi passer par le jeu? Parce que sinon c'est pénible, je n'ai pas fait toutes ces études pour m'ennuyer 10h par jour. Parce que l'enfant apprend mieux de cette façon. Le jeu permet de donner un sens à ce que l'enfant apprend. Une fonction. Le plaisir éprouvé permettra d'utiliser ces apprentissages dans d'autres contextes de la vie quotidienne. Le jeu améliore les compétences sociales et cognitives et permet à l'enfant d'évoluer sereinement dans un environnement changeant. Il aura appris en toute confiance à développer des stratégies, à s'adapter de façon créative, à collaborer et à apprendre de ses erreurs.  
 Autant le stress et l'anxiété bloquent les compétences, autant le plaisir et la créativité ouvrent l'esprit aux nouveaux apprentissages.
 
-Comme d'habitude, j'ai dégoté ce petit bijou chez [Cotontige, à Ath](https://www.facebook.com/boutique.cotontige) :)
+Comme d'habitude, j'ai dégoté ce petit bijou chez [Cotontige, à Ath](https://www.instagram.com/boutique_cotontige/) :)

@@ -40,6 +40,6 @@ Bon, revenons-en à notre jeu maintenant. Imaginons qu'on trouve LA dentiste dan
 Véronique met ce matériel à disposition des prestataires, et donc des patients, dans les locaux d'[Up-Toi](http://uptoi.be/). Up-Toi est un centre interdisciplinaire de thérapie et d'accompagnement scolaire, dans la région d'Ath. L'équipe, dont je fais partie, est constituée de spécialistes en psychologie, neuropsychologie, neurofeedback, gestion mentale, logopédie, coaching scolaire et des jeunes, pleine conscience et accompagnement des enfants, adolescents et adultes à haut potentiel. Up-Toi propose aussi des ateliers bienveillants et ludiques, ponctuellement ou de façon plus régulière (BD/Manga, maths ludiques... )
 
 Vocabulaire, description d'images et d'actions, syntaxe, morpho-syntaxe, articulation, mémorisation, imagination... Vous avez forcément besoin de ce jeu.  
-Où le trouver? Chez [Cotontige](https://www.facebook.com/boutique.cotontige) bien sûr!
+Où le trouver? Chez [Cotontige](https://www.instagram.com/boutique_cotontige/) bien sûr!
 
 La superbe photo du plateau a été trouvée sur le site de [Plateau Marmots](https://plateaumarmots.fr/test-le-jeu-aux-mille-titres) qui en a fait un article non moins superbe.

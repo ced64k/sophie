@@ -40,7 +40,7 @@ Voici un tuto pour la bouteille de retour au calme, trouvé sur [le blog de Mell
 
 On a hâte!
 
-Tous les jeux dont je parle ici sont faciles à trouver. Un petit saut chez [Cotontige](https://www.facebook.com/boutique.cotontige/) si vous êtes dans la région (Hainaut, Ath), vous pouvez dire que vous venez de ma part ^^ (et likez la page, hop!) Sinon, dans les bonnes boutiques de jeux. Vous allez à la rencontre des conseillers, vous leur posez plein de questions... ne comptez pas sur moi pour mettre des liens vers les géants de la vente en ligne ;)
+Tous les jeux dont je parle ici sont faciles à trouver. Un petit saut chez [Cotontige](https://www.instagram.com/boutique_cotontige/) si vous êtes dans la région (Hainaut, Ath), vous pouvez dire que vous venez de ma part ^^ (et likez la page, hop!) Sinon, dans les bonnes boutiques de jeux. Vous allez à la rencontre des conseillers, vous leur posez plein de questions... ne comptez pas sur moi pour mettre des liens vers les géants de la vente en ligne ;)
 
  
 

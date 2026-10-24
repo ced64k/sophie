@@ -36,4 +36,4 @@ Voici plusieurs idées qui permettront de travailler un objectif sur le langage 
 
 D'autres idées viendront à l'utilisation, amusez-vous bien les logos!
 
-Et j'ai encoooore trouvé ce jeu chez [Cotontige, à Ath](https://www.facebook.com/boutique.cotontige), dis donc! C'est fou les trésors qu'on trouve là bas!
+Et j'ai encoooore trouvé ce jeu chez [Cotontige, à Ath](https://www.instagram.com/boutique_cotontige/), dis donc! C'est fou les trésors qu'on trouve là bas!
