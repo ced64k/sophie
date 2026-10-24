@@ -1250,11 +1250,12 @@ p { margin: 0; }
   height: 2.5px;
   margin: -1.25px 0 0 -7px;
   border-radius: 2px;
-  background: var(--encre);
+  background: #b5b5b5;
   rotate: 45deg;
 }
 .carte.leaflet-container a.leaflet-popup-close-button::after { rotate: -45deg; }
 .carte.leaflet-container a.leaflet-popup-close-button:hover { background: var(--cyan-pale); }
+.carte.leaflet-container a.leaflet-popup-close-button:hover::before, .carte.leaflet-container a.leaflet-popup-close-button:hover::after { background: #8a8a8a; }
 .carte .leaflet-popup-tip { background: var(--blanc); box-shadow: none; }
 .carte .leaflet-popup-tip-container { margin-top: -1px; }
 .carte-ville { font-weight: 700; font-size: 1.1rem; line-height: 1.3; }
