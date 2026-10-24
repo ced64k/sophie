@@ -2,7 +2,8 @@
 title: Mon enfant confond les b et les d. Pourquoi ? Que faire ?
 date: 2026-10-16
 image: /static/img/IMG_0219.jpeg
-categories: []
+categories:
+  - langage-ecrit
 ---
 
 C’est une constatation fréquente, qui fait peur aux parents. Et pourtant, les confusions visuelles sont normales jusqu’à un certain âge. 
