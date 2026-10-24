@@ -62,7 +62,7 @@ Avec mon jeune public, j’utilise régulièrement « Wahiohio Quel est ce cri 
 
 ![](/static/img/IMG_0212.jpeg)
 
-La collection « Le livre dont vous êtes le héros » n’est plus à présenter, elle rend les livres interactifs depuis les années 80, dans une thématique généralement issue du monde fantastique et horrifique. Différents éditeurs empruntent le concept et le proposent à différentes tranches d’âges. ![](/static/img/IMG_0208.jpeg)
+La collection « Un livre dont vous êtes le héros » n’est plus à présenter, elle rend les livres interactifs depuis les années 80, dans une thématique généralement issue du monde fantastique et horrifique. Différents éditeurs empruntent le concept et le proposent à différentes tranches d’âges. ![](/static/img/IMG_0208.jpeg)
 
 ![](/static/img/IMG_0209.jpeg)
 
