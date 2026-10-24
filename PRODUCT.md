@@ -21,7 +21,7 @@ Site professionnel de Sophie Lenaerts, logopède indépendante. Il sert à la fo
 
 ## Positioning
 
-Une logopède qui travaille par le jeu : elle détourne des jeux du commerce (que les parents peuvent acheter et refaire à la maison) et décline chacun par domaine (lexique, syntaxe, phonologie, métaphonologie, lecture, orthographe, fonctions exécutives, cognition mathématique…). Approche inspirée des pédagogies alternatives : partir des intérêts et du rythme de l'enfant, parents bienvenus en séance, travail conjoint avec l'école et les autres thérapeutes. Elle a aussi créé des jeux en ligne, sur un site séparé (jeux.sophielenaerts.be).
+Une logopède qui travaille par le jeu : elle détourne des jeux du commerce (que les parents peuvent acheter et refaire à la maison) et décline chacun par domaine (lexique, syntaxe, phonologie, métaphonologie, lecture, orthographe, fonctions exécutives, cognition mathématique…). Approche inspirée des pédagogies alternatives : partir des intérêts et du rythme de l'enfant, parents bienvenus en séance, travail conjoint avec l'école et les autres thérapeutes. Elle a aussi créé des jeux en ligne, sur un site séparé (jeux.sophielogo.be).
 
 ## Operating Context
 
@@ -40,7 +40,7 @@ Une logopède qui travaille par le jeu : elle détourne des jeux du commerce (qu
 - **Formulaire de contact** : envoi par FormSubmit vers l'e-mail de Sophie (le site est statique).
 - **Contenus existants** : tout est conservé et mieux organisé (par public et par domaine, avec résumés et images). Les URL actuelles (`/AAAA/MM/JJ/slug/` pour les articles, `/slug/` pour les fiches jeux, `/tags/…`) sont conservées ou redirigées.
 - Le site est en français (Belgique) ; dates et interface en français.
-- Le site des jeux en ligne (jeux.sophielenaerts.be) reste séparé ; le site principal le met en avant de façon bien visible dans la navigation.
+- Le site des jeux en ligne (jeux.sophielogo.be) reste séparé ; le site principal le met en avant de façon bien visible dans la navigation.
 
 ## Brand Commitments
 

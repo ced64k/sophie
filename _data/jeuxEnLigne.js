@@ -3,5 +3,5 @@
 module.exports =
   process.env.JEUX_EN_LIGNE ||
   (process.env.GITHUB_REF === "refs/heads/dev"
-    ? "https://devjeux.sophielenaerts.be"
-    : "https://jeux.sophielenaerts.be");
+    ? "https://devjeux.sophielogo.be"
+    : "https://jeux.sophielogo.be");

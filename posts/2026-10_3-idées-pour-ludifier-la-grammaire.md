@@ -17,6 +17,6 @@ S'il y a bien une matière qui trône en haut de la catégorie "bof", c'est la g
 
 #### **Bonus!**
 
-J’ai créé [un petit jeu en ligne](https://jeux.sophielenaerts.be/#allumer-les-ampoules). Le principe est simple, l’enfant lit les mots et les trie selon leur nature, puis utilise ces mêmes mots dans des phrases où il doit leur attribuer l’accord correct. Après quoi, il appuie sur l’interrupteur et si la guirlande s’allume, c’est que la phrase est bien accordée. En tant qu’accompagnant: pendant le tri, nous l’aidons à faire les liens entre la nature et l’accord, nous l’amenons à organiser sa pensée et prendre des points de repère; et lorsqu’il doit accorder, nous lui rappelons ces points de repère.
+J’ai créé [un petit jeu en ligne](https://jeux.sophielogo.be/#allumer-les-ampoules). Le principe est simple, l’enfant lit les mots et les trie selon leur nature, puis utilise ces mêmes mots dans des phrases où il doit leur attribuer l’accord correct. Après quoi, il appuie sur l’interrupteur et si la guirlande s’allume, c’est que la phrase est bien accordée. En tant qu’accompagnant: pendant le tri, nous l’aidons à faire les liens entre la nature et l’accord, nous l’amenons à organiser sa pensée et prendre des points de repère; et lorsqu’il doit accorder, nous lui rappelons ces points de repère.
 
 ![](/static/img/IMG_0194.jpeg)

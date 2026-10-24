@@ -15,7 +15,7 @@ surtout depuis un iPad, en session Claude Code cloud : pas d'accès SSH au VPS, 
   (`/var/www/sophie` pour main, `/var/www/devsophie` pour dev). Les secrets SSH sont dans GitHub, pas dans le dépôt.
 - Domaine : sophielogo.be depuis le 2026-10-24. L'ancien domaine (sophielenaerts.be, www et dev) redirige en 301 vers le nouveau,
   chemin compris (nginx : `/etc/nginx/sites-available/sophie` et `devsophie`, sauvegardes `*.bak-domaine`). Les jeux en ligne
-  restent sur jeux.sophielenaerts.be (dépôt séparé).
+  (dépôt séparé `soph64k/jeuxlogo`) sont sur jeux.sophielogo.be ; jeux. et devjeux.sophielenaerts.be redirigent aussi.
 - Vérifier un déploiement : `gh run list -R ced64k/sophie -L 3`.
 - Compiler en local : `npm install` puis `npx @11ty/eleventy` (sortie dans `_site/`).
 
