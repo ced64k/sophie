@@ -44,24 +44,30 @@ Et plus généralement, cherchez avec l’enfant un geste qui fait penser à la 
 
 **Faites des jeux qui impliquent une attention visuelle et visuo-spatiale**. Dobble, Jungle speed, Speed cup, Cubeez, le lynx et ses variantes, Speedy Crazy, Micro macro, Les monstres dé-traqués… la liste est longue. Certains jeux de cartes Tam Tam ont les confusions visuelles pour thématique.
 
+![](/static/img/IMG_0217.jpeg)
+
 ![](/static/img/IMG_0216.jpeg)
 
 ![](/static/img/IMG_0214.jpeg)
 
 ![](/static/img/IMG_0213.jpeg)
 
-Manipulez des images sous un petit miroir et laissez-le percevoir les différences et les similitudes et décrire ce qu’il voit. Djeco a toute une série de jeux avec miroir, et « Miroir Magique » chez Red Cat Games, est très très mignon. 
+**Manipulez ensemble des images sous un petit miroir** et laissez-le percevoir les différences et les similitudes et décrire ce qu’il voit. Djeco a toute une série de jeux avec miroir, et « Miroir Magique » chez Red Cat Games, est très très mignon. 
+
+![](/static/img/IMG_0215.jpeg)
+
+![](/static/img/IMG_0218.jpeg)
 
 Mettez des lettres magnétiques sur le frigo, faites des jeux, des dessins et des mots avec ces lettres, faites entrer les jeux de lettres dans le quotidien, révisez les dictées en direct du frigo. Lorsqu’il y a une difficulté visuo-spatiale, la charge cognitive liée au geste d’écriture est très lourde. On évite cette charge en utilisant des lettres mobiles. 
 
-Certains sites de vente en ligne trient les jeux selon les compétences qu’ils favorisent, je vais citer didacto et hoptoys mais il y en a plein, ils sont remplis d’idées et d’informations utiles. 
+Certains sites de vente en ligne trient les jeux selon les compétences qu’ils favorisent, je vais citer [didacto]([https://www.didacto.com/](https://www.didacto.com/)) et [hoptoys]([https://www.hoptoys.fr/](https://www.hoptoys.fr/))  mais il y en a plein, ils sont remplis d’idées et d’informations utiles. 
 
-Ce qu’on ne fait pas : 
+#### Ce qu’on ne fait pas : 
 
-Punir et faire copier les mots. Allez allez, les parents, on n’est plus en 1950. Maintenant on sait des trucs sur la charge cognitive et sur l’inutilité de ce genre de tâches. Au bout de 2 lignes, l’enfant se met en pilote automatique et la tâche devient une répétition mécanique. Il ne fera pas plus attention la prochaine fois, les confusions visuelles ne sont pas un trouble du comportement. 
+**Punir et faire copier les mots.** Allez allez, les parents, on n’est plus en 1950. Maintenant on sait des trucs sur la charge cognitive et sur l’inutilité de ce genre de tâches. Au bout de 2 lignes, l’enfant se met en pilote automatique et la tâche devient une répétition mécanique. Il ne fera pas plus attention la prochaine fois, les confusions visuelles ne sont pas un trouble du comportement. 
 
-Pointer les erreurs en rouge, avec des points d’exclamation, un smiley triste et des remarques sur le manque d’attention, de soin… Et voilà, rien qu’à y penser je suis énervée. Je ne vais même pas faire l’affront d’expliquer pourquoi c’est mauvais de faire ça. Arrêtez ça, c’est tout, c’est pas gentil et ça stresse les patients, après les logos passent la moitié de la séance à les rassurer. 
+**Pointer les erreurs en rouge**, avec des points d’exclamation, un smiley triste et des remarques sur le manque d’attention, de soin… Et voilà, rien qu’à y penser je suis énervée. Je ne vais même pas faire l’affront d’expliquer pourquoi c’est mauvais de faire ça. Arrêtez ça, c’est tout, c’est pas gentil et ça stresse les patients, après les logos passent la moitié de la séance à les rassurer. 
 
-Chronométrer la lecture. Brrrr. (J’ai eu un frisson d’effroi.) L’influence du stress sur les saccades visuelles dans le contexte d’une fragilité visuo-spatiale. Tout un programme. 
+**Chronométrer la lecture**. Brrrr. (J’ai eu un frisson d’effroi.) L’influence du stress sur les saccades visuelles dans le contexte d’une fragilité visuo-spatiale. Tout un programme. 
 
-Le cerveau a besoin de sens, de projet, de manipulation et de sécurité pour apprendre. Jouez avec vos enfants.
+> Le cerveau a besoin de sens, de projet, de manipulation et de sécurité pour apprendre. Jouez avec vos enfants.
