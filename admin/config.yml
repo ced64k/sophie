@@ -22,7 +22,28 @@ collections:
       - { label: Titre, name: title, widget: string }
       - { label: Date de publication, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
       - { label: Image de couverture, name: image, widget: image, required: false, hint: "Facultatif : sinon la première image du texte est utilisée." }
-      - { label: Catégories, name: categories, widget: list, required: false, hint: "Mêmes identifiants que les anciennes catégories du site (ex. langage-oral)." }
+      # Valeurs reconnues par _data/classement.json (domaines, publics, thèmes) : garder les deux listes identiques
+      - label: Catégories
+        name: categories
+        widget: select
+        multiple: true
+        required: false
+        hint: "Le domaine (oral, écrit, maths, méthodologie) place l'article dans les filtres de la page Articles."
+        options:
+          - { label: "Domaine : Langage oral", value: langage-oral }
+          - { label: "Domaine : Langage écrit", value: langage-ecrit }
+          - { label: "Domaine : Langage écrit (grammaire)", value: grammaire }
+          - { label: "Domaine : Cognition mathématique", value: mathematique }
+          - { label: "Domaine : Méthodologie", value: methodologie }
+          - { label: "Public : Pour les parents", value: pour-les-parents }
+          - { label: "Public : Pour les instits", value: pour-les-instits }
+          - { label: "Thème : À télécharger", value: telechargements-gratuits }
+          - { label: "Thème : Jeux", value: jeux-educatifs }
+          - { label: "Thème : Matériel pédagogique", value: materiel-pedagogique }
+          - { label: "Thème : Création de matériel", value: creation-de-materiel }
+          - { label: "Thème : Livres", value: livres }
+          - { label: "Thème : Ateliers", value: ateliers }
+          - { label: "Thème : Réflexions", value: du-blabla }
       - { label: Texte, name: body, widget: markdown }
 
   - name: jeux

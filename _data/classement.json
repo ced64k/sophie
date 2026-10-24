@@ -3,7 +3,8 @@
     "langage-oral": "oral",
     "langage-ecrit": "ecrit",
     "grammaire": "ecrit",
-    "mathematique": "math"
+    "mathematique": "math",
+    "methodologie": "methodo"
   },
   "publics": {
     "pour-les-parents": { "id": "parents", "nom": "Pour les parents" },
