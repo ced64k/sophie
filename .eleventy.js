@@ -334,6 +334,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/img");
   eleventyConfig.addPassthroughCopy("static/fonts");
   eleventyConfig.addPassthroughCopy("admin/");
+  // Carte de la page contact (Leaflet, servi par le site : pas de dépendance à un CDN)
+  eleventyConfig.addPassthroughCopy({ "node_modules/leaflet/dist/leaflet.js": "static/vendor/leaflet/leaflet.js", "node_modules/leaflet/dist/leaflet.css": "static/vendor/leaflet/leaflet.css" });
   // Script d'envoi du formulaire de contact (exécuté par PHP-FPM sur le VPS, voir serveur/README.md)
   eleventyConfig.addPassthroughCopy({ "serveur/contact-envoi.php": "contact/envoi.php" });
 

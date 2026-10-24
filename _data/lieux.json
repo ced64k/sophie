@@ -2,15 +2,19 @@
   {
     "ville": "Ath",
     "structure": "Up-toi!",
-    "adresse": "Rue de Messines 53, 7800 Ath",
+    "adresse": "Rue de Messine 53, 7800 Ath",
     "telephone": "0471 51 75 59",
-    "email": "veronique.dieu@uptoi.be"
+    "email": "veronique.dieu@uptoi.be",
+    "lat": 50.62166,
+    "lon": 3.77127
   },
   {
     "ville": "Elouges (Dour)",
     "structure": "Les Locaux des Chaperons",
     "adresse": "Rue du Commerce 158, 7370 Elouges",
     "telephone": "065 65 38 88",
-    "email": "centredeschaperons@gmail.com"
+    "email": "centredeschaperons@gmail.com",
+    "lat": 50.40381,
+    "lon": 3.75237
   }
 ]

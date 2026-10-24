@@ -27,6 +27,8 @@ section: contact
 						{% if lieu.provisoire %}<p class="provisoire">Coordonnées provisoires, à remplacer</p>{% endif %}
 					</div>
 				{% endfor %}
+				<div class="carte" id="carte" role="region" aria-label="Carte des deux lieux de consultation"></div>
+				<script type="application/json" id="carte-donnees">{{ lieux | dump | safe }}</script>
 			</section>
 
 			<section aria-labelledby="titre-ecrire">
@@ -36,3 +38,43 @@ section: contact
 		</div>
 	</div>
 </article>
+
+<link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css">
+<script src="/static/vendor/leaflet/leaflet.js"></script>
+<script>
+	(function () {
+		var el = document.getElementById("carte");
+		if (!el || !window.L) return;
+		var lieux = JSON.parse(document.getElementById("carte-donnees").textContent).filter(function (l) { return l.lat && l.lon; });
+		if (!lieux.length) return;
+		var carte = L.map(el, { scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false, attributionControl: false, zoomSnap: 0.5 });
+		L.control.attribution({ prefix: false }).addTo(carte);
+		L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: "© <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>" }).addTo(carte);
+		var icone = L.divIcon({
+			className: "carte-pin",
+			html: '<svg class="pin" aria-hidden="true" focusable="false"><use href="#pin"/></svg>',
+			iconSize: [36, 45],
+			iconAnchor: [18, 43],
+			popupAnchor: [0, -40]
+		});
+		var points = lieux.map(function (l, i) {
+			var contenu = document.createElement("div");
+			var ville = document.createElement("strong");
+			ville.textContent = l.ville;
+			var adresse = document.createElement("span");
+			adresse.appendChild(document.createElement("br"));
+			adresse.appendChild(document.createTextNode(l.structure));
+			adresse.appendChild(document.createElement("br"));
+			adresse.appendChild(document.createTextNode(l.adresse));
+			var lien = document.createElement("a");
+			lien.href = "https://www.openstreetmap.org/directions?to=" + l.lat + "%2C" + l.lon;
+			lien.target = "_blank";
+			lien.rel = "noopener";
+			lien.textContent = "Itinéraire";
+			contenu.append(ville, adresse, document.createElement("br"), lien);
+			L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu);
+			return [l.lat, l.lon];
+		});
+		carte.fitBounds(points, { padding: [48, 48], maxZoom: 12 });
+	})();
+</script>

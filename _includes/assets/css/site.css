@@ -1197,6 +1197,31 @@ p { margin: 0; }
   margin-top: 2.4em;
 }
 .contact-grille h2 { font-size: 1.8rem; margin-bottom: .6em; }
+.carte {
+  height: 320px;
+  margin-top: 22px;
+  border-radius: var(--rayon-petit);
+  overflow: hidden;
+  background: var(--cyan-pale);
+  isolation: isolate;
+}
+.carte .leaflet-tile-pane { filter: saturate(.7) contrast(.96); }
+.carte-pin { background: none; border: 0; }
+.carte-pin .pin {
+  width: 36px;
+  height: 45px;
+  margin: 0;
+  vertical-align: top;
+  /* Ombre plate dessous, comme les boutons du site */
+  filter: drop-shadow(0 3px 0 rgba(17, 17, 17, .22));
+  transition: translate .15s var(--sortie);
+}
+.carte-pin:hover .pin, .carte-pin:focus-visible .pin { translate: 0 -3px; }
+.carte .leaflet-container { font: inherit; }
+.carte .leaflet-popup-content-wrapper { border-radius: 18px; box-shadow: 0 4px 0 rgba(17, 17, 17, .12); color: var(--encre); }
+.carte .leaflet-popup-content { margin: 14px 18px; font-size: 1rem; line-height: 1.5; }
+.carte .leaflet-popup-content a { font-weight: 700; }
+.carte .leaflet-control-attribution { font-size: .72rem; }
 .lieu-carte { padding: 18px 0; border-top: 2px solid var(--cyan-pale); }
 .lieu-ville {
   font-family: var(--titre);
