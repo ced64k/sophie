@@ -366,6 +366,8 @@ p { margin: 0; }
   .nav-toggle[aria-expanded="true"] ~ .nav-liens { display: flex; }
   /* Menu ouvert : voile légèrement assombri (sans flou) sur toute la page, sous le menu */
   .menu-ouvert .accueil, .menu-ouvert .suite-page { z-index: 40; }
+  /* Menu ouvert : la page derrière ne défile plus */
+  html.menu-ouvert, html.menu-ouvert body { overflow: hidden; overscroll-behavior: none; }
   /* Un élément nommé pour les transitions de page isole son fond : sans ça, le voile ne couvrirait pas la page */
   .menu-ouvert .bord { view-transition-name: none; }
   .menu-ouvert .bord::before {
