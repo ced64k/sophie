@@ -377,6 +377,20 @@ p { margin: 0; }
     z-index: -1;
     background: rgba(17, 17, 17, .22);
   }
+  /* Menu ouvert : l'en-tête et le menu forment un seul panneau blanc qui touche les bords de l'écran ; la croix n'a plus de rond visible */
+  .menu-ouvert .bord::after {
+    content: "";
+    position: absolute;
+    inset: -100px calc(-1 * var(--marge-page)) 0;
+    z-index: -1;
+    background: var(--blanc);
+  }
+  .menu-ouvert .nav-liens {
+    left: calc(-1 * var(--marge-page));
+    right: calc(-1 * var(--marge-page));
+    top: 100%;
+    border-radius: 0 0 var(--rayon) var(--rayon);
+  }
   .nav-liens li + li { border-top: 2px solid var(--cyan-pale); }
   .nav-liens a { padding: 15px 0; font-size: 1.15rem; }
   .nav-liens a[aria-current="page"]::after { left: 50%; right: auto; width: 100%; translate: -50% 0; bottom: .6em; }
