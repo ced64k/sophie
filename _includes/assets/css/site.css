@@ -1074,7 +1074,7 @@ p { margin: 0; }
   padding: 24px 30px;
   margin-bottom: 2.2em;
 }
-.livret-page > .fiche-entete { max-width: 62rem; }
+.fiche-jeu .livret-page > .fiche-entete { max-width: 62rem; }
 .fiche-entete.sans-infos, .fiche-entete:not(:has(.sommaire)) { grid-template-columns: minmax(0, 1fr); }
 .fiche-entete .sommaire { background: none; padding: 0; margin: 0; }
 .fiche-infos {
