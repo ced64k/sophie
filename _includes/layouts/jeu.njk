@@ -29,7 +29,7 @@ section: jeu
 		{% endif %}
 		{% if infos | length %}
 			<div class="fiche-bloc-infos">
-			<p class="sommaire-titre">En bref</p>
+			<p class="sommaire-titre">Infos</p>
 			<dl class="fiche-infos">
 				{% for i in infos %}
 					<div><dt title="{{ i.nom }}">{{ i.icone | safe }}<span class="cache">{{ i.nom }}</span></dt><dd>{{ i.valeur }}</dd></div>
