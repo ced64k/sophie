@@ -1066,7 +1066,7 @@ p { margin: 0; }
 /* Variantes (gauche) et informations sur le jeu (droite) : un seul bloc vert clair, plus large que le texte */
 .fiche-entete {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 15rem;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 28px;
   align-items: start;
   background: var(--cyan-pale);
@@ -1080,7 +1080,7 @@ p { margin: 0; }
 .fiche-infos {
   margin: 0;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto auto;
   column-gap: 14px;
   row-gap: 10px;
   align-items: baseline;
@@ -1095,6 +1095,7 @@ p { margin: 0; }
   padding-right: 14px;
   border-right: 2px solid rgba(17, 17, 17, .12);
 }
+.fiche-infos dt, .fiche-infos dd { white-space: nowrap; }
 .fiche-infos dd { margin: 0; font-weight: 700; }
 @media (max-width: 760px) {
   .fiche-entete { grid-template-columns: minmax(0, 1fr); padding: 20px 22px; gap: 18px; }
