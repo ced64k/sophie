@@ -1083,18 +1083,34 @@ p { margin: 0; }
   grid-template-columns: auto auto;
   column-gap: 14px;
   row-gap: 10px;
-  align-items: baseline;
+  align-items: center;
   padding-left: 28px;
   border-left: 2px solid rgba(17, 17, 17, .12);
 }
 .fiche-infos > div { display: contents; }
 .fiche-infos dt {
-  font-family: var(--titre);
-  font-weight: 600;
-  font-size: .95rem;
+  display: flex;
   padding-right: 14px;
   border-right: 2px solid rgba(17, 17, 17, .12);
 }
+.fiche-infos dt svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: var(--encre);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cache {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.fiche-infos > div { align-items: center; }
 .fiche-infos dt, .fiche-infos dd { white-space: nowrap; }
 .fiche-infos dd { margin: 0; font-weight: 700; }
 @media (max-width: 760px) {
