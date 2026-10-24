@@ -1063,23 +1063,26 @@ p { margin: 0; }
 .fiche-jeu .livret-page > *, .fiche-jeu .texte > * { width: 100%; max-width: 44rem; margin-inline: auto; }
 .fiche-jeu .texte > p:first-child:has(> img:only-child) { order: -1; margin-bottom: 1.2em; }
 
-/* Variantes (gauche) et informations sur le jeu (droite) */
+/* Variantes (gauche) et informations sur le jeu (droite) : un seul bloc vert clair, plus large que le texte */
 .fiche-entete {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 15rem;
-  gap: 16px;
+  gap: 28px;
   align-items: start;
-  margin-bottom: 2.2em;
-}
-.fiche-entete.sans-infos, .fiche-entete:not(:has(.sommaire)) { grid-template-columns: minmax(0, 1fr); }
-.fiche-entete .sommaire { margin-bottom: 0; }
-.fiche-infos {
-  margin: 0;
   background: var(--cyan-pale);
   border-radius: var(--rayon-petit);
-  padding: 18px 22px;
+  padding: 24px 30px;
+  margin-bottom: 2.2em;
+}
+.livret-page > .fiche-entete { max-width: 62rem; }
+.fiche-entete.sans-infos, .fiche-entete:not(:has(.sommaire)) { grid-template-columns: minmax(0, 1fr); }
+.fiche-entete .sommaire { background: none; padding: 0; margin: 0; }
+.fiche-infos {
+  margin: 0;
   display: grid;
   gap: 10px;
+  padding-left: 28px;
+  border-left: 2px solid rgba(17, 17, 17, .12);
 }
 .fiche-infos dt {
   font-family: var(--titre);
@@ -1088,7 +1091,8 @@ p { margin: 0; }
 }
 .fiche-infos dd { margin: 0; font-weight: 700; }
 @media (max-width: 760px) {
-  .fiche-entete { grid-template-columns: minmax(0, 1fr); }
+  .fiche-entete { grid-template-columns: minmax(0, 1fr); padding: 20px 22px; gap: 18px; }
+  .fiche-infos { padding: 18px 0 0; border-left: 0; border-top: 2px solid rgba(17, 17, 17, .12); }
 }
 
 .variante {
