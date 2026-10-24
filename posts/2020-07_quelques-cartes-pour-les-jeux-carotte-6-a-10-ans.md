@@ -11,7 +11,7 @@ categories:
   - "telechargements-gratuits"
 ---
 
-Dans la foulée de l'achat de [ce jeu](https://sophielenaerts.be/2021/06/30/jeu-carotte-save-the-dragon/), j'ai préparé quelques cartes-récap, que j'utiliserai également avec d'autres jeux.
+Dans la foulée de l'achat de [ce jeu](/2021/06/30/2021-06_jeu-carotte-save-the-dragon/), j'ai préparé quelques cartes-récap, que j'utiliserai également avec d'autres jeux.
 
 - Des cartes récap fin de 1ere primaire (CP), début de 2ème (CE1): Page 1 : 12 cartes pour remettre les syllabes dans l'ordre (mots de 3 syllabe) et 12 cartes pour retrouver la 2ème syllabe (mots de 2 syllabes) Page 2:  12 cartes pour retrouver la syllabe identique (entre deux mots) et 11 cartes de lecture rapide (3 mots)
 
@@ -33,4 +33,4 @@ Dans la foulée de l'achat de [ce jeu](https://sophielenaerts.be/2021/06/30/jeu-
 
 J'ajoute à la main des petits points sur les cartes au cas où le patient a besoin de compter les points pour se booster, ou si on utilise les cartes dans un jeu de parcours (on avance ensuite d'autant de cases que de points sur la carte)
 
-Voilà voilà, servez-vous! PDF:  [cartes-jeux-carotte](https://sophielenaerts.be/wp-content/uploads/2021/07/cartes-jeux-carotte.pdf)
+Voilà voilà, servez-vous! PDF:  [cartes-jeux-carotte](/static/img/cartes-jeux-carotte.pdf)

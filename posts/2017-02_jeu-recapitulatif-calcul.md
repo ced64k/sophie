@@ -14,13 +14,13 @@ Jeu récapitulatif pour **les procédés, les problèmes, les tables de multipli
 
 Les pdf sont à télécharger gratuitement ci-dessous.
 
-[plateau-de-jeu-règles](http://sophielenaerts.be/wp-content/uploads/2017/02/plateau-de-jeu-règles.pdf)
+[plateau-de-jeu-règles](/static/img/plateau-de-jeu-règles.pdf)
 
-[problèmes3P](http://sophielenaerts.be/wp-content/uploads/2017/02/problèmes3P.pdf)
+[problèmes3P](/static/img/problèmes3P.pdf)
 
-[procédés-3p](http://sophielenaerts.be/wp-content/uploads/2017/02/procédés-3p.pdf)
+[procédés-3p](/static/img/procédés-3p.pdf)
 
-[tablesmultiplication-10](http://sophielenaerts.be/wp-content/uploads/2017/02/tablesmultiplication-10.pdf)
+[tablesmultiplication-10](/static/img/tablesmultiplication-10.pdf)
 
 Enregistrer
 

@@ -20,6 +20,6 @@ Le but du jeu est d'obtenir le plus possible de phrases correctes au niveau du s
 
 Fichiers à télécharger:
 
-[jeu-des-accords](http://sophielenaerts.be/wp-content/uploads/2018/02/jeu-des-accords.pdf)
+[jeu-des-accords](/static/img/jeu-des-accords.pdf)
 
-[plateau-jeu-des-accords](http://sophielenaerts.be/wp-content/uploads/2018/02/plateau-jeu-des-accords.pdf)
+[plateau-jeu-des-accords](/static/img/plateau-jeu-des-accords.pdf)

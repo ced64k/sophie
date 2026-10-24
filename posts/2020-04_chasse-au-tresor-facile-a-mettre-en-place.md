@@ -18,7 +18,7 @@ Une chasse au trésor facile à mettre en place pour jouer avec l'observation et
 
 ![](/static/img/IMG-4739-1024x1024.jpg)
 
-Variante plus difficile pour les plus grands qui doivent travailler la compréhension à la lecture et la recherche dans des documents (livres, internet...), [voici une série de 13 questions](http://sophielenaerts.be/wp-content/uploads/2020/04/chasseautresor.pdf).  
+Variante plus difficile pour les plus grands qui doivent travailler la compréhension à la lecture et la recherche dans des documents (livres, internet...), [voici une série de 13 questions](/static/img/chasseautresor.pdf).  
 \- Vous créez une phrase de maximum 13 mots, qui indique l'endroit où sera caché le trésor final (exemple : Ton / superbe/ trésor/ se/ situe/ plus ou moins/ entre / les/ deux/ grands / arbres / du / jardin )  
 \- Vous écrivez ces mots devant la bonne réponse de chaque question, et des mots perturbateurs devant les autres réponses.  
 \- Vous découpez les questions avec les 4 réponses possibles, et vous cachez ces petits papiers où vous voulez.  

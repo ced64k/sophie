@@ -8,13 +8,13 @@ categories:
   - "materiel-pedagogique"
 ---
 
-[Une fois les grandes lignes trouvées, les idées mises sur papier,](http://sophielenaerts.be/2017/02/12/ateliers-de-communication-structure-et-mise-en-place/) nous avons dû  fabriquer du matériel. Pourquoi ne pas l'acheter? Hum. Parce que. C'est dans les gènes quand on est logopède. On manie les ciseaux, la colle et la plastifieuse avec grâce. "Avec amour et tendresse" comme disait l'un de mes profs.
+[Une fois les grandes lignes trouvées, les idées mises sur papier,](/2017/02/12/2017-02_ateliers-de-communication-structure-et-mise-en-place/) nous avons dû  fabriquer du matériel. Pourquoi ne pas l'acheter? Hum. Parce que. C'est dans les gènes quand on est logopède. On manie les ciseaux, la colle et la plastifieuse avec grâce. "Avec amour et tendresse" comme disait l'un de mes profs.
 
 En vrai, c'est parce que nos idées sont tellement précises que nous ne pourrions pas trouver de jeu qui corresponde pile-poil à ce que nous cherchons.
 
-Mais il y a des quantités de jeux bien faits pour les âges qui nous intéressent ici (18 à 36 mois pour rappel) Notre idée de cube est directement inspirée du jeu **Roule et Joue de Thinkfun**. Pour l'avoir manipulé, ce jeu est vraiment génial. Le principe est de lancer un gros cube coloré et de prendre une carte correspondant à la couleur de la face. Sur ces cartes, des petits gages, des questions, etc. Je me souviens d'un papy qui l'avait acheté et était revenu à la boutique me dire que ses petits enfants (même les plus grands) fonçaient sur le cube dés qu'ils arrivaient chez lui. ![](/static/img/thinkfun-roule-joue-300x300.jpg) Nous l'avons adapté pour avoir [des actions plus ciblées "logopédie".](http://sophielenaerts.be/2017/02/12/ateliers-de-communication-structure-et-mise-en-place/)
+Mais il y a des quantités de jeux bien faits pour les âges qui nous intéressent ici (18 à 36 mois pour rappel) Notre idée de cube est directement inspirée du jeu **Roule et Joue de Thinkfun**. Pour l'avoir manipulé, ce jeu est vraiment génial. Le principe est de lancer un gros cube coloré et de prendre une carte correspondant à la couleur de la face. Sur ces cartes, des petits gages, des questions, etc. Je me souviens d'un papy qui l'avait acheté et était revenu à la boutique me dire que ses petits enfants (même les plus grands) fonçaient sur le cube dés qu'ils arrivaient chez lui. ![](/static/img/thinkfun-roule-joue-300x300.jpg) Nous l'avons adapté pour avoir [des actions plus ciblées "logopédie".](/2017/02/12/2017-02_ateliers-de-communication-structure-et-mise-en-place/)
 
-Nous pourrons encore l'adapter et créer des cartes colorées pour l'apprentissage du langage écrit par exemple (affaire à suivre ^^ ) Pour les calculs, l'adaptation est en cours, [j'ai déjà mis en ligne quelques fiches prévues pour les calculs de 0 à 10.](http://sophielenaerts.be/2017/02/12/jeu-de-calcul-de-0-a-10/)
+Nous pourrons encore l'adapter et créer des cartes colorées pour l'apprentissage du langage écrit par exemple (affaire à suivre ^^ ) Pour les calculs, l'adaptation est en cours, [j'ai déjà mis en ligne quelques fiches prévues pour les calculs de 0 à 10.](/2017/02/12/2017-02_jeu-de-calcul-de-0-a-10/)
 
 Alors, côté pratique:
 

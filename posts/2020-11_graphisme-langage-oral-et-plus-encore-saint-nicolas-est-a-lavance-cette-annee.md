@@ -27,4 +27,4 @@ Imagicien a clignoté dans ma tête en mode "alerte pépite, alerte pépite" dè
 
 Dernier craquage : Sticky Chameleons. Parce que j'adore les caméléons. Et aussi parce que c'est toujours chouette, les jeux de rapidité. Associer deux dés (couleur et forme, la forme étant celle d'une saleté de bestiole que le caméléon va attraper). Le caméléon c'est nous. Et on attrape la bestiole de la bonne couleur avec notre langue. Pas notre vraie langue (ce serait drôle, n'empêche) mais la langue collante, très collante. Sans se faire piquer par une guêpe sinon c'est moins drôle. Entre la rapidité, la concentration, la flexibilité mentale, la connaissance des couleurs et le vocabulaire des bestioles, je ne sais plus où donner de la tête moi!
 
-Tout cela est disponible en call-and-collect, click-and-collect, laissez-un-message-and-collect chez [Cotontige (Ath)](https://www.cotontige.be/) et dans toutes les bonnes boutiques.
+Tout cela est disponible en call-and-collect, click-and-collect, laissez-un-message-and-collect chez [Cotontige (Ath)](https://www.facebook.com/boutique.cotontige/) et dans toutes les bonnes boutiques.
