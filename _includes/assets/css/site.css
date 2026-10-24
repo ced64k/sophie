@@ -724,6 +724,20 @@ p { margin: 0; }
   max-height: 560px;
   width: auto;
 }
+.duo-images {
+  display: flex;
+  gap: 12px;
+  margin-block: 1.6em;
+}
+.duo-images span { min-width: 0; }
+.texte .duo-images img {
+  margin: 0;
+  width: 100%;
+  max-height: none;
+}
+@media (max-width: 480px) {
+  .duo-images { flex-direction: column; }
+}
 .texte a {
   color: var(--encre);
   font-weight: 700;
