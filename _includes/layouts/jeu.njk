@@ -4,6 +4,13 @@ section: jeu
 ---
 
 {% set sections = content | sectionsFiche %}
+{% set infos = [
+	{ nom: "Marque", valeur: marque },
+	{ nom: "Âge", valeur: age },
+	{ nom: "Joueurs", valeur: joueurs },
+	{ nom: "Durée", valeur: duree },
+	{ nom: "Prix indicatif", valeur: prix }
+] | selectattr("valeur") %}
 <header class="titre-page">
 	<h1>{{ title }}</h1>
 	<p class="titre-meta"><span class="etiquette">Fiche de {{ author }}</span></p>
@@ -11,6 +18,7 @@ section: jeu
 
 <article class="livret fiche-jeu">
 	<div class="livret-page">
+		<div class="fiche-entete{% if not infos | length %} sans-infos{% endif %}">
 		{% if sections.length %}
 			<div class="sommaire" role="group" aria-label="Variantes de la fiche">
 				<p class="sommaire-titre">Les variantes</p>
@@ -22,6 +30,14 @@ section: jeu
 				</ul>
 			</div>
 		{% endif %}
+		{% if infos | length %}
+			<dl class="fiche-infos" aria-label="Informations sur le jeu">
+				{% for i in infos %}
+					<div><dt>{{ i.nom }}</dt><dd>{{ i.valeur }}</dd></div>
+				{% endfor %}
+			</dl>
+		{% endif %}
+		</div>
 
 		<div class="texte">
 			{{ content | puceFiche | safe }}

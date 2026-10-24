@@ -1063,6 +1063,34 @@ p { margin: 0; }
 .fiche-jeu .livret-page > *, .fiche-jeu .texte > * { width: 100%; max-width: 44rem; margin-inline: auto; }
 .fiche-jeu .texte > p:first-child:has(> img:only-child) { order: -1; margin-bottom: 1.2em; }
 
+/* Variantes (gauche) et informations sur le jeu (droite) */
+.fiche-entete {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 2.2em;
+}
+.fiche-entete.sans-infos, .fiche-entete:not(:has(.sommaire)) { grid-template-columns: minmax(0, 1fr); }
+.fiche-entete .sommaire { margin-bottom: 0; }
+.fiche-infos {
+  margin: 0;
+  background: var(--cyan-pale);
+  border-radius: var(--rayon-petit);
+  padding: 18px 22px;
+  display: grid;
+  gap: 10px;
+}
+.fiche-infos dt {
+  font-family: var(--titre);
+  font-weight: 600;
+  font-size: .95rem;
+}
+.fiche-infos dd { margin: 0; font-weight: 700; }
+@media (max-width: 760px) {
+  .fiche-entete { grid-template-columns: minmax(0, 1fr); }
+}
+
 .variante {
   display: flex;
   align-items: center;

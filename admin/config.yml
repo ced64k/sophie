@@ -35,6 +35,11 @@ collections:
       - { label: Titre, name: title, widget: string }
       - { label: Auteur, name: author, widget: string, default: Sophie Lenaerts }
       - { label: Image de la vignette, name: image, widget: image, required: false, hint: "Facultatif : sinon la première image du texte est utilisée." }
+      - { label: Marque, name: marque, widget: string, required: false, hint: "Éditeur du jeu (ex. Djeco)." }
+      - { label: Âge, name: age, widget: string, required: false, hint: "Ex. 4 ans et +" }
+      - { label: Nombre de joueurs, name: joueurs, widget: string, required: false, hint: "Ex. 2 à 4" }
+      - { label: Durée, name: duree, widget: string, required: false, hint: "Ex. 15 min" }
+      - { label: Prix indicatif, name: prix, widget: string, required: false, hint: "Ex. 25 €" }
       - { label: Texte, name: body, widget: markdown, hint: "Les titres de niveau 2 (##) classent la fiche par domaine : Langage oral, Langage écrit, Mathématiques, Méthodologie, Bégaiement." }
 
   - name: pages
