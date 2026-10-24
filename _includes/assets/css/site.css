@@ -347,6 +347,8 @@ p { margin: 0; }
     rotate: 45deg;
   }
   .nav-toggle[aria-expanded="true"]::after { opacity: 1; }
+  /* Menu ouvert : la croix se pose directement sur la feuille, sans rond blanc */
+  .nav-toggle[aria-expanded="true"] { background: transparent; }
   /* Menu : l'en-tête et la liste des liens forment une seule feuille blanche qui touche les bords de l'écran
      (la croix n'a plus de rond visible). Elle part du haut de l'écran, derrière le logo et la croix, et descend d'un bloc. */
   .nav-liens {
@@ -361,7 +363,7 @@ p { margin: 0; }
     gap: 0;
     /* 40px au-dessus de l'en-tête + la hauteur de la ligne du logo (48px + son espacement) + 10px d'air */
     padding: calc(40px + 48px + 2 * clamp(10px, 1.6vw, 22px) + 10px) 24px 22px;
-    background: rgba(255, 255, 255, .9);
+    background: var(--blanc);
     border-radius: 0 0 var(--rayon) var(--rayon);
     box-shadow: var(--ombre);
     text-align: center;
@@ -369,6 +371,18 @@ p { margin: 0; }
     clip-path: inset(0 -60px 100% -60px);
     pointer-events: none;
     transition: clip-path .4s var(--sortie), visibility 0s .4s;
+  }
+  /* Légère texture de tissu, comme le reste du site (multiplication à faible opacité : un overlay ne se verrait pas sur du blanc) */
+  .nav-liens::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--tex) 0 0 / 250px auto;
+    mix-blend-mode: multiply;
+    opacity: .12;
+    pointer-events: none;
   }
   .nav-toggle[aria-expanded="true"] ~ .nav-liens {
     visibility: visible;
