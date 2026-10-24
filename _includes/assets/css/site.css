@@ -361,7 +361,7 @@ p { margin: 0; }
     gap: 0;
     /* 40px au-dessus de l'en-tête + la hauteur de la ligne du logo (48px + son espacement) + 10px d'air */
     padding: calc(40px + 48px + 2 * clamp(10px, 1.6vw, 22px) + 10px) 24px 22px;
-    background: var(--blanc);
+    background: rgba(255, 255, 255, .9);
     border-radius: 0 0 var(--rayon) var(--rayon);
     box-shadow: var(--ombre);
     text-align: center;
