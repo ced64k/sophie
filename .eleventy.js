@@ -114,7 +114,7 @@ module.exports = function(eleventyConfig) {
   // Sections (h2) d'une fiche jeu avec leur domaine
   eleventyConfig.addFilter("sectionsFiche", html => {
     const sections = [];
-    String(html || "").replace(/<h2[^>]*?(?:id="([^"]*)")?[^>]*>([\s\S]*?)<\/h2>/g, (m, id, titre) => {
+    String(html || "").replace(/<h2(?:[^>]*?\sid="([^"]*)")?[^>]*>([\s\S]*?)<\/h2>/g, (m, id, titre) => {
       const texte = texteBrut(titre);
       sections.push({ id, titre: texte, domaine: domaineDuTitre(texte) });
     });
@@ -334,6 +334,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/img");
   eleventyConfig.addPassthroughCopy("static/fonts");
   eleventyConfig.addPassthroughCopy("admin/");
+  // Script d'envoi du formulaire de contact (exécuté par PHP-FPM sur le VPS, voir serveur/README.md)
+  eleventyConfig.addPassthroughCopy({ "serveur/contact-envoi.php": "contact/envoi.php" });
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
@@ -343,8 +345,10 @@ module.exports = function(eleventyConfig) {
     breaks: true,
     linkify: true
   };
+  // Identifiants de titres sans accents : un id « ex%C3%A9cutives » ne correspond pas au lien #exécutives décodé par le navigateur
   let opts = {
-    permalink: false
+    permalink: false,
+    slugify: titre => String(titre).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
   };
 
   eleventyConfig.setLibrary("md", markdownIt(options)

@@ -45,4 +45,4 @@ Alooooors comment utiliser ça en jeu-carotte, me demanderez-vous? Selon ce qu'o
 
 Petite précision sérieuse, quand je dis "jeu-carotte", je ne dis pas "chantage". Il y a cette notion de "si tu réussis, tu peux avancer, si tu rates, tu restes en retrait" qui est très délicate dans l'utilisation des jeux censés booster leur motivation. Il ne faudrait pas que ça ait l'effet inverse. Je ne les utilise que lorsque les compétences visées sont "acquises mais avec concentration", afin d'enclencher une automatisation de façon ludique.
 
-Acheté chez [Cotontige, à Ath](https://www.facebook.com/boutique.cotontige), comme d'habitude.
+Acheté chez [Cotontige, à Ath](https://www.instagram.com/boutique_cotontige/), comme d'habitude.

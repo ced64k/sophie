@@ -1,9 +1,5 @@
-{# Envoi par FormSubmit (formsubmit.co) vers l'adresse de Sophie. Premier envoi : FormSubmit demande une confirmation par e-mail. #}
-<form class="formulaire" method="post" action="https://formsubmit.co/lenaerts.sophie@gmail.com">
-  <input type="hidden" name="_subject" value="Message depuis sophielenaerts.be">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://sophielenaerts.be/contact/merci/">
+{# Envoi par /contact/envoi.php (voir serveur/) : le script envoie le message à Sophie par le SMTP de Brevo. Sans JavaScript, le formulaire part normalement ; avec, le message s'envoie sur place. #}
+<form class="formulaire" method="post" action="/contact/envoi.php">
   <p class="champ">
     <label for="nom">Votre nom</label>
     <input type="text" name="nom" id="nom" autocomplete="name" required>
@@ -21,6 +17,34 @@
     <textarea name="message" id="message" rows="7" required aria-describedby="aide-message"></textarea>
     <span class="aide" id="aide-message">Indiquez l'âge de l'enfant et ce qui vous amène, si vous le souhaitez.</span>
   </p>
-  <p class="piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
+  <p class="piege" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></p>
+  <p class="statut" id="statut" role="status" aria-live="polite" hidden></p>
   <button class="bouton" type="submit">Envoyer le message</button>
 </form>
+<script>
+  (function () {
+    var f = document.querySelector("form.formulaire");
+    if (!f || !window.fetch) return;
+    var statut = document.getElementById("statut");
+    var bouton = f.querySelector("button[type=submit]");
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      statut.hidden = true;
+      bouton.disabled = true;
+      var texte = bouton.textContent;
+      bouton.textContent = "Envoi en cours…";
+      fetch(f.action, { method: "POST", body: new FormData(f), headers: { Accept: "application/json" } })
+        .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+        .then(function (r) {
+          if (r.ok) { location.href = "/contact/merci/"; return; }
+          throw new Error(r.message);
+        })
+        .catch(function (err) {
+          statut.textContent = (err && err.message) || "Le message n'a pas pu être envoyé. Réessayez, ou appelez directement.";
+          statut.hidden = false;
+          bouton.disabled = false;
+          bouton.textContent = texte;
+        });
+    });
+  })();
+</script>

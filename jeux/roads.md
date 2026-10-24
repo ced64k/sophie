@@ -2,11 +2,13 @@
 title: "Roads"
 author: "Sophie Lenaerts"
 image: "/static/img/fiches/roads.jpg"
+marque: "Londji"
+age: "4 ans et +"
 ---
 
 ![](/static/img/fiches/roads.jpg)
 
-Roads, c’est une pépite! Vendu au rayon puzzle dans les bonnes boutiques (coucou [Cotontige](https://web.archive.org/web/20221005214652/https://www.facebook.com/boutique.cotontige)), mais tellement plus qu’un puzzle!
+Roads, c’est une pépite! Vendu au rayon puzzle dans les bonnes boutiques (coucou [Cotontige](https://www.instagram.com/boutique_cotontige/)), mais tellement plus qu’un puzzle!
 
 Roads contient 130 pièces: des routes, des carrefours, des ronds-points, des voitures, des maisons et des arbres ainsi qu’un petit carnet représentant des circuits, des villages et des villes, que l’enfant doit reproduire avec les pièces.  
 Plus qu’un circuit, la reproduction des modèles tient du casse-tête car les modèles ne sont pas détaillés.

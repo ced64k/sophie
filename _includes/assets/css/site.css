@@ -83,6 +83,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 24px;
+  scroll-behavior: smooth;
   accent-color: var(--corail);
   scrollbar-color: var(--encre) var(--cyan);
 }
@@ -303,6 +304,8 @@ p { margin: 0; }
     cursor: pointer;
     border: 0;
     border-radius: 50%;
+    /* Pas de carré de surbrillance du navigateur mobile derrière le rond au toucher */
+    -webkit-tap-highlight-color: transparent;
   }
   .nav-toggle-texte {
     position: absolute;
@@ -344,39 +347,80 @@ p { margin: 0; }
     rotate: 45deg;
   }
   .nav-toggle[aria-expanded="true"]::after { opacity: 1; }
-  /* Menu ouvert : panneau blanc sous l'en-tête, éléments centrés et séparés par un fin trait */
+  /* Menu ouvert : la croix se pose directement sur la feuille, sans rond blanc */
+  .nav-toggle[aria-expanded="true"] { background: transparent; }
+  /* Menu : l'en-tête et la liste des liens forment une seule feuille blanche qui touche les bords de l'écran
+     (la croix n'a plus de rond visible). Elle part du haut de l'écran, derrière le logo et la croix, et descend d'un bloc. */
   .nav-liens {
-    display: none;
+    display: flex;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% + 4px);
+    z-index: -1;
+    left: calc(-1 * var(--marge-page));
+    right: calc(-1 * var(--marge-page));
+    top: -40px;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 10px 24px 22px;
-    background: var(--blanc);
-    border-radius: var(--rayon);
+    /* 40px au-dessus de l'en-tête + la hauteur de la ligne du logo (48px + son espacement) + 10px d'air */
+    padding: calc(40px + 48px + 2 * clamp(10px, 1.6vw, 22px) + 10px) 24px 22px;
+    /* Blanc avec une légère texture de tissu (version à fils sombres translucides de la texture du site, sans mode de fusion) */
+    background: url("/static/img/fabric-texture-blanc.webp") 0 0 / 250px auto, var(--blanc);
+    border-radius: 0 0 var(--rayon) var(--rayon);
     box-shadow: var(--ombre);
     text-align: center;
+    visibility: hidden;
+    clip-path: inset(0 -60px 100% -60px);
+    pointer-events: none;
+    transition: clip-path .4s var(--sortie), visibility 0s .4s;
   }
-  .nav-toggle[aria-expanded="true"] ~ .nav-liens { display: flex; }
-  /* Menu ouvert : voile légèrement flouté sur toute la page, sous le menu */
+  .nav-toggle[aria-expanded="true"] ~ .nav-liens {
+    visibility: visible;
+    clip-path: inset(0 -60px -80px -60px);
+    pointer-events: auto;
+    transition: clip-path .4s var(--sortie), visibility 0s;
+  }
+  /* Voile légèrement assombri (sans flou) sur toute la page, sous le menu */
   .menu-ouvert .accueil, .menu-ouvert .suite-page { z-index: 40; }
-  /* Un élément nommé pour les transitions de page isole son fond : sans ça, le flou ne verrait rien derrière */
-  .menu-ouvert .bord { view-transition-name: none; }
-  .menu-ouvert .bord::before {
+  /* Le blanc de l'en-tête doit dépasser jusqu'en haut de l'écran : la page ne le rogne plus tant que le menu est ouvert */
+  .menu-ouvert .suite-page { overflow: visible; }
+  /* Menu ouvert : la page derrière ne défile plus */
+  html.menu-ouvert, html.menu-ouvert body { overflow: hidden; overscroll-behavior: none; }
+  /* Un élément nommé pour les transitions de page isole son fond (le voile fixe ne couvrirait pas la page) */
+  html .bord { view-transition-name: none; }
+  .bord::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: rgba(255, 255, 255, .18);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    background: rgba(17, 17, 17, .22);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s ease, visibility 0s .3s;
   }
-  .nav-liens li + li { border-top: 2px solid var(--cyan-pale); }
-  .nav-liens a { padding: 15px 0; font-size: 1.15rem; }
-  .nav-liens a[aria-current="page"]::after { left: 50%; right: auto; width: 100%; translate: -50% 0; bottom: .6em; }
+  .menu-ouvert .bord::before { opacity: 1; visibility: visible; transition: opacity .3s ease, visibility 0s; }
+  /* Entre deux liens : un court trait mauve au marqueur, un peu penché, au lieu d'un filet */
+  .nav-liens li + li { position: relative; }
+  .nav-liens li:not(.nav-jeux) + li:not(.nav-jeux)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 32px;
+    height: 5px;
+    translate: -50% -50%;
+    rotate: -1.5deg;
+    border-radius: 3px 6px 4px 5px;
+    background-color: var(--koala-oreille);
+    background-image: var(--tex);
+    background-size: 250px auto;
+    background-blend-mode: overlay;
+    opacity: .75;
+  }
+  .nav-liens li:nth-child(even):not(.nav-jeux) + li::before { width: 24px; rotate: 1.2deg; border-radius: 5px 3px 6px 4px; }
+  .nav-liens a { padding: 17px 0; font-size: 1.15rem; }
+  /* Menu mobile : la page active est surlignée au marqueur derrière le bas du texte (et non un trait dessous) */
+  .nav-liens a[aria-current="page"]::after { left: -.25em; right: -.25em; bottom: calc(17px + .12em); height: .68em; }
   .nav-jeux { display: block; padding-top: 18px; }
   .nav-liens li.nav-jeux { border-top: 0; }
   .nav-liens .jeton-jeux { display: inline-flex; padding: 12px 24px; font-size: 1.15rem; color: var(--blanc); }
@@ -1052,6 +1096,68 @@ p { margin: 0; }
   font-weight: 700;
 }
 .sommaire .puce { font-size: 1.1rem; }
+.sommaire a.sommaire-item { text-decoration: none; color: inherit; }
+.sommaire a.sommaire-item:hover .marque, .sommaire a.sommaire-item:focus-visible .marque { filter: brightness(.95) saturate(1.15); }
+.variante { scroll-margin-top: 1.5rem; }
+
+/* La photo de la fiche passe avant les variantes */
+.fiche-jeu .livret-page { display: flex; flex-direction: column; }
+.fiche-jeu .texte { display: contents; }
+.fiche-jeu .livret-page > *, .fiche-jeu .texte > * { width: 100%; max-width: 44rem; margin-inline: auto; }
+.fiche-jeu .texte > p:first-child:has(> img:only-child) { order: -1; margin-bottom: 1.2em; }
+
+/* Variantes (gauche) et informations sur le jeu (droite) : un seul bloc vert clair, plus large que le texte */
+.fiche-entete {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
+  background: var(--cyan-pale);
+  border-radius: var(--rayon-petit);
+  padding: 24px 30px;
+  margin-bottom: 2.2em;
+}
+.fiche-jeu .livret-page > .fiche-entete { max-width: 62rem; }
+.fiche-entete.sans-infos, .fiche-entete:not(:has(.sommaire)) { grid-template-columns: minmax(0, 1fr); }
+.fiche-entete .sommaire { background: none; padding: 0; margin: 0; }
+.fiche-infos {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: center;
+}
+.fiche-infos > div { display: contents; }
+.fiche-infos dt {
+  display: flex;
+  padding-right: 14px;
+  border-right: 2px solid rgba(17, 17, 17, .12);
+}
+.fiche-infos dt svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: var(--encre);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cache {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.fiche-infos > div { align-items: center; }
+.fiche-infos dt, .fiche-infos dd { white-space: nowrap; }
+.fiche-infos dd { margin: 0; font-weight: 700; }
+@media (max-width: 760px) {
+  .fiche-entete { grid-template-columns: minmax(0, 1fr); padding: 20px 22px; gap: 18px; }
+  .fiche-bloc-infos { padding-top: 18px; border-top: 2px solid rgba(17, 17, 17, .12); }
+}
 
 .variante {
   display: flex;
@@ -1165,6 +1271,15 @@ p { margin: 0; }
 .aide { font-size: .92rem; color: var(--encre-douce); }
 .piege { position: absolute; left: -9999px; }
 .formulaire .bouton { justify-self: start; }
+.formulaire .statut {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--rayon-petit);
+  background: var(--cyan-pale);
+  font-weight: 700;
+}
+.formulaire .statut[hidden] { display: none; }
+.formulaire .bouton:disabled { opacity: .7; cursor: progress; }
 
 @media (max-width: 760px) {
   .contact-grille { grid-template-columns: 1fr; }
@@ -1447,4 +1562,5 @@ p { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
 }

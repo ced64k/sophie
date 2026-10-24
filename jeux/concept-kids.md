@@ -2,6 +2,8 @@
 title: "Concept Kids"
 author: "Julie Braeye"
 image: "/static/img/fiches/concept-kids.jpg"
+marque: "Repos Production"
+age: "4 ans et +"
 ---
 
 ![](/static/img/fiches/concept-kids.jpg)

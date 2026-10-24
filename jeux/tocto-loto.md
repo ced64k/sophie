@@ -2,6 +2,8 @@
 title: "Tocto Loto"
 author: "Fanny Jonckheere"
 image: "/static/img/fiches/tocto-loto.jpg"
+marque: "Djeco"
+age: "3 ans et +"
 ---
 
 ![Le jeu Tocto Loto](/static/img/fiches/tocto-loto.jpg)

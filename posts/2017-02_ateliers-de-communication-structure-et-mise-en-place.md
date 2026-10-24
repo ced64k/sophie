@@ -39,7 +39,7 @@ Les cartes de la chasse au trésor peuvent aussi être utilisées avec un gros d
 
 ![](/static/img/Photo-11-02-17-23-17-45-e1486859111399-300x300.jpg)
 
-Bientôt des détails sur [la réalisation pratique du matériel](http://sophielenaerts.be/2017/02/12/ateliers-de-communication-creation-de-materiel/). Et après le 18 février, un feed-back du premier atelier :)
+Bientôt des détails sur [la réalisation pratique du matériel](/2017/02/12/2017-02_ateliers-de-communication-creation-de-materiel/). Et après le 18 février, un feed-back du premier atelier :)
 
  
 
