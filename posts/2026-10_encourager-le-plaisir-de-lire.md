@@ -17,9 +17,11 @@ D’abord on s’enlève cette pression, on se coupe de cette image de l’enfan
 
 Bon, mettons qu’on le voit galérer et qu’on aimerait lui montrer que c’est pas ça la lecture, c’est pas galérer pour finir avant dimanche soir le bouquin pour l’école. 
 
-##### **On démystifie la lecture et le format.** 
+#### **On démystifie la lecture et le format.** 
 
-Non, un roman sur lequel on sera interrogé, ce n’est pas censé être une lecture agréable. Ce n’est pas représentatif de ce qu’une lecture peut apporter. C’est normal de trouver difficile de se créer des images mentales, de retenir les personnages, les lieux. C’est normal de préférer quand il y a des images. Un livre s’aime sans condition. Sans devoir tout comprendre, tout relater. 
+Non, un roman sur lequel on sera interrogé, ce n’est pas censé être une lecture agréable. Ce n’est pas représentatif de ce qu’une lecture peut apporter. C’est normal de trouver difficile de se créer des images mentales, de retenir les personnages, les lieux. C’est normal de préférer quand il y a des images. 
+
+> _Un livre s’aime sans condition. Sans devoir tout comprendre, tout relater._ 
 
 Alors on sort les bd, les mangas, les magazines spécialisés. 
 
@@ -34,7 +36,7 @@ J’aime beaucoup Mortelle Adèle et Ariol. 
 
 ![](/static/img/IMG_0210.jpeg)
 
-##### **On pratique la lecture partagée.**
+#### **On pratique la lecture partagée.**
 
 On instaure un système en binôme, un travail d’équipe, chacun une page, chacun un paragraphe, chacun un personnage, chacun une phrase… on fait les voix, on mime les personnages, on utilise des figurines.
 
@@ -45,7 +47,7 @@ La collection « tu lis, je lis » chez Bayard est parfaite, les textes sont d
 
 ![](/static/img/IMG_0200.jpeg)
 
-##### **On utilise des livres-jeux.**
+#### **On utilise des livres-jeux.**
 
 On tourne les pages par ci, par là, on renverse le livre, on tapote dessus, on plie des pages, on souffle dessus, on résout des énigmes, on cherche la sortie…
 
@@ -60,7 +62,7 @@ Avec mon jeune public, j’utilise régulièrement « Wahiohio Quel est ce cri 
 
 ![](/static/img/IMG_0212.jpeg)
 
-La collection « Le livre dont vous êtes le héros » n’est plus à présenter, elle rend les livres interactifs depuis les années 80, dans une thématique généralement issue du monde fantastique et horrifique. Différents éditeurs empruntent le concept et le proposent à différentes tranches d’âges. ![](/static/img/IMG_0208.jpeg)
+La collection « Un livre dont vous êtes le héros » n’est plus à présenter, elle rend les livres interactifs depuis les années 80, dans une thématique généralement issue du monde fantastique et horrifique. Différents éditeurs empruntent le concept et le proposent à différentes tranches d’âges. ![](/static/img/IMG_0208.jpeg)
 
 ![](/static/img/IMG_0209.jpeg)
 
@@ -68,7 +70,7 @@ Avec les plus petits, ma référence est Hervé Tullet, voir ci-dessous. Je pens
 
 ![](/static/img/IMG_0202.jpeg)
 
-##### **On se laisse le droit d’abandonner un livre.** 
+#### **On se laisse le droit d’abandonner un livre.** 
 
 Ce n’est pas grave, promis. 
 
