@@ -409,3 +409,5 @@ async function generer(taches, sortie, cache = path.join(RACINE, ".cache", "og")
 }
 
 module.exports = { generer, FORMATS };
+// Pieces reused by facebook.js (cover picture of the Facebook page)
+module.exports.pieces = { charger, h, logo, etiquette, marqueurs, koala, fond, dessiner, rognerKoala, COULEURS };
