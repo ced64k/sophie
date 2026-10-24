@@ -77,7 +77,7 @@ section: contact
 			nom.textContent = l.structure;
 			var lien = document.createElement("a");
 			lien.className = "carte-lien";
-			lien.href = "https://www.openstreetmap.org/directions?to=" + l.lat + "%2C" + l.lon;
+			lien.href = "https://www.google.com/maps/dir/?api=1&hl=fr&destination=" + encodeURIComponent(l.structure + ", " + l.adresse + ", Belgique");
 			lien.target = "_blank";
 			lien.rel = "noopener";
 			lien.textContent = "Itinéraire";
