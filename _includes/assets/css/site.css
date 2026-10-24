@@ -1218,7 +1218,7 @@ p { margin: 0; }
   transition: translate .15s var(--sortie);
 }
 .carte-pin:hover .pin, .carte-pin:focus-visible .pin { translate: 0 -3px; }
-.carte .leaflet-container { font: inherit; }
+.carte.leaflet-container { font-family: var(--texte); font-size: 1rem; line-height: 1.5; }
 /* Infobulle : petit panneau blanc très arrondi, sans contour, comme les panneaux du site */
 .carte .leaflet-popup-content-wrapper {
   padding: 18px 22px 20px;
@@ -1242,15 +1242,17 @@ p { margin: 0; }
   background-size: 250px auto;
   background-blend-mode: overlay;
   color: var(--blanc);
-  font-weight: 700;
-  font-size: .95rem;
+  font-family: var(--titre);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.4;
   text-decoration: none;
-  box-shadow: 0 3px 0 rgba(17, 17, 17, .22);
+  box-shadow: 0 4px 0 var(--corail-fonce);
 }
-.carte .carte-lien:hover { color: var(--blanc); translate: 0 1px; box-shadow: 0 2px 0 rgba(17, 17, 17, .22); }
+.carte .carte-lien:hover { color: var(--blanc); translate: 0 1px; box-shadow: 0 3px 0 var(--corail-fonce); }
 /* Boutons de zoom et mention : dans le style du site */
 .carte .leaflet-bar { border: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 3px 0 rgba(17, 17, 17, .13); }
-.carte .leaflet-bar a { width: 34px; height: 34px; line-height: 34px; background: var(--blanc); color: var(--encre); border-bottom: 2px solid var(--cyan-pale); font-weight: 700; }
+.carte .leaflet-bar a { width: 34px; height: 34px; line-height: 34px; background: var(--blanc); color: var(--encre); border-bottom: 2px solid var(--cyan-pale); font-family: var(--titre); font-weight: 600; }
 .carte .leaflet-bar a:last-child { border-bottom: 0; }
 .carte .leaflet-bar a:hover { background: var(--cyan-pale); }
 .carte .leaflet-control-attribution { font-size: .72rem; background: rgba(255, 255, 255, .75); border-radius: 10px 0 0 0; padding: 1px 8px; color: var(--encre); }
