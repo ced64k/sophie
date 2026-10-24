@@ -83,6 +83,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 24px;
+  scroll-behavior: smooth;
   accent-color: var(--corail);
   scrollbar-color: var(--encre) var(--cyan);
 }
@@ -1456,4 +1457,5 @@ p { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
 }
