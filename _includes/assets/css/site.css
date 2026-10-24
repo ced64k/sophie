@@ -399,8 +399,26 @@ p { margin: 0; }
     transition: opacity .3s ease, visibility 0s .3s;
   }
   .menu-ouvert .bord::before { opacity: 1; visibility: visible; transition: opacity .3s ease, visibility 0s; }
-  .nav-liens li + li { border-top: 2px solid var(--cyan-pale); }
-  .nav-liens a { padding: 15px 0; font-size: 1.15rem; }
+  /* Entre deux liens : un court trait mauve au marqueur, un peu penché, au lieu d'un filet */
+  .nav-liens li + li { position: relative; }
+  .nav-liens li:not(.nav-jeux) + li:not(.nav-jeux)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 52px;
+    height: 6px;
+    translate: -50% -50%;
+    rotate: -1.5deg;
+    border-radius: 3px 6px 4px 5px;
+    background-color: var(--koala-oreille);
+    background-image: var(--tex);
+    background-size: 250px auto;
+    background-blend-mode: overlay;
+    opacity: .75;
+  }
+  .nav-liens li:nth-child(even):not(.nav-jeux) + li::before { width: 40px; rotate: 1.2deg; border-radius: 5px 3px 6px 4px; }
+  .nav-liens a { padding: 17px 0; font-size: 1.15rem; }
   .nav-liens a[aria-current="page"]::after { left: 50%; right: auto; width: 100%; translate: -50% 0; bottom: .6em; }
   .nav-jeux { display: block; padding-top: 18px; }
   .nav-liens li.nav-jeux { border-top: 0; }
