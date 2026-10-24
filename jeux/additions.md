@@ -4,9 +4,6 @@ author: "Sophie Lenaerts"
 image: "/static/img/fiches/addition.jpg"
 marque: "Djeco"
 age: "4 ans et +"
-joueurs: "1 à 4"
-duree: "10 à 15 min"
-prix: "25 €"
 ---
 
 ![](/static/img/fiches/addition.jpg)

@@ -1113,7 +1113,7 @@ p { margin: 0; }
 .fiche-infos dd { margin: 0; font-weight: 700; }
 @media (max-width: 760px) {
   .fiche-entete { grid-template-columns: minmax(0, 1fr); padding: 20px 22px; gap: 18px; }
-  .fiche-infos { padding-top: 18px; border-top: 2px solid rgba(17, 17, 17, .12); }
+  .fiche-bloc-infos { padding-top: 18px; border-top: 2px solid rgba(17, 17, 17, .12); }
 }
 
 .variante {
