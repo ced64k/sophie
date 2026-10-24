@@ -1221,7 +1221,7 @@ p { margin: 0; }
 .carte.leaflet-container { font-family: var(--texte); font-size: 1rem; line-height: 1.5; }
 /* Infobulle : petit panneau blanc très arrondi, sans contour, comme les panneaux du site */
 .carte .leaflet-popup-content-wrapper {
-  padding: 18px 22px 20px;
+  padding: 18px 40px 20px 22px;
   border-radius: 22px;
   background: var(--blanc);
   color: var(--encre);
@@ -1229,6 +1229,19 @@ p { margin: 0; }
 }
 .carte .leaflet-popup-content { margin: 0; font-size: 1rem; line-height: 1.5; }
 .carte .leaflet-popup-content p { margin: 0; }
+.carte.leaflet-container a.leaflet-popup-close-button {
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: 50%;
+  font: 600 1.4rem/24px var(--titre);
+  color: var(--encre);
+  text-align: center;
+  transition: background .2s var(--sortie);
+}
+.carte.leaflet-container a.leaflet-popup-close-button:hover { background: var(--cyan-pale); color: var(--encre); }
 .carte .leaflet-popup-tip { background: var(--blanc); box-shadow: none; }
 .carte .leaflet-popup-tip-container { margin-top: -1px; }
 .carte-ville { font-weight: 700; font-size: 1.1rem; line-height: 1.3; }

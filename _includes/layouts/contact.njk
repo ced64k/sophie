@@ -69,6 +69,7 @@ section: contact
 			popupAnchor: [0, -40]
 		});
 		var marqueurs = {};
+		var epingle = null; // ville dont l'infobulle reste affichée jusqu'à la petite croix
 		var points = lieux.map(function (l, i) {
 			var contenu = document.createElement("div");
 			var nom = document.createElement("p");
@@ -81,18 +82,29 @@ section: contact
 			lien.rel = "noopener";
 			lien.textContent = "Itinéraire";
 			contenu.append(nom, lien);
-			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: false, minWidth: 180, offset: [0, 4], autoPan: false });
+			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: true, closeOnClick: false, minWidth: 180, offset: [0, 4], autoPan: false });
+			marqueurs[l.ville].on("click", function () { epingle = l.ville; });
+			marqueurs[l.ville].on("popupclose", function () { if (epingle === l.ville) epingle = null; });
+			marqueurs[l.ville].on("popupopen", function (ev) {
+				var croix = ev.popup.getElement().querySelector(".leaflet-popup-close-button");
+				if (croix) { croix.setAttribute("aria-label", "Fermer"); croix.setAttribute("title", "Fermer"); }
+			});
 			return [l.lat, l.lon];
 		});
 		// Cadrage large : de la place en haut pour l'infobulle d'Ath, et un peu de recul autour des deux lieux
 		carte.fitBounds(points, { paddingTopLeft: [40, 190], paddingBottomRight: [40, 40], maxZoom: 11 });
-		// Au survol (ou au clavier) d'un lieu dans la liste, son infobulle s'ouvre sur la carte
+		// Au survol d'un lieu dans la liste, son infobulle s'ouvre sur la carte ; au clic, elle reste affichée
 		document.querySelectorAll(".lieu-carte[data-lieu]").forEach(function (bloc) {
 			var m = marqueurs[bloc.getAttribute("data-lieu")];
 			if (!m) return;
 			bloc.querySelectorAll(".lieu-ville, .lieu-nom, .lieu-adresse").forEach(function (cible) {
-				cible.addEventListener("mouseenter", function () { m.openPopup(); });
-				cible.addEventListener("mouseleave", function () { m.closePopup(); });
+				var ville = bloc.getAttribute("data-lieu");
+				cible.style.cursor = "pointer";
+				// Survol : l'infobulle s'ouvre le temps du survol (sauf si une autre est épinglée)
+				cible.addEventListener("mouseenter", function () { if (!epingle || epingle === ville) m.openPopup(); });
+				cible.addEventListener("mouseleave", function () { if (epingle !== ville) m.closePopup(); });
+				// Clic : l'infobulle reste affichée, jusqu'à la petite croix
+				cible.addEventListener("click", function () { m.openPopup(); epingle = ville; });
 			});
 		});
 	})();
