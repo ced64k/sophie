@@ -364,18 +364,16 @@ p { margin: 0; }
     text-align: center;
   }
   .nav-toggle[aria-expanded="true"] ~ .nav-liens { display: flex; }
-  /* Menu ouvert : voile légèrement flouté sur toute la page, sous le menu */
+  /* Menu ouvert : voile légèrement assombri (sans flou) sur toute la page, sous le menu */
   .menu-ouvert .accueil, .menu-ouvert .suite-page { z-index: 40; }
-  /* Un élément nommé pour les transitions de page isole son fond : sans ça, le flou ne verrait rien derrière */
+  /* Un élément nommé pour les transitions de page isole son fond : sans ça, le voile ne couvrirait pas la page */
   .menu-ouvert .bord { view-transition-name: none; }
   .menu-ouvert .bord::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: rgba(255, 255, 255, .18);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    background: rgba(17, 17, 17, .22);
   }
   .nav-liens li + li { border-top: 2px solid var(--cyan-pale); }
   .nav-liens a { padding: 15px 0; font-size: 1.15rem; }
