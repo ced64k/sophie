@@ -14,19 +14,32 @@ section: contact
 		</div>
 
 		<div class="contact-grille">
-			<section class="contact-lieux" aria-labelledby="titre-appeler">
-				<h2 id="titre-appeler">Appeler</h2>
+			<section class="contact-lieux" aria-label="Appeler">
 				{% for lieu in lieux %}
-					<div class="lieu-carte">
-						<p class="lieu-ville"><svg class="pin" aria-hidden="true" focusable="false"><use href="#pin"/></svg>{{ lieu.ville }}</p>
-						<p>{{ lieu.structure }}<br>{{ lieu.adresse }}</p>
+					<div class="lieu-carte" data-lieu="{{ lieu.ville }}">
+						<p class="lieu-ville">{{ lieu.ville }}</p>
+						<p class="lieu-nom">{{ lieu.structure }}</p>
+						<p class="lieu-adresse">{{ lieu.adresse }}</p>
 						<p class="lieu-contacts">
 							<a class="lieu-lien lieu-tel" href="tel:{{ lieu.telephone | replace(' ', '') }}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3.2c.5-.5 1.3-.5 1.8 0l2 2.4c.4.5.4 1.2 0 1.7L9.3 8.6c1 2.1 2.6 3.9 4.6 5l1.4-1.1c.5-.4 1.2-.4 1.7 0l2.4 2c.5.5.5 1.300 0 1.800l-1.300 1.400c-.8.8-2 1.100-3.100.7C9.300 17.500 6 14.100 3.800 8.700c-.4-1.100-.1-2.300.7-3.100z" fill="currentColor"/></svg>{{ lieu.telephone }}</a>
-							<a class="lieu-lien lieu-mail" href="mailto:{{ lieu.email }}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6.500C4 5.700 4.700 5 5.500 5h13c.8 0 1.500.7 1.500 1.500v11c0 .8-.7 1.500-1.500 1.500h-13C4.700 19 4 18.300 4 17.500zm2 .9v.3l6 4.100 6-4.100v-.3z" fill="currentColor"/></svg>{{ lieu.email }}</a>
+							<a class="lieu-lien lieu-mail" href="mailto:{{ lieu.email }}" title="{{ lieu.email }}" aria-label="Écrire à {{ lieu.email }}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6.500C4 5.700 4.700 5 5.500 5h13c.8 0 1.500.7 1.500 1.500v11c0 .8-.7 1.500-1.500 1.500h-13C4.700 19 4 18.300 4 17.500zm2 .9v.3l6 4.100 6-4.100v-.3z" fill="currentColor"/></svg>E-mail</a>
 						</p>
 						{% if lieu.provisoire %}<p class="provisoire">Coordonnées provisoires, à remplacer</p>{% endif %}
 					</div>
 				{% endfor %}
+				{# Filtre de la carte : niveaux de gris étirés, puis remappés sur la palette menthe du site (foncé #3E7A6C → fond #A3D9CB → clair #F6FCFA) #}
+				<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+					<filter id="carte-menthe" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+						<feColorMatrix type="matrix" values=".4677 1.5734 .1588 0 -1.2  .4677 1.5734 .1588 0 -1.2  .4677 1.5734 .1588 0 -1.2  0 0 0 1 0"/>
+						<feComponentTransfer>
+							<feFuncR type="table" tableValues="0.243 0.435 0.639 0.796 0.965"/>
+							<feFuncG type="table" tableValues="0.478 0.682 0.851 0.914 0.988"/>
+							<feFuncB type="table" tableValues="0.424 0.624 0.796 0.878 0.980"/>
+						</feComponentTransfer>
+					</filter>
+				</svg>
+				<div class="carte" id="carte" role="region" aria-label="Carte des deux lieux de consultation"></div>
+				<script type="application/json" id="carte-donnees">{{ lieux | dump | safe }}</script>
 			</section>
 
 			<section aria-labelledby="titre-ecrire">
@@ -36,3 +49,63 @@ section: contact
 		</div>
 	</div>
 </article>
+
+<link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css">
+<script src="/static/vendor/leaflet/leaflet.js"></script>
+<script>
+	(function () {
+		var el = document.getElementById("carte");
+		if (!el || !window.L) return;
+		var lieux = JSON.parse(document.getElementById("carte-donnees").textContent).filter(function (l) { return l.lat && l.lon; });
+		if (!lieux.length) return;
+		var carte = L.map(el, { scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false, attributionControl: false, zoomSnap: 0.5 });
+		L.control.attribution({ prefix: false }).addTo(carte);
+		L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: "© <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>" }).addTo(carte);
+		var icone = L.divIcon({
+			className: "carte-pin",
+			html: '<svg class="pin" aria-hidden="true" focusable="false"><use href="#pin"/></svg>',
+			iconSize: [36, 45],
+			iconAnchor: [18, 43],
+			popupAnchor: [0, -40]
+		});
+		var marqueurs = {};
+		var epingle = null; // ville dont l'infobulle reste affichée jusqu'à la petite croix
+		var points = lieux.map(function (l, i) {
+			var contenu = document.createElement("div");
+			var nom = document.createElement("p");
+			nom.className = "carte-ville";
+			nom.textContent = l.structure;
+			var lien = document.createElement("a");
+			lien.className = "carte-lien";
+			lien.href = "https://www.google.com/maps/dir/?api=1&hl=fr&destination=" + encodeURIComponent(l.structure + ", " + l.adresse + ", Belgique");
+			lien.target = "_blank";
+			lien.rel = "noopener";
+			lien.textContent = "Itinéraire";
+			contenu.append(nom, lien);
+			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: true, closeOnClick: false, offset: [0, 4], autoPan: false });
+			marqueurs[l.ville].on("click", function () { epingle = l.ville; });
+			marqueurs[l.ville].on("popupclose", function () { if (epingle === l.ville) epingle = null; });
+			marqueurs[l.ville].on("popupopen", function (ev) {
+				var croix = ev.popup.getElement().querySelector(".leaflet-popup-close-button");
+				if (croix) { croix.setAttribute("aria-label", "Fermer"); croix.setAttribute("title", "Fermer"); }
+			});
+			return [l.lat, l.lon];
+		});
+		// Cadrage large : de la place en haut pour l'infobulle d'Ath, et un peu de recul autour des deux lieux
+		carte.fitBounds(points, { paddingTopLeft: [40, 190], paddingBottomRight: [40, 40], maxZoom: 11 });
+		// Au survol d'un lieu dans la liste, son infobulle s'ouvre sur la carte ; au clic, elle reste affichée
+		document.querySelectorAll(".lieu-carte[data-lieu]").forEach(function (bloc) {
+			var m = marqueurs[bloc.getAttribute("data-lieu")];
+			if (!m) return;
+			bloc.querySelectorAll(".lieu-ville, .lieu-nom, .lieu-adresse").forEach(function (cible) {
+				var ville = bloc.getAttribute("data-lieu");
+				cible.style.cursor = "pointer";
+				// Survol : l'infobulle s'ouvre le temps du survol (sauf si une autre est épinglée)
+				cible.addEventListener("mouseenter", function () { if (!epingle || epingle === ville) m.openPopup(); });
+				cible.addEventListener("mouseleave", function () { if (epingle !== ville) m.closePopup(); });
+				// Clic : l'infobulle reste affichée, jusqu'à la petite croix
+				cible.addEventListener("click", function () { m.openPopup(); epingle = ville; });
+			});
+		});
+	})();
+</script>
