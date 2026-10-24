@@ -1198,7 +1198,7 @@ p { margin: 0; }
 }
 .contact-grille h2 { font-size: 1.8rem; margin-bottom: .6em; }
 .carte {
-  height: 320px;
+  height: 400px;
   margin-top: 22px;
   border-radius: var(--rayon-petit);
   overflow: hidden;

@@ -16,7 +16,7 @@ section: contact
 		<div class="contact-grille">
 			<section class="contact-lieux" aria-label="Appeler">
 				{% for lieu in lieux %}
-					<div class="lieu-carte">
+					<div class="lieu-carte" data-lieu="{{ lieu.ville }}">
 						<p class="lieu-ville">{{ lieu.ville }}</p>
 						<p class="lieu-nom">{{ lieu.structure }}</p>
 						<p class="lieu-adresse">{{ lieu.adresse }}</p>
@@ -68,6 +68,7 @@ section: contact
 			iconAnchor: [18, 43],
 			popupAnchor: [0, -40]
 		});
+		var marqueurs = {};
 		var points = lieux.map(function (l, i) {
 			var contenu = document.createElement("div");
 			var ville = document.createElement("p");
@@ -84,9 +85,19 @@ section: contact
 			lien.rel = "noopener";
 			lien.textContent = "Itinéraire";
 			contenu.append(ville, adresse, lien);
-			L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: false, minWidth: 200, offset: [0, 4] });
+			marqueurs[l.ville] = L.marker([l.lat, l.lon], { icon: icone, title: l.structure + ", " + l.ville, riseOnHover: true }).addTo(carte).bindPopup(contenu, { closeButton: false, minWidth: 200, offset: [0, 4], autoPan: false });
 			return [l.lat, l.lon];
 		});
-		carte.fitBounds(points, { padding: [48, 48], maxZoom: 12 });
+		// Cadrage large : de la place en haut pour l'infobulle d'Ath, et un peu de recul autour des deux lieux
+		carte.fitBounds(points, { paddingTopLeft: [40, 235], paddingBottomRight: [40, 40], maxZoom: 11 });
+		// Au survol (ou au clavier) d'un lieu dans la liste, son infobulle s'ouvre sur la carte
+		document.querySelectorAll(".lieu-carte[data-lieu]").forEach(function (bloc) {
+			var m = marqueurs[bloc.getAttribute("data-lieu")];
+			if (!m) return;
+			bloc.querySelectorAll(".lieu-ville, .lieu-nom, .lieu-adresse").forEach(function (cible) {
+				cible.addEventListener("mouseenter", function () { m.openPopup(); });
+				cible.addEventListener("mouseleave", function () { m.closePopup(); });
+			});
+		});
 	})();
 </script>
