@@ -32,7 +32,7 @@ Si les difficultés persistent après 6 à 7 mois en première primaire, si les 
 
 Les confusions visuelles ne sont pas le seul signe de la dyslexie, il est néanmoins important de noter ici que la dyslexie est un trouble neuro-développemental, elle est liée au fonctionnement cérébral, notamment dans le traitement des sons de la parole et dans l’analyse visuo-attentionnelle. On ne l’annule pas par anticipation. On s’y confronte et on trouve des moyens de contourner les obstacles et d’alléger le quotidien, en particulier le quotidien scolaire. On peut par contre agir tôt pour que le parcours de l’enfant ne se transforme pas en souffrance psychologique. Un jour, on parlera des aménagements. 
 
-#### Trucs et astuces
+### Trucs et astuces
 
 **Offrez assez tôt un vocabulaire topologique stable**. L’objet n’est pas « là », il est « en dessous » de la table, «sur» le meuble, « entre »  la chaise et le mur, « au dessus » de l’arbre. En offrant un accès à ce vocabulaire, l’enfant s’approprie et précise ce qui était abstrait. 
 
