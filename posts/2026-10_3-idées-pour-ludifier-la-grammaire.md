@@ -6,15 +6,15 @@ categories:
   - langage-ecrit
 ---
 
-S'il y a bien une matière qui trône en haut de la catégorie "bof", c'est la grammaire, ex aequo avec la conjugaison. Natures, fonctions, accords, rien de bien amusant. Pourtant, certains patients en redemandent. Mystère? Voici trois jeux à télécharger, plastifier, découper, pour démystifier la grammaire (et un bonus à la fin). 
+S’il y a bien une matière qui trône en haut de la catégorie « bof », c’est la grammaire, ex aequo avec la conjugaison. Natures, fonctions, accords, rien de bien amusant. Pourtant, certains patients en redemandent. Mystère? Voici trois jeux à télécharger, plastifier, découper, pour démystifier la grammaire (et un bonus à la fin). 
 
-**Le détective des fonctions** : Tout d’abord on pioche une phrase mystère, celle-ci est construite selon une structure grammaticale cible, avec un ou plusieurs compléments. On donne un premier indice : l'infinitif du verbe principal. Le patient pose ensuite des questions pour découvrir la phrase mystère. Il retient les reponses et forme la phrase grâce aux indices qu'il a decouverts. [Téléchargez le pdf](/static/img/fonctions-detective.pdf)
+**Le détective des fonctions** : Tout d’abord on pioche une phrase mystère, celle-ci est construite selon une structure grammaticale cible, avec un ou plusieurs compléments. On donne un premier indice : l’infinitif du verbe principal. Le patient pose ensuite des questions pour découvrir la phrase mystère. Il retient les reponses et forme la phrase grâce aux indices qu’il a decouverts. [Téléchargez le pdf](/static/img/fonctions-detective.pdf)
 
-**Le collectionneur de natures** : Chaque « case » d’un parcours est un petit tas de cartes sur lesquelles sont écrits des mots. Lorsque l’on s’arrête sur une case, on pioche une carte. Le but est d’obtenir un mot de chaque nature. On s'arrête sur la même case que l'adversaire? On lui vole une carte, bien sûr! L’enfant va comparer sa carte à celles qu’il a déjà triées dans son jeu et c’est exactement ce qu’on souhaite ! Petit à petit, cette categorisation se fluidifie. [Téléchargez le pdf](/static/img/natures.pdf)
+**Le collectionneur de natures** : Chaque « case » d’un parcours est un petit tas de cartes sur lesquelles sont écrits des mots. Lorsque l’on s’arrête sur une case, on pioche une carte. Le but est d’obtenir un mot de chaque nature. On s’arrête sur la même case que l’adversaire? On lui vole une carte, bien sûr! L’enfant va comparer sa carte à celles qu’il a déjà triées dans son jeu et c’est exactement ce qu’on souhaite ! Petit à petit, cette categorisation se fluidifie. [Téléchargez le pdf](/static/img/natures.pdf)
 
-**Le voleur** : Une grande quantité de cartes sur lesquelles sont écrits des mots de natures diverses sont dispersées sur la table, faces cachées. On chronomètre 15 secondes pendant lesquelles on attrape le plus possible de mots avec les jolis petits personnages-ventouses. Il faut ensuite être le premier à avoir une phrase complète. Des cartes « vol » pimentent le jeu. Les noms et les adjectifs sont à la forme neutre, les verbes sont à l'infinitif. Aprés avoir créé la phrase, il faudra donc l'accorder convenablement. [Téléchargez le pdf](/static/img/voleur.pdf)
+**Le voleur** : Une grande quantité de cartes sur lesquelles sont écrits des mots de natures diverses sont dispersées sur la table, faces cachées. On chronomètre 15 secondes pendant lesquelles on attrape le plus possible de mots avec les jolis petits personnages-ventouses. Il faut ensuite être le premier à avoir une phrase complète. Des cartes « vol » pimentent le jeu. Les noms et les adjectifs sont à la forme neutre, les verbes sont à l’infinitif. Aprés avoir créé la phrase, il faudra donc l’accorder convenablement. [Téléchargez le pdf](/static/img/voleur.pdf)
 
-![les mains d'un enfant qui joue à un jeu de grammaire et ecrit sa phrase](/static/img/IMG_0195.jpeg)
+![les mains d’un enfant qui joue à un jeu de grammaire et ecrit sa phrase](/static/img/IMG_0195.jpeg)
 
 #### **Bonus!**
 

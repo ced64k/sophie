@@ -59,7 +59,7 @@ Ca casse l’image du livre dont il faut absolument prendre soin. 
 
 L’enfant est acteur, le livre est un terrain de jeu. On active différents modes de cognition, la flexibilité, la prise de risques (si je choisis cette option, que se passe t’il?), la mémorisation (j’ai déjà essayé cette option, j’en essaie une autre), et tout ça c’est du plaisir et de l’apprentissage. 
 
-Avec mon jeune public, j’utilise régulièrement « Wahiohio Quel est ce cri bizarre ? ». Deux enfants se promènent dans la jungle à la recherche de ce qui a crié. Deux choix s’offrent à la sortie de chaque page, soit le choix de la sécurité pour l’un des enfants, soit celui de l’aventure pour l’autre. Selon le choix, on suit les onglets au bord des pages, on se promène dans le livre et en faisant les bons choix, on trouve la solution. 
+Avec mon jeune public, j’utilise régulièrement « Wahiohio Quel est ce cri bizarre ? ». Deux enfants se promènent dans la jungle à la recherche de ce qui a crié. Deux choix s’offrent à la sortie de chaque page, soit le choix de la sécurité pour l’un des enfants, soit celui de l’aventure pour l’autre. Selon le choix, on suit les onglets au bord des pages, on se promène dans le livre et en faisant les bons choix, on trouve la solution. 
 
 ![](/static/img/IMG_0212.jpeg)
 
