@@ -8,7 +8,7 @@ categories:
 
 C’est comme une mission qu’on s’est donnée depuis que cet enfant est tout petit, lui insuffler le plaisir de lire, de se laisser aller dans une multitude d’univers. Cette image rêvée d’un enfant calme dans le canapé, dans son monde, dans sa lecture, pendant qu’une tarte aux pommes dore dans le four, l’odeur embaume toute la maison, il neige un peu, le feu crépite dans la cheminée… Bon je digresse. Alors du coup, il en mange du bouquin. Et une histoire pour s’endormir (ou deux ou trois ou quatre…) et une activité bibliothèque chaque week-end, et un atelier avec la gentille conteuse, et des petites étagères mignonnes comme sur Pinterest. Je le sais, je l’ai fait. ![](/static/img/IMG_0206.jpeg)
 
-Ca ne fonctionne pas forcément. Aujourd’hui ado de 18 ans, il ouvrira un jour un roman de son plein gré. (« Jamais de la vie » dit-il en lisant derrière mon épaule) Pour l’instant, ses lectures sont uniquement fonctionnelles et relationnelles : ses cours, les commentaires sur les réseaux, les conversations. Mais il lit sans hésiter ni se sentir limité par une aversion. 
+Ça ne fonctionne pas forcément. Aujourd’hui ado de 18 ans, il ouvrira un jour un roman de son plein gré. (« Jamais de la vie », dit-il en lisant derrière mon épaule) Pour l’instant, ses lectures sont uniquement fonctionnelles et relationnelles : ses cours, les commentaires sur les réseaux, les conversations. Mais il lit sans hésiter ni se sentir limité par une aversion. 
 
 Et donc petite prise de conscience, retour sur expérience (ou sur non-expérience du coup) avec ma double casquette de maman et de logopède. 
 
@@ -24,12 +24,12 @@ Non, un roman sur lequel on sera interrogé, ce n’est pas censé être une lec
 
 > _Un livre s’aime sans condition. Sans devoir tout comprendre, tout relater._ 
 
-Alors on sort les bd, les mangas, les magazines spécialisés. 
+Alors on sort les BD, les mangas, les magazines spécialisés. 
 
-**Ca change quoi ?** 
+**Ça change quoi ?** 
 Si on associe le texte à l’image, on allège la charge cognitive, on permet une meilleure compréhension du contenu inférentiel (tout ce qui n’est pas explicite comme par exemple savoir qui parle quand on lit une conversation) et en même temps, on entraîne la compréhension à la lecture. 
 
-Attention attention, choisissez ensemble car l’écriture des bd est parfois peu lisible ou s’éloigne de ce qu’il est habitué à lire. Les mangas quant à eux se lisent parfois de droite à gauche, rien de très compliqué mais ça demande un moment d’adaptation. 
+Attention attention, choisissez ensemble car l’écriture des BD est parfois peu lisible ou s’éloigne de ce qu’il est habitué à lire. Les mangas quant à eux se lisent parfois de droite à gauche, rien de très compliqué mais ça demande un moment d’adaptation. 
 
 J’aime beaucoup Mortelle Adèle et Ariol. 
 
@@ -41,7 +41,7 @@ J’aime beaucoup Mortelle Adèle et Ariol. 
 
 On instaure un système en binôme, un travail d’équipe, chacun une page, chacun un paragraphe, chacun un personnage, chacun une phrase… on fait les voix, on mime les personnages, on utilise des figurines.
 
-**Ca change quoi?** 
+**Ça change quoi ?** 
 En plus de transformer la lecture en un moment de complicité, ça permet à l’enfant de souffler un peu et de revenir sur le sens qu’il avait peut-être perdu en chemin. 
 
 La collection « tu lis, je lis » chez Bayard est parfaite, les textes sont de couleurs et de difficultés différentes pour l’adulte et pour l’enfant, le personnage qui parle est représenté dans la marge.
@@ -52,12 +52,12 @@ La collection « tu lis, je lis » chez Bayard est parfaite, les textes sont d
 
 On tourne les pages par ci, par là, on renverse le livre, on tapote dessus, on plie des pages, on souffle dessus, on résout des énigmes, on cherche la sortie…
 
-**Ca change quoi?** 
-Ca casse l’image du livre dont il faut absolument prendre soin. 
+**Ça change quoi ?** 
+Ça casse l’image du livre dont il faut absolument prendre soin. 
 
 > _Les pages cornées font des livres heureux._ 
 
-L’enfant est acteur, le livre est un terrain de jeu. On active différents modes de cognition, la flexibilité, la prise de risques (si je choisis cette option, que se passe t’il?), la mémorisation (j’ai déjà essayé cette option, j’en essaie une autre), et tout ça c’est du plaisir et de l’apprentissage. 
+L’enfant est acteur, le livre est un terrain de jeu. On active différents modes de cognition, la flexibilité, la prise de risques (si je choisis cette option, que se passe-t-il ?), la mémorisation (j’ai déjà essayé cette option, j’en essaie une autre), et tout ça c’est du plaisir et de l’apprentissage. 
 
 Avec mon jeune public, j’utilise régulièrement « Wahiohio Quel est ce cri bizarre ? ». Deux enfants se promènent dans la jungle à la recherche de ce qui a crié. Deux choix s’offrent à la sortie de chaque page, soit le choix de la sécurité pour l’un des enfants, soit celui de l’aventure pour l’autre. Selon le choix, on suit les onglets au bord des pages, on se promène dans le livre et en faisant les bons choix, on trouve la solution. 
 
