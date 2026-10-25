@@ -29,15 +29,15 @@ Si les difficultés persistent après plusieurs mois en deuxième primaire, si l
 
 ### Que faire pour prévenir ?
 
-La dyslexie est un trouble neuro-développemental : elle est liée au fonctionnement du cerveau, pas à l'éducation ni au manque d'efforts. On ne l'annule donc pas par anticipation. Ce qu'on peut faire, c'est repérer tôt et soutenir tôt, pour que l'enfant ne vive pas son apprentissage comme un échec. 
+La dyslexie est un trouble neuro-développemental : elle est liée au fonctionnement du cerveau, pas à l’éducation ni au manque d’efforts. On ne l’annule donc pas par anticipation. Ce qu’on peut faire, c’est repérer tôt et soutenir tôt, pour que l’enfant ne vive pas son apprentissage comme un échec. 
 
-Les confusions b/d, les confusions visuelles en général, les omissions, les substitutions de lettres sont la partie visible de l’iceberg mais ce ne sont pas elles qui définissent la dyslexie. Elles n’en sont un indice que si elles sont persistantes. La difficulté centrale est le plus souvent phonologique : relier les sons du langage aux lettres. C'est pourquoi on est attentif, dès la troisième maternelle à d'autres signes que les lettres en miroir : repérer les rimes, découper un mot en syllabes, retrouver le premier son… 
+Les confusions b/d, les confusions visuelles en général, les omissions, les substitutions de lettres sont la partie visible de l’iceberg mais ce ne sont pas elles qui définissent la dyslexie. Elles n’en sont un indice que si elles sont persistantes. La difficulté centrale est le plus souvent phonologique : relier les sons du langage aux lettres. C’est pourquoi on est attentif, dès la troisième maternelle à d’autres signes que les lettres en miroir : repérer les rimes, découper un mot en syllabes, retrouver le premier son… 
 
 > Un signe isolé n’est jamais suffisant pour parler de dyslexie. 
 
 ### Trucs et astuces
 
-**Offrez assez tôt un vocabulaire topologique stable**. L’objet n’est pas « là », il est « en dessous » de la table, « sur » le meuble, « entre » la chaise et le mur, « au-dessus » de l’arbre. En offrant un accès à ce vocabulaire, l’enfant s’approprie et précise ce qui était abstrait. 
+**Offrez assez tôt un vocabulaire topologique stable**. L’objet n’est pas « là », il est « en dessous » de la table, « sur » le meuble, « entre » la chaise et le mur, « au-dessus » de l’arbre. En offrant un accès à ce vocabulaire, l’enfant s’approprie et précise ce qui était abstrait. 
 
 >
 > « Nommer, c’est posséder » 
