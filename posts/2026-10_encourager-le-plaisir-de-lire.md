@@ -75,4 +75,6 @@ Avec les plus petits, ma référence est Hervé Tullet, voir ci-dessous. Je pens
 
 Ce n’est pas grave, promis. 
 
+
+Si l’aversion persiste ou s’accompagne de fatigue, de plaintes, d’évitement, il peut y avoir autre chose : un bilan peut aider. 
 La lecture ne doit pas être une performance ni une obligation, c’est un espace de liberté, d’émerveillement et d’émotions, c’est l’expérience qui s’adapte au lecteur.
