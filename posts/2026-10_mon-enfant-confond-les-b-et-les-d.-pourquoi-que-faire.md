@@ -70,9 +70,9 @@ Certains sites de vente en ligne trient les jeux selon les compétences qu’ils
 
 #### Ce qu’on ne fait pas : 
 
-**Punir et faire copier les mots.** Allez allez, les parents, on n’est plus en 1950. Maintenant on sait des trucs sur la charge cognitive et sur l’inutilité de ce genre de tâches. Au bout de 2 lignes, l’enfant se met en pilote automatique et la tâche devient une répétition mécanique. Il ne fera pas plus attention la prochaine fois, les confusions visuelles ne sont pas un trouble du comportement. 
+**Punir et faire copier les mots.** Allez allez, les parents, on n’est plus en 1950. On vous pardonne mais maintenant on arrête avec ça. Maintenant on sait des trucs sur la charge cognitive et sur l’inutilité de ce genre de tâches. Au bout de 2 lignes, l’enfant se met en pilote automatique et la tâche devient une répétition mécanique. Il ne fera pas plus attention la prochaine fois, les confusions visuelles ne sont pas un trouble du comportement. 
 
-**Pointer les erreurs en rouge**, avec des points d’exclamation, un smiley triste et des remarques sur le manque d’attention, de soin… Et voilà, rien qu’à y penser je suis énervée. Je ne vais même pas faire l’affront d’expliquer pourquoi c’est mauvais de faire ça. Arrêtez ça, c’est tout, c’est pas gentil et ça stresse les patients, après les logos passent la moitié de la séance à les rassurer. 
+**Pointer les erreurs en rouge**, avec des points d’exclamation, un smiley triste et des remarques sur le manque d’attention, de soin… Et voilà, rien qu’à y penser je suis énervée. Arrêtez ça, c’est tout, c’est pas gentil et ça stresse les patients, et après les logos passent la moitié de la séance à les rassurer. 
 
 **Chronométrer la lecture**. Brrrr. (J’ai eu un frisson d’effroi.) L’influence du stress sur les saccades visuelles dans le contexte d’une fragilité visuo-spatiale. Tout un programme. 
 
