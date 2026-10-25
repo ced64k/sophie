@@ -29,17 +29,7 @@ Si les difficultés persistent après plusieurs mois en deuxième primaire, si l
 
 ### Que faire pour prévenir ?
 
-La dyslexie est un trouble neuro-développemental : elle est liée au fonctionnement du cerveau, pas à l’éducation ni à un manque d’efforts. Les confusions visuelles ne sont qu’un signe parmi d’autres, et à elles seules, elles ne permettent pas de conclure. On ne l’annule donc pas par anticipation. On s’y confronte, on trouve des moyens de contourner les obstacles et d’alléger le quotidien, en particulier le quotidien scolaire.
-
-Ce qu’on peut faire, c’est agir tôt, pour que le parcours de l’enfant ne se transforme pas en souffrance psychologique :
-
-- **Faire confiance à son ressenti, sans jouer au détective.** Repérer les signes d’une dyslexie demande un regard de professionnel. Si quelque chose vous inquiète, parlez-en à l’enseignant et à votre médecin ou à un logopède plutôt que de chercher à vous faire une idée seul.
-- **Ne pas attendre « que ça passe » quand le doute persiste.** Un bilan logopédique peut être demandé avant ou pendant l’entrée en lecture. Un bilan n’est pas une étiquette : c’est une façon de comprendre comment l’enfant apprend. Le diagnostic de dyslexie, lui, ne se pose généralement qu’après un à deux ans d’apprentissage de la lecture, mais un accompagnement peut commencer plus tôt.
-- **Signaler les antécédents familiaux.** La dyslexie est en partie héréditaire : si un parent, un frère ou une sœur est dyslexique, c’est une bonne raison d’en parler plus tôt au professionnel.
-- **Soutenir le langage oral au quotidien.** Lire des histoires ensemble, parler de ce qu’on voit, enrichir le vocabulaire : plus l’enfant a de mots en tête, plus il les reconnaît à l’écrit.
-- **Protéger sa confiance en lui.** Un enfant qui se sent en échec à répétition perd le goût d’apprendre. Valoriser ses efforts, ses réussites et ses autres talents est aussi de la prévention.
-
-Un jour, on parlera des aménagements.
+Les confusions visuelles ne sont pas le seul signe de la dyslexie, il est néanmoins important de noter ici que la dyslexie est un trouble neuro-développemental, elle est liée au fonctionnement cérébral. On ne l’annule pas par anticipation. On s’y confronte et on trouve des moyens de contourner les obstacles et d’alléger le quotidien, en particulier le quotidien scolaire. On peut par contre agir tôt pour que le parcours de l’enfant ne se transforme pas en souffrance psychologique. Un jour, on parlera des aménagements. 
 
 ### Trucs et astuces
 
