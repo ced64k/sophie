@@ -12,26 +12,24 @@ On déstresse un peu, je vous explique. 
 
 ### Une règle naturelle 
 
-Le cerveau d’un enfant fonctionne selon le principe de **l’invariance de l’objet**. En d’autres termes, une chaise reste une chaise, même si elle est à l’envers, tournée sur le côté, l’assise à gauche, l’assise à droite, ou posée sur une table. L’enfant la perçoit et l’identifie comme étant une chaise. Il pourra comprendre l’objet, connaître l’utilisation qui est prévue et remettre la chaise à l’endroit s’il souhaite s’asseoir dessus. C’est une compétence vitale, bien sûr, sinon il entrerait dans une sorte de chaos cognitif en permanence. 
-
-Cette compétence est soumise à un apprentissage. Prenons un cas extrême : si personne ne lui dit que le chihuahua et le dogue allemand sont des races de chiens, il ne le devinera pas car les caractéristiques physiques ne sont pas suffisamment communes pour créer des généralités. Très tôt, le cerveau des enfants est donc entraîné à inhiber certaines différences.
+Le cerveau d’un enfant fonctionne selon le principe de **l’invariance en miroir (Stanislas Dehaene, 2007)**. En d’autres termes, une chaise reste une chaise, même si elle est à l’envers, tournée sur le côté, l’assise à gauche, l’assise à droite, ou posée sur une table. L’enfant la perçoit et l’identifie comme étant une chaise. Il pourra comprendre l’objet, connaître l’utilisation qui est prévue et remettre la chaise à l’endroit s’il souhaite s’asseoir dessus. C’est une compétence vitale, bien sûr, sinon il entrerait dans une sorte de chaos cognitif en permanence. Très tôt, le cerveau des enfants est donc entraîné à inhiber certaines différences.
 
 >  Ma tasse reste ma tasse même si la anse est à gauche ou à droite. 
 
-Et voilà où je voulais en venir. Quand on commence à présenter des lettres aux enfants, la boule du d et celle du b ont la même valeur, qu’elles soient à gauche ou à droite. Le p et le q, même combat. Le W et le M, le n et le u, le t et le f, le a et le o…  les enfants très jeunes n’ont parfois même pas encore assez de vocabulaire topologique pour décrire ces petits détails qui changent d’un signe à l’autre. 
-A l’âge où leur vocabulaire, leur langage, leur logique et leur vie sociale s’enrichissent, l’apprentissage est constant, envahissant, épuisant. Leur demander de « bloquer » cette invariance alors qu’ils ne sont eux-mêmes parfois pas encore latéralisés, demande un effort cognitif et dans un premier temps, il est tout à fait normal que ça ne coule pas de source. 
+Et voilà où je voulais en venir. Quand on commence à présenter des lettres aux enfants, la boule du d et celle du b ont la même valeur, qu’elles soient à gauche ou à droite. Le p et le q, même combat. Le W et le M, le n et le u, et à un autre niveau de détails, le t et le f, le a et le o…  les enfants très jeunes n’ont parfois même pas encore assez de vocabulaire topologique pour décrire ces petits détails qui changent d’un signe à l’autre. 
+A l’âge où leur vocabulaire, leur langage, leur logique et leur vie sociale s’enrichissent, l’apprentissage est constant, envahissant, épuisant. Leur demander de « bloquer » cette invariance implique un effort cognitif et dans un premier temps, il est tout à fait normal que ça ne coule pas de source. 
 
 > Au début de l’apprentissage de la lecture, on force le cerveau à désapprendre une règle naturelle (ignorer l’orientation) pour intégrer une règle culturelle, arbitraire et rigide. 
 
-En première primaire, on ne s’inquiète donc pas si les défauts d’orientation sont les seuls indices, s’il se rend compte de son erreur et est capable de se corriger. 
+En première primaire, jusqu’en milieu de  deuxième, on ne s’inquiète donc pas si les défauts d’orientation sont les seuls indices, s’il se rend compte de son erreur et est capable de se corriger. 
 
 ### Quand s’inquiéter?
 
-Si les difficultés persistent après 6 à 7 mois en première primaire, si les erreurs sont systématiques et que l’enfant ne s’en rend pas compte, il est temps de faire un bilan car la fluidité de la lecture est impactée, le coût cognitif est énorme, avec une mémoire de travail saturée et une fatigabilité importante. Des difficultés au niveau visuo-spatial ne concernent pas uniquement des lettres en miroir mais s’accompagnent de fragilités durables dans la structure de l’écrit, dans l’organisation du lexique orthographique, dans son accès et dans la capacité à se repérer dans l’espace. 
+Si les difficultés persistent après plusieurs mois en deuxième primaire, si les erreurs sont systématiques et que l’enfant ne s’en rend pas compte, il est temps de faire un bilan car la fluidité de la lecture est impactée, le coût cognitif est énorme, avec une mémoire de travail saturée et une fatigabilité importante. Des difficultés au niveau visuo-spatial ne concernent pas uniquement des lettres en miroir mais s’accompagnent de fragilités durables dans la structure de l’écrit, dans l’organisation du lexique orthographique, dans son accès et dans la capacité à se repérer dans l’espace. 
 
 ### Que faire pour prévenir?
 
-Les confusions visuelles ne sont pas le seul signe de la dyslexie, il est néanmoins important de noter ici que la dyslexie est un trouble neuro-développemental, elle est liée au fonctionnement cérébral, notamment dans le traitement des sons de la parole et dans l’analyse visuo-attentionnelle. On ne l’annule pas par anticipation. On s’y confronte et on trouve des moyens de contourner les obstacles et d’alléger le quotidien, en particulier le quotidien scolaire. On peut par contre agir tôt pour que le parcours de l’enfant ne se transforme pas en souffrance psychologique. Un jour, on parlera des aménagements. 
+Les confusions visuelles ne sont pas le seul signe de la dyslexie, il est néanmoins important de noter ici que la dyslexie est un trouble neuro-développemental, elle est liée au fonctionnement cérébral. On ne l’annule pas par anticipation. On s’y confronte et on trouve des moyens de contourner les obstacles et d’alléger le quotidien, en particulier le quotidien scolaire. On peut par contre agir tôt pour que le parcours de l’enfant ne se transforme pas en souffrance psychologique. Un jour, on parlera des aménagements. 
 
 ### Trucs et astuces
 
