@@ -29,7 +29,11 @@ Si les difficultés persistent après plusieurs mois en deuxième primaire, si l
 
 ### Que faire pour prévenir ?
 
-Les confusions visuelles ne sont pas le seul signe de la dyslexie, il est néanmoins important de noter ici que la dyslexie est un trouble neuro-développemental, elle est liée au fonctionnement cérébral. On ne l’annule pas par anticipation. On s’y confronte et on trouve des moyens de contourner les obstacles et d’alléger le quotidien, en particulier le quotidien scolaire. On peut par contre agir tôt pour que le parcours de l’enfant ne se transforme pas en souffrance psychologique. Un jour, on parlera des aménagements. 
+La dyslexie est un trouble neuro-développemental : elle est liée au fonctionnement du cerveau, pas à l'éducation ni au manque d'efforts. On ne l'annule donc pas par anticipation. Ce qu'on peut faire, c'est repérer tôt et soutenir tôt, pour que l'enfant ne vive pas son apprentissage comme un échec. 
+
+Les confusions b/d, les confusions visuelles en général, les omissions, les substitutions de lettres sont la partie visible de l’iceberg mais ce ne sont pas elles qui définissent la dyslexie. Elles n’en sont un indice que si elles sont persistantes. La difficulté centrale est le plus souvent phonologique : relier les sons du langage aux lettres. C'est pourquoi on est attentif, dès la troisième maternelle à d'autres signes que les lettres en miroir : repérer les rimes, découper un mot en syllabes, retrouver le premier son… 
+
+> Un signe isolé n’est jamais suffisant pour parler de dyslexie. 
 
 ### Trucs et astuces
 
@@ -41,6 +45,8 @@ Les confusions visuelles ne sont pas le seul signe de la dyslexie, il est néanm
 
 **Levez le pouce droit devant vous.** Ça forme un d, comme « droite ».
 Et plus généralement, cherchez avec l’enfant un geste qui fait penser à la forme des lettres qui posent problème. Mes patients adorent quand j’écris sur leurs mains. 
+
+**Jouez avec les sons**, les rimes, les comptines, les syllabes : lors des trajets en voiture, cherchez des mots avec les lettres des plaques d’immatriculation, inventez des défis pour trouver le plus possible de mots qui contiennent tel ou tel son, jouez à « mon petit œil voit » en donnant l’indice du premier son, inventez des mots rigolos… 
 
 **Faites des jeux qui impliquent une attention visuelle et visuo-spatiale**. Dobble, Jungle speed, Speed cup, Cubeez, le lynx et ses variantes, Speedy Crazy, Micro macro, Les monstres dé-traqués… la liste est longue. Certains jeux de cartes Tam Tam ont les confusions visuelles pour thématique.
 
