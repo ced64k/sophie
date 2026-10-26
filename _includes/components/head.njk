@@ -32,4 +32,8 @@
     {% include "assets/css/site.css" %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
+  {# GoatCounter (stats.sophielogo.be, sans cookies ; pas sur la version de test) #}
+  {% if siteUrl == "https://sophielogo.be" %}
+  <script data-goatcounter="https://stats.sophielogo.be/count" async src="https://stats.sophielogo.be/count.js"></script>
+  {% endif %}
 </head>
