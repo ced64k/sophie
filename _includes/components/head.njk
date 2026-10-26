@@ -3,7 +3,6 @@
   <meta name="generator" content="{{ eleventy.generator }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ metadata.title }}</title>
-  <meta name="description" content="{{ metaDescription or summary or metadata.description }}">
   <meta name="theme-color" content="#A3D9CB">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -13,6 +12,7 @@
   {%- endif %}
   {%- set ogSlug = page | ogCarte({ title: title, author: author, categories: categories, tags: tags, image: image, ogTitre: ogTitre, ogEtiquette: ogEtiquette, ogBouton: ogBouton }, content) %}
   {%- set ogDescription = ({ metaDescription: metaDescription, summary: summary } | ogDescription(content, metadata.description)) if (section == 'post' or section == 'jeu') else (metaDescription or summary or metadata.description) %}
+  <meta name="description" content="{{ ogDescription }}">
   <link rel="canonical" href="{{ siteUrl }}{{ page.url }}">
   <meta property="og:site_name" content="Sophie Lenaerts, logopède">
   <meta property="og:locale" content="fr_BE">

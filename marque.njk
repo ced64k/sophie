@@ -1,0 +1,777 @@
+---
+permalink: /marque/
+eleventyExcludeFromCollections: true
+---
+{#- Planche « Brand choices » : référence visuelle de la palette, des polices et du langage graphique.
+    Page autonome (sans en-tête ni pied du site), non indexée, hors menu. Les valeurs suivent site.css et DESIGN.md. -#}
+<!doctype html>
+<html lang="fr-BE">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Brand choices · Sophie Lenaerts, logopède</title>
+	<meta name="description" content="Planche de référence de l'identité de sophielogo.be : palette menthe, Fredoka et Atkinson Hyperlegible, marqueur jaune, boutons et frimousse.">
+	<meta name="robots" content="noindex">
+	<meta name="theme-color" content="#A3D9CB">
+	<link rel="icon" href="/favicon.ico" sizes="48x48">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+	<link rel="preload" href="/static/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/static/fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+	<style>
+@font-face { font-family: "Fredoka"; src: url("/static/fonts/fredoka.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "Chiffres"; src: url("/static/fonts/fredoka.woff2") format("woff2"); font-weight: 300 700; font-display: swap; unicode-range: U+0030-0039; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("/static/fonts/atkinson-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("/static/fonts/atkinson-400i.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("/static/fonts/atkinson-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --cyan: #A3D9CB;
+  --cyan-fort: #8CC7B8;
+  --cyan-pale: #E6F4F0;
+  --corail: #464A96;
+  --corail-fonce: #35387A;
+  --encre: #111111;
+  --encre-douce: #33443F;
+  --blanc: #FFFFFF;
+  --erreur: #B3261E;
+  --koala-visage: #A5A8D5;
+  --koala-oreille: #9295CA;
+  --koala-creux: #D5D0E9;
+  --koala-oeil: #262E59;
+  --jaune: #E4AF1A;
+  --surligne: #F2C94C;
+  --etiquette: #F7DB84;
+  --tex: url("/static/img/fabric-texture-gris.webp");
+  --titre: "Fredoka", "Atkinson Hyperlegible", system-ui, sans-serif;
+  --texte: "Chiffres", "Atkinson Hyperlegible", system-ui, sans-serif;
+  --rayon: 32px;
+  --rayon-petit: 20px;
+  --sortie: cubic-bezier(.16, 1, .3, 1);
+  --pas: clamp(12px, 1.4vw, 20px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; accent-color: var(--corail); scrollbar-color: var(--encre) var(--cyan); }
+body {
+  margin: 0;
+  background: var(--tex) 0 0 / 250px auto, var(--cyan);
+  background-blend-mode: overlay, normal;
+  color: var(--encre);
+  font-family: var(--texte);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  padding: clamp(16px, 2.4vw, 40px) clamp(16px, 2.4vw, 40px) 64px;
+}
+::selection { background: var(--surligne); color: var(--encre); }
+:focus-visible { outline: 3px solid var(--encre); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3, p, figure, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* Texture de tissu posée sur un aplat (comme sur le site) */
+.grain { background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay; }
+
+/* ——— Planche ——— */
+
+.planche {
+  max-width: 1480px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--pas);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas:
+    "hero hero hero hero hero hero hero logo logo logo logo logo"
+    "hero hero hero hero hero hero hero coul coul coul coul coul"
+    "type type type type type type domn domn domn koal koal koal"
+    "type type type type type type domn domn domn koal koal koal"
+    "lang lang lang lang lang lang bout bout bout koal koal koal"
+    "lang lang lang lang lang lang form form form text text text"
+    "appl appl appl appl appl appl appl appl regl regl regl regl";
+}
+.t-hero { grid-area: hero; }
+.t-logo { grid-area: logo; }
+.t-coul { grid-area: coul; }
+.t-type { grid-area: type; }
+.t-domn { grid-area: domn; }
+.t-koal { grid-area: koal; }
+.t-lang { grid-area: lang; }
+.t-bout { grid-area: bout; }
+.t-form { grid-area: form; }
+.t-text { grid-area: text; }
+.t-appl { grid-area: appl; }
+.t-regl { grid-area: regl; }
+
+.tuile {
+  position: relative;
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  padding: clamp(20px, 2.2vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+  overflow: hidden;
+}
+.tuile-titre {
+  font-family: var(--titre);
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.tuile-titre small {
+  font-family: var(--texte);
+  font-weight: 700;
+  font-size: .8rem;
+  color: var(--encre-douce);
+}
+.note { font-size: .875rem; line-height: 1.45; color: var(--encre-douce); max-width: 46ch; }
+.note b { color: var(--encre); }
+code { font-family: var(--texte); font-weight: 700; font-size: .92em; white-space: nowrap; }
+
+/* Marqueurs (repris de site.css) */
+.surligne { position: relative; isolation: isolate; padding-inline: .04em; }
+.surligne::before {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0;
+  top: calc((100% - .16em) * .88); height: .16em;
+  background-color: var(--surligne);
+  background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay;
+}
+.marque { position: relative; isolation: isolate; padding-inline: .1em; font-weight: 700; }
+.marque::before {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0;
+  top: calc((100% - .55em) * .9); height: .55em;
+  background-color: color-mix(in srgb, var(--puce) 55%, white);
+  background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay;
+}
+
+/* ——— Hero ——— */
+
+.t-hero {
+  background: var(--tex) 0 0 / 250px auto, var(--cyan-fort);
+  background-blend-mode: overlay, normal;
+  justify-content: space-between;
+  min-height: 560px;
+  padding-bottom: 0;
+}
+.hero-haut { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.hero-tache {
+  position: absolute; z-index: 0; border-radius: 50%;
+  background: var(--tex) 0 0 / 250px auto, var(--cyan);
+  background-blend-mode: overlay, normal;
+}
+.hero-tache.un { width: 46%; aspect-ratio: 1.4; left: -10%; top: 30%; rotate: -12deg; }
+.hero-tache.deux { width: 30%; aspect-ratio: 1.4; right: -6%; top: 6%; rotate: 18deg; border-radius: 52% 48% 55% 45%; }
+.t-hero > * { position: relative; z-index: 1; }
+.t-hero > .hero-tache { position: absolute; z-index: 0; }
+.hero-colophon { font-weight: 700; font-size: .875rem; text-align: right; }
+.hero-colophon span { display: block; font-weight: 400; color: var(--encre-douce); }
+.hero-titre {
+  font-family: var(--titre);
+  font-weight: 700;
+  font-size: clamp(3rem, 1.2rem + 4.6vw, 6rem);
+  line-height: .92;
+  letter-spacing: -.02em;
+  text-align: center;
+  max-width: 11ch;
+  margin: 0 auto;
+  rotate: -2deg;
+  text-wrap: balance;
+}
+.hero-centre { display: flex; flex-direction: column; gap: 22px; }
+.hero-sous {
+  text-align: center;
+  text-wrap: balance;
+  font-family: var(--titre);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1rem + .8vw, 1.7rem);
+}
+.hero-sous b { font-weight: 700; }
+.hero-koala { width: min(62%, 420px); margin: 0 auto -14%; }
+
+/* Logo */
+.logo {
+  font-family: var(--titre);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.logo b { position: relative; z-index: 0; display: inline-block; font-weight: inherit; }
+.logo b::before {
+  content: ""; position: absolute; z-index: -1; left: 50%; bottom: .2em;
+  width: .32em; height: .34em; margin-left: -.156em; border-radius: 50%; background: var(--jaune);
+}
+.hero-haut .logo { font-size: clamp(2.2rem, 1.6rem + 1.6vw, 3.2rem); }
+
+.logos { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; flex: 1; }
+.logos > div {
+  border-radius: var(--rayon-petit);
+  display: grid; place-items: center;
+  min-height: 132px; padding: 16px;
+}
+.logos .logo { font-size: clamp(1.7rem, 1rem + 1.2vw, 2.5rem); white-space: nowrap; }
+.logo-blanc { background: var(--cyan-pale); }
+.logo-menthe { background: var(--tex) 0 0 / 250px auto, var(--cyan); background-blend-mode: overlay, normal; }
+.logo-encre { background: var(--encre); color: var(--blanc); }
+.logo-icone { background: var(--cyan-pale); }
+.logo-icone img { width: 64px; height: 64px; border-radius: 14px; }
+
+/* ——— Couleurs ——— */
+
+.couleurs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.pastille { display: flex; flex-direction: column; gap: 8px; }
+.pastille-aplat {
+  height: 92px; border-radius: var(--rayon-petit);
+  background: var(--c);
+  display: flex; align-items: flex-end; padding: 10px 12px;
+  font-family: var(--titre); font-weight: 600; font-size: .95rem; letter-spacing: .01em;
+}
+.pastille-aplat.clair { color: var(--encre); }
+.pastille-aplat.fonce { color: var(--blanc); }
+.pastille-aplat.bord { box-shadow: inset 0 0 0 2px var(--cyan-pale); }
+.pastille dt { font-weight: 700; font-size: .95rem; line-height: 1.2; }
+.pastille dd { font-size: .8rem; line-height: 1.35; color: var(--encre-douce); }
+.couleurs-petites { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.couleurs-petites .pastille-aplat { height: 54px; font-size: .78rem; padding: 6px 8px; border-radius: 14px; }
+.couleurs-petites dt { font-size: .8rem; }
+.proportions { display: flex; height: 22px; border-radius: 999px; overflow: hidden; box-shadow: inset 0 0 0 2px var(--cyan-pale); }
+.proportions span { background: var(--c); }
+.proportions-legende { display: flex; justify-content: space-between; font-size: .75rem; color: var(--encre-douce); margin-top: -10px; }
+
+/* ——— Typographie ——— */
+
+.polices { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.police { background: var(--cyan-pale); border-radius: var(--rayon-petit); padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+.police-aa { font-size: clamp(5rem, 3rem + 4vw, 8rem); line-height: .85; letter-spacing: -.03em; }
+.police-nom { font-weight: 700; font-size: 1.05rem; }
+.police-alphabet { font-size: 1.05rem; line-height: 1.35; word-break: break-all; }
+.f-fredoka { font-family: var(--titre); font-weight: 700; }
+.f-atkinson { font-family: "Atkinson Hyperlegible", system-ui, sans-serif; }
+.echelle { display: flex; flex-direction: column; }
+.echelle li { display: grid; grid-template-columns: 7.5rem 1fr; align-items: baseline; gap: 12px; padding: 8px 0; border-top: 2px solid var(--cyan-pale); }
+.echelle li:first-child { border-top: 0; }
+.echelle .role { font-size: .8rem; font-weight: 700; line-height: 1.25; }
+.echelle .role span { display: block; font-weight: 400; color: var(--encre-douce); }
+.ex-display { font-family: var(--titre); font-weight: 700; font-size: 3.4rem; line-height: .95; letter-spacing: -.02em; }
+.ex-headline { font-family: var(--titre); font-weight: 700; font-size: 2.4rem; line-height: 1; letter-spacing: -.015em; }
+.ex-title { font-family: var(--titre); font-weight: 700; font-size: 1.8rem; line-height: 1; letter-spacing: -.015em; }
+.ex-small { font-family: var(--titre); font-weight: 600; font-size: 1.3rem; line-height: 1.1; }
+.ex-body { font-size: 1.0625rem; line-height: 1.6; max-width: 52ch; }
+.ex-label { font-weight: 700; font-size: 1rem; }
+.zeros { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.zero { border-radius: var(--rayon-petit); padding: 14px 18px; display: flex; align-items: center; gap: 14px; }
+.zero-chiffre { font-size: 2.6rem; line-height: 1; }
+.zero.non { background: var(--cyan-pale); }
+.zero.non .zero-chiffre { font-family: "Atkinson Hyperlegible", sans-serif; text-decoration: line-through 3px var(--erreur); text-decoration-skip-ink: none; }
+.zero.oui { background: var(--etiquette); }
+.zero.oui .zero-chiffre { font-family: var(--titre); font-weight: 500; }
+.zero p { font-size: .82rem; line-height: 1.35; }
+
+/* ——— Domaines ——— */
+
+.domaines { display: flex; flex-direction: column; }
+.t-domn .note { margin-top: auto; }
+.domaines li { display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 12px; padding: 11px 0; border-top: 2px solid var(--cyan-pale); }
+.domaines li:first-child { border-top: 0; }
+.domaines .puce { width: 30px; height: 30px; }
+.domaines li:nth-child(2n) .puce { rotate: 70deg; }
+.domaines li:nth-child(3n) .puce { rotate: -40deg; }
+.domaines .nom { font-family: var(--titre); font-weight: 600; font-size: 1.25rem; line-height: 1.15; }
+.domaines .nom .marque { font-weight: 600; }
+.domaines .nom small { display: block; font-family: var(--texte); font-weight: 400; font-size: .8rem; line-height: 1.35; color: var(--encre-douce); margin-top: 4px; }
+.domaines li { align-items: start; }
+.domaines .puce, .domaines .hex { margin-top: 2px; }
+.domaines .hex { font-family: var(--titre); font-size: .85rem; color: var(--encre-douce); }
+
+/* ——— Frimousse ——— */
+
+.t-koal { background: var(--tex) 0 0 / 250px auto, var(--cyan-fort); background-blend-mode: overlay, normal; padding-bottom: 0; }
+.koala-scene { flex: 1; display: flex; align-items: flex-end; justify-content: center; margin-top: 4px; }
+.koala-scene .frimousse { flex-shrink: 0; width: 135%; margin-bottom: -22%; }
+.mouvements { display: flex; flex-direction: column; }
+.mouvements li { display: grid; grid-template-columns: 5.2rem 1fr; gap: 10px; padding: 8px 0; border-top: 2px solid rgba(17, 17, 17, .1); font-size: .85rem; line-height: 1.35; }
+.mouvements li:first-child { border-top: 0; }
+.mouvements b { font-family: var(--titre); font-weight: 600; font-size: .95rem; }
+.koala-couleurs { display: flex; gap: 8px; flex-wrap: wrap; }
+.koala-couleurs span { display: inline-flex; align-items: center; gap: 6px; font-family: var(--titre); font-size: .82rem; font-weight: 500; background: rgba(255,255,255,.6); padding: 4px 10px 4px 5px; border-radius: 999px; }
+.koala-couleurs i { width: 18px; height: 18px; border-radius: 50%; background: var(--c); }
+.t-koal .note { color: var(--encre); }
+.frimousse { display: block; width: 100%; height: auto; }
+.koala-visage { fill: var(--koala-visage); }
+.koala-oreille { fill: var(--koala-oreille); }
+.koala-creux { fill: var(--koala-creux); }
+.koala-oeil, .koala-nez { fill: var(--koala-oeil); }
+.koala-reflet { fill: var(--blanc); }
+.pupille { transition: transform .5s var(--sortie); }
+
+/* ——— Langage graphique ——— */
+
+.langage { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; flex: 1; }
+.selection-faux { background: var(--surligne); }
+.focus-faux { font-weight: 700; padding: 6px 12px; border-radius: 6px; outline: 3px solid var(--encre); outline-offset: 3px; }
+.ex { background: var(--cyan-pale); border-radius: var(--rayon-petit); padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+.ex-scene { flex: 1; display: flex; align-items: center; gap: 10px 22px; flex-wrap: wrap; min-height: 64px; }
+.ex-joue { font-family: var(--titre); font-weight: 700; font-size: 2.6rem; line-height: 1; letter-spacing: -.02em; rotate: -2deg; }
+.menu-faux { display: flex; gap: 18px; font-weight: 700; white-space: nowrap; }
+.actif { position: relative; isolation: isolate; }
+.actif::before {
+  content: ""; position: absolute; z-index: -1; left: -.15em; right: -.15em; bottom: -.02em; height: .5em;
+  background-color: var(--surligne); background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay;
+  border-radius: .3em .5em .25em .45em; rotate: -1.5deg;
+}
+.lien { font-weight: 700; position: relative; isolation: isolate; text-decoration: none; }
+.lien::before {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: .02em; height: .32em;
+  background-color: var(--surligne); background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay;
+  border-radius: .2em .4em .25em .35em;
+}
+.filtres { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.filtre { position: relative; isolation: isolate; font-weight: 700; padding: 6px 12px; }
+.filtre::before {
+  content: ""; position: absolute; z-index: -1; inset: 14% 2px 10%;
+  background-color: rgba(255, 255, 255, .9); background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay;
+  border-radius: .25em .5em .3em .45em; rotate: -1deg;
+}
+.filtre:nth-child(2n)::before { rotate: .8deg; border-radius: .45em .25em .5em .2em; }
+.filtre.on::before { background-color: var(--surligne); }
+.filtre[style*="--puce"]::before { background-color: color-mix(in srgb, var(--puce) 38%, white); }
+.filtre[style*="--puce"].on::before { background-color: color-mix(in srgb, var(--puce) 82%, white); }
+.etiquette { position: relative; isolation: isolate; font-weight: 700; font-size: .85rem; padding: 2px 8px; }
+.etiquette::before {
+  content: ""; position: absolute; z-index: -1; inset: 12% 1px 8%;
+  background-color: var(--etiquette); background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay;
+  border-radius: .2em .55em .3em .45em; rotate: -1.2deg;
+}
+.etiquette + .etiquette::before { rotate: .9deg; border-radius: .45em .25em .5em .2em; }
+.fleche { width: 1em; height: 1em; vertical-align: -.12em; margin-left: .25em; }
+.ex .note { font-size: .82rem; }
+
+/* ——— Boutons ——— */
+
+.bouton {
+  display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+  background-color: var(--corail);
+  background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay;
+  color: var(--blanc);
+  font-family: var(--titre); font-weight: 600; font-size: 1.3rem; line-height: 1.1;
+  padding: 18px 34px; border: 0; border-radius: 999px; cursor: pointer;
+  --bouton-ombre: var(--corail-fonce);
+  box-shadow: 0 4px 0 var(--bouton-ombre);
+  transition: transform .15s var(--sortie), box-shadow .15s var(--sortie);
+}
+.bouton:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--bouton-ombre); }
+.bouton:active { transform: translateY(4px); box-shadow: 0 0 0 var(--bouton-ombre); }
+.bouton-encre { background-color: var(--encre); --bouton-ombre: rgba(0, 0, 0, .35); font-size: 1.1rem; padding: 14px 26px; }
+.boutons { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; flex: 1; justify-content: center; }
+.bandeau-mini { background: var(--jaune); border-radius: var(--rayon-petit); padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 12px; align-self: stretch; }
+.bandeau-mini p { font-family: var(--titre); font-weight: 600; font-size: 1.15rem; line-height: 1.1; }
+.coupe { display: flex; gap: 18px; align-items: flex-end; }
+.coupe div { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: .72rem; color: var(--encre-douce); }
+.coupe i { display: block; width: 58px; height: 22px; border-radius: 999px; background: var(--corail); }
+.coupe .repos i { box-shadow: 0 4px 0 var(--corail-fonce); }
+.coupe .survol i { box-shadow: 0 6px 0 var(--corail-fonce); transform: translateY(-2px); }
+.coupe .appui i { transform: translateY(4px); }
+
+/* ——— Formes ——— */
+
+.formes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: end; flex: 1; }
+.formes div { display: flex; flex-direction: column; gap: 8px; font-size: .78rem; color: var(--encre-douce); }
+.formes b { font-family: var(--titre); font-weight: 600; color: var(--encre); font-size: .95rem; }
+.formes i { display: block; background: var(--cyan-fort); }
+.r32 { height: 84px; border-radius: 32px; }
+.r20 { height: 84px; border-radius: 20px; background: var(--cyan-pale) !important; box-shadow: inset 0 0 0 2px var(--cyan-fort); }
+.rpil { height: 40px; border-radius: 999px; background: var(--corail) !important; }
+.ovales { display: flex; gap: 10px; align-items: center; }
+.ovales i { display: block; background: var(--tex) 0 0 / 250px auto, var(--cyan-fort); background-blend-mode: overlay, normal; border-radius: 50%; aspect-ratio: 1.4; }
+
+/* ——— Texture ——— */
+
+.textures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; flex: 1; }
+.textures div { display: flex; flex-direction: column; gap: 6px; font-size: .78rem; color: var(--encre-douce); }
+.textures i { display: block; flex: 1; min-height: 96px; border-radius: var(--rayon-petit); background-color: var(--c); }
+.textures .avec { background-image: var(--tex); background-size: 250px auto; background-blend-mode: overlay; }
+.textures .cadre { box-shadow: inset 0 0 0 2px var(--cyan-pale); }
+
+/* ——— Applications ——— */
+
+.t-appl { background: var(--encre); color: var(--blanc); }
+.t-appl .tuile-titre small, .t-appl .note { color: rgba(255, 255, 255, .72); }
+.t-appl .note b { color: var(--blanc); }
+.applis { display: grid; grid-template-columns: 2.2fr .7fr 1.1fr; gap: 14px; align-items: start; }
+.applis figure { display: flex; flex-direction: column; gap: 8px; }
+.applis img { border-radius: 14px; width: 100%; }
+.applis figcaption { font-size: .78rem; color: rgba(255, 255, 255, .72); }
+.appli-col { display: flex; flex-direction: column; gap: 14px; }
+.carte-fiche { background: var(--blanc); color: var(--encre); border-radius: var(--rayon-petit); overflow: hidden; }
+.carte-fiche img { border-radius: 0; aspect-ratio: 4 / 3; object-fit: cover; }
+.carte-fiche div { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; }
+.carte-fiche b { font-family: var(--titre); font-weight: 600; font-size: 1.3rem; line-height: 1.05; }
+.carte-fiche span { display: flex; gap: 6px; }
+.carte-fiche .puce { width: 20px; height: 20px; }
+.carte-fiche .puce:nth-child(2n) { rotate: 70deg; }
+
+/* ——— Règles ——— */
+
+.t-regl { background: var(--tex) 0 0 / 250px auto, var(--jaune); background-blend-mode: overlay, normal; }
+.regles { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.regles h3 { font-family: var(--titre); font-weight: 700; font-size: 1.15rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.regles h3 svg { width: 22px; height: 22px; }
+.regles li { font-size: .9rem; line-height: 1.35; padding: 7px 0; border-top: 2px solid rgba(17, 17, 17, .12); }
+.regles li:first-child { border-top: 0; }
+
+.pied-planche { max-width: 1480px; margin: 22px auto 0; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .85rem; }
+.pied-planche a { font-weight: 700; color: inherit; text-decoration: none; }
+
+/* ——— Tablette ——— */
+
+@media (max-width: 1180px) {
+  .planche {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "hero hero"
+      "logo logo"
+      "coul coul"
+      "type type"
+      "domn koal"
+      "lang lang"
+      "bout form"
+      "text text"
+      "appl appl"
+      "regl regl";
+  }
+  .t-koal { min-height: 380px; }
+}
+
+/* ——— Téléphone ——— */
+
+@media (max-width: 720px) {
+  .planche {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "hero" "logo" "coul" "type" "domn" "koal" "lang" "bout" "form" "text" "appl" "regl";
+  }
+  .t-hero { min-height: 0; gap: 28px; }
+  .hero-colophon { text-align: left; }
+  .logos { grid-template-columns: 1fr 1fr; }
+  .couleurs { grid-template-columns: 1fr 1fr; }
+  .couleurs-petites { grid-template-columns: repeat(3, 1fr); }
+  .polices, .zeros, .langage, .regles { grid-template-columns: 1fr; }
+  .echelle li { grid-template-columns: 1fr; gap: 2px; }
+  .ex-display { font-size: 2.6rem; }
+  .applis { grid-template-columns: 1fr 1fr; }
+  .applis > figure:first-child { grid-column: 1 / -1; }
+  .textures i { min-height: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bouton, .pupille { transition: none; }
+}
+	</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+	<symbol id="puce" viewBox="0 0 24 24">
+		<path d="M12.5 2.5c5.8.2 10 4.3 9.6 9.9-.4 5.4-4.9 9.3-10.6 9.1C5.9 21.3 1.8 17.4 2 11.9 2.2 6.2 6.6 2.3 12.5 2.5z" fill="var(--puce, currentColor)"/>
+	</symbol>
+	<symbol id="fleche" viewBox="0 0 24 24">
+		<path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
+	<symbol id="oui" viewBox="0 0 24 24">
+		<path d="M5.5 12.8l4.2 4.2 8.8-9.6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
+	<symbol id="non" viewBox="0 0 24 24">
+		<path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+	</symbol>
+</svg>
+
+<main class="planche">
+
+	{# ——— Hero ——— #}
+	<section class="tuile t-hero" aria-labelledby="titre-planche">
+		<span class="hero-tache un" aria-hidden="true"></span>
+		<span class="hero-tache deux" aria-hidden="true"></span>
+		<div class="hero-haut">
+			<p class="logo" aria-label="sophie">s<b>o</b>phie</p>
+			<p class="hero-colophon">Brand choices<span>sophielogo.be · palette menthe · octobre 2026</span></p>
+		</div>
+		<div class="hero-centre">
+			<h1 class="hero-titre" id="titre-planche">La logopédie, ça se <span class="surligne">joue</span> !</h1>
+			<p class="hero-sous">Doux, rond et curieux. <b>Une frimousse qui regarde le visiteur.</b></p>
+		</div>
+		{% set frimousseId = "hero" %}{% set frimousseClasse = "hero-koala" %}
+		{% include "components/frimousse.njk" %}
+	</section>
+
+	{# ——— Logo ——— #}
+	<section class="tuile t-logo" aria-labelledby="t-logo">
+		<h2 class="tuile-titre" id="t-logo">Logo <small>Fredoka 700 · −0,02em</small></h2>
+		<div class="logos">
+			<div class="logo-blanc"><p class="logo">s<b>o</b>phie</p></div>
+			<div class="logo-menthe"><p class="logo">s<b>o</b>phie</p></div>
+			<div class="logo-encre"><p class="logo">s<b>o</b>phie</p></div>
+			<div class="logo-icone"><img src="/favicon.svg" alt="Icône : « so » sur carré menthe" width="64" height="64"></div>
+		</div>
+		<p class="note">Le mot en minuscules, noir franc (blanc sur le pied encre). <b>Le creux du « o » est rempli de jaune</b> : un disque posé derrière la lettre. L'icône garde « so » sur un carré menthe.</p>
+	</section>
+
+	{# ——— Couleurs ——— #}
+	<section class="tuile t-coul" aria-labelledby="t-coul">
+		<h2 class="tuile-titre" id="t-coul">Palette « menthe » <small>un fond, une encre, un accent, une touche</small></h2>
+		<dl class="couleurs">
+			<div class="pastille"><div class="pastille-aplat clair grain" style="--c: #A3D9CB">#A3D9CB</div><dt>Menthe</dt><dd>Fond de toutes les pages · <code>--cyan</code></dd></div>
+			<div class="pastille"><div class="pastille-aplat clair grain" style="--c: #8CC7B8">#8CC7B8</div><dt>Menthe tache</dt><dd>Grands ovales de fond · <code>--cyan-fort</code></dd></div>
+			<div class="pastille"><div class="pastille-aplat fonce" style="--c: #111111">#111111</div><dt>Encre</dt><dd>Tout le texte, logo, pied · <code>--encre</code></dd></div>
+			<div class="pastille"><div class="pastille-aplat fonce grain" style="--c: #464A96">#464A96</div><dt>Indigo</dt><dd>Seule couleur pour agir · <code>--corail</code></dd></div>
+			<div class="pastille"><div class="pastille-aplat fonce" style="--c: #35387A">#35387A</div><dt>Indigo nuit</dt><dd>Aplat des boutons, liens · <code>--corail-fonce</code></dd></div>
+			<div class="pastille"><div class="pastille-aplat clair grain" style="--c: #E4AF1A">#E4AF1A</div><dt>Jaune d'or</dt><dd>Petites touches, bandeau · <code>--jaune</code></dd></div>
+		</dl>
+		<dl class="couleurs-petites">
+			<div class="pastille"><div class="pastille-aplat clair bord" style="--c: #FFFFFF">#FFF</div><dt>Blanc</dt><dd>Panneaux</dd></div>
+			<div class="pastille"><div class="pastille-aplat clair" style="--c: #E6F4F0">#E6F4F0</div><dt>Givre</dt><dd>Champs, filets</dd></div>
+			<div class="pastille"><div class="pastille-aplat clair" style="--c: #F2C94C">#F2C94C</div><dt>Surligné</dt><dd>Marqueur</dd></div>
+			<div class="pastille"><div class="pastille-aplat clair" style="--c: #F7DB84">#F7DB84</div><dt>Paille</dt><dd>Étiquettes</dd></div>
+			<div class="pastille"><div class="pastille-aplat fonce" style="--c: #33443F">#33443F</div><dt>Encre douce</dt><dd>Texte second</dd></div>
+			<div class="pastille"><div class="pastille-aplat fonce" style="--c: #B3261E">#B3261E</div><dt>Erreur</dt><dd>Champs seuls</dd></div>
+		</dl>
+		<div class="proportions" role="img" aria-label="Proportions approximatives : menthe 58 %, blanc 24 %, encre 10 %, indigo 5 %, jaune 3 %">
+			<span style="--c: #A3D9CB; flex: 58"></span><span style="--c: #FFFFFF; flex: 24"></span><span style="--c: #111111; flex: 10"></span><span style="--c: #464A96; flex: 5"></span><span style="--c: #E4AF1A; flex: 3"></span>
+		</div>
+		<p class="proportions-legende" aria-hidden="true"><span>menthe</span><span>blanc</span><span>encre · indigo · jaune</span></p>
+	</section>
+
+	{# ——— Typographie ——— #}
+	<section class="tuile t-type" aria-labelledby="t-type">
+		<h2 class="tuile-titre" id="t-type">Typographie <small>deux polices, auto-hébergées</small></h2>
+		<div class="polices">
+			<div class="police">
+				<p class="police-aa f-fredoka" aria-hidden="true">Aa</p>
+				<p class="police-nom">Fredoka · 300 à 700</p>
+				<p class="police-alphabet f-fredoka">AaBbCcDdEeFfGg 0123456789 ?!</p>
+				<p class="note">Ronde et dodue, pour ce qui se lit d'un coup d'œil : titres, logo, boutons, noms de fiches, chiffres.</p>
+			</div>
+			<div class="police">
+				<p class="police-aa f-atkinson" aria-hidden="true">Aa</p>
+				<p class="police-nom">Atkinson Hyperlegible · 400, 700</p>
+				<p class="police-alphabet f-atkinson">AaBbCcDdEeFfGg Il1 bdpq <i>italique</i></p>
+				<p class="note">Dessinée pour la lisibilité, aussi pour les lecteurs dyslexiques : tout ce qui se lit vraiment.</p>
+			</div>
+		</div>
+		<ul class="echelle">
+			<li><p class="role">Display<span>accueil · 7,2rem</span></p><p class="ex-display">Ça se joue !</p></li>
+			<li><p class="role">Headline<span>h1 · 4,5rem</span></p><p class="ex-headline">Prenons contact</p></li>
+			<li><p class="role">Title<span>h2 · 2,8rem</span></p><p class="ex-title">Derniers articles</p></li>
+			<li><p class="role">Title small<span>Fredoka 600 · 1,3rem</span></p><p class="ex-small">Cuisto Dingo</p></li>
+			<li><p class="role">Body<span>Atkinson 400 · 1,6</span></p><p class="ex-body">Je détourne des jeux du commerce que les parents peuvent acheter et refaire à la maison, depuis 2017.</p></li>
+			<li><p class="role">Label<span>Atkinson 700 · 1rem</span></p><p class="ex-label">Pour les parents · À télécharger</p></li>
+		</ul>
+		<div class="zeros">
+			<div class="zero non"><span class="zero-chiffre" aria-hidden="true">2001</span><p><b>Pas le zéro barré</b> d'Atkinson : les dates et les numéros avaient l'air de code.</p></div>
+			<div class="zero oui"><span class="zero-chiffre" aria-hidden="true">2001</span><p><b>Les chiffres en Fredoka</b>, partout dans le texte, et les téléphones en Fredoka 600.</p></div>
+		</div>
+	</section>
+
+	{# ——— Domaines ——— #}
+	<section class="tuile t-domn" aria-labelledby="t-domn">
+		<h2 class="tuile-titre" id="t-domn">Domaines <small>repères, pas surfaces</small></h2>
+		<ul class="domaines">
+			{%- for d in domaines %}
+			<li style="--puce: {{ d.couleur }}">
+				<svg class="puce" aria-hidden="true"><use href="#puce"/></svg>
+				<span class="nom"><span class="marque">{{ d.nom }}</span><small>{{ d.texte }}</small></span>
+				<span class="hex">{{ d.couleur }}</span>
+			</li>
+			{%- endfor %}
+		</ul>
+		<p class="note">Le nom est <b>surligné au marqueur</b> dans la couleur du domaine. Là où il n'est pas écrit (cartes de fiches), une petite tache. <b>Ni pions ni dés.</b></p>
+	</section>
+
+	{# ——— Frimousse ——— #}
+	<section class="tuile t-koal" aria-labelledby="t-koal">
+		<h2 class="tuile-titre" id="t-koal">La frimousse <small>bouge ton pointeur</small></h2>
+		<p class="note">Le koala dépasse du bas de l'accueil et du haut du pied de page. Il monte une fois à l'arrivée ; <b>les reflets de ses yeux suivent le pointeur</b>. Jamais de jaune sur lui.</p>
+		<p class="koala-couleurs">
+			<span><i style="--c: #A5A8D5"></i>#A5A8D5</span>
+			<span><i style="--c: #9295CA"></i>#9295CA</span>
+			<span><i style="--c: #D5D0E9"></i>#D5D0E9</span>
+			<span><i style="--c: #262E59"></i>#262E59</span>
+		</p>
+		<ul class="mouvements">
+			<li><b>Arrivée</b><span>monte en 1,1 s, une seule fois</span></li>
+			<li><b>Regard</b><span>les reflets suivent le pointeur</span></li>
+			<li><b>Cartes</b><span>montent de 6 px en penchant de −1°</span></li>
+			<li><b>Calme</b><span>tout se fige si on réduit les animations</span></li>
+		</ul>
+		<div class="koala-scene">
+			{% set frimousseId = "planche" %}{% set frimousseClasse = "koala-planche" %}
+			{% include "components/frimousse.njk" %}
+		</div>
+	</section>
+
+	{# ——— Langage graphique ——— #}
+	<section class="tuile t-lang" aria-labelledby="t-lang">
+		<h2 class="tuile-titre" id="t-lang">Le marqueur jaune <small>trait irrégulier, légèrement penché</small></h2>
+		<div class="langage">
+			<div class="ex">
+				<div class="ex-scene"><p class="ex-joue">ça se <span class="surligne">joue</span></p></div>
+				<p class="note">Un trait fin sous le mot qui compte, dans le grand titre.</p>
+			</div>
+			<div class="ex">
+				<div class="ex-scene"><p class="menu-faux"><span>Qui suis-je ?</span><span class="actif">Fiches jeux</span><span>Articles</span></p></div>
+				<p class="note">Page active du menu : un trait large derrière le bas du mot.</p>
+			</div>
+			<div class="ex">
+				<div class="ex-scene">
+					<p class="filtres">
+						<span class="filtre on">Tous</span><span class="filtre">Pour les parents</span>
+						{%- for d in domaines %}{% if loop.index <= 3 %}<span class="filtre{% if loop.index == 2 %} on{% endif %}" style="--puce: {{ d.couleur }}">{{ d.court }}</span>{% endif %}{% endfor %}
+					</p>
+				</div>
+				<p class="note">Filtres : blanc au repos, jaune ou couleur du domaine quand ils sont actifs. Pas de pilules.</p>
+			</div>
+			<div class="ex">
+				<div class="ex-scene">
+					<p><span class="etiquette">Pour les parents</span> <span class="etiquette">Lecture</span></p>
+					<p><span class="lien">Tous les articles</span><svg class="fleche" aria-hidden="true"><use href="#fleche"/></svg></p>
+				</div>
+				<p class="note">Étiquettes en jaune paille ; liens soulignés au marqueur, jamais en soulignement classique.</p>
+			</div>
+			<div class="ex">
+				<div class="ex-scene"><p>Le texte <span class="selection-faux">sélectionné</span> passe au jaune surligné.</p></div>
+				<p class="note">Sélection de texte : jaune surligné, texte encre.</p>
+			</div>
+			<div class="ex">
+				<div class="ex-scene"><p><span class="focus-faux">Fiches jeux</span></p></div>
+				<p class="note">Focus au clavier : anneau encre de 3 px, décalé de 3 px, partout.</p>
+			</div>
+		</div>
+	</section>
+
+	{# ——— Boutons ——— #}
+	<section class="tuile t-bout" aria-labelledby="t-bout">
+		<h2 class="tuile-titre" id="t-bout">Boutons</h2>
+		<div class="boutons">
+			<button class="bouton" type="button">Prendre contact</button>
+			<div class="coupe" aria-hidden="true">
+				<div class="repos"><i></i>repos</div>
+				<div class="survol"><i></i>survol</div>
+				<div class="appui"><i></i>appui</div>
+			</div>
+			<div class="bandeau-mini">
+				<p>Les jeux en ligne</p>
+				<button class="bouton bouton-encre" type="button">Jouer</button>
+			</div>
+		</div>
+		<p class="note">Pilule indigo sur un <b>aplat de 4 px sans flou</b> qui s'écrase au clic. Essaie-le.</p>
+	</section>
+
+	{# ——— Formes ——— #}
+	<section class="tuile t-form" aria-labelledby="t-form">
+		<h2 class="tuile-titre" id="t-form">Formes <small>tout est rond</small></h2>
+		<div class="formes">
+			<div><i class="r32"></i><b>32 px</b>panneaux</div>
+			<div><i class="r20"></i><b>20 px</b>dedans</div>
+			<div><i class="rpil"></i><b>pilule</b>ce qui se clique</div>
+		</div>
+		<div class="ovales" aria-hidden="true"><i style="width: 38%"></i><i style="width: 22%; rotate: 24deg"></i><i style="width: 30%; rotate: -14deg; border-radius: 52% 48% 55% 45%"></i></div>
+		<p class="note">Ovales de fond (ratio 1,4) en parallaxe. <b>Aucun contour</b> : des filets givrés de 2 px.</p>
+	</section>
+
+	{# ——— Texture ——— #}
+	<section class="tuile t-text" aria-labelledby="t-text">
+		<h2 class="tuile-titre" id="t-text">Texture de tissu <small>overlay · 250 px</small></h2>
+		<div class="textures">
+			<div><i style="--c: #464A96"></i>aplat seul</div>
+			<div><i class="avec" style="--c: #464A96"></i>avec le tissu</div>
+			<div><i class="cadre" style="--c: #FFFFFF"></i>panneau blanc : sans</div>
+		</div>
+		<p class="note">En niveaux de gris, posée en <b>overlay</b> sur le fond, les taches, le koala, les boutons et les marqueurs. Jamais sur les panneaux blancs.</p>
+	</section>
+
+	{# ——— Applications ——— #}
+	<section class="tuile t-appl" aria-labelledby="t-appl">
+		<h2 class="tuile-titre" id="t-appl">Applications <small>dessinées à la compilation</small></h2>
+		<div class="applis">
+			<figure>
+				<img src="/og/accueil.jpg" alt="Image de partage de l'accueil : « La logopédie, ça se joue ! » sur fond menthe, avec le koala" width="1200" height="630" loading="lazy" decoding="async">
+				<figcaption>Aperçu de lien · 1200 × 630</figcaption>
+			</figure>
+			<figure>
+				<img src="/og/story/jeux.jpg" alt="Story 9/16 de la page Fiches jeux" width="1080" height="1920" loading="lazy" decoding="async">
+				<figcaption>Story · 9/16</figcaption>
+			</figure>
+			<div class="appli-col">
+				<figure class="carte-fiche">
+					<img src="{{ '/static/img/fiches/cuisto-dingo.jpg' | vignette(640) }}" alt="Le jeu Cuisto Dingo" width="640" height="480" loading="lazy" decoding="async">
+					<div><b>Cuisto Dingo</b><span>{% for d in domaines %}{% if d.id != "precoce" and d.id != "methodo" %}<svg class="puce" style="--puce: {{ d.couleur }}" aria-hidden="true"><use href="#puce"/></svg>{% endif %}{% endfor %}</span></div>
+				</figure>
+				<figure>
+					<img src="/static/img/partage/facebook-couverture.jpg" alt="Couverture de la page Facebook" width="1640" height="624" loading="lazy" decoding="async">
+					<figcaption>Couverture Facebook · 1640 × 624</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	{# ——— Règles ——— #}
+	<section class="tuile t-regl" aria-labelledby="t-regl">
+		<h2 class="tuile-titre" id="t-regl">Les règles du jeu</h2>
+		<div class="regles">
+			<div>
+				<h3><svg aria-hidden="true"><use href="#oui"/></svg>Oui</h3>
+				<ul>
+					<li>Texte noir franc, sur menthe comme sur blanc.</li>
+					<li>Une seule couleur pour agir&nbsp;: l’indigo.</li>
+					<li>Le jaune ponctue, et porte toujours du texte noir.</li>
+					<li>Trois rayons : 32, 20, pilule.</li>
+					<li>Mouvement coupé si «&nbsp;réduire les animations&nbsp;».</li>
+				</ul>
+			</div>
+			<div>
+				<h3><svg aria-hidden="true"><use href="#non"/></svg>Non</h3>
+				<ul>
+					<li>Ni pions ni dés pour les domaines.</li>
+					<li>Pas de gris pour le texte principal.</li>
+					<li>Pas de contour ni d'ombre sur les panneaux.</li>
+					<li>Pas de jaune sur le koala ni sur les boutons.</li>
+					<li>Pas de soulignement classique.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+<footer class="pied-planche">
+	<p>Sophie Lenaerts, logopède · référence détaillée dans <code>DESIGN.md</code></p>
+	<p><a href="/">sophielogo.be<svg class="fleche" aria-hidden="true"><use href="#fleche"/></svg></a></p>
+</footer>
+
+<script>
+	// Les reflets des yeux des deux koalas suivent le pointeur, comme sur l'accueil
+	(function () {
+		if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+		var koalas = document.querySelectorAll(".frimousse");
+		var attente = false;
+		addEventListener("pointermove", function (e) {
+			if (attente) return;
+			attente = true;
+			requestAnimationFrame(function () {
+				attente = false;
+				koalas.forEach(function (f) {
+					var r = f.getBoundingClientRect();
+					var dx = (e.clientX - (r.left + r.width / 2)) / innerWidth;
+					var dy = (e.clientY - (r.top + r.height * .6)) / innerHeight;
+					var x = Math.max(-1, Math.min(1, dx * 2)) * 6;
+					var y = Math.max(-1, Math.min(1, dy * 2)) * 6;
+					f.querySelectorAll(".pupille").forEach(function (p) { p.style.transform = "translate(" + x + "px," + y + "px)"; });
+				});
+			});
+		}, { passive: true });
+	})();
+</script>
+</body>
+</html>
