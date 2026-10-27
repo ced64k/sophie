@@ -9,12 +9,9 @@ age: 6 à 120 ans
 Because Potatoes vient d’arriver dans mon bureau et a déjà sa place d’honneur dans l’étagère, aux côtés de Bazar bizarre, Dobble, Crazy cups, Kezao et même Clac clac!
 
 Les règles sont simples et le jeu est fun, comme souvent chez cet éditeur. Le but est de gagner le plus de cartes possible. Chaque joueur a trois cartes, on défausse une première carte de la pioche puis le premier joueur peut poser une, deux ou ses trois cartes, puis pioche pour remplir sa main. La consigne pour poser, est d’avoir sur la carte un point commun avec la patate précédente. A partir de la troisième carte, une nouvelle règle s’ajoute : pour gagner l’ensemble des cartes, il faudra que la carte posée n’ait rien en commun avec la première carte. 
+![](/static/img/IMG_0220.jpeg)Observation, flexibilité, ambiance, on aime! 
 
-![](/static/img/IMG_0220.jpeg)
-
-Observation, flexibilité, ambiance, on aime! 
-
-Comment jouer avec nos petits choux chez qui la flexibilité n’est pas encore un super pouvoir? 
+> Comment jouer avec nos petits choux chez qui la flexibilité n’est pas encore un super pouvoir? 
 
 ## Langage oral
 
