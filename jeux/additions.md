@@ -1,9 +1,9 @@
 ---
-title: "Additions"
-author: "Sophie Lenaerts"
-image: "/static/img/fiches/addition.jpg"
-marque: "Djeco"
-age: "4 ans et +"
+title: Additions
+author: Sophie Lenaerts
+image: /static/img/IMG_0229.jpeg
+marque: Djeco
+age: 4 ans et +
 ---
 
 ![](/static/img/fiches/addition.jpg)
