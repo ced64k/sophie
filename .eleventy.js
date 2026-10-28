@@ -73,7 +73,7 @@ module.exports = function(eleventyConfig) {
 
   // Fiches jeux
   eleventyConfig.addCollection("jeux", collection =>
-    collection.getFilteredByGlob("./jeux/*.md").sort((a, b) => a.data.title.localeCompare(b.data.title, "fr"))
+    collection.getFilteredByGlob("./jeux/*.md").sort((a, b) => (b.date - a.date) || a.data.title.localeCompare(b.data.title, "fr"))
   );
 
   // Filters

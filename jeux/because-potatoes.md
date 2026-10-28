@@ -1,5 +1,6 @@
 ---
 title: Because Potatoes
+date: 2026-10-27
 author: Sophie Lenaerts
 image: /static/img/IMG_0223.jpeg
 marque: Widyka

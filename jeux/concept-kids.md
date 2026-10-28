@@ -1,5 +1,6 @@
 ---
 title: "Concept Kids"
+date: 2023-08-28
 author: "Julie Braeye"
 image: "/static/img/fiches/concept-kids.jpg"
 marque: "Repos Production"

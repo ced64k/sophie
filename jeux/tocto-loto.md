@@ -1,5 +1,6 @@
 ---
 title: "Tocto Loto"
+date: 2023-08-28
 author: "Fanny Jonckheere"
 image: "/static/img/fiches/tocto-loto.jpg"
 marque: "Djeco"

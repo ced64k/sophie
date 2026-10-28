@@ -1,5 +1,6 @@
 ---
 title: Pico pico
+date: 2026-10-28
 author: Sophie Lenaerts
 image: /static/img/IMG_0233.jpeg
 marque: Djeco

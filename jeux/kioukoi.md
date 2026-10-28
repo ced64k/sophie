@@ -1,5 +1,6 @@
 ---
 title: "Kioukoi"
+date: 2023-08-28
 author: "Sophie Lenaerts"
 image: "/static/img/fiches/kioukoi.jpg"
 marque: "Djeco"

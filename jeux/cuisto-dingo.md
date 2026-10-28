@@ -1,5 +1,6 @@
 ---
 title: Cuisto Dingo
+date: 2023-08-28
 author: Estelle Richard
 image: /static/img/IMG_0230.jpeg
 marque: Goliath

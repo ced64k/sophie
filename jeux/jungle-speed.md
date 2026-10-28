@@ -1,5 +1,6 @@
 ---
 title: "Jungle Speed"
+date: 2023-08-28
 author: "Fanny Jonckheere"
 image: "/static/img/fiches/jungle-speed.jpg"
 marque: "Asmodee"

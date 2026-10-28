@@ -1,5 +1,6 @@
 ---
 title: Additions
+date: 2023-08-28
 author: Sophie Lenaerts
 image: /static/img/IMG_0229.jpeg
 marque: Djeco
