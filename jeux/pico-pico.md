@@ -20,4 +20,6 @@ Pour varier un peu quand mes patients me demandent un loto (j’avoue, c’est r
 
 Évidemment, qui dit discrimination visuelle dit bien souvent langage écrit. Ici, il faut quand même pondérer un peu car ce jeu seul permettra d’entraîner la discrimination visuelle mais n’aura pas d’impact notable sur le langage écrit si les compétences acquises grâce au jeu ne sont pas transférées au matériel de lettres (Woodrome et Johnson, 2009) Pico pico nous servira de tremplin pour entraîner la précision et la patience du regard, l’attention aux détails et le vocabulaire descriptif mais il faudra ensuite lier explicitement ces compétences aux lettres. 
 
-Voici un pdf qui part du même principe que Pico pico mais avec des lettres.
+[Voici un pdf](https://sophielogo.be/static/img/pico-lettres.pdf) qui part du même principe que Pico pico mais avec des lettres.
+
+![](/static/img/IMG_0236.jpeg)
