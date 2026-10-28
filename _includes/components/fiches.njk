@@ -1,8 +1,9 @@
-{# Liste de fiches jeux : attend `fiches` (une collection). `sousLaFlottaison` : toutes les images en chargement différé (accueil) #}
+{# Liste de fiches jeux : attend `fiches` (une collection) et éventuellement `limite` (les fiches au-delà de la sixième sont masquées sur tablette et téléphone). `sousLaFlottaison` : toutes les images en chargement différé (accueil) #}
 <ul class="fiches" data-liste>
 	{% for fiche in fiches %}
+		{% if not limite or loop.index <= limite %}
 		{% set domainesFiche = fiche.templateContent | domainesFiche %}
-		<li class="fiche" data-domaines="{{ domainesFiche | join(' ') }}">
+		<li class="fiche{% if limite and loop.index > 6 %} fiche-grand-ecran{% endif %}" data-domaines="{{ domainesFiche | join(' ') }}">
 			<a href="{{ fiche.url | url }}">
 				{# La photo générique d'enfant (ancien en-tête WordPress) ne représente aucun jeu : on affiche un aplat à la place #}
 				{% set image = fiche.data.image or (fiche.templateContent | firstImage) %}
@@ -13,5 +14,6 @@
 				</span>
 			</a>
 		</li>
+		{% endif %}
 	{% endfor %}
 </ul>

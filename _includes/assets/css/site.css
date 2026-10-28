@@ -843,6 +843,11 @@ p { margin: 0; }
   gap: clamp(16px, 2vw, 26px);
 }
 
+/* Accueil : 8 fiches sur grand écran (4 colonnes), 6 sur tablette et téléphone */
+@media (max-width: 1100px) {
+  .fiche-grand-ecran { display: none; }
+}
+
 .fiche a {
   display: flex;
   flex-direction: column;

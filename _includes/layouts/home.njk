@@ -61,7 +61,9 @@ section: home
 	</div>
 	{% set sousLaFlottaison = true %}
 	{% set fiches = collections.jeux %}
+	{% set limite = 8 %}
 	{% include "components/fiches.njk" %}
+	{% set limite = null %}
 	<p class="section-pied"><a class="lien-fort" href="/jeux/">Toutes les fiches jeux</a></p>
 </section>
 
